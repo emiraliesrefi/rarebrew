@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>Rarebrew: the rare-answer alchemy trivia game</title>
+<meta name="description" content="Drop answers into the cauldron. The rarer your correct answer, the richer the brew.">
+<meta name="theme-color" content="#0e0a17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700&family=IM+Fell+English:ital@0;1&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   RAREBREW  ·  styles
+   1 tokens · 2 base · 3 top bar · 4 home · 5 game · 6 cauldron
+   7 shelf & gems · 8 results · 9 modals · 10 reduced motion
+   ===================================================================== */
+
+/* ---------- 1. tokens ---------- */
+@property --liq-a { syntax: '<color>'; inherits: true; initial-value: #4fe0a0; }
+@property --liq-b { syntax: '<color>'; inherits: true; initial-value: #0b5a45; }
+@property --liq-c { syntax: '<color>'; inherits: true; initial-value: #9bf5cf; }
+:root {
+  --bg: #0e0a17; --panel: #1b1429; --panel-2: #261b3a; --line: rgba(255,255,255,.12);
+  --ink: #f3ebdc; --muted: #bdb2cf; --green: #62e3a6; --gold: #f6c95c; --danger: #ff7a6b;
+  --parch: #ead9ae; --parch-2: #d9c48f; --parch-ink: #2b1e10;
+  --t0: #8a7647; --t1: #b3b3bf; --t2: #c2ad55; --t3: #e8935a; --t4: #dcecfa; --t5: #ffd35c; --t6: #ff4d3d;
+  --display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --logo: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+  --script: 'IM Fell English', 'Iowan Old Style', Georgia, serif;
+  --ui: 'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --vvh: 100dvh; --vvt: 0px;
+}
+
+/* ---------- 2. base ---------- */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: var(--ui); overscroll-behavior: none; }
+body { overflow: hidden; -webkit-tap-highlight-color: transparent; }
+button, input { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+#app { position: fixed; left: 0; right: 0; top: var(--vvt); height: var(--vvh); display: flex; flex-direction: column; overflow: hidden; background: #0b0812; }
+
+/* ---------- 2b. the underground brewing chamber: CSS + inline SVG only, always behind the game ---------- */
+#chamber { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #0b0812; }
+#chamber .wall { position: absolute; inset: 0; background-image: var(--brick); background-size: clamp(170px, 22vw, 260px) auto; }
+#chamber .vault { position: absolute; left: 0; top: 0; width: 100%; height: clamp(90px, 24vh, 230px); }
+#chamber .floor { position: absolute; left: 0; bottom: 0; width: 100%; height: 17%; }
+#chamber .unit { position: absolute; width: clamp(104px, 23vw, 300px); opacity: .92; }
+#chamber .unit.l { left: 0; top: 34%; } #chamber .unit.r { right: 0; top: 29%; }
+#chamber .torch { position: absolute; top: clamp(64px, 19vh, 180px); width: clamp(24px, 3.6vw, 42px); overflow: visible; }
+#chamber .torch.l { left: clamp(4px, 2.5vw, 40px); } #chamber .torch.r { right: clamp(4px, 2.5vw, 40px); }
+#chamber .tlight { position: absolute; top: clamp(64px, 19vh, 180px); width: 110vmin; height: 110vmin; margin-top: -50vmin; border-radius: 50%; will-change: opacity, transform;
+  background: radial-gradient(closest-side, rgba(255,170,80,.20), rgba(255,130,50,.07) 50%, transparent 72%); animation: torch 3.3s ease-in-out infinite; }
+#chamber .tlight.l { left: -50vmin; } #chamber .tlight.r { right: -50vmin; animation-duration: 4.1s; animation-delay: -1.3s; }
+@keyframes torch { 0%,100% { opacity: .8; transform: scale(1) } 12% { opacity: 1; transform: scale(1.04) } 30% { opacity: .68; transform: scale(.98) } 47% { opacity: .95 } 63% { opacity: .74; transform: scale(1.02) } 81% { opacity: 1 } }
+#chamber .shade { position: absolute; inset: 0; background:
+  radial-gradient(120% 80% at 50% 45%, transparent 30%, rgba(5,3,10,.8) 100%),
+  linear-gradient(180deg, rgba(8,5,14,.5) 0%, rgba(8,5,14,.12) 30%, rgba(8,5,14,.3) 70%, rgba(5,3,9,.85) 100%); }
+#chamber .mote { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #ffd9a0; opacity: 0; will-change: transform, opacity; animation: mote 14s linear infinite; }
+@keyframes mote { 0% { transform: translate(0, 0); opacity: 0 } 15% { opacity: .5 } 50% { transform: translate(18px, -28px) } 85% { opacity: .3 } 100% { transform: translate(-10px, -62px); opacity: 0 } }
+#chamber .mist { position: absolute; left: -20%; bottom: 2%; width: 140%; height: 24vh; will-change: transform; animation: mist 28s ease-in-out infinite alternate;
+  background: radial-gradient(40% 60% at 30% 62%, rgba(200,210,230,.10), transparent 70%), radial-gradient(34% 52% at 68% 52%, rgba(190,205,225,.08), transparent 70%), radial-gradient(26% 40% at 50% 80%, rgba(200,215,235,.07), transparent 70%); }
+#chamber .mist.two { animation-duration: 37s; animation-direction: alternate-reverse; bottom: -3%; opacity: .8; }
+@keyframes mist { from { transform: translateX(-6%) } to { transform: translateX(6%) } }
+#dim { position: absolute; inset: 0; z-index: 28; background: #000; opacity: 0; pointer-events: none; transition: opacity .5s ease; }
+#dim.on { opacity: .5; }
+#fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 30; }
+#glow { position: absolute; inset: 0; pointer-events: none; z-index: 29; opacity: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(255,214,110,.55), rgba(255,180,60,.18) 35%, transparent 65%); }
+#glow.on { animation: glow 1.3s ease-out; }
+#glow.big { animation: glow 2.4s ease-out; }
+#glow.red { background: radial-gradient(circle at 50% 45%, rgba(255,40,40,.5), rgba(150,0,12,.2) 35%, transparent 65%); }
+@keyframes glow { 0% { opacity: 0 } 18% { opacity: 1 } 100% { opacity: 0 } }
+
+.btn { border: 1px solid var(--line); background: var(--panel-2); color: var(--ink); border-radius: 12px; padding: .7rem 1.1rem;
+  font-weight: 700; cursor: pointer; transition: transform .12s ease, background .2s, box-shadow .2s, border-color .2s; }
+.btn:hover { background: #32254b; border-color: rgba(255,255,255,.25); }
+.btn:active { transform: translateY(2px) scale(.98); }
+.btn.primary { background: linear-gradient(180deg, #ffdb7d, #e9a93a); color: #2a1a05; border-color: #ffe7a3;
+  box-shadow: 0 6px 0 #9a6a14, 0 14px 30px rgba(240,180,60,.25); }
+.btn.primary:hover { background: linear-gradient(180deg, #ffe596, #f2b548); }
+.btn.primary:active { transform: translateY(4px); box-shadow: 0 2px 0 #9a6a14, 0 6px 14px rgba(240,180,60,.2); }
+.btn.big { font-family: var(--display); font-size: 1.2rem; padding: 1rem 1.6rem; letter-spacing: .04em; }
+.btn.ghost { background: transparent; }
+.btn.danger { border-color: rgba(255,122,107,.6); color: #ffb3aa; }
+.icon-btn { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--line);
+  background: rgba(255,255,255,.04); cursor: pointer; transition: background .2s, transform .12s; }
+.icon-btn:hover { background: rgba(255,255,255,.12); }
+.icon-btn:active { transform: scale(.92); }
+.icon-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- 3. top bar ---------- */
+.topbar { position: relative; z-index: 5; display: flex; align-items: center; gap: 8px; padding: 10px 14px; padding-top: max(10px, env(safe-area-inset-top)); }
+.brand { font-family: var(--logo); font-size: 1.25rem; color: var(--gold); letter-spacing: .03em; margin-right: auto; background: none; border: 0; cursor: pointer; padding: 4px;
+  text-shadow: 0 0 18px rgba(246,201,92,.35); }
+#btn-leave { width: auto; padding: 0 12px; font-weight: 700; font-size: .85rem; }
+
+main { position: relative; z-index: 2; flex: 1; min-height: 0; display: flex; }
+.screen { flex: 1; min-height: 0; width: 100%; overflow-y: auto; padding: 8px 16px 24px; padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+
+/* ---------- 4. home ---------- */
+#screen-home { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+.home-inner { max-width: 760px; width: 100%; margin: auto; display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 12px 0; }
+.logo { font-family: var(--logo); font-size: clamp(2.6rem, 11vw, 5rem); line-height: 1; margin: 0; color: var(--gold);
+  background: linear-gradient(180deg, #fff1b8 0%, #f6c95c 45%, #c98a1e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 22px rgba(246,201,92,.35)); }
+.tag { font-family: var(--script); font-style: italic; font-size: 1.25rem; color: #e6dcc8; margin: 0; max-width: 30ch; }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: .8rem; font-weight: 700; color: #1b1206; white-space: nowrap; }
+.badge.t0 { background: var(--t0); color: #fff; } .badge.t1 { background: var(--t1); } .badge.t2 { background: var(--t2); }
+.badge.t3 { background: var(--t3); } .badge.t4 { background: var(--t4); } .badge.t5 { background: var(--t5); }
+.badge.t6 { background: linear-gradient(90deg, #3d0007, #a80f1c 50%, #3d0007); color: #ffe9e6; box-shadow: inset 0 0 0 1px #e0463f; }
+.cats { border: 0; padding: 0; margin: 0; }
+.cats legend { font-family: var(--display); font-size: .95rem; color: var(--muted); margin: 0 auto 10px; letter-spacing: .08em; text-transform: uppercase; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chip span { display: block; padding: .5rem .95rem; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.04); font-weight: 600; transition: all .18s; }
+.chip:hover span { border-color: rgba(255,255,255,.3); }
+.chip input:checked + span { background: var(--green); color: #06281a; border-color: #b6f5d6; box-shadow: 0 0 18px rgba(98,227,166,.35); }
+.chip input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 3px; }
+.home-actions { display: flex; flex-direction: column; gap: 14px; align-items: center; width: 100%; }
+.home-actions .btn.big { min-width: min(100%, 300px); }
+.mini { color: var(--muted); font-size: .92rem; margin: 0; }
+
+/* ---------- 5. game ---------- */
+#screen-game { display: flex; flex-direction: column; gap: 8px; overflow: hidden; padding-bottom: max(10px, env(safe-area-inset-bottom)); max-width: 620px; margin: 0 auto; }
+.hud { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: .92rem; color: var(--muted); }
+.hud .score { margin-left: auto; color: var(--gold); font-variant-numeric: tabular-nums; }
+.hud .mode { color: var(--green); }
+.link-btn { background: none; border: 0; color: var(--muted); text-decoration: underline; cursor: pointer; padding: 6px 4px; font-weight: 600; }
+.link-btn:hover { color: var(--ink); }
+.card { position: relative; background:
+    radial-gradient(120% 90% at 20% 10%, rgba(255,255,255,.35), transparent 50%),
+    radial-gradient(40% 30% at 85% 85%, rgba(140,95,30,.18), transparent 70%),
+    linear-gradient(180deg, var(--parch), var(--parch-2));
+  color: var(--parch-ink); border-radius: 8px 10px 7px 11px; padding: 14px 18px 16px;
+  box-shadow: inset 0 0 34px rgba(120,80,20,.35), 0 10px 26px rgba(0,0,0,.45); }
+.card .cat { font-family: var(--display); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #6a4a1c; font-weight: 700; }
+.card .q { font-family: var(--script); font-size: clamp(1.3rem, 5.2vw, 1.9rem); line-height: 1.15; margin: 4px 0 0; }
+.card.enter { animation: cardIn .45s cubic-bezier(.2,.9,.3,1.2); }
+@keyframes cardIn { from { transform: translateY(-14px) rotate(-1.5deg); opacity: 0 } to { transform: none; opacity: 1 } }
+.paused .card .q { filter: blur(9px); }
+.timer { display: flex; align-items: center; gap: 10px; }
+.timer .track { flex: 1; height: 10px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+.timer .fill { height: 100%; width: 100%; transform-origin: left center; border-radius: 999px; background: linear-gradient(90deg, #39c98a, #8df0c2); transition: background-color .3s; }
+.timer.warn .fill { background: linear-gradient(90deg, #e9a93a, #ffd97a); }
+.timer.danger .fill { background: linear-gradient(90deg, #e2503f, #ff9a7a); }
+.timer .secs { width: 2.2ch; text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.timer.danger .secs { color: var(--danger); animation: pulse .5s ease-in-out infinite alternate; }
+@keyframes pulse { to { transform: scale(1.25) } }
+.feedback { min-height: 1.5em; margin: 0; font-weight: 600; text-align: center; font-size: .98rem; }
+.feedback b { color: var(--gold); }
+.feedback.bad { color: #ffb3aa; }
+.feed { min-height: 1.6em; display: grid; place-items: center; }
+.confirm { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; background: rgba(20,14,32,.94); border: 1px solid var(--gold);
+  border-radius: 14px; padding: 8px 12px; box-shadow: 0 8px 24px rgba(0,0,0,.5); animation: sheetIn .18s ease-out; }
+.confirm .cq { font-weight: 600; }
+.confirm .btn { padding: .45rem .85rem; }
+.confirm .btn.primary { box-shadow: 0 3px 0 #9a6a14; }
+
+.brew-form { display: flex; gap: 8px; }
+.brew-form input { flex: 1; min-width: 0; font-size: 1.1rem; padding: .85rem 1rem; border-radius: 14px; border: 2px solid rgba(98,227,166,.5); background: rgba(10,7,17,.85); color: var(--ink);
+  animation: inputPulse 2.2s ease-in-out infinite; }
+.brew-form input::placeholder { color: #9d93b0; }
+.brew-form input:focus { outline: none; border-color: var(--green); }
+.brew-form.busy input { opacity: .55; animation: none; }
+.brew-form input.nudge { animation: nudge .3s; }
+@keyframes inputPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(98,227,166,.0) } 50% { box-shadow: 0 0 0 5px rgba(98,227,166,.18) } }
+@keyframes nudge { 25% { transform: translateX(-6px) } 75% { transform: translateX(6px) } }
+.brew-form .btn { padding-inline: 1.2rem; font-family: var(--display); }
+
+/* ---------- 6. cauldron ---------- */
+.stage { position: relative; flex: 1; min-height: 84px; display: grid; place-items: center;
+  --liq-a: #4fe0a0; --liq-b: #0b5a45; --liq-c: #9bf5cf;
+  transition: --liq-a .6s ease, --liq-b .6s ease, --liq-c .6s ease; }
+.stage[data-brew=wrong]  { --liq-a: #7d6a3c; --liq-b: #2a2111; --liq-c: #8d7b4b; }
+.stage[data-brew=ash]    { --liq-a: #9a9aa6; --liq-b: #3b3b46; --liq-c: #c2c2cc; }
+.stage[data-brew=flash]  { --liq-a: #fff0a0; --liq-b: #e0a010; --liq-c: #ffffff; transition-duration: .12s; }
+.stage[data-brew=brass]  { --liq-a: #a39048; --liq-b: #4a4019; --liq-c: #b9aa66; }
+.stage[data-brew=copper] { --liq-a: #f08d3f; --liq-b: #16705a; --liq-c: #58e0a8; }
+.stage[data-brew=silver] { --liq-a: #f2fbff; --liq-b: #5f9fd6; --liq-c: #ffffff; }
+.stage[data-brew=gold]   { --liq-a: #fff3a8; --liq-b: #d88a00; --liq-c: #fffbe0; }
+.stage[data-brew=stone]  { --liq-a: #ff3327; --liq-b: #240004; --liq-c: #ff8a70; }
+.stage::before { content: ''; position: absolute; left: 50%; top: 30%; width: min(90%, 520px); aspect-ratio: 1.6; transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, var(--liq-a), transparent); opacity: .22; pointer-events: none; transition: opacity .4s ease; }
+.stage.shake { animation: shake .32s linear; }
+@keyframes shake { 20% { transform: translate(-3px, 1px) } 40% { transform: translate(3px, -1px) } 60% { transform: translate(-2px, 0) } 80% { transform: translate(2px, 1px) } }
+#cauldron { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.s-a { stop-color: var(--liq-a); } .s-b { stop-color: var(--liq-b); }
+.sw { fill: var(--liq-c); opacity: .35; transform-box: fill-box; transform-origin: center; animation: swirl 7s linear infinite; }
+.sw.two { animation-duration: 9s; animation-direction: reverse; opacity: .25; }
+.stage[data-brew=copper] .sw, .stage[data-brew=gold] .sw, .stage[data-brew=stone] .sw { animation-duration: 1.6s; opacity: .6; }
+@keyframes swirl { from { transform: rotate(0) scaleX(1) } 50% { transform: rotate(180deg) scaleX(.7) } to { transform: rotate(360deg) scaleX(1) } }
+/* build-up before a reward erupts: faster churn, brighter glow, a slight rumble */
+.stage.churn .sw { animation-duration: .6s; opacity: .75; }
+.stage.churn .bub { animation-duration: .45s; }
+.stage.churn::before { opacity: .55; }
+.stage.churn #cauldron { animation: rumble .11s linear infinite; }
+@keyframes rumble { 0% { transform: translate(1.5px, 0) } 50% { transform: translate(-1.5px, 1px) } 100% { transform: translate(1px, -1px) } }
+.bub { fill: var(--liq-c); opacity: 0; transform-box: fill-box; transform-origin: center; animation: bub 2.6s ease-in infinite; }
+.bub:nth-of-type(2) { animation-delay: .5s } .bub:nth-of-type(3) { animation-delay: 1.1s } .bub:nth-of-type(4) { animation-delay: 1.6s }
+.bub:nth-of-type(5) { animation-delay: 2.0s } .bub:nth-of-type(6) { animation-delay: .8s }
+.stage.lively .bub { animation-duration: .9s; }
+@keyframes bub { 0% { transform: scale(.2); opacity: 0 } 30% { opacity: .85 } 85% { transform: scale(1); opacity: .8 } 100% { transform: scale(1.5); opacity: 0 } }
+.rise { fill: none; stroke: var(--liq-c); stroke-width: 1.5; opacity: 0; animation: rise 4s ease-out infinite; }
+.rise:nth-of-type(2) { animation-delay: 1.2s } .rise:nth-of-type(3) { animation-delay: 2.3s } .rise:nth-of-type(4) { animation-delay: 3.1s }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0 } 15% { opacity: .7 } 100% { transform: translateY(-70px); opacity: 0 } }
+.steam { fill: #fff; opacity: 0; animation: steam 6s ease-in-out infinite; }
+.steam:nth-of-type(2) { animation-delay: 2s } .steam:nth-of-type(3) { animation-delay: 4s }
+@keyframes steam { 0% { transform: translate(0, 0) scale(.6); opacity: 0 } 30% { opacity: .07 } 100% { transform: translate(14px, -110px) scale(1.5); opacity: 0 } }
+.flame { transform-box: fill-box; transform-origin: 50% 100%; animation: flame .9s ease-in-out infinite alternate; }
+.flame:nth-child(2) { animation-duration: .7s } .flame:nth-child(3) { animation-duration: 1.1s } .flame:nth-child(4) { animation-duration: .8s }
+@keyframes flame { from { transform: scale(1, .82) skewX(-4deg) } to { transform: scale(.92, 1.12) skewX(5deg) } }
+.pop { position: absolute; left: 50%; top: 16%; transform: translate(-50%, -50%); z-index: 33; pointer-events: none; white-space: nowrap; text-align: center; line-height: 1.05;
+  font-family: var(--display); font-weight: 700; font-size: clamp(1.2rem, 5.4vw, 2rem); letter-spacing: .05em;
+  text-shadow: 0 2px 0 rgba(0,0,0,.7), 0 0 24px currentColor; animation: pop 1.7s ease-out both; }
+.pop small { display: block; font-size: .55em; letter-spacing: .12em; opacity: .9; }
+.pop.big { font-size: clamp(1.7rem, 7vw, 3rem); white-space: normal; width: min(94vw, 760px); }
+.pop.t0 { color: #c9b98a } .pop.t1 { color: var(--t1) } .pop.t2 { color: var(--t2) } .pop.t3 { color: var(--t3) } .pop.t4 { color: var(--t4) } .pop.t5 { color: var(--t5) } .pop.t6 { color: var(--t6) }
+@keyframes pop { 0% { transform: translate(-50%, -20%) scale(.5); opacity: 0 } 14% { transform: translate(-50%, -50%) scale(1.14); opacity: 1 } 24% { transform: translate(-50%, -50%) scale(1) } 82% { opacity: 1 } 100% { transform: translate(-50%, -110%); opacity: 0 } }
+@keyframes popFade { 0% { opacity: 0 } 15% { opacity: 1 } 80% { opacity: 1 } 100% { opacity: 0 } }
+/* the typed answer, travelling to the cauldron */
+.orb { position: absolute; left: 0; top: 0; z-index: 31; pointer-events: none; max-width: 62vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 15px; color: #06281a; will-change: transform, opacity;
+  background: radial-gradient(circle at 35% 28%, #ffffff, #b9f7dc 42%, #4fd69a); border: 1px solid #eafff5;
+  box-shadow: 0 0 0 3px rgba(98,227,166,.25), 0 0 22px 6px rgba(98,227,166,.6); }
+/* the reward while it rises, hangs and flies to the shelf */
+.rfly { position: absolute; left: 0; top: 0; width: 72px; height: 72px; margin: -36px 0 0 -36px; z-index: 32; pointer-events: none; opacity: 0; will-change: transform, filter, opacity; }
+.rfly .rw { width: 100%; height: 100%; position: relative; }
+.rfly .halo { position: absolute; inset: -80%; border-radius: 50%; background: radial-gradient(closest-side, var(--halo, #ffd35c), transparent 72%); opacity: 0; }
+.rfly.fade { animation: popFade 1.3s ease both; }
+
+/* ---------- 7. shelf & rewards ---------- */
+.shelf { list-style: none; margin: 0 auto 10px; padding: 0 16px 13px; width: fit-content; max-width: 100%; position: relative; display: flex; justify-content: center; gap: clamp(3px, 2vw, 12px); }
+.shelf::before { /* the plank: lit top lip, grained front edge */
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 16px; border-radius: 3px;
+  background: linear-gradient(180deg, #a06a38 0 3px, #5a3719 3px 5px, transparent 5px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.16) 0 2px, transparent 2px 23px, rgba(255,255,255,.05) 23px 24px, transparent 24px 61px),
+    linear-gradient(180deg, #6f4725, #3a2210);
+  box-shadow: 0 9px 14px rgba(0,0,0,.6), inset 0 -2px 0 rgba(0,0,0,.4); }
+.shelf::after { /* iron brackets */
+  content: ''; position: absolute; left: 20px; right: 20px; bottom: -11px; height: 11px;
+  background: linear-gradient(135deg, #1c1622 50%, transparent 51%) left / 13px 11px no-repeat, linear-gradient(225deg, #1c1622 50%, transparent 51%) right / 13px 11px no-repeat; }
+.slot { width: 40px; height: 42px; display: grid; place-items: end center; position: relative; z-index: 1; }
+.slot::before { content: ''; width: 12px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.16); margin-bottom: 4px; }
+.slot.current::before { background: var(--green); box-shadow: 0 0 10px var(--green); animation: pulse .8s ease-in-out infinite alternate; }
+.slot.spent::before { width: 18px; height: 5px; background: rgba(0,0,0,.55); }            /* nothing kept: a scorch mark */
+.slot.filled::before { position: absolute; bottom: 1px; width: 74%; height: 6px; margin: 0; background: rgba(0,0,0,.55); z-index: -1; }   /* contact shadow */
+.slot.fresh .rw { animation: land .4s cubic-bezier(.3,1.6,.5,1); }
+@keyframes land { 0% { transform: translateY(-7px) scale(1.12) } 60% { transform: translateY(1px) scale(.96) } 100% { transform: none } }
+.rw { width: 38px; height: 38px; display: block; overflow: visible; }
+.rw2 { filter: drop-shadow(0 1px 1px rgba(0,0,0,.6)); }
+.rw3 { filter: drop-shadow(0 0 4px rgba(232,147,90,.45)); }
+.rw4 { filter: drop-shadow(0 0 5px rgba(220,236,250,.5)); }
+.rw5 { filter: drop-shadow(0 0 6px rgba(255,211,92,.6)); }
+.rw6 { filter: drop-shadow(0 0 7px rgba(200,16,30,.85)); }
+.rw .glint { transform-box: fill-box; transform-origin: center; animation: twinkle 2.6s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { transform: scale(.55) rotate(0deg); opacity: .5 } 50% { transform: scale(1.1) rotate(45deg); opacity: 1 } }
+.rw .core { animation: corePulse 2.2s ease-in-out infinite; }
+@keyframes corePulse { 0%, 100% { opacity: .45 } 50% { opacity: 1 } }
+
+/* ---------- 8. results ---------- */
+#screen-results .wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
+.final { text-align: center; }
+.final .num { font-family: var(--display); font-size: clamp(3rem, 14vw, 5.5rem); line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; text-shadow: 0 0 30px rgba(246,201,92,.35); }
+.final .num small { font-size: .35em; color: var(--muted); }
+.final .title { font-family: var(--script); font-style: italic; font-size: 1.5rem; margin: 4px 0 0; }
+.res-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.res { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.res .rq { color: var(--muted); font-size: .9rem; margin: 0 0 4px; }
+.res .ra { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-weight: 700; font-size: 1.05rem; }
+.res .ra .pts { margin-left: auto; color: var(--gold); font-variant-numeric: tabular-nums; }
+.res .ra s { color: #ffb3aa; font-weight: 600; }
+.res .ra .rw { width: 30px; height: 30px; }
+.res .wg { font-size: .82rem; font-weight: 600; color: var(--muted); }
+.res .masters { margin: 8px 0 0; font-size: .88rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.res .masters .lbl { font-family: var(--script); font-style: italic; font-size: 1rem; color: #e6dcc8; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; position: sticky; bottom: 0; padding: 12px 0 4px;
+  background: linear-gradient(180deg, transparent, var(--bg) 35%); }
+
+/* ---------- 9. modals ---------- */
+.modal { position: absolute; inset: 0; z-index: 50; display: grid; place-items: center; padding: 16px; background: rgba(6,4,12,.72); backdrop-filter: blur(3px); }
+.sheet { width: min(560px, 100%); max-height: 100%; overflow-y: auto; background: linear-gradient(180deg, #241a38, #18112a); border: 1px solid rgba(255,255,255,.16);
+  border-radius: 18px; padding: 20px; box-shadow: 0 30px 80px rgba(0,0,0,.6); animation: sheetIn .25s ease-out; }
+@keyframes sheetIn { from { transform: translateY(16px); opacity: 0 } }
+.sheet h2 { font-family: var(--display); margin: 0 0 12px; color: var(--gold); font-size: 1.4rem; }
+.sheet h3 { font-family: var(--display); font-size: 1rem; margin: 16px 0 6px; color: #e6dcc8; }
+.sheet p { line-height: 1.5; margin: 0 0 10px; }
+.sheet .row { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; margin-top: 16px; }
+.step-n { font-family: var(--display); color: var(--green); letter-spacing: .1em; font-size: .8rem; }
+.dots { display: flex; gap: 6px; margin-right: auto; align-items: center; }
+.dots i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.2); }
+.dots i.on { background: var(--gold); }
+.toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.toggle button[role=switch] { width: 54px; height: 30px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.1); position: relative; cursor: pointer; flex: none; transition: background .2s; }
+.toggle button[role=switch]::after { content: ''; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; transition: transform .2s; }
+.toggle button[aria-checked=true] { background: var(--green); }
+.toggle button[aria-checked=true]::after { transform: translateX(24px); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+.tile { background: rgba(255,255,255,.05); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+.tile b { display: block; font-family: var(--display); font-size: 1.5rem; color: var(--gold); font-variant-numeric: tabular-nums; }
+.tile span { font-size: .82rem; color: var(--muted); }
+.gem-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.gem-row div { display: flex; align-items: center; gap: 6px; font-weight: 700; }
+.gem-row .rw { width: 34px; height: 34px; }
+.grim-group { border-top: 1px solid var(--line); padding: 10px 0; }
+.grim-group h3 { margin: 0 0 6px; font-family: var(--script); font-size: 1.1rem; font-weight: 400; }
+.grim-group .count { color: var(--muted); font-family: var(--ui); font-size: .82rem; margin-left: 6px; }
+.grim-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.unknown { display: inline-flex; padding: 3px 10px; border-radius: 999px; border: 1px dashed rgba(255,255,255,.25); color: var(--muted); font-size: .8rem; }
+.progress { height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; margin: 6px 0 12px; }
+.progress i { display: block; height: 100%; background: linear-gradient(90deg, #5a0510, #e0202a); }
+.grim-group h3 .rw { display: inline-block; width: 22px; height: 22px; vertical-align: -5px; margin-right: 6px; }
+#toast { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 60; background: #fff; color: #1b1206; font-weight: 700; padding: 10px 16px; border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5); opacity: 0; pointer-events: none; transition: opacity .25s; }
+#toast.show { opacity: 1; }
+
+/* ---------- layout: keyboard-open (compact) and desktop ---------- */
+.compact.in-game .topbar { display: none; }
+@media (max-width: 560px) { .in-game #btn-grimoire, .in-game #btn-stats { display: none; } .icon-btn { width: 40px; height: 40px; } .topbar { gap: 6px; padding-inline: 12px; } }
+.compact #screen-game { gap: 5px; padding-top: 6px; }
+.compact .card { padding: 8px 12px 9px; }
+.compact .card .q { font-size: 1.15rem; }
+.compact .slot { height: 28px; width: 30px; }
+.compact .rw { width: 24px; height: 24px; }
+.compact .shelf { margin-bottom: 6px; }
+.compact .feedback { font-size: .88rem; min-height: 1.3em; }
+.compact .brew-form input { padding: .6rem .8rem; }
+@media (min-width: 920px) and (min-height: 560px) {
+  #screen-game { max-width: 1180px; display: grid; column-gap: 48px; row-gap: 12px; padding-inline: 32px;
+    grid-template-columns: minmax(340px, 440px) 1fr; grid-template-rows: 1fr auto auto auto auto auto 1fr auto;
+    grid-template-areas: ". stage" "hud stage" "card stage" "timer stage" "feed stage" "form stage" ". stage" ". shelf"; }
+  .hud { grid-area: hud } .card { grid-area: card; padding: 22px 26px 26px } .timer { grid-area: timer } .feed { grid-area: feed; justify-items: start; min-height: 3.4em } .feedback { text-align: left } .confirm { justify-content: flex-start }
+  .brew-form { grid-area: form } .stage { grid-area: stage } .shelf { grid-area: shelf; justify-self: center; padding-inline: 28px; gap: 20px }
+  .slot { width: 54px; height: 54px } .rw { width: 48px; height: 48px }
+  .card .q { font-size: 2.1rem }
+}
+
+/* ---------- 10. reduced motion: colour changes and fades only ---------- */
+.reduced *, .reduced *::before, .reduced *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; animation-delay: 0s !important; }
+.reduced .bub { opacity: .5; } .reduced .steam, .reduced .rise { opacity: 0; }
+.reduced .pop { animation: popFade 1.6s ease both !important; animation-duration: 1.6s !important; }
+.reduced #glow.on, .reduced #glow.big { animation: none !important; }
+.reduced .rfly.fade { animation: popFade 1.3s ease both !important; animation-duration: 1.3s !important; }
+.reduced #chamber .mote, .reduced #chamber .mist { display: none; }
+.reduced #chamber .tlight { opacity: .85; }
+.reduced .rw .core { opacity: .8; }
+.reduced .btn, .reduced .icon-btn { transition: none; }
+</style>
+</head>
+<body>
+<div id="app">
+  <!-- shared SVG paint for the reward shapes and flames (kept rendered so every screen can use it) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+    <linearGradient id="gFlame" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a18"/><stop offset=".6" stop-color="#ffc24a"/><stop offset="1" stop-color="#fff3b0"/></linearGradient>
+    <radialGradient id="rgCu" cx="36%" cy="28%" r="78%"><stop offset="0" stop-color="#ffc79a"/><stop offset=".45" stop-color="#c8703a"/><stop offset="1" stop-color="#5a2a0f"/></radialGradient>
+    <linearGradient id="lgAgTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#c9d3de"/><stop offset="1" stop-color="#f4f8fb"/></linearGradient>
+    <linearGradient id="lgAgFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcc7d2"/><stop offset="1" stop-color="#66727f"/></linearGradient>
+    <linearGradient id="lgAuTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8cf"/><stop offset=".5" stop-color="#ffd24a"/><stop offset="1" stop-color="#ffec9a"/></linearGradient>
+    <linearGradient id="lgAuFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3b92c"/><stop offset="1" stop-color="#9c6a08"/></linearGradient>
+    <radialGradient id="rgStone" cx="50%" cy="48%" r="62%"><stop offset="0" stop-color="#ff4a3a"/><stop offset=".32" stop-color="#b80f1c"/><stop offset=".72" stop-color="#52040e"/><stop offset="1" stop-color="#130108"/></radialGradient>
+    <radialGradient id="rgCore"><stop offset="0" stop-color="#ffc0aa" stop-opacity=".95"/><stop offset=".45" stop-color="#ff2a1f" stop-opacity=".55"/><stop offset="1" stop-color="#ff2a1f" stop-opacity="0"/></radialGradient>
+  </defs></svg>
+
+  <div id="chamber" aria-hidden="true">
+    <div class="wall"></div>
+    <svg class="vault" viewBox="0 0 1000 200" preserveAspectRatio="none">
+      <path d="M0 0H1000V200Q500-40 0 200Z" fill="#07050c"/>
+      <path d="M0 200Q500-40 1000 200" fill="none" stroke="#2b2236" stroke-width="30" stroke-dasharray="64 5"/>
+      <path d="M0 218Q500-22 1000 218" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="5"/>
+      <path d="M476 60h48l-9 46h-30z" fill="#352a43" stroke="#0a0710" stroke-width="2"/>
+    </svg>
+    <svg class="floor" viewBox="0 0 1000 100" preserveAspectRatio="none">
+      <rect width="1000" height="100" fill="#0c0912"/>
+      <path d="M0 4H1000M0 20H1000M0 46H1000M0 82H1000M500 4L-300 100M500 4L60 100M500 4L340 100M500 4L660 100M500 4L940 100M500 4L1300 100" stroke="#1c1626" stroke-width="2" fill="none"/>
+    </svg>
+    <div class="unit l" id="unit-l"></div><div class="unit r" id="unit-r"></div>
+    <div class="tlight l"></div><div class="tlight r"></div>
+    <svg class="torch l" viewBox="0 0 60 130"><path d="M30 60v52" stroke="#3a2414" stroke-width="9" stroke-linecap="round"/><path d="M14 58h32l-5 14H19z" fill="#17121e" stroke="#2d2439"/><path d="M30 112v10M18 122h24" stroke="#17121e" stroke-width="5" stroke-linecap="round"/><g><path class="flame" d="M30 58c-16-14-9-30 0-46 9 16 16 32 0 46z" fill="url(#gFlame)"/><path class="flame" d="M30 58c-8-9-5-18 0-28 5 10 8 19 0 28z" fill="#fff3b0"/></g></svg>
+    <svg class="torch r" viewBox="0 0 60 130"><path d="M30 60v52" stroke="#3a2414" stroke-width="9" stroke-linecap="round"/><path d="M14 58h32l-5 14H19z" fill="#17121e" stroke="#2d2439"/><path d="M30 112v10M18 122h24" stroke="#17121e" stroke-width="5" stroke-linecap="round"/><g><path class="flame" d="M30 58c-16-14-9-30 0-46 9 16 16 32 0 46z" fill="url(#gFlame)"/><path class="flame" d="M30 58c-8-9-5-18 0-28 5 10 8 19 0 28z" fill="#fff3b0"/></g></svg>
+    <div class="mist"></div><div class="mist two"></div>
+    <div class="shade"></div>
+    <div id="motes"></div>
+  </div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div id="dim" aria-hidden="true"></div>
+  <div id="glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <button class="brand" id="btn-home" aria-label="Rarebrew home">Rarebrew</button>
+    <button class="icon-btn" id="btn-leave" hidden>Leave</button>
+    <button class="icon-btn" id="btn-grimoire" aria-label="Open the Grimoire collection"><svg viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19M9 8h6"/></svg></button>
+    <button class="icon-btn" id="btn-stats" aria-label="Open stats"><svg viewBox="0 0 24 24"><path d="M5 20V11M12 20V4M19 20v-6"/></svg></button>
+    <button class="icon-btn" id="btn-help" aria-label="How to brew"><svg viewBox="0 0 24 24"><path d="M9.2 9a3 3 0 1 1 4.6 2.5c-.9.6-1.8 1.2-1.8 2.5M12 18h.01"/></svg></button>
+    <button class="icon-btn" id="btn-settings" aria-label="Open settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></button>
+    <button class="icon-btn" id="btn-mute" aria-label="Mute sound" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5z"/><path class="on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/><path class="off" d="M16 9.5l5 5M21 9.5l-5 5" hidden/></svg></button>
+  </header>
+
+  <main>
+    <!-- ================= HOME ================= -->
+    <section class="screen" id="screen-home" aria-labelledby="home-h">
+      <div class="home-inner">
+        <h1 class="logo" id="home-h" tabindex="-1">Rarebrew</h1>
+        <p class="tag">Name something true. The rarer your answer, the richer the brew.</p>
+        <ul class="legend" aria-label="Rarity tiers and points" id="legend"></ul>
+        <fieldset class="cats">
+          <legend>Choose your ingredients</legend>
+          <div class="chips" id="cat-chips"></div>
+        </fieldset>
+        <div class="home-actions">
+          <button class="btn primary big" id="btn-start">Start brewing</button>
+          <button class="btn ghost" id="btn-daily">Daily Brew</button>
+        </div>
+        <p class="mini" id="home-stats"></p>
+      </div>
+    </section>
+
+    <!-- ================= GAME ================= -->
+    <section class="screen" id="screen-game" hidden aria-label="Brewing round">
+      <div class="hud">
+        <span id="hud-count">Prompt 1 of 7</span><span class="mode" id="hud-mode"></span>
+        <span class="score" id="hud-score" aria-label="Score">0</span>
+        <button class="link-btn" id="btn-skip" type="button">Skip</button>
+      </div>
+      <div class="card" id="card">
+        <div class="cat" id="card-cat">Science</div>
+        <h2 class="q" id="card-q" tabindex="-1">Name a chemical element</h2>
+      </div>
+      <div class="timer" id="timer" role="timer" aria-label="Time left">
+        <div class="track"><div class="fill" id="timer-fill"></div></div>
+        <span class="secs" id="timer-secs">25</span>
+      </div>
+      <div class="feed">
+        <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+        <div class="confirm" id="confirm" role="group" aria-label="Confirm your answer" aria-live="polite" hidden></div>
+      </div>
+      <div class="stage" id="stage" data-brew="neutral">
+        <svg id="cauldron" viewBox="0 0 400 380" role="img" aria-label="A bubbling cauldron over a fire">
+          <defs>
+            <radialGradient id="gLiq" cx="50%" cy="35%" r="75%"><stop offset="0" class="s-a"/><stop offset="1" class="s-b"/></radialGradient>
+            <linearGradient id="gIron" x1="0" x2="1"><stop offset="0" stop-color="#15111d"/><stop offset=".42" stop-color="#3b3349"/><stop offset="1" stop-color="#0c0912"/></linearGradient>
+            <radialGradient id="gFire" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb347" stop-opacity=".75"/><stop offset="1" stop-color="#ff6a00" stop-opacity="0"/></radialGradient>
+            <clipPath id="clipLiq"><ellipse cx="200" cy="128" rx="128" ry="30"/></clipPath>
+          </defs>
+          <ellipse cx="200" cy="352" rx="170" ry="26" fill="url(#gFire)"/>
+          <g>
+            <path class="flame" d="M150 352c-14-18-6-34 2-48 8 14 16 30 2 48z" fill="url(#gFlame)"/>
+            <path class="flame" d="M185 354c-18-22-8-44 3-60 10 18 20 38 3 60z" fill="url(#gFlame)"/>
+            <path class="flame" d="M222 354c-16-20-7-40 2-54 9 16 18 34 2 54z" fill="url(#gFlame)"/>
+            <path class="flame" d="M254 352c-12-16-5-30 2-42 7 12 14 26 2 42z" fill="url(#gFlame)"/>
+          </g>
+          <rect x="118" y="346" width="164" height="13" rx="6.5" fill="#3a2414"/><rect x="140" y="354" width="120" height="12" rx="6" fill="#2a190d"/>
+          <path d="M96 318l-16 38h16l14-30zM304 318l16 38h-16l-14-30z" fill="#120e19"/>
+          <path d="M62 130C28 190 44 300 120 334q80 16 160 0c76-34 92-144 58-204z" fill="url(#gIron)"/>
+          <path d="M92 172c-16 50-6 108 34 140" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="48" cy="176" r="15" fill="none" stroke="#2c2538" stroke-width="7"/><circle cx="352" cy="176" r="15" fill="none" stroke="#2c2538" stroke-width="7"/>
+          <ellipse cx="200" cy="128" rx="146" ry="38" fill="#1d1728" stroke="#4d4365" stroke-width="3"/>
+          <g clip-path="url(#clipLiq)" class="liquid">
+            <ellipse id="liq" cx="200" cy="128" rx="128" ry="30" fill="url(#gLiq)"/>
+            <ellipse class="sw" cx="170" cy="124" rx="64" ry="9"/><ellipse class="sw two" cx="236" cy="134" rx="52" ry="7"/>
+            <circle class="bub" cx="140" cy="130" r="9"/><circle class="bub" cx="212" cy="120" r="7"/><circle class="bub" cx="262" cy="134" r="10"/>
+            <circle class="bub" cx="176" cy="140" r="6"/><circle class="bub" cx="238" cy="144" r="5"/><circle class="bub" cx="110" cy="124" r="5"/>
+          </g>
+          <path d="M72 128a128 30 0 0 0 256 0" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+          <circle class="rise" cx="160" cy="110" r="6"/><circle class="rise" cx="230" cy="104" r="4"/><circle class="rise" cx="196" cy="112" r="5"/><circle class="rise" cx="262" cy="110" r="3.5"/>
+          <ellipse class="steam" cx="170" cy="96" rx="34" ry="22"/><ellipse class="steam" cx="226" cy="92" rx="30" ry="20"/><ellipse class="steam" cx="198" cy="88" rx="38" ry="24"/>
+        </svg>
+      </div>
+      <ol class="shelf" id="shelf" aria-label="Reward shelf for this round"></ol>
+      <form class="brew-form" id="brew-form" autocomplete="off">
+        <label class="sr-only" for="answer">Your answer</label>
+        <input id="answer" name="answer" type="text" inputmode="text" enterkeyhint="go" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Drop in an ingredient…" maxlength="80">
+        <button class="btn primary" type="submit" id="btn-brew">Brew</button>
+      </form>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section class="screen" id="screen-results" hidden aria-labelledby="res-h">
+      <div class="wrap">
+        <div class="final">
+          <h2 class="sr-only" id="res-h" tabindex="-1">Round results</h2>
+          <div class="num"><span id="res-score">0</span><small> / 700</small></div>
+          <p class="title" id="res-title"></p>
+        </div>
+        <ol class="shelf" id="res-shelf" aria-label="Rewards brewed this round"></ol>
+        <ol class="res-list" id="res-list"></ol>
+        <div class="actions">
+          <button class="btn primary big" id="btn-again">Brew again</button>
+          <button class="btn" id="btn-share">Share</button>
+          <button class="btn ghost" id="btn-change">Change category</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MODALS ================= -->
+  <div class="modal" id="modal-help" hidden role="dialog" aria-modal="true" aria-labelledby="help-h">
+    <div class="sheet">
+      <div class="step-n" id="help-n">STEP 1 OF 3</div>
+      <h2 id="help-h">How to brew</h2>
+      <div id="help-body"></div>
+      <div class="row">
+        <div class="dots" id="help-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <button class="btn ghost" id="help-skip">Skip</button>
+        <button class="btn primary" id="help-next">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-settings" hidden role="dialog" aria-modal="true" aria-labelledby="set-h">
+    <div class="sheet">
+      <h2 id="set-h">Settings</h2>
+      <div class="toggle"><span id="lbl-sound">Sound effects</span><button role="switch" id="sw-sound" aria-labelledby="lbl-sound" aria-checked="true"></button></div>
+      <div class="toggle"><span id="lbl-reduced">Reduced effects<br><small style="color:var(--muted)">Swaps particles and motion for simple colour fades</small></span><button role="switch" id="sw-reduced" aria-labelledby="lbl-reduced" aria-checked="false"></button></div>
+      <h3>Reset</h3>
+      <div id="reset-zone"><button class="btn danger" id="btn-reset">Reset stats and Grimoire</button></div>
+      <p class="mini" id="storage-note" hidden>Storage is blocked in this browser, so stats won't be saved between visits.</p>
+      <div class="row"><button class="btn" data-close>Done</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-stats" hidden role="dialog" aria-modal="true" aria-labelledby="stats-h">
+    <div class="sheet"><h2 id="stats-h">Your brewing record</h2><div id="stats-body"></div><div class="row"><button class="btn" data-close>Close</button></div></div>
+  </div>
+
+  <div class="modal" id="modal-grimoire" hidden role="dialog" aria-modal="true" aria-labelledby="grim-h">
+    <div class="sheet"><h2 id="grim-h">The Grimoire</h2><div id="grim-body"></div><div class="row"><button class="btn" data-close>Close</button></div></div>
+  </div>
+
+  <div class="modal" id="modal-leave" hidden role="dialog" aria-modal="true" aria-labelledby="leave-h">
+    <div class="sheet"><h2 id="leave-h">Abandon this brew?</h2><p>This round won't be scored or saved.</p>
+      <div class="row"><button class="btn" data-close>Keep brewing</button><button class="btn danger" id="btn-leave-yes">Leave round</button></div></div>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+'use strict';
+/* =====================================================================
+   RAREBREW  ·  game code (vanilla JS, no dependencies)
+   1 CONFIG · 2 helpers · 3 storage · 4 matching · 5 round selection
+   6 audio · 7 effects (canvas) · 8 state & timer · 9 rendering
+   10 game flow · 11 modals & screens · 12 boot
+   ===================================================================== */
+
+/* ---------- 1. CONFIG: every tunable value lives here ---------- */
+const CONFIG = {
+  gameName: 'Rarebrew',
+  roundSize: 7,
+  timerSeconds: 25,
+  goodBrewScore: 350,          // a "good brew" for streaks
+  reshuffleAt: 0.8,            // reuse prompts only after this share of the pool has been seen
+  maxPerCategory: 2,           // variety cap per round when playing "All"
+  tiers: {
+    0: { name: 'Murk',                points: 0,   emoji: '🟤', shout: 'FIZZLE' },
+    1: { name: 'Ash',                 points: 10,  emoji: '💨', shout: 'ASH' },
+    2: { name: "Fool's Gold",         points: 15,  emoji: '🪙', shout: "FOOL'S GOLD" },
+    3: { name: 'Copper',              points: 30,  emoji: '🟠', shout: 'COPPER' },
+    4: { name: 'Silver',              points: 55,  emoji: '⚪', shout: 'SILVER' },
+    5: { name: 'Gold',                points: 80,  emoji: '🟡', shout: 'GOLD' },
+    6: { name: "Philosopher's Stone", points: 100, emoji: '🔴', shout: "PHILOSOPHER'S STONE" }
+  },
+  typo: { minLen: 4, longLen: 8, shortMax: 1, longMax: 2 },   // Levenshtein tolerance by answer length
+  maxSuggestions: 3,           // most "Did you mean" buttons shown at once
+  fx: {
+    maxParticles: 140, maxParticlesLite: 70, maxDPR: 2, motes: 14,
+    sparks: { 2: 6 },
+    colors:  { 0: '#7d6a3c', 1: '#a9a9b4', 2: '#b9a44c', 3: '#e8935a', 4: '#dcecfa', 5: '#ffd35c', 6: '#e0202a' },
+    halo:    { 2: '#ffe27a', 3: '#ff9d4d', 4: '#cfeaff', 5: '#ffd35c', 6: '#ff1f2e' },
+    liquid:  { 3: '#f08d3f', 4: '#e6f5ff', 5: '#ffd35c', 6: '#d0101c' },
+    palette: { 3: ['#ff9d4d', '#58e0a8', '#ffc38a'], 4: ['#ffffff', '#bfe3ff'], 5: ['#ffd35c', '#fff3b0', '#ff9d2e'], 6: ['#ff3b30', '#ff6a55', '#c1121f', '#ff9a8a'] },
+    erupt:   { 3: { sparks: 14, drops: 10, power: 0.8,  size: 1,    rgb: '255,157,77' },
+               4: { sparks: 24, drops: 14, power: 1,    size: 1.15, rgb: '220,240,255' },
+               5: { sparks: 40, drops: 18, power: 1.15, size: 1.3,  rgb: '255,211,92' },
+               6: { sparks: 60, drops: 24, power: 1.35, size: 1.5,  rgb: '255,40,40' } },
+    beam:    { 3: 0.22, 4: 0.32, 5: 0.5, 6: 0.9 }
+  },
+  // reward sequence per tier (ms): build-up -> eruption -> rise -> hang -> fly to shelf
+  reward: {
+    3: { build: 350,  rise: 400, hang: 350,  fly: 400, scale: 1.3, spins: 1 },   // ~1.5s
+    4: { build: 500,  rise: 500, hang: 550,  fly: 450, scale: 1.5, spins: 1 },   // ~2.0s
+    5: { build: 650,  rise: 600, hang: 750,  fly: 500, scale: 1.7, spins: 1 },   // ~2.5s
+    6: { build: 1000, rise: 900, hang: 1300, fly: 600, scale: 1.9, spins: 2 }    // ~3.8s
+  },
+  timing: { orbMs: 700, fizzleMs: 900, plainMs: 900, reducedMs: 1300, nextDelayMs: 650, skipGuardMs: 250, countUpMs: 1100 },
+  titles: [[700, 'Keeper of the Stone'], [600, 'Grand Alchemist'], [500, 'Master Transmuter'], [400, 'Adept of the Flask'],
+           [300, 'Journeyman Brewer'], [200, 'Apprentice Mixer'], [100, 'Soot-Stained Novice'], [0, 'Kitchen Dabbler']],
+  categories: ['All', 'Science', 'Geography', 'Film & TV', 'Sport', 'Food', 'History', 'Music', 'Language'],
+  storageKey: 'rarebrew.v1'
+};
+const BREW = ['wrong', 'ash', 'brass', 'copper', 'silver', 'gold', 'stone'];
+const MAX_SCORE = CONFIG.roundSize * CONFIG.tiers[6].points;
+
+/* ---------- 2. helpers ---------- */
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const rand = (a, b) => a + Math.random() * (b - a);
+function mulberry32(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function hashStr(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function shuffle(arr, rng = Math.random) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(rng() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
+const utcDate = () => new Date().toISOString().slice(0, 10);
+
+/* ---------- 3. storage (always try/catch: the game must run with storage blocked) ---------- */
+const Store = (() => {
+  const blank = () => ({
+    muted: false, reduced: false, tutorialSeen: false, category: 'All', recent: [], lastRound: [],
+    stats: { rounds: 0, total: 0, best: 0, streak: 0, longest: 0, tiers: [0, 0, 0, 0, 0, 0, 0], rarest: null },
+    grimoire: {}, daily: {}
+  });
+  let data = blank(), ok = true;
+  try {
+    const raw = window.localStorage.getItem(CONFIG.storageKey);
+    if (raw) { const p = JSON.parse(raw); data = Object.assign(blank(), p); data.stats = Object.assign(blank().stats, p.stats || {}); }
+  } catch (e) { ok = false; }
+  function save() { try { window.localStorage.setItem(CONFIG.storageKey, JSON.stringify(data)); ok = true; } catch (e) { ok = false; } }
+  function resetStats() { const b = blank(); data.stats = b.stats; data.grimoire = {}; data.daily = {}; data.recent = []; data.lastRound = []; save(); }
+  return { get data() { return data; }, get ok() { return ok; }, save, resetStats };
+})();
+
+/* ---------- 4. answer matching ---------- */
+const SPECIAL = { 'ß': 'ss', 'ø': 'o', 'æ': 'ae', 'œ': 'oe', 'đ': 'd', 'ł': 'l' };
+/** lowercase, strip accents, "&" = "and", drop punctuation, collapse spaces, drop a leading the/a/an */
+function normalize(s) {
+  return String(s == null ? '' : s).toLowerCase()
+    .replace(/[ßøæœđł]/g, c => SPECIAL[c])
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/&/g, ' and ')
+    .replace(/['’‘`.]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim()
+    .replace(/^(the|a|an) (?=.)/, '');
+}
+/** Levenshtein distance with an early exit once it exceeds `max` */
+function lev(a, b, max) {
+  if (a === b) return 0;
+  const la = a.length, lb = b.length;
+  if (Math.abs(la - lb) > max) return max + 1;
+  let prev = new Array(lb + 1), cur = new Array(lb + 1);
+  for (let j = 0; j <= lb; j++) prev[j] = j;
+  for (let i = 1; i <= la; i++) {
+    cur[0] = i; let best = cur[0];
+    for (let j = 1; j <= lb; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a.charCodeAt(i - 1) === b.charCodeAt(j - 1) ? 0 : 1));
+      if (cur[j] < best) best = cur[j];
+    }
+    if (best > max) return max + 1;
+    [prev, cur] = [cur, prev];
+  }
+  return prev[lb];
+}
+const digitsOf = s => s.replace(/\D+/g, ' ').trim();
+const _index = new Map();
+/** normalized text/alias -> answer object, per prompt */
+function promptIndex(p) {
+  if (!_index.has(p.id)) {
+    const m = new Map();
+    for (const a of p.answers) for (const t of [a.text, ...(a.aliases || [])]) { const k = normalize(t); if (k && !m.has(k)) m.set(k, a); }
+    _index.set(p.id, m);
+  }
+  return _index.get(p.id);
+}
+let _lexicon = null;
+/** every accepted spelling across the whole bank: used to spot "that's a real answer, just for something else" */
+function lexicon() {
+  if (!_lexicon) { _lexicon = new Set(); for (const p of PROMPTS) for (const k of promptIndex(p).keys()) _lexicon.add(k); }
+  return _lexicon;
+}
+/**
+ * Match a typed answer against a prompt.
+ *   'ok'      exact match on the main answer text: accept straight away
+ *   'confirm' alias / abbreviation, or within typo tolerance of 1-3 answers: ask "Did you mean ...?"
+ *   'wrong'   no match (or an exact answer to a different question)
+ *   'blank'   nothing typed
+ */
+function matchAnswer(prompt, raw) {
+  const n = normalize(raw);
+  if (!n) return { status: 'blank' };
+  const idx = promptIndex(prompt), T = CONFIG.typo;
+  const exact = idx.get(n);
+  if (exact) return normalize(exact.text) === n ? { status: 'ok', answer: exact, via: 'exact' } : { status: 'confirm', candidates: [exact], via: 'alias' };
+  if (n.length >= T.minLen) {
+    const hits = new Map();                                   // answer -> closest distance
+    for (const [key, a] of idx) {
+      if (key.length < T.minLen) continue;                    // never fuzzy-match short answers
+      const tol = key.length >= T.longLen ? T.longMax : T.shortMax;
+      if (Math.abs(key.length - n.length) > tol) continue;
+      if (digitsOf(key) !== digitsOf(n)) continue;            // "Toy Story 5" is not a typo of "Toy Story 4"
+      const d = lev(n, key, tol);
+      if (d <= tol && (!hits.has(a) || d < hits.get(a))) hits.set(a, d);
+    }
+    if (hits.size) {
+      if (lexicon().has(n)) return { status: 'wrong', reason: 'other-meaning' };   // a real answer, just to a different question
+      const candidates = [...hits].sort((x, y) => x[1] - y[1]).slice(0, CONFIG.maxSuggestions).map(h => h[0]);
+      return { status: 'confirm', candidates, via: 'typo' };
+    }
+  }
+  return { status: 'wrong' };
+}
+
+/* ---------- 5. round selection ---------- */
+function poolFor(category) { return category === 'All' ? PROMPTS.slice() : PROMPTS.filter(p => p.category === category); }
+/** take n prompts from a shuffled list, capping how many share a category (when the pool allows it) */
+function takeVaried(list, n) {
+  const out = [], count = {}, rest = [];
+  for (const p of list) {
+    if (out.length >= n) break;
+    if ((count[p.category] || 0) < CONFIG.maxPerCategory) { out.push(p); count[p.category] = (count[p.category] || 0) + 1; } else rest.push(p);
+  }
+  for (const p of rest) { if (out.length >= n) break; out.push(p); }
+  return out;
+}
+/**
+ * Pick prompts while avoiding recently used ones. Once 80% of the pool has been used
+ * (or too few fresh prompts remain) the pool is reshuffled; the round just played is still avoided if possible.
+ */
+function pickPrompts(pool, recent, lastRound, n, rng = Math.random) {
+  const ids = new Set(pool.map(p => p.id));
+  const seen = new Set(recent.filter(id => ids.has(id)));
+  let fresh = pool.filter(p => !seen.has(p.id)), reshuffled = false;
+  if (fresh.length < n || seen.size / pool.length >= CONFIG.reshuffleAt) {
+    reshuffled = true;
+    const last = new Set(lastRound);
+    const notLast = pool.filter(p => !last.has(p.id));
+    fresh = notLast.length >= n ? notLast : pool.slice();
+  }
+  return { picked: takeVaried(shuffle(fresh.slice(), rng), n), reshuffled };
+}
+function nextFreePrompts(category) {
+  const d = Store.data, pool = poolFor(category);
+  const { picked, reshuffled } = pickPrompts(pool, d.recent, d.lastRound, CONFIG.roundSize);
+  if (reshuffled) { const ids = new Set(pool.map(p => p.id)); d.recent = d.recent.filter(id => !ids.has(id)); }
+  d.recent.push(...picked.map(p => p.id));
+  d.lastRound = picked.map(p => p.id);
+  Store.save();
+  return picked;
+}
+/** Daily Brew: same 7 prompts for everyone, seeded from the UTC date */
+function dailyPrompts(dateStr) {
+  const rng = mulberry32(hashStr('rarebrew-daily-' + dateStr));
+  const sorted = PROMPTS.slice().sort((a, b) => a.id < b.id ? -1 : 1);
+  return takeVaried(shuffle(sorted, rng), CONFIG.roundSize);
+}
+
+/* ---------- 6. audio (Web Audio, generated in code, no files) ---------- */
+const Sound = (() => {
+  let ac = null, master = null, noiseBuf = null;
+  function ensure() {
+    try {
+      if (!ac) {
+        const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
+        ac = new AC(); master = ac.createGain(); master.gain.value = 0.9; master.connect(ac.destination);
+        noiseBuf = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+        const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+      }
+      if (ac.state === 'suspended') ac.resume();
+      return true;
+    } catch (e) { return false; }
+  }
+  function tone(f, dur, o = {}) {
+    const t = ac.currentTime + (o.at || 0), osc = ac.createOscillator(), g = ac.createGain();
+    osc.type = o.type || 'sine'; osc.frequency.setValueAtTime(f, t);
+    if (o.to) osc.frequency.exponentialRampToValueAtTime(o.to, t + dur);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(o.gain || 0.15, t + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    osc.connect(g); g.connect(master); osc.start(t); osc.stop(t + dur + 0.05);
+  }
+  function noise(dur, o = {}) {
+    const t = ac.currentTime + (o.at || 0), src = ac.createBufferSource(), f = ac.createBiquadFilter(), g = ac.createGain();
+    src.buffer = noiseBuf; src.loop = true; f.type = o.type || 'lowpass'; f.frequency.setValueAtTime(o.f || 1000, t);
+    if (o.to) f.frequency.exponentialRampToValueAtTime(o.to, t + dur);
+    g.gain.setValueAtTime(o.gain || 0.15, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    src.connect(f); f.connect(g); g.connect(master); src.start(t); src.stop(t + dur + 0.05);
+  }
+  const bank = {
+    click()   { tone(620, 0.05, { type: 'triangle', gain: 0.05 }); },
+    tick()    { tone(1100, 0.04, { type: 'square', gain: 0.025 }); },
+    bubble()  { tone(rand(260, 340), 0.09, { to: rand(620, 820), gain: 0.12 }); },
+    splash()  { noise(0.28, { f: 2200, to: 300, gain: 0.22 }); tone(180, 0.16, { to: 420, gain: 0.12, at: 0.03 }); },
+    fizz()    { noise(0.6, { type: 'highpass', f: 3200, gain: 0.07 }); },
+    sad()     { noise(0.55, { type: 'highpass', f: 2600, gain: 0.06 }); tone(196, 0.45, { type: 'sawtooth', to: 82, gain: 0.07 }); tone(110, 0.12, { to: 60, gain: 0.14, at: 0.42 }); },
+    puff()    { noise(0.25, { f: 700, to: 200, gain: 0.14 }); },
+    pfft()    { tone(1320, 0.1, { gain: 0.1 }); tone(1760, 0.1, { gain: 0.08, at: 0.06 }); tone(320, 0.35, { type: 'sawtooth', to: 110, gain: 0.07, at: 0.2 }); noise(0.3, { f: 900, to: 250, gain: 0.1, at: 0.2 }); },
+    swirl()   { for (let i = 0; i < 4; i++) tone(rand(300, 380), 0.09, { to: rand(700, 900), gain: 0.1, at: i * 0.09 }); tone(392, 0.3, { type: 'triangle', gain: 0.07, at: 0.1 }); },
+    sparkle() { [1568, 1976, 2349, 2637, 3136].forEach((f, i) => tone(f, 0.22, { gain: 0.06, at: i * 0.055 })); },
+    gold()    { [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => tone(f, 0.5, { type: 'triangle', gain: 0.09, at: i * 0.07 })); [2093, 2637, 3136].forEach((f, i) => tone(f, 0.25, { gain: 0.045, at: 0.25 + i * 0.06 })); },
+    chime()   { [783.99, 987.77, 1174.66, 1567.98].forEach((f, i) => { tone(f, 1.3, { gain: 0.1, at: i * 0.11 }); tone(f * 2.01, 0.8, { gain: 0.03, at: i * 0.11 }); }); },
+    fanfare() { [392, 523.25, 659.25, 783.99].forEach((f, i) => tone(f, 0.28, { type: 'triangle', gain: 0.08, at: i * 0.12 })); },
+    rumble(d = 0.6) { tone(52, d, { type: 'sawtooth', to: 74, gain: 0.07 }); tone(41, d, { to: 60, gain: 0.16 }); noise(d, { f: 140, to: 320, gain: 0.2 }); },
+    erupt()   { noise(0.45, { f: 2400, to: 220, gain: 0.26 }); tone(150, 0.3, { to: 55, gain: 0.2 }); },
+    clink()   { tone(2350, 0.09, { type: 'triangle', gain: 0.1 }); tone(3520, 0.16, { gain: 0.06, at: 0.02 }); },
+    ominous() { [73.42, 110].forEach(f => tone(f, 2.2, { type: 'sawtooth', gain: 0.05 })); [293.66, 349.23, 440, 587.33].forEach((f, i) => { tone(f, 1.6, { gain: 0.09, at: 0.25 + i * 0.22 }); tone(f * 2.01, 0.9, { gain: 0.025, at: 0.25 + i * 0.22 }); }); }
+  };
+  function play(name, arg) { if (Store.data.muted) return; if (!ensure()) return; try { bank[name] && bank[name](arg); } catch (e) { /* audio is optional */ } }
+  return { play, ensure };
+})();
+
+/* ---------- 7. effects: one capped canvas particle system, idle when nothing is on screen ---------- */
+const reducedFx = () => Store.data.reduced || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+const FX = (() => {
+  const cv = $('#fx'), ctx = cv.getContext('2d');
+  let W = 0, H = 0, parts = [], tweens = [], raf = 0, last = 0, ox = 0, oy = 0;
+  const lite = () => (window.matchMedia && window.matchMedia('(max-width: 720px)').matches) || (navigator.hardwareConcurrency || 8) <= 4;
+  const cap = () => lite() ? CONFIG.fx.maxParticlesLite : CONFIG.fx.maxParticles;
+  function resize() {
+    const r = cv.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, CONFIG.fx.maxDPR);
+    W = r.width; H = r.height; ox = r.left; oy = r.top;
+    cv.width = Math.max(1, Math.round(W * dpr)); cv.height = Math.max(1, Math.round(H * dpr)); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  /** centre of a DOM element in canvas (= #app) coordinates */
+  function centre(el) { const r = el.getBoundingClientRect(); return { x: r.left - ox + r.width / 2, y: r.top - oy + r.height / 2, w: r.width, h: r.height }; }
+  function add(p) { if (parts.length >= cap()) parts.shift(); parts.push(p); kick(); }
+  function kick() { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+  function tween(dur, draw) { return new Promise(done => { tweens.push({ t0: performance.now(), dur, draw, done }); kick(); }); }
+  /** drop everything at once (used when an animation is skipped) */
+  function clear() { parts.length = 0; const t = tweens; tweens = []; t.forEach(x => x.done()); ctx.clearRect(0, 0, W, H); }
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    ctx.clearRect(0, 0, W, H);
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const p = parts[i]; p.life -= dt / p.dur;
+      if (p.life <= 0) { parts.splice(i, 1); continue; }
+      p.vy += (p.g || 0) * dt; p.x += p.vx * dt; p.y += p.vy * dt;
+      if (p.kind === 'spark') { ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = p.life; ctx.fillStyle = p.c; ctx.beginPath(); ctx.arc(p.x, p.y, p.s * (0.35 + 0.65 * p.life), 0, 6.3); ctx.fill(); }
+      else if (p.kind === 'smoke') { ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 0.38 * p.life; ctx.fillStyle = p.c; ctx.beginPath(); ctx.arc(p.x, p.y, p.s * (1.9 - p.life), 0, 6.3); ctx.fill(); }
+      else if (p.kind === 'drop') { ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = Math.min(1, p.life * 2); ctx.fillStyle = p.c; ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, 6.3); ctx.fill(); }
+      else if (p.kind === 'ring') { p.r += p.vr * dt; ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = p.life; ctx.strokeStyle = p.c; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(p.x, p.y, p.r, p.r * 0.24, 0, 0, 6.3); ctx.stroke(); }
+    }
+    const live = tweens.slice();
+    for (const t of live) {
+      const k = clamp((now - t.t0) / t.dur, 0, 1);
+      ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+      t.draw(ctx, k, now);
+      if (k >= 1) { const i = tweens.indexOf(t); if (i >= 0) { tweens.splice(i, 1); t.done(); } }
+    }
+    ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+    if (parts.length || tweens.length) raf = requestAnimationFrame(frame); else { raf = 0; ctx.clearRect(0, 0, W, H); }
+  }
+  const pick = c => Array.isArray(c) ? c[Math.floor(Math.random() * c.length)] : c;
+  function sparks(m, n, colors, power = 1, size = 1) {
+    for (let i = 0; i < n; i++) { const a = rand(-Math.PI * 0.95, -Math.PI * 0.05), v = rand(120, 420) * power;
+      add({ kind: 'spark', x: m.x + rand(-m.w * 0.3, m.w * 0.3), y: m.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, g: 520, life: 1, dur: rand(0.6, 1.3), s: rand(2, 4.5) * size, c: pick(colors) }); }
+  }
+  function smoke(m, n, color) {
+    for (let i = 0; i < n; i++) add({ kind: 'smoke', x: m.x + rand(-m.w * 0.25, m.w * 0.25), y: m.y - rand(0, 10), vx: rand(-18, 18), vy: rand(-70, -30), g: -10, life: 1, dur: rand(1, 1.7), s: rand(12, 22), c: color });
+  }
+  /** the ingredient lands: droplets, then two ripples spreading over the surface */
+  function splash(m, color) {
+    for (let i = 0; i < 10; i++) { const a = rand(-Math.PI * 0.85, -Math.PI * 0.15), v = rand(90, 240);
+      add({ kind: 'drop', x: m.x + rand(-14, 14), y: m.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, g: 700, life: 1, dur: rand(0.45, 0.8), s: rand(2, 4), c: color }); }
+    add({ kind: 'ring', x: m.x, y: m.y, r: 6, vr: m.w * 0.5, vx: 0, vy: 0, life: 1, dur: 0.5, c: color });
+    add({ kind: 'ring', x: m.x, y: m.y, r: 2, vr: m.w * 0.34, vx: 0, vy: 0, life: 1, dur: 0.75, c: color });
+  }
+  function ring(m, color) { for (let i = 0; i < 2; i++) add({ kind: 'ring', x: m.x, y: m.y, r: 10 + i * 18, vr: m.w * (0.55 + i * 0.2), vx: 0, vy: 0, life: 1, dur: 0.9 + i * 0.2, c: color }); }
+  function trail(x, y, c) { add({ kind: 'spark', x, y, vx: rand(-20, 20), vy: rand(-20, 20), g: 0, life: 1, dur: 0.4, s: 2.4, c }); }
+  /** reward eruption: a burst of light, liquid thrown up, sparks. Bigger for higher tiers. */
+  function erupt(m, tier) {
+    const E = CONFIG.fx.erupt[tier], P = CONFIG.fx.palette[tier], liq = CONFIG.fx.liquid[tier];
+    tween(300, (c, k) => { const r = m.w * (0.3 + 0.9 * k) * E.size, g = c.createRadialGradient(m.x, m.y, 0, m.x, m.y, r);
+      g.addColorStop(0, `rgba(${E.rgb},${0.9 * (1 - k)})`); g.addColorStop(1, `rgba(${E.rgb},0)`);
+      c.globalCompositeOperation = 'lighter'; c.fillStyle = g; c.beginPath(); c.arc(m.x, m.y, r, 0, 6.3); c.fill(); });
+    for (let i = 0; i < E.drops; i++) { const a = rand(-Math.PI * 0.8, -Math.PI * 0.2), v = rand(200, 430) * E.power;
+      add({ kind: 'drop', x: m.x + rand(-m.w * 0.25, m.w * 0.25), y: m.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, g: 820, life: 1, dur: rand(0.6, 1), s: rand(2.5, 5) * E.size, c: liq }); }
+    sparks(m, E.sparks, P, E.power, E.size);
+    ring(m, P[0]);
+  }
+  /** light beam from the liquid up past the hanging reward */
+  function beam(m, topY, tier, ms) {
+    const E = CONFIG.fx.erupt[tier], str = CONFIG.fx.beam[tier], top = Math.max(0, topY - 130), w = m.w * (0.14 + 0.03 * tier);
+    return tween(ms, (c, k, now) => {
+      const a = str * Math.min(1, k / 0.15) * Math.min(1, (1 - k) / 0.2) * (0.9 + 0.1 * Math.sin(now / 55));
+      const g = c.createLinearGradient(0, m.y, 0, top);
+      g.addColorStop(0, `rgba(${E.rgb},${a})`); g.addColorStop(0.7, `rgba(${E.rgb},${a * 0.45})`); g.addColorStop(1, `rgba(${E.rgb},0)`);
+      c.globalCompositeOperation = 'lighter'; c.fillStyle = g;
+      c.beginPath(); c.moveTo(m.x - w * 0.5, m.y); c.lineTo(m.x - w * 1.3, top); c.lineTo(m.x + w * 1.3, top); c.lineTo(m.x + w * 0.5, m.y); c.closePath(); c.fill();
+    });
+  }
+  /** the reward lands on the shelf: a four-point glint and a few sparks */
+  function glint(p, color) {
+    for (let i = 0; i < 6; i++) { const a = rand(0, 6.3), v = rand(40, 110); add({ kind: 'spark', x: p.x, y: p.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 30, g: 200, life: 1, dur: 0.45, s: 2, c: color }); }
+    tween(380, (c, k) => { const r = 22 * Math.sin(k * Math.PI); c.globalCompositeOperation = 'lighter'; c.globalAlpha = 1 - k; c.fillStyle = '#fff';
+      c.beginPath(); c.moveTo(p.x, p.y - r); c.lineTo(p.x + r * 0.16, p.y - r * 0.16); c.lineTo(p.x + r, p.y); c.lineTo(p.x + r * 0.16, p.y + r * 0.16);
+      c.lineTo(p.x, p.y + r); c.lineTo(p.x - r * 0.16, p.y + r * 0.16); c.lineTo(p.x - r, p.y); c.lineTo(p.x - r * 0.16, p.y - r * 0.16); c.closePath(); c.fill(); });
+  }
+  /** wrong answer: a sludge bubble swells on the surface and pops */
+  function sludge(m) {
+    return tween(520, (c, k) => {
+      if (k < 0.8) { const r = 6 + 24 * (k / 0.8); c.globalAlpha = 0.9; c.fillStyle = '#5c4a26'; c.beginPath(); c.arc(m.x, m.y - r * 0.5, r, 0, 6.3); c.fill();
+        c.globalAlpha = 0.35; c.fillStyle = '#a8935a'; c.beginPath(); c.arc(m.x - r * 0.3, m.y - r * 0.8, r * 0.25, 0, 6.3); c.fill(); }
+    }).then(() => { for (let i = 0; i < 9; i++) { const a = rand(-Math.PI, 0), v = rand(60, 180);
+      add({ kind: 'drop', x: m.x, y: m.y - 16, vx: Math.cos(a) * v, vy: Math.sin(a) * v, g: 620, life: 1, dur: 0.6, s: rand(2.5, 4.5), c: '#5c4a26' }); } });
+  }
+  return { resize, centre, clear, sparks, smoke, splash, ring, trail, erupt, beam, glint, sludge, get count() { return parts.length; }, cap };
+})();
+
+/** A skippable sequence: every wait and tween inside it ends at once when the player clicks, taps or presses Enter. */
+const Seq = {
+  active: null,
+  start() { const s = { skipped: false, wakers: new Set(), t0: performance.now() }; this.active = s; return s; },
+  end(s) { if (this.active === s) this.active = null; },
+  skip(force) { const s = this.active; if (!s || s.skipped || (!force && performance.now() - s.t0 < CONFIG.timing.skipGuardMs)) return false;
+    s.skipped = true; [...s.wakers].forEach(w => w()); s.wakers.clear(); return true; }
+};
+const FREE = { skipped: false, wakers: new Set() };          // for effects that are not part of a skippable sequence
+function hold(s, ms) { return s.skipped ? Promise.resolve() : new Promise(r => { const done = () => { clearTimeout(t); s.wakers.delete(done); r(); }; const t = setTimeout(done, ms); s.wakers.add(done); }); }
+/** requestAnimationFrame tween: fn(k) with k from 0 to 1; jumps to the end if the sequence is skipped */
+function animate(s, ms, fn) {
+  return new Promise(r => {
+    if (s.skipped) { fn(1); return r(); }
+    const t0 = performance.now(); let raf = 0;
+    const stop = () => { cancelAnimationFrame(raf); s.wakers.delete(stop); fn(1); r(); };
+    s.wakers.add(stop);
+    const step = now => { const k = clamp((now - t0) / ms, 0, 1); fn(k); if (k >= 1) { s.wakers.delete(stop); r(); } else raf = requestAnimationFrame(step); };
+    step(t0);
+  });
+}
+
+/* ---------- 8. state & timer ---------- */
+const state = { screen: 'home', round: null, locked: false, modal: null, confirm: null, token: 0, calmT: 0 };
+const Timer = {
+  total: 0, left: 0, running: false, raf: 0, last: 0, lastWhole: -1, onEnd: null,
+  start(seconds, onEnd) { this.stop(); this.total = this.left = seconds; this.onEnd = onEnd; this.lastWhole = -1; this.running = true; this.last = performance.now(); this.paint(); this.loop(); },
+  loop() { this.raf = requestAnimationFrame(now => { if (!this.running) return; this.left -= (now - this.last) / 1000; this.last = now;
+    if (this.left <= 0) { this.left = 0; this.paint(); this.running = false; const cb = this.onEnd; cb && cb(); return; } this.paint(); this.loop(); }); },
+  pause() { if (this.running) { this.running = false; cancelAnimationFrame(this.raf); this.paused = true; } },
+  resume() { if (this.paused) { this.paused = false; this.running = true; this.last = performance.now(); this.loop(); } },
+  stop() { this.running = false; this.paused = false; cancelAnimationFrame(this.raf); },
+  paint() {
+    const f = this.total ? this.left / this.total : 0, el = $('#timer');
+    $('#timer-fill').style.transform = `scaleX(${f})`;
+    el.classList.toggle('warn', f <= 0.5 && f > 0.25); el.classList.toggle('danger', f <= 0.25);
+    const whole = Math.ceil(this.left);
+    if (whole !== this.lastWhole) { this.lastWhole = whole; $('#timer-secs').textContent = whole; if (whole <= 5 && whole > 0 && this.running) Sound.play('tick'); }
+  }
+};
+
+/* ---------- 9. rendering helpers ---------- */
+/** Each reward is drawn as its real material. One SVG per tier, reused on the shelf, results, stats and Grimoire. */
+const REWARD = (() => {
+  const f = n => (+n).toFixed(1), pts = a => a.map(p => f(p[0]) + ',' + f(p[1])).join(' ');
+  const shadow = '<ellipse cx="32" cy="58" rx="21" ry="4" fill="#000" opacity=".4"/>';
+  // one pyrite cube (isometric), with the fine striations real pyrite has
+  const cube = (cx, cy, s) => { const a = s * 0.87, h = s * 0.5;
+    return `<polygon points="${pts([[cx, cy - s], [cx + a, cy - h], [cx, cy], [cx - a, cy - h]])}" fill="#d8c676"/>` +
+      `<polygon points="${pts([[cx - a, cy - h], [cx, cy], [cx, cy + s], [cx - a, cy + h]])}" fill="#a08c44"/>` +
+      `<polygon points="${pts([[cx, cy], [cx + a, cy - h], [cx + a, cy + h], [cx, cy + s]])}" fill="#665726"/>` +
+      `<path d="M${f(cx - a * 0.7)} ${f(cy - h * 0.2)}v${f(s * 0.75)}M${f(cx - a * 0.35)} ${f(cy + h * 0.15)}v${f(s * 0.75)}M${f(cx + a * 0.45)} ${f(cy - h * 0.05)}v${f(s * 0.75)}" stroke="#000" stroke-opacity=".2" stroke-width=".8"/>` +
+      `<path d="M${f(cx - a)} ${f(cy - h)}L${f(cx)} ${f(cy)}L${f(cx + a)} ${f(cy - h)}M${f(cx)} ${f(cy)}V${f(cy + s)}" fill="none" stroke="#f3e6a8" stroke-opacity=".5" stroke-width=".8"/>`; };
+  // rough-cut stone: irregular outline, a table facet, and crown facets shaded from near-black to blood red
+  const O = [[32, 3], [49, 9], [60, 26], [57, 45], [42, 60], [22, 59], [7, 46], [4, 26], [15, 9]];
+  const Tb = [[27, 18], [40, 17], [47, 29], [44, 43], [31, 48], [19, 41], [17, 27]];
+  const shade = ['rgba(0,0,0,.34)', 'rgba(255,80,60,.2)', 'rgba(0,0,0,.14)', 'rgba(255,255,255,.08)', 'rgba(0,0,0,.42)', 'rgba(255,60,50,.12)', 'rgba(0,0,0,.24)', 'rgba(255,120,100,.16)', 'rgba(0,0,0,.1)'];
+  let facets = '';
+  O.forEach((p, i) => { const q = O[(i + 1) % O.length], j = Math.floor(i * Tb.length / O.length), j2 = Math.floor((i + 1) * Tb.length / O.length) % Tb.length;
+    facets += `<polygon points="${pts(j === j2 ? [p, q, Tb[j]] : [p, q, Tb[j2], Tb[j]])}" fill="${shade[i]}" stroke="#ff8a78" stroke-opacity=".2" stroke-width=".6"/>`; });
+  const svg = (t, body) => `<svg class="rw rw${t}" viewBox="0 0 64 64" aria-hidden="true">${body}</svg>`;
+  return {
+    1: svg(1, '<circle cx="24" cy="38" r="12" fill="#8f8f9b" opacity=".75"/><circle cx="38" cy="32" r="14" fill="#b3b3bf" opacity=".7"/><circle cx="44" cy="44" r="9" fill="#74747f" opacity=".7"/><circle cx="30" cy="24" r="7" fill="#c9c9d2" opacity=".5"/>'),
+    2: svg(2, shadow + cube(33, 23, 10) + cube(23, 39, 13) + cube(41, 36, 15) + cube(15, 51, 7) + cube(50, 50, 7.5)),
+    3: svg(3, shadow +
+      '<path d="M12 40c-6-9-1-21 9-24 5-9 20-9 26 0 10 1 14 15 7 24-3 11-20 16-32 11-6-2-9-6-10-11z" fill="url(#rgCu)" stroke="#47200a" stroke-width="1.5"/>' +
+      '<path d="M21 16c4 3 5 8 3 13M47 16c-3 4-3 9 1 13M22 51c3-5 9-7 15-6M12 40c4-1 7 0 9 3" fill="none" stroke="#5a2a0f" stroke-width="2" stroke-linecap="round" opacity=".7"/>' +
+      '<path d="M17 27c3-5 8-7 12-6-4 2-7 6-8 11z" fill="#ffe1c2" opacity=".75"/><ellipse cx="40" cy="21" rx="5" ry="2.4" fill="#fff" opacity=".45" transform="rotate(-20 40 21)"/>' +
+      '<path d="M38 36c4-3 10-2 12 2-1 5-7 7-11 4-2-2-2-4-1-6z" fill="#3f9c7d"/><path d="M41 37c2-1 5-1 6 1" fill="none" stroke="#8fe0c2" stroke-width="1.2" stroke-linecap="round"/>' +
+      '<path d="M16 41c2-2 6-2 8 1-1 3-5 4-8 2z" fill="#4fae8b"/><circle cx="31" cy="47" r="2.6" fill="#3f9c7d"/><circle cx="50" cy="29" r="1.8" fill="#6cc7a6"/>'),
+    4: svg(4, shadow +
+      '<polygon points="6,50 58,50 54,32 10,32" fill="url(#lgAgFront)" stroke="#4d5965" stroke-width="1.2" stroke-linejoin="round"/>' +
+      '<polygon points="10,32 54,32 47,19 17,19" fill="url(#lgAgTop)" stroke="#8a96a3" stroke-width="1.2" stroke-linejoin="round"/>' +
+      '<polygon points="20,20 27,20 22,31 14,31" fill="#fff" opacity=".85"/><polygon points="37,20 40,20 36,31 32,31" fill="#fff" opacity=".55"/>' +
+      '<path d="M10 32.6h44" stroke="#fff" stroke-width="1.4" opacity=".9"/><path d="M8 49h48" stroke="#000" stroke-width="1.2" opacity=".25"/>' +
+      '<rect x="21" y="36" width="22" height="9.5" rx="1.6" fill="#000" fill-opacity=".1" stroke="#fff" stroke-opacity=".55" stroke-width=".9"/>' +
+      '<text x="32" y="43.8" text-anchor="middle" font-family="Georgia, serif" font-size="7.5" font-weight="700" fill="#44505c">Ag</text>' +
+      '<path class="glint" d="M49 13l1.4 5 5 1.4-5 1.4-1.4 5-1.4-5-5-1.4 5-1.4z" fill="#fff"/>'),
+    5: svg(5, shadow +
+      '<polygon points="1,57 59,57 55,45 5,45" fill="url(#lgAuFront)" stroke="#7a5206" stroke-width="1.1" stroke-linejoin="round"/><polygon points="5,45 55,45 50,37 10,37" fill="url(#lgAuTop)" stroke="#b8860b" stroke-width="1.1" stroke-linejoin="round"/>' +
+      '<polygon points="10,41 61,41 58,28 13,28" fill="url(#lgAuFront)" stroke="#7a5206" stroke-width="1.1" stroke-linejoin="round"/><polygon points="13,28 58,28 52,18 19,18" fill="url(#lgAuTop)" stroke="#b8860b" stroke-width="1.1" stroke-linejoin="round"/>' +
+      '<polygon points="23,19 31,19 25,27 17,27" fill="#fff" opacity=".85"/><polygon points="41,19 44,19 39,27 36,27" fill="#fff" opacity=".5"/>' +
+      '<path d="M13 28.6h45M5 45.6h6" stroke="#fffbe0" stroke-width="1.4" opacity=".95"/><path d="M12 40h47" stroke="#000" stroke-width="1.2" opacity=".2"/>' +
+      '<rect x="27" y="31" width="17" height="6.5" rx="1.2" fill="#000" fill-opacity=".1" stroke="#fff3b0" stroke-opacity=".7" stroke-width=".8"/>' +
+      '<path class="glint" d="M20 6l2.4 8.2 8.2 2.4-8.2 2.4-2.4 8.2-2.4-8.2-8.2-2.4 8.2-2.4z" fill="#fff"/>'),
+    6: svg(6, shadow +
+      `<polygon points="${pts(O)}" fill="url(#rgStone)" stroke="#120006" stroke-width="1.6" stroke-linejoin="round"/>` + facets +
+      `<polygon points="${pts(Tb)}" fill="rgba(255,50,40,.2)" stroke="#ff9a8a" stroke-opacity=".4" stroke-width=".7"/>` +
+      '<ellipse class="core" cx="32" cy="32" rx="17" ry="16" fill="url(#rgCore)"/>' +
+      '<polygon points="19,12 28,8 24,17" fill="#fff" opacity=".3"/><polygon points="41,19 45,26 39,24" fill="#ffd0c4" opacity=".35"/>')
+  };
+})();
+function rewardSVG(tier) { return REWARD[tier] || ''; }
+function badge(tier) { return `<span class="badge t${tier}">${esc(CONFIG.tiers[tier].name)}</span>`; }
+function titleFor(score) { return CONFIG.titles.find(t => score >= t[0])[1]; }
+function announce(msg, bad) { const f = $('#feedback'); f.classList.toggle('bad', !!bad); f.innerHTML = msg; }
+let toastT = 0;
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
+
+/** Only Copper and above are kept on the shelf. Ash, Fool's Gold and fizzles leave a scorch mark. */
+function renderShelf(el, results, current, fresh = -1) {
+  el.innerHTML = '';
+  for (let i = 0; i < CONFIG.roundSize; i++) {
+    const li = document.createElement('li'); li.className = 'slot'; const r = results[i];
+    if (r) {
+      if (r.tier >= 3) { li.classList.add('filled'); if (i === fresh) li.classList.add('fresh'); li.innerHTML = rewardSVG(r.tier); } else li.classList.add('spent');
+      li.setAttribute('aria-label', `Prompt ${i + 1}: ${CONFIG.tiers[r.tier].name}`);
+    } else { if (i === current) li.classList.add('current'); li.setAttribute('aria-label', `Prompt ${i + 1}: not brewed yet`); }
+    el.appendChild(li);
+  }
+}
+function renderHome() {
+  $('#legend').innerHTML = [1, 2, 3, 4, 5, 6].map(t => `<li><span class="badge t${t}">${esc(CONFIG.tiers[t].name)} · ${CONFIG.tiers[t].points}</span></li>`).join('');
+  $('#cat-chips').innerHTML = CONFIG.categories.map(c => `<label class="chip"><input type="radio" name="cat" value="${esc(c)}" ${c === Store.data.category ? 'checked' : ''}><span>${esc(c)}</span></label>`).join('');
+  const s = Store.data.stats, today = utcDate(), d = Store.data.daily;
+  $('#btn-daily').textContent = d.date === today ? `Daily Brew · today's score ${d.score}` : `Daily Brew · ${today}`;
+  $('#home-stats').textContent = s.rounds ? `Rounds brewed ${s.rounds} · Best ${s.best} · Good-brew streak ${s.streak}` : 'No daily limit. Brew as many rounds as you like.';
+}
+function renderMute() {
+  const m = Store.data.muted, b = $('#btn-mute');
+  b.setAttribute('aria-pressed', String(m)); b.setAttribute('aria-label', m ? 'Unmute sound' : 'Mute sound');
+  $('.on', b).toggleAttribute('hidden', m); $('.off', b).toggleAttribute('hidden', !m);
+  $('#sw-sound').setAttribute('aria-checked', String(!m));
+}
+function applyReduced() { document.body.classList.toggle('reduced', reducedFx()); $('#sw-reduced').setAttribute('aria-checked', String(Store.data.reduced)); }
+
+/** The chamber behind the game: brick tile, two shelf units of bottles and books, dust motes. Built once. */
+function buildChamber() {
+  const tones = ['#1b1524', '#201929', '#18121f', '#231b2d', '#1d1626', '#1a1422'];
+  const brick = (x, y, w, i) => `<rect x="${x + 2}" y="${y + 2}" width="${w - 4}" height="56" rx="5" fill="${tones[i % tones.length]}"/>` +
+    `<path d="M${x + 7} ${y + 5}h${w - 14}" stroke="#fff" stroke-opacity=".05" stroke-width="2" stroke-linecap="round"/><path d="M${x + 7} ${y + 55.5}h${w - 14}" stroke="#000" stroke-opacity=".4" stroke-width="2" stroke-linecap="round"/>`;
+  const tile = `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120"><rect width="240" height="120" fill="#09060e"/>` +
+    brick(0, 0, 130, 0) + brick(130, 0, 110, 1) + brick(-70, 60, 140, 2) + brick(70, 60, 100, 3) + brick(170, 60, 140, 2) +
+    `<path d="M40 10l8 11-4 9 7 13M186 70l-6 12 7 9" stroke="#09060e" stroke-width="1.6" fill="none" opacity=".8"/><circle cx="96" cy="34" r="2" fill="#09060e"/><circle cx="150" cy="96" r="1.6" fill="#09060e"/><circle cx="212" cy="22" r="1.4" fill="#2c2338"/></svg>`;
+  $('#chamber').style.setProperty('--brick', `url("data:image/svg+xml,${encodeURIComponent(tile)}")`);
+
+  const dark = '#08060d', edge = '#2d2439';
+  const glow = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}" opacity=".13"/><circle cx="${x}" cy="${y}" r="${r * 0.55}" fill="${c}" opacity=".16"/>`;
+  const bottle = (x, y, w, h, c) => { const nw = w * 0.36, nh = h * 0.3, bh = h - nh, sh = w * 0.3, sw = w / 2 - nw / 2;
+    return (c ? glow(x, y - bh / 2, w * 1.6, c) : '') +
+      `<path d="M${x - w / 2} ${y}v${-(bh - sh)}q0 ${-sh} ${sw} ${-sh}v${-nh}h${nw}v${nh}q${sw} 0 ${sw} ${sh}v${bh - sh}z" fill="${c || dark}" fill-opacity="${c ? 0.45 : 1}" stroke="${edge}" stroke-width="1.5"/>` +
+      `<rect x="${x - nw / 2 - 1}" y="${y - h - 5}" width="${nw + 2}" height="6" rx="1.5" fill="#3a2a1a"/>` +
+      (c ? `<rect x="${x - w / 2 + 2.5}" y="${y - bh * 0.55}" width="${w - 5}" height="${bh * 0.55 - 2.5}" rx="2" fill="${c}" opacity=".7"/>` : '') +
+      `<path d="M${x - w / 2 + 3.5} ${y - bh + sh + 3}v${bh * 0.45}" stroke="#fff" stroke-opacity=".13" stroke-width="1.5" stroke-linecap="round"/>`; };
+  const flask = (x, y, r, c) => (c ? glow(x, y - r, r * 2.1, c) : '') +
+    `<path d="M${x - r * 0.3} ${y - r * 2.9}h${r * 0.6}v${r * 1.1}a${r} ${r} 0 1 1 ${-r * 0.6} 0z" fill="${c || dark}" fill-opacity="${c ? 0.45 : 1}" stroke="${edge}" stroke-width="1.5"/>` +
+    (c ? `<path d="M${x - r * 0.86} ${y - r * 0.7}a${r * 0.9} ${r * 0.9} 0 0 0 ${r * 1.72} 0z" fill="${c}" opacity=".7"/>` : '') + `<rect x="${x - r * 0.4}" y="${y - r * 3.1}" width="${r * 0.8}" height="4" rx="1" fill="#3a2a1a"/>`;
+  const jar = (x, y, w, h, c) => (c ? glow(x, y - h / 2, w * 1.1, c) : '') +
+    `<rect x="${x - w / 2}" y="${y - h}" width="${w}" height="${h}" rx="5" fill="${c || dark}" fill-opacity="${c ? 0.4 : 1}" stroke="${edge}" stroke-width="1.5"/><rect x="${x - w / 2 - 2}" y="${y - h - 6}" width="${w + 4}" height="7" rx="2" fill="#2a1c10" stroke="${edge}"/>` +
+    `<path d="M${x - w / 2 + 4} ${y - h + 6}v${h * 0.5}" stroke="#fff" stroke-opacity=".1" stroke-width="1.5" stroke-linecap="round"/>`;
+  const book = (x, y, w, h, c, tilt) => `<g transform="rotate(${tilt || 0} ${x} ${y})"><rect x="${x - w / 2}" y="${y - h}" width="${w}" height="${h}" rx="1.5" fill="${c}" stroke="${edge}"/>` +
+    `<path d="M${x - w / 2 + 1} ${y - h + 8}h${w - 2}M${x - w / 2 + 1} ${y - 9}h${w - 2}" stroke="#c9a24a" stroke-opacity=".35" stroke-width="1.5"/></g>`;
+  const plank = y => `<rect x="4" y="${y + 10}" width="292" height="12" fill="#000" opacity=".35"/><path d="M30 ${y + 10}v26l22-26zM270 ${y + 10}v26l-22-26z" fill="#120d18"/>` +
+    `<rect x="6" y="${y}" width="288" height="10" rx="2" fill="#35210f"/><rect x="6" y="${y}" width="288" height="3" rx="1.5" fill="#5e3d20"/>`;
+  const unit = items => `<svg viewBox="0 0 300 300" width="100%" aria-hidden="true">${items}</svg>`;
+  $('#unit-l').innerHTML = unit(
+    bottle(40, 120, 22, 60) + flask(86, 120, 17, '#58e0a8') + jar(130, 120, 30, 38) + book(170, 120, 13, 56, '#3b1f24') + book(185, 120, 11, 48, '#1f2a3b') + book(200, 120, 14, 62, '#2e2a1a') + bottle(242, 120, 18, 46, '#b07cff') + jar(274, 120, 22, 26) + plank(120) +
+    book(34, 250, 14, 58, '#2a1f33') + book(50, 250, 12, 50, '#3a2414') + book(72, 250, 13, 54, '#1f3329', 13) + flask(124, 250, 20) + bottle(168, 250, 24, 70, '#ffb347') + jar(210, 250, 32, 40) + bottle(250, 250, 16, 52) + flask(280, 250, 12, '#6fb7ff') + plank(250));
+  $('#unit-r').innerHTML = unit(
+    jar(34, 120, 30, 44, '#ff6a8a') + bottle(74, 120, 20, 64) + bottle(102, 120, 16, 44) + flask(142, 120, 19) + book(184, 120, 14, 60, '#33261a') + book(200, 120, 12, 52, '#3b1f24') + book(222, 120, 13, 56, '#1f2a3b', -12) + bottle(266, 120, 22, 58, '#58e0a8') + plank(120) +
+    flask(36, 250, 16, '#ffd35c') + jar(80, 250, 28, 34) + bottle(120, 250, 18, 56) + book(152, 250, 13, 50, '#2e2a1a') + book(167, 250, 12, 58, '#2a1f33') + book(182, 250, 14, 46, '#3a2414') + bottle(222, 250, 26, 72) + flask(268, 250, 18, '#b07cff') + plank(250));
+
+  let motes = '';
+  for (let i = 0; i < CONFIG.fx.motes; i++) { const side = i % 2 ? rand(2, 34) : rand(66, 98);
+    motes += `<i class="mote" style="left:${side.toFixed(1)}%;top:${rand(14, 72).toFixed(1)}%;width:${rand(2, 3.4).toFixed(1)}px;height:${rand(2, 3.4).toFixed(1)}px;animation-duration:${rand(9, 18).toFixed(1)}s;animation-delay:-${rand(0, 18).toFixed(1)}s"></i>`; }
+  $('#motes').innerHTML = motes;
+}
+
+/* ---------- 10. game flow ---------- */
+function showScreen(name) {
+  state.screen = name;
+  for (const s of ['home', 'game', 'results']) $('#screen-' + s).hidden = s !== name;
+  document.body.classList.toggle('in-game', name === 'game');
+  $('#btn-leave').hidden = name !== 'game';
+  if (name === 'home') { renderHome(); $('#home-h').focus({ preventScroll: true }); }
+  if (name === 'results') { $('#screen-results').scrollTop = 0; $('#res-h').focus({ preventScroll: true }); }
+  requestAnimationFrame(FX.resize);
+}
+function startRound(mode) {
+  Sound.ensure(); Sound.play('click');
+  const category = Store.data.category;
+  const prompts = mode === 'daily' ? dailyPrompts(utcDate()) : nextFreePrompts(category);
+  state.round = { mode, category, date: utcDate(), prompts, i: 0, results: [], score: 0, wrongNow: 0 };
+  showScreen('game');
+  $('#hud-mode').textContent = mode === 'daily' ? '· Daily Brew' : (category === 'All' ? '' : '· ' + category);
+  $('#hud-score').textContent = '0';
+  beginPrompt();
+}
+function clearFxDom() { $$('.rfly').forEach(n => n.remove()); $('#dim').classList.remove('on'); $('#stage').classList.remove('churn', 'lively'); }
+function beginPrompt() {
+  const R = state.round, p = R.prompts[R.i], stage = $('#stage');
+  state.locked = false; state.token++; R.wrongNow = 0; hideConfirm(); clearFxDom();
+  stage.dataset.brew = 'neutral';                                // cauldron calms between prompts
+  $('#hud-count').textContent = `Prompt ${R.i + 1} of ${CONFIG.roundSize}`;
+  $('#card-cat').textContent = p.category; $('#card-q').textContent = p.prompt;
+  const card = $('#card'); card.classList.remove('enter'); void card.offsetWidth; card.classList.add('enter');
+  renderShelf($('#shelf'), R.results, R.i);
+  announce('');
+  const input = $('#answer'); input.value = ''; $('#brew-form').classList.remove('busy'); $('#btn-skip').disabled = false;
+  input.focus({ preventScroll: true });
+  Timer.start(CONFIG.timerSeconds, () => conclude('timeout', null, ''));
+  if (!reducedFx()) Sound.play('bubble');
+}
+function nudge(el) { el.classList.remove('nudge'); void el.offsetWidth; el.classList.add('nudge'); }
+
+/* ---- submitting: exact answers brew at once, near-misses ask first, wrong guesses fizzle and let you retry ---- */
+function onSubmit(ev) {
+  ev.preventDefault();
+  if (state.screen !== 'game') return;
+  if (state.locked) { Seq.skip(); return; }                      // Enter during a reward animation = skip it
+  const R = state.round, p = R.prompts[R.i], input = $('#answer'), raw = input.value;
+  if (state.confirm) {                                           // Enter with the question open = "Yes"
+    if (normalize(raw) === state.confirm.norm) { pickCandidate(0); return; }
+    hideConfirm();
+  }
+  const res = matchAnswer(p, raw);
+  if (res.status === 'blank') { nudge(input); announce('Drop an ingredient in first.', true); }
+  else if (res.status === 'confirm') showConfirm(res, raw);
+  else if (res.status === 'ok') conclude('ok', res.answer, raw);
+  else wrongGuess(raw);
+}
+const coarsePointer = () => !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+function showConfirm(res, raw) {
+  const box = $('#confirm'), c = res.candidates;
+  state.confirm = { norm: normalize(raw), candidates: c };
+  box.innerHTML = (c.length === 1
+    ? `<span class="cq">Did you mean <b>${esc(c[0].text)}</b>?</span><button type="button" class="btn primary" data-pick="0">Yes, brew it</button>`
+    : `<span class="cq">Did you mean:</span>` + c.map((a, i) => `<button type="button" class="btn primary" data-pick="${i}">${esc(a.text)}</button>`).join('')) +
+    `<button type="button" class="btn" data-pick="no">No</button>`;
+  $('#feedback').hidden = true; box.hidden = false;
+  if (!coarsePointer()) $('[data-pick="0"]', box).focus();       // on touch screens focus stays in the input so the keyboard stays up
+}
+function hideConfirm() { state.confirm = null; $('#confirm').hidden = true; $('#feedback').hidden = false; }
+function dismissConfirm() { hideConfirm(); announce('No problem. Edit your answer and try again.'); $('#answer').focus({ preventScroll: true }); }
+function pickCandidate(i) { const cf = state.confirm; if (!cf || state.locked) return; conclude('ok', cf.candidates[i], $('#answer').value); }
+
+/** A wrong guess costs nothing: it fizzles, the input clears, and the player can type again at once. */
+function wrongGuess(raw) {
+  const R = state.round, input = $('#answer'), text = raw.trim();
+  R.wrongNow++;
+  input.value = ''; input.focus({ preventScroll: true });
+  announce(`The brew rejects “${esc(text)}”. Try another.`, true);
+  fizzle(text);
+}
+async function fizzle(text) {
+  const token = state.token, stage = $('#stage');
+  const live = () => token === state.token && !state.locked && state.round;
+  if (!reducedFx()) await flyOrb(FREE, text);
+  if (!live()) return;                                           // the prompt moved on while the orb was in the air
+  stage.dataset.brew = 'wrong'; Sound.play('sad');
+  clearTimeout(state.calmT); state.calmT = setTimeout(() => { if (live()) stage.dataset.brew = 'neutral'; }, CONFIG.timing.fizzleMs);
+  if (reducedFx()) return;
+  const m = FX.centre($('#liq'));
+  FX.splash(m, '#8d7b4b'); FX.sludge(m); FX.smoke(m, 3, '#5c4a26');
+  stage.classList.remove('shake'); void stage.offsetWidth; stage.classList.add('shake');
+  showPop(m.x, m.y - 76, 0, CONFIG.tiers[0].shout);
+}
+
+/** The typed answer becomes a glowing ingredient that leaves the input, arcs over and drops into the liquid. */
+function flyOrb(s, text) {
+  const app = $('#app'), ar = app.getBoundingClientRect(), ir = $('#answer').getBoundingClientRect(), lr = $('#liq').getBoundingClientRect();
+  const el = document.createElement('div'); el.className = 'orb'; el.setAttribute('aria-hidden', 'true'); el.textContent = text.slice(0, 40); app.appendChild(el);
+  const w = el.offsetWidth, h = el.offsetHeight;
+  const p0 = { x: ir.left - ar.left + Math.min(ir.width / 2, 14 + w / 2), y: ir.top - ar.top + ir.height / 2 };    // starts where the text was typed
+  const p3 = { x: lr.left - ar.left + lr.width / 2, y: lr.top - ar.top + lr.height / 2 };
+  const apex = Math.max(h, Math.min(p0.y - 34, p3.y - Math.max(90, lr.height * 2.2)));     // always arrives from above the liquid, even when the cauldron is below the input
+  const p1 = { x: p0.x + (p3.x - p0.x) * 0.3, y: apex }, p2 = { x: p3.x - (p3.x - p0.x) * 0.04, y: apex };
+  return animate(s, CONFIG.timing.orbMs, k => {
+    const u = 1 - k, a = u * u * u, b = 3 * u * u * k, c = 3 * u * k * k, d = k * k * k;
+    const x = a * p0.x + b * p1.x + c * p2.x + d * p3.x, y = a * p0.y + b * p1.y + c * p2.y + d * p3.y;
+    el.style.transform = `translate3d(${(x - w / 2).toFixed(1)}px,${(y - h / 2).toFixed(1)}px,0) scale(${(1 - 0.45 * k).toFixed(3)}) rotate(${(k * 16).toFixed(1)}deg)`;
+    el.style.opacity = k > 0.9 ? (1 - k) * 10 : 1;
+    if (!s.skipped && Math.random() < 0.55) FX.trail(x, y, '#9bf5cf');
+  }).then(() => el.remove());
+}
+
+function showPop(x, y, tier, html, big, ms) {
+  const el = document.createElement('div'); el.className = 'pop t' + tier + (big ? ' big' : ''); el.setAttribute('aria-hidden', 'true');
+  el.style.left = x + 'px'; el.style.top = Math.max(big ? 54 : 30, y) + 'px'; if (ms) el.style.animationDuration = ms + 'ms';
+  if (big) { const W = $('#app').clientWidth; el.style.width = Math.max(200, Math.min(760, 2 * Math.min(x, W - x) - 20)) + 'px'; }   // keep long tier names on screen
+  el.innerHTML = html; $('#app').appendChild(el); setTimeout(() => el.remove(), (ms || 1700) + 200); return el;
+}
+const shoutHTML = tier => `<small>+${CONFIG.tiers[tier].points}</small>${esc(CONFIG.tiers[tier].shout)}`;
+function flashGlow(tier) { const g = $('#glow'); g.className = ''; void g.offsetWidth; if (tier >= 5) g.className = tier === 6 ? 'on big red' : 'on'; }
+function place(el, x, y, sc, ry, rz) { el.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) perspective(520px) scale(${sc.toFixed(3)}) rotateY(${ry.toFixed(1)}deg) rotate(${rz.toFixed(1)}deg)`; }
+function makeReward(tier) {
+  const el = document.createElement('div'); el.className = 'rfly'; el.setAttribute('aria-hidden', 'true'); el.style.setProperty('--halo', CONFIG.fx.halo[tier]);
+  el.innerHTML = `<i class="halo"></i>${rewardSVG(tier)}`; $('#app').appendChild(el); return el;
+}
+const TIER_SOUND = { 0: 'sad', 1: 'puff', 2: 'pfft', 3: 'swirl', 4: 'sparkle', 5: 'gold', 6: 'ominous' };
+
+/**
+ * The prompt is over: a valid answer ('ok'), the timer ('timeout') or Skip ('skip').
+ * The timer stops here (the answer is locked in), the reaction plays, then the next prompt begins.
+ * A click, tap or Enter skips the rest of the animation.
+ */
+async function conclude(kind, answer, raw) {
+  if (state.locked || !state.round) return;
+  state.locked = true; state.token++; Timer.stop(); hideConfirm(); clearTimeout(state.calmT);
+  const R = state.round, p = R.prompts[R.i], text = String(raw || '').trim();
+  $('#answer').value = ''; $('#brew-form').classList.add('busy'); $('#btn-skip').disabled = true;   // input keeps focus so a phone keyboard stays open
+  const ok = kind === 'ok', tier = ok ? answer.tier : 0, points = CONFIG.tiers[tier].points;
+  const result = { promptId: p.id, input: text, status: kind, tier, points, accepted: ok ? answer.text : null, z: ok ? answer.z : null, wrong: R.wrongNow };
+  const msg = ok ? `Accepted as: <b>${esc(answer.text)}</b> · ${esc(CONFIG.tiers[tier].name)} +${points}`
+    : kind === 'timeout' ? "Time's up. The brew went flat · +0" : 'Skipped · +0';
+  let landed = false;
+  const onImpact = () => { if (landed) return; landed = true; R.results.push(result); R.score += points; $('#hud-score').textContent = R.score; announce(msg, !ok); };
+  const s = Seq.start();
+  try { await (ok ? playValid(s, tier, text, onImpact) : playFail(s, kind, onImpact)); } catch (e) { /* effects must never break scoring */ }
+  onImpact();
+  if (s.skipped) FX.clear();
+  clearFxDom(); $$('.pop').forEach(n => s.skipped && n.remove());
+  if (state.round !== R) { Seq.end(s); return; }                 // round was abandoned meanwhile
+  renderShelf($('#shelf'), R.results, -1, s.skipped ? -1 : R.results.length - 1);
+  await hold(s, CONFIG.timing.nextDelayMs);
+  Seq.end(s);
+  if (state.round !== R) return;
+  R.i++;
+  if (R.i < CONFIG.roundSize) beginPrompt(); else finishRound();
+}
+async function playFail(s, kind, onImpact) {
+  const stage = $('#stage');
+  onImpact(); stage.dataset.brew = 'wrong'; Sound.play('sad');
+  FX.resize(); const m = FX.centre($('#liq'));
+  showPop(m.x, m.y - 76, 0, kind === 'timeout' ? "TIME'S UP" : 'SKIPPED');
+  if (!reducedFx()) { FX.sludge(m); FX.smoke(m, 3, '#5c4a26'); stage.classList.remove('shake'); void stage.offsetWidth; stage.classList.add('shake'); }
+  await hold(s, CONFIG.timing.plainMs);
+}
+async function playValid(s, tier, text, onImpact) {
+  const stage = $('#stage'), T = CONFIG.timing;
+  FX.resize();
+  const m = FX.centre($('#liq'));
+  if (reducedFx()) {                                             // reduced motion: a short fade-in of the reward and its tier name
+    onImpact(); stage.dataset.brew = BREW[tier]; Sound.play(TIER_SOUND[tier]);
+    const y = Math.max(96, m.y - clamp(m.w * 0.5, 90, 170));
+    let el = null;
+    if (tier >= 2) { el = makeReward(tier); el.classList.add('fade'); place(el, m.x, y, 1.4, 0, 0); showPop(m.x, y + 84, tier, shoutHTML(tier), tier >= 3, T.reducedMs); }
+    else showPop(m.x, m.y - 76, tier, shoutHTML(tier), false, T.reducedMs);
+    await hold(s, T.reducedMs); if (el) el.remove(); return;
+  }
+  await flyOrb(s, text);                                         // 1. the answer travels into the cauldron
+  if (!s.skipped) { Sound.play('splash'); FX.splash(m, (getComputedStyle(stage).getPropertyValue('--liq-c') || '').trim() || '#9bf5cf'); }
+  onImpact();                                                    // 2. then the reaction
+  if (s.skipped) return;
+  if (tier === 1) { stage.dataset.brew = 'ash'; Sound.play('puff'); FX.smoke(m, 10, '#a9a9b4'); showPop(m.x, m.y - 76, 1, shoutHTML(1)); await hold(s, T.plainMs); }
+  else if (tier === 2) await foolsGold(s, m);
+  else await reward(s, tier, m, state.round.results.length - 1);
+}
+/** Fool's Gold: flashes like the real thing, a pyrite cluster shows itself, tarnishes, and sinks back. Not kept. */
+async function foolsGold(s, m) {
+  const stage = $('#stage'), top = { x: m.x, y: m.y - clamp(m.w * 0.36, 64, 124) };
+  stage.dataset.brew = 'flash'; Sound.play('sparkle'); FX.sparks(m, CONFIG.fx.sparks[2], ['#ffe27a', '#ffffff'], 0.6);
+  const el = makeReward(2), halo = el.firstChild;
+  await animate(s, 420, k => { const e = 1 - Math.pow(1 - k, 3); el.style.opacity = Math.min(1, k * 5); halo.style.opacity = 0.7 * e;
+    place(el, m.x, m.y + (top.y - m.y) * e, 0.2 + 0.95 * e, 0, -12 + 12 * e); el.style.filter = `brightness(${(2 - 0.2 * e).toFixed(2)}) saturate(1.7)`; });
+  if (!s.skipped) { showPop(top.x, top.y + 70, 2, shoutHTML(2)); stage.dataset.brew = 'brass'; Sound.play('pfft'); FX.smoke(m, 5, '#8f8350'); }
+  await animate(s, 380, k => { el.style.filter = `brightness(${(1.8 - 1.05 * k).toFixed(2)}) saturate(${(1.7 - 1.2 * k).toFixed(2)})`; halo.style.opacity = 0.7 * (1 - k); });   // the tarnish
+  await hold(s, 260);
+  await animate(s, 360, k => { place(el, top.x, top.y + (m.y - top.y) * k * k, 1.15 - 0.55 * k, 0, 14 * k); el.style.opacity = 1 - k; });
+  el.remove();
+}
+/** Copper and above: build-up, eruption, the reward rises and forms, hangs in the light, then flies to the shelf. */
+async function reward(s, tier, m, slotIndex) {
+  const stage = $('#stage'), D = CONFIG.reward[tier];
+  // 1. build-up: the liquid churns, the glow brightens, a low rumble
+  stage.dataset.brew = BREW[tier]; stage.classList.add('churn'); Sound.play('rumble', D.build / 1000);
+  await hold(s, D.build);
+  stage.classList.remove('churn'); stage.classList.add('lively');
+  if (s.skipped) return;
+  // 2. eruption
+  FX.erupt(m, tier); Sound.play('erupt'); Sound.play(TIER_SOUND[tier]); flashGlow(tier);
+  if (tier === 6) $('#dim').classList.add('on');                 // the whole room dims for the Stone
+  // 3. the reward rises out of the liquid, white-hot at first, solidifying as it spins
+  const big = D.scale * clamp(m.w / 300, 0.7, 1), hang = { x: m.x, y: Math.max(40 + 36 * big, m.y - clamp(m.w * 0.6, 100, 210)) };
+  const el = makeReward(tier), halo = el.firstChild;
+  FX.beam(m, hang.y, tier, D.rise + D.hang);
+  await animate(s, D.rise, k => { const e = 1 - Math.pow(1 - k, 3); el.style.opacity = Math.min(1, k * 5); halo.style.opacity = 0.75 * e;
+    place(el, m.x, m.y + (hang.y - m.y) * e, 0.2 + (big - 0.2) * e, 360 * D.spins * e, 0);
+    el.style.filter = e < 0.98 ? `brightness(${(1 + 3 * (1 - e)).toFixed(2)}) saturate(${(0.2 + 0.8 * e).toFixed(2)}) blur(${(2.5 * (1 - e)).toFixed(2)}px)` : ''; });
+  // 4. it hangs in the air with its name
+  if (!s.skipped) showPop(hang.x, hang.y + 36 * big + 48, tier, shoutHTML(tier), true, D.hang + 550);
+  await animate(s, D.hang, k => { const w = Math.sin(k * Math.PI * 2); halo.style.opacity = 0.62 + 0.3 * Math.sin(k * Math.PI * (tier === 6 ? 6 : 2));
+    place(el, hang.x, hang.y + w * 5, big * (1 + 0.04 * w), w * 24, 0); });
+  // 5. and flies in an arc to its place on the shelf
+  $('#dim').classList.remove('on');
+  const to = FX.centre($$('#shelf .slot')[slotIndex]), end = Math.min(to.w, to.h) * 0.9 / 72;
+  const cx = (hang.x + to.x) / 2, cy = Math.min(hang.y, to.y) - 50;
+  await animate(s, D.fly, k => { const e = k * k * (3 - 2 * k), u = 1 - e; halo.style.opacity = 0.5 * (1 - e);
+    place(el, u * u * hang.x + 2 * u * e * cx + e * e * to.x, u * u * hang.y + 2 * u * e * cy + e * e * to.y, big + (end - big) * e, 0, 360 * e); });
+  el.remove();
+  if (!s.skipped) { Sound.play('clink'); FX.glint(to, CONFIG.fx.halo[tier]); }
+}
+function mastersFor(p, exclude) {
+  const of = t => shuffle(p.answers.filter(a => a.tier === t && a.text !== exclude));
+  const six = of(6), five = of(5), out = six.slice(0, 2);
+  for (const a of five) { if (out.length >= 3) break; out.push(a); }
+  for (const a of six.slice(2)) { if (out.length >= 3) break; out.push(a); }
+  return out;
+}
+function finishRound() {
+  const R = state.round, d = Store.data, s = d.stats;
+  Timer.stop();
+  // ---- stats & collection ----
+  s.rounds++; s.total += R.score; s.best = Math.max(s.best, R.score);
+  s.streak = R.score >= CONFIG.goodBrewScore ? s.streak + 1 : 0; s.longest = Math.max(s.longest, s.streak);
+  R.results.forEach((r, i) => {
+    s.tiers[r.tier] = (s.tiers[r.tier] || 0) + 1;
+    if (r.tier === 0) return;
+    const better = !s.rarest || r.tier > s.rarest.tier || (r.tier === s.rarest.tier && r.z < s.rarest.z);
+    if (better) s.rarest = { text: r.accepted, prompt: R.prompts[i].prompt, tier: r.tier, z: r.z };
+    if (r.tier === 6) { const g = d.grimoire[r.promptId] || (d.grimoire[r.promptId] = []); if (!g.includes(r.accepted)) g.push(r.accepted); }
+  });
+  if (R.mode === 'daily' && d.daily.date !== R.date) d.daily = { date: R.date, score: R.score };
+  Store.save();
+  // ---- render ----
+  showScreen('results');
+  $('#res-title').textContent = titleFor(R.score) + (R.mode === 'daily' ? ' · Daily Brew' : '');
+  renderShelf($('#res-shelf'), R.results, -1);
+  $('#res-list').innerHTML = R.results.map((r, i) => {
+    const p = R.prompts[i], masters = mastersFor(p, r.accepted);
+    const ans = r.tier ? esc(r.accepted) : r.status === 'timeout' ? '<s>Time ran out</s>' : '<s>Skipped</s>';
+    const wg = r.wrong ? `<span class="wg">${r.wrong} wrong ${r.wrong === 1 ? 'guess' : 'guesses'}</span>` : '';
+    return `<li class="res"><p class="rq">${i + 1}. ${esc(p.prompt)}</p>
+      <div class="ra">${rewardSVG(r.tier)}<span>${ans}</span>${badge(r.tier)}${wg}<span class="pts">+${r.points}</span></div>
+      <p class="masters"><span class="lbl">What the masters brewed:</span>${masters.map(a => `<span class="badge t${a.tier}">${esc(a.text)}</span>`).join('')}</p></li>`;
+  }).join('');
+  countUp($('#res-score'), R.score);
+  Sound.play(R.score >= CONFIG.goodBrewScore ? 'fanfare' : 'bubble');
+}
+function countUp(el, to) {
+  if (reducedFx() || !to) { el.textContent = to; return; }
+  const t0 = performance.now(), dur = CONFIG.timing.countUpMs;
+  (function step(now) { const k = clamp((now - t0) / dur, 0, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0);
+}
+function shareText() {
+  const R = state.round;
+  const head = `${CONFIG.gameName}${R.mode === 'daily' ? ' Daily ' + R.date : ''} 🧪 ${R.score}/${MAX_SCORE}`;
+  const url = /^https?:/.test(location.protocol) ? '\n' + location.href.split('#')[0] : '';
+  return `${head}\n${R.results.map(r => CONFIG.tiers[r.tier].emoji).join('')}${url}`;
+}
+async function share() {
+  const text = shareText();
+  try { await navigator.clipboard.writeText(text); toast('Copied to clipboard'); }
+  catch (e) {
+    try { const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast('Copied to clipboard'); }
+    catch (e2) { toast('Could not copy. Select the result manually.'); }
+  }
+}
+
+/* ---------- 11. modals & secondary screens ---------- */
+const HELP = [
+  ['Drop in an ingredient', 'Each round has <b>7 prompts</b>, like “Name a chemical element”. Type one answer and press <b>Enter</b>. You have <b>25 seconds</b> per prompt. A wrong guess just fizzles, so keep trying until the time runs out.'],
+  ['Rare answers brew richer', 'Any correct answer scores, but the answer everyone thinks of is just <b>Ash</b> (10). Dig deeper for <b>Copper</b>, <b>Silver</b>, <b>Gold</b> and the 100-point <b>Philosopher\'s Stone</b>. Beware <b>Fool\'s Gold</b>: the “clever” pick that everybody else reaches for too.'],
+  ['Fill your shelf', 'Copper, Silver, Gold and the blood-red Stone rise out of the cauldron onto your shelf. Near-misses and abbreviations get a quick “Did you mean…?” before they count. Play as many rounds as you like, and collect every Stone in the <b>Grimoire</b>.']
+];
+let helpStep = 0, lastFocus = null;
+function renderHelp() {
+  $('#help-n').textContent = `STEP ${helpStep + 1} OF ${HELP.length}`;
+  $('#help-body').innerHTML = `<h3>${HELP[helpStep][0]}</h3><p>${HELP[helpStep][1]}</p>`;
+  $$('#help-dots i').forEach((d, i) => d.classList.toggle('on', i === helpStep));
+  $('#help-next').textContent = helpStep === HELP.length - 1 ? 'Start brewing' : 'Next';
+}
+function openModal(id) {
+  if (state.modal) closeModal();
+  lastFocus = document.activeElement; state.modal = id;
+  if (state.screen === 'game') { Timer.pause(); document.body.classList.add('paused'); }
+  const m = $('#' + id); m.hidden = false;
+  const first = $('button, [href], input', m); first && first.focus();
+}
+function closeModal() {
+  if (!state.modal) return;
+  const id = state.modal; $('#' + id).hidden = true; state.modal = null;
+  document.body.classList.remove('paused');
+  if (id === 'modal-help') { Store.data.tutorialSeen = true; Store.save(); }
+  if (id === 'modal-settings') resetZone(false);
+  if (state.screen === 'game' && !state.locked) { Timer.resume(); $('#answer').focus({ preventScroll: true }); }
+  else if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+}
+function resetZone(confirming) {
+  $('#reset-zone').innerHTML = confirming
+    ? `<p>Erase all stats, streaks and discovered Stones? This can't be undone.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn danger" id="btn-reset-yes">Yes, erase everything</button><button class="btn" id="btn-reset-no">Cancel</button></div>`
+    : `<button class="btn danger" id="btn-reset">Reset stats and Grimoire</button>`;
+  if (confirming) $('#btn-reset-no').focus();
+}
+function renderStats() {
+  const s = Store.data.stats, avg = s.rounds ? Math.round(s.total / s.rounds) : 0;
+  const tile = (v, l) => `<div class="tile"><b>${v}</b><span>${l}</span></div>`;
+  $('#stats-body').innerHTML = `<div class="tiles">${tile(s.rounds, 'Rounds played')}${tile(avg, 'Average score')}${tile(s.best, 'Best round')}${tile(s.streak, 'Good-brew streak')}${tile(s.longest, 'Longest streak')}</div>
+    <p class="mini" style="margin-top:8px">A good brew is a round of ${CONFIG.goodBrewScore} or more.</p>
+    <h3>Rewards collected</h3><div class="gem-row">${[3, 4, 5, 6].map(t => `<div>${rewardSVG(t)}<span>${s.tiers[t] || 0}<span class="sr-only"> ${esc(CONFIG.tiers[t].name)}</span></span></div>`).join('')}</div>
+    <div class="gem-row" style="margin-top:10px"><div>${rewardSVG(2)}<span>${s.tiers[2] || 0}<span class="sr-only"> Fool's Gold</span></span></div><div>${rewardSVG(1)}<span>${s.tiers[1] || 0}<span class="sr-only"> Ash</span></span></div><span class="mini">not kept on the shelf · ${s.tiers[0] || 0} prompts with no answer</span></div>
+    <h3>Rarest answer found</h3>${s.rarest ? `<p>${badge(s.rarest.tier)} <b>${esc(s.rarest.text)}</b><br><span class="mini">${esc(s.rarest.prompt)}</span></p>` : '<p class="mini">Nothing yet. Go and brew something strange.</p>'}`;
+}
+function renderGrimoire() {
+  const g = Store.data.grimoire;
+  let total = 0, found = 0, html = '';
+  for (const p of PROMPTS) {
+    const stones = p.answers.filter(a => a.tier === 6), have = (g[p.id] || []).filter(t => stones.some(a => a.text === t));
+    total += stones.length; found += have.length;
+    if (!have.length) continue;
+    const left = stones.length - have.length;
+    html += `<div class="grim-group"><h3>${rewardSVG(6)}${esc(p.prompt)}<span class="count">${have.length} of ${stones.length}</span></h3><div class="grim-chips">${have.map(t => `<span class="badge t6">${esc(t)}</span>`).join('')}${left ? `<span class="unknown">${left} still undiscovered</span>` : ''}</div></div>`;
+  }
+  $('#grim-body').innerHTML = `<p>Every Philosopher's Stone answer you have discovered. <b>${found}</b> of <b>${total}</b> found.</p>
+    <div class="progress" role="progressbar" aria-label="Stones discovered" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${found}"><i style="width:${total ? (found / total * 100).toFixed(1) : 0}%"></i></div>
+    ${html || '<p class="mini">Your Grimoire is empty. Stones appear here when you find a 100-point answer.</p>'}`;
+}
+
+/* ---------- 12. boot: events, viewport, first visit ---------- */
+function fitViewport() {
+  const vv = window.visualViewport, h = vv ? vv.height : window.innerHeight, top = vv ? vv.offsetTop : 0, root = document.documentElement;
+  root.style.setProperty('--vvh', h + 'px'); root.style.setProperty('--vvt', top + 'px');
+  document.body.classList.toggle('compact', h < 540);         // on-screen keyboard open or a very short window
+  if (window.scrollY) window.scrollTo(0, 0);
+  FX.resize();
+}
+function boot() {
+  if (typeof PROMPTS === 'undefined' || !Array.isArray(PROMPTS)) { $('#home-stats').textContent = 'Could not load data.js. Keep it in the same folder as index.html.'; $('#btn-start').disabled = true; $('#btn-daily').disabled = true; return; }
+  buildChamber(); renderHome(); renderMute(); applyReduced(); fitViewport();
+  if (window.visualViewport) { window.visualViewport.addEventListener('resize', fitViewport); window.visualViewport.addEventListener('scroll', fitViewport); }
+  window.addEventListener('resize', fitViewport);
+  if (window.matchMedia) { const mq = window.matchMedia('(prefers-reduced-motion: reduce)'); mq.addEventListener && mq.addEventListener('change', applyReduced); }
+
+  $('#cat-chips').addEventListener('change', e => { if (e.target.name === 'cat') { Store.data.category = e.target.value; Store.save(); Sound.play('click'); } });
+  $('#btn-start').addEventListener('click', () => startRound('free'));
+  $('#btn-daily').addEventListener('click', () => startRound('daily'));
+  $('#brew-form').addEventListener('submit', onSubmit);
+  $('#btn-skip').addEventListener('click', () => conclude('skip', null, ''));
+  $('#confirm').addEventListener('click', e => { const b = e.target.closest('[data-pick]'); if (!b) return; if (b.dataset.pick === 'no') dismissConfirm(); else pickCandidate(+b.dataset.pick); });
+  $('#answer').addEventListener('input', e => { if (state.confirm && normalize(e.target.value) !== state.confirm.norm) hideConfirm(); });
+  document.addEventListener('pointerdown', () => { if (!state.modal) Seq.skip(); });      // click or tap anywhere skips the rest of a reward animation
+  $('#btn-again').addEventListener('click', () => startRound('free'));
+  $('#btn-share').addEventListener('click', share);
+  $('#btn-change').addEventListener('click', () => { showScreen('home'); const c = $('#cat-chips input:checked'); c && c.focus(); });
+  $('#btn-home').addEventListener('click', () => { if (state.screen === 'game') openModal('modal-leave'); else showScreen('home'); });
+  $('#btn-leave').addEventListener('click', () => openModal('modal-leave'));
+  $('#btn-leave-yes').addEventListener('click', () => { Timer.stop(); state.round = null; state.token++; Seq.skip(true); FX.clear(); clearFxDom(); hideConfirm(); $$('.orb, .pop').forEach(n => n.remove()); state.locked = false; state.modal = null; $('#modal-leave').hidden = true; document.body.classList.remove('paused'); showScreen('home'); });
+  $('#btn-help').addEventListener('click', () => { helpStep = 0; renderHelp(); openModal('modal-help'); });
+  $('#help-next').addEventListener('click', () => { if (helpStep < HELP.length - 1) { helpStep++; renderHelp(); } else closeModal(); });
+  $('#help-skip').addEventListener('click', closeModal);
+  $('#btn-settings').addEventListener('click', () => { $('#storage-note').hidden = Store.ok; openModal('modal-settings'); });
+  $('#btn-stats').addEventListener('click', () => { renderStats(); openModal('modal-stats'); });
+  $('#btn-grimoire').addEventListener('click', () => { renderGrimoire(); openModal('modal-grimoire'); });
+  const toggleMute = () => { Store.data.muted = !Store.data.muted; Store.save(); renderMute(); if (!Store.data.muted) Sound.play('click'); };
+  $('#btn-mute').addEventListener('click', toggleMute);
+  $('#sw-sound').addEventListener('click', toggleMute);
+  $('#sw-reduced').addEventListener('click', () => { Store.data.reduced = !Store.data.reduced; Store.save(); applyReduced(); });
+  $('#reset-zone').addEventListener('click', e => {
+    if (e.target.id === 'btn-reset') resetZone(true);
+    else if (e.target.id === 'btn-reset-no') resetZone(false);
+    else if (e.target.id === 'btn-reset-yes') { Store.resetStats(); resetZone(false); renderHome(); toast('Stats and Grimoire reset'); }
+  });
+  document.addEventListener('click', e => { if (e.target.matches('[data-close]')) closeModal(); else if (e.target.classList.contains('modal')) closeModal(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && state.modal) { e.preventDefault(); closeModal(); return; }
+    if (e.key === 'Escape' && state.confirm) { e.preventDefault(); dismissConfirm(); return; }           // Esc = "No"
+    if (e.key === 'Tab' && state.modal) {                        // keep focus inside the open dialog
+      const f = $$('button:not([hidden]):not([disabled]), input, [href]', $('#' + state.modal)); if (!f.length) return;
+      const first = f[0], lastEl = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); lastEl.focus(); }
+      else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); first.focus(); }
+    }
+  });
+  if (!Store.data.tutorialSeen) { helpStep = 0; renderHelp(); openModal('modal-help'); }
+}
+// small hook for automated self-tests (harmless in production)
+window.__RB = { CONFIG, normalize, matchAnswer, pickPrompts, dailyPrompts, poolFor, Store, state, Timer, FX, Seq, rewardSVG };
+boot();
+</script>
+</body>
+</html>
