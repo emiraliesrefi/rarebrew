@@ -248,11 +248,12 @@ main { position: relative; z-index: 2; flex: 1; min-height: 0; display: flex; }
 .slot { width: 40px; height: 42px; display: grid; place-items: end center; position: relative; z-index: 1; }
 .slot::before { content: ''; width: 12px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.16); margin-bottom: 4px; }
 .slot.current::before { background: var(--green); box-shadow: 0 0 10px var(--green); animation: pulse .8s ease-in-out infinite alternate; }
-.slot.spent::before { width: 18px; height: 5px; background: rgba(0,0,0,.55); }            /* nothing kept: a scorch mark */
+.slot.spent::before { width: 18px; height: 5px; background: rgba(0,0,0,.55); }            /* no answer: a scorch mark */
 .slot.filled::before { position: absolute; bottom: 1px; width: 74%; height: 6px; margin: 0; background: rgba(0,0,0,.55); z-index: -1; }   /* contact shadow */
 .slot.fresh .rw { animation: land .4s cubic-bezier(.3,1.6,.5,1); }
 @keyframes land { 0% { transform: translateY(-7px) scale(1.12) } 60% { transform: translateY(1px) scale(.96) } 100% { transform: none } }
 .rw { width: 38px; height: 38px; display: block; overflow: visible; }
+.rw1 { filter: drop-shadow(0 1px 1px rgba(0,0,0,.6)); }
 .rw2 { filter: drop-shadow(0 1px 1px rgba(0,0,0,.6)); }
 .rw3 { filter: drop-shadow(0 0 4px rgba(232,147,90,.45)); }
 .rw4 { filter: drop-shadow(0 0 5px rgba(220,236,250,.5)); }
@@ -307,6 +308,10 @@ main { position: relative; z-index: 2; flex: 1; min-height: 0; display: flex; }
 .gem-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 .gem-row div { display: flex; align-items: center; gap: 6px; font-weight: 700; }
 .gem-row .rw { width: 34px; height: 34px; }
+.cat-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.cat-table th, .cat-table td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); font-weight: 600; }
+.cat-table thead th { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
+.cat-table td { font-variant-numeric: tabular-nums; color: var(--gold); }
 .grim-group { border-top: 1px solid var(--line); padding: 10px 0; }
 .grim-group h3 { margin: 0 0 6px; font-family: var(--script); font-size: 1.1rem; font-weight: 400; }
 .grim-group .count { color: var(--muted); font-family: var(--ui); font-size: .82rem; margin-left: 6px; }
@@ -555,7 +560,6 @@ const CONFIG = {
   roundSize: 7,
   timerSeconds: 25,
   goodBrewScore: 350,          // a "good brew" for streaks
-  reshuffleAt: 0.8,            // reuse prompts only after this share of the pool has been seen
   maxPerCategory: 2,           // variety cap per round when playing "All"
   tiers: {
     0: { name: 'Murk',                points: 0,   emoji: '🟤', shout: 'FIZZLE' },
@@ -591,7 +595,7 @@ const CONFIG = {
   timing: { orbMs: 700, fizzleMs: 900, plainMs: 900, reducedMs: 1300, nextDelayMs: 650, skipGuardMs: 250, countUpMs: 1100 },
   titles: [[700, 'Keeper of the Stone'], [600, 'Grand Alchemist'], [500, 'Master Transmuter'], [400, 'Adept of the Flask'],
            [300, 'Journeyman Brewer'], [200, 'Apprentice Mixer'], [100, 'Soot-Stained Novice'], [0, 'Kitchen Dabbler']],
-  categories: ['All', 'Science', 'Geography', 'Film & TV', 'Sport', 'Food', 'History', 'Music', 'Language'],
+  categories: ['All', 'Science', 'Geography', 'Film & TV', 'Sport', 'Food', 'History', 'Music', 'Language', 'Video Games'],
   storageKey: 'rarebrew.v1'
 };
 const BREW = ['wrong', 'ash', 'brass', 'copper', 'silver', 'gold', 'stone'];
@@ -612,8 +616,8 @@ const utcDate = () => new Date().toISOString().slice(0, 10);
 /* ---------- 3. storage (always try/catch: the game must run with storage blocked) ---------- */
 const Store = (() => {
   const blank = () => ({
-    muted: false, reduced: false, tutorialSeen: false, category: 'All', recent: [], lastRound: [],
-    stats: { rounds: 0, total: 0, best: 0, streak: 0, longest: 0, tiers: [0, 0, 0, 0, 0, 0, 0], rarest: null },
+    muted: false, reduced: false, tutorialSeen: false, category: 'All', recent: [],
+    stats: { rounds: 0, total: 0, best: 0, streak: 0, longest: 0, tiers: [0, 0, 0, 0, 0, 0, 0], rarest: null, cats: {} },
     grimoire: {}, daily: {}
   });
   let data = blank(), ok = true;
@@ -622,7 +626,7 @@ const Store = (() => {
     if (raw) { const p = JSON.parse(raw); data = Object.assign(blank(), p); data.stats = Object.assign(blank().stats, p.stats || {}); }
   } catch (e) { ok = false; }
   function save() { try { window.localStorage.setItem(CONFIG.storageKey, JSON.stringify(data)); ok = true; } catch (e) { ok = false; } }
-  function resetStats() { const b = blank(); data.stats = b.stats; data.grimoire = {}; data.daily = {}; data.recent = []; data.lastRound = []; save(); }
+  function resetStats() { const b = blank(); data.stats = b.stats; data.grimoire = {}; data.daily = {}; data.recent = []; save(); }
   return { get data() { return data; }, get ok() { return ok; }, save, resetStats };
 })();
 
@@ -633,6 +637,7 @@ function normalize(s) {
   return String(s == null ? '' : s).toLowerCase()
     .replace(/[ßøæœđł]/g, c => SPECIAL[c])
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/\+\+/g, ' plus plus ').replace(/([a-z])#/g, '$1 sharp')     // C++ and C# must not collapse into C
     .replace(/&/g, ' and ')
     .replace(/['’‘`.]/g, '')
     .replace(/[^\p{L}\p{N}]+/gu, ' ')
@@ -719,29 +724,28 @@ function takeVaried(list, n) {
   return out;
 }
 /**
- * Pick prompts while avoiding recently used ones. Once 80% of the pool has been used
- * (or too few fresh prompts remain) the pool is reshuffled; the round just played is still avoided if possible.
+ * Pick prompts, never repeating one until every prompt in the pool has been used.
+ * `recent` is a list of prompt ids ordered from least to most recently used. Fresh prompts always go first;
+ * if fewer than n are left, the round is topped up with the prompts used longest ago.
+ * Works the same for "All" and for a single category.
  */
-function pickPrompts(pool, recent, lastRound, n, rng = Math.random) {
-  const ids = new Set(pool.map(p => p.id));
-  const seen = new Set(recent.filter(id => ids.has(id)));
-  let fresh = pool.filter(p => !seen.has(p.id)), reshuffled = false;
-  if (fresh.length < n || seen.size / pool.length >= CONFIG.reshuffleAt) {
-    reshuffled = true;
-    const last = new Set(lastRound);
-    const notLast = pool.filter(p => !last.has(p.id));
-    fresh = notLast.length >= n ? notLast : pool.slice();
-  }
-  return { picked: takeVaried(shuffle(fresh.slice(), rng), n), reshuffled };
+function pickPrompts(pool, recent, n, rng = Math.random) {
+  const order = new Map(); recent.forEach((id, i) => order.set(id, i));
+  const fresh = shuffle(pool.filter(p => !order.has(p.id)), rng);
+  if (fresh.length >= n) return { picked: takeVaried(fresh, n), reused: [] };
+  const oldest = pool.filter(p => order.has(p.id)).sort((a, b) => order.get(a.id) - order.get(b.id)).slice(0, n - fresh.length);
+  return { picked: shuffle(fresh.concat(oldest), rng), reused: oldest.map(p => p.id) };
+}
+/** Move a round's prompts to the "most recently used" end of the list (re-used ones last, so reuse stays even). */
+function noteUsed(recent, pick) {
+  const ids = pick.picked.map(p => p.id), again = new Set(pick.reused), all = new Set(ids);
+  return recent.filter(id => !all.has(id)).concat(ids.filter(id => !again.has(id)), ids.filter(id => again.has(id)));
 }
 function nextFreePrompts(category) {
-  const d = Store.data, pool = poolFor(category);
-  const { picked, reshuffled } = pickPrompts(pool, d.recent, d.lastRound, CONFIG.roundSize);
-  if (reshuffled) { const ids = new Set(pool.map(p => p.id)); d.recent = d.recent.filter(id => !ids.has(id)); }
-  d.recent.push(...picked.map(p => p.id));
-  d.lastRound = picked.map(p => p.id);
+  const d = Store.data, pick = pickPrompts(poolFor(category), d.recent, CONFIG.roundSize);
+  d.recent = noteUsed(d.recent, pick);
   Store.save();
-  return picked;
+  return pick.picked;
 }
 /** Daily Brew: same 7 prompts for everyone, seeded from the UTC date */
 function dailyPrompts(dateStr) {
@@ -962,7 +966,12 @@ const REWARD = (() => {
     facets += `<polygon points="${pts(j === j2 ? [p, q, Tb[j]] : [p, q, Tb[j2], Tb[j]])}" fill="${shade[i]}" stroke="#ff8a78" stroke-opacity=".2" stroke-width=".6"/>`; });
   const svg = (t, body) => `<svg class="rw rw${t}" viewBox="0 0 64 64" aria-hidden="true">${body}</svg>`;
   return {
-    1: svg(1, '<circle cx="24" cy="38" r="12" fill="#8f8f9b" opacity=".75"/><circle cx="38" cy="32" r="14" fill="#b3b3bf" opacity=".7"/><circle cx="44" cy="44" r="9" fill="#74747f" opacity=".7"/><circle cx="30" cy="24" r="7" fill="#c9c9d2" opacity=".5"/>'),
+    1: svg(1, shadow +                                           // a small pile of grey ash with a wisp of smoke
+      '<path d="M6 55c5-13 13-23 24-25 12 1 22 11 28 25z" fill="#77778a" stroke="#4c4c5a" stroke-width="1.4" stroke-linejoin="round"/>' +
+      '<path d="M15 53c4-9 9-15 16-17 5 2 9 7 12 13-5-4-11-5-16-3-5 1-9 4-12 7z" fill="#b9b9c6" opacity=".85"/>' +
+      '<path d="M38 40c5 3 9 8 12 14M24 46c2-3 5-5 8-6" fill="none" stroke="#4c4c5a" stroke-width="1.3" stroke-linecap="round" opacity=".6"/>' +
+      '<circle cx="21" cy="50" r="1.5" fill="#e3e3ea"/><circle cx="34" cy="44" r="1.3" fill="#e3e3ea"/><circle cx="44" cy="51" r="1.4" fill="#4c4c5a"/><circle cx="28" cy="36" r="1.1" fill="#4c4c5a"/>' +
+      '<path d="M31 27c-5-5 4-8 0-13 5 3 6 6 3 9-2 2-2 3-3 4z" fill="#c9c9d2" opacity=".55"/>'),
     2: svg(2, shadow + cube(33, 23, 10) + cube(23, 39, 13) + cube(41, 36, 15) + cube(15, 51, 7) + cube(50, 50, 7.5)),
     3: svg(3, shadow +
       '<path d="M12 40c-6-9-1-21 9-24 5-9 20-9 26 0 10 1 14 15 7 24-3 11-20 16-32 11-6-2-9-6-10-11z" fill="url(#rgCu)" stroke="#47200a" stroke-width="1.5"/>' +
@@ -999,13 +1008,13 @@ function announce(msg, bad) { const f = $('#feedback'); f.classList.toggle('bad'
 let toastT = 0;
 function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
 
-/** Only Copper and above are kept on the shelf. Ash, Fool's Gold and fizzles leave a scorch mark. */
+/** Every valid answer puts its reward on the shelf (tiers 1 to 6). A prompt with no answer leaves a scorch mark. */
 function renderShelf(el, results, current, fresh = -1) {
   el.innerHTML = '';
   for (let i = 0; i < CONFIG.roundSize; i++) {
     const li = document.createElement('li'); li.className = 'slot'; const r = results[i];
     if (r) {
-      if (r.tier >= 3) { li.classList.add('filled'); if (i === fresh) li.classList.add('fresh'); li.innerHTML = rewardSVG(r.tier); } else li.classList.add('spent');
+      if (r.tier >= 1) { li.classList.add('filled'); if (i === fresh) li.classList.add('fresh'); li.innerHTML = rewardSVG(r.tier); } else li.classList.add('spent');
       li.setAttribute('aria-label', `Prompt ${i + 1}: ${CONFIG.tiers[r.tier].name}`);
     } else { if (i === current) li.classList.add('current'); li.setAttribute('aria-label', `Prompt ${i + 1}: not brewed yet`); }
     el.appendChild(li);
@@ -1245,11 +1254,11 @@ async function playValid(s, tier, text, onImpact) {
   onImpact();                                                    // 2. then the reaction
   if (s.skipped) return;
   if (tier === 1) { stage.dataset.brew = 'ash'; Sound.play('puff'); FX.smoke(m, 10, '#a9a9b4'); showPop(m.x, m.y - 76, 1, shoutHTML(1)); await hold(s, T.plainMs); }
-  else if (tier === 2) await foolsGold(s, m);
+  else if (tier === 2) await foolsGold(s, m, state.round.results.length - 1);
   else await reward(s, tier, m, state.round.results.length - 1);
 }
-/** Fool's Gold: flashes like the real thing, a pyrite cluster shows itself, tarnishes, and sinks back. Not kept. */
-async function foolsGold(s, m) {
+/** Fool's Gold: flashes like the real thing, a pyrite cluster rises, tarnishes to dull brass, then drops onto the shelf. */
+async function foolsGold(s, m, slotIndex) {
   const stage = $('#stage'), top = { x: m.x, y: m.y - clamp(m.w * 0.36, 64, 124) };
   stage.dataset.brew = 'flash'; Sound.play('sparkle'); FX.sparks(m, CONFIG.fx.sparks[2], ['#ffe27a', '#ffffff'], 0.6);
   const el = makeReward(2), halo = el.firstChild;
@@ -1258,8 +1267,11 @@ async function foolsGold(s, m) {
   if (!s.skipped) { showPop(top.x, top.y + 70, 2, shoutHTML(2)); stage.dataset.brew = 'brass'; Sound.play('pfft'); FX.smoke(m, 5, '#8f8350'); }
   await animate(s, 380, k => { el.style.filter = `brightness(${(1.8 - 1.05 * k).toFixed(2)}) saturate(${(1.7 - 1.2 * k).toFixed(2)})`; halo.style.opacity = 0.7 * (1 - k); });   // the tarnish
   await hold(s, 260);
-  await animate(s, 360, k => { place(el, top.x, top.y + (m.y - top.y) * k * k, 1.15 - 0.55 * k, 0, 14 * k); el.style.opacity = 1 - k; });
+  const to = FX.centre($$('#shelf .slot')[slotIndex]), end = Math.min(to.w, to.h) * 0.9 / 72, cx = (top.x + to.x) / 2, cy = Math.min(top.y, to.y) - 40;
+  await animate(s, 420, k => { const e = k * k * (3 - 2 * k), u = 1 - e;
+    place(el, u * u * top.x + 2 * u * e * cx + e * e * to.x, u * u * top.y + 2 * u * e * cy + e * e * to.y, 1.15 + (end - 1.15) * e, 0, 200 * e); });
   el.remove();
+  if (!s.skipped) Sound.play('click');
 }
 /** Copper and above: build-up, eruption, the reward rises and forms, hangs in the light, then flies to the shelf. */
 async function reward(s, tier, m, slotIndex) {
@@ -1297,16 +1309,19 @@ function mastersFor(p, exclude) {
   const six = of(6), five = of(5), out = six.slice(0, 2);
   for (const a of five) { if (out.length >= 3) break; out.push(a); }
   for (const a of six.slice(2)) { if (out.length >= 3) break; out.push(a); }
+  for (const t of [4, 3]) for (const a of of(t)) { if (out.length >= 3) break; out.push(a); }   // small sets: top up with the next-rarest tier
   return out;
 }
 function finishRound() {
   const R = state.round, d = Store.data, s = d.stats;
   Timer.stop();
   // ---- stats & collection ----
+  s.cats = s.cats || {};
   s.rounds++; s.total += R.score; s.best = Math.max(s.best, R.score);
   s.streak = R.score >= CONFIG.goodBrewScore ? s.streak + 1 : 0; s.longest = Math.max(s.longest, s.streak);
   R.results.forEach((r, i) => {
     s.tiers[r.tier] = (s.tiers[r.tier] || 0) + 1;
+    const c = s.cats[R.prompts[i].category] || (s.cats[R.prompts[i].category] = { n: 0, pts: 0 }); c.n++; c.pts += r.points;
     if (r.tier === 0) return;
     const better = !s.rarest || r.tier > s.rarest.tier || (r.tier === s.rarest.tier && r.z < s.rarest.z);
     if (better) s.rarest = { text: r.accepted, prompt: R.prompts[i].prompt, tier: r.tier, z: r.z };
@@ -1353,7 +1368,7 @@ async function share() {
 const HELP = [
   ['Drop in an ingredient', 'Each round has <b>7 prompts</b>, like “Name a chemical element”. Type one answer and press <b>Enter</b>. You have <b>25 seconds</b> per prompt. A wrong guess just fizzles, so keep trying until the time runs out.'],
   ['Rare answers brew richer', 'Any correct answer scores, but the answer everyone thinks of is just <b>Ash</b> (10). Dig deeper for <b>Copper</b>, <b>Silver</b>, <b>Gold</b> and the 100-point <b>Philosopher\'s Stone</b>. Beware <b>Fool\'s Gold</b>: the “clever” pick that everybody else reaches for too.'],
-  ['Fill your shelf', 'Copper, Silver, Gold and the blood-red Stone rise out of the cauldron onto your shelf. Near-misses and abbreviations get a quick “Did you mean…?” before they count. Play as many rounds as you like, and collect every Stone in the <b>Grimoire</b>.']
+  ['Fill your shelf', 'Every valid answer leaves its reward on your shelf, from a pile of ash to the blood-red Stone. Near-misses and abbreviations get a quick “Did you mean…?” before they count. Play as many rounds as you like, and collect every Stone in the <b>Grimoire</b>.']
 ];
 let helpStep = 0, lastFocus = null;
 function renderHelp() {
@@ -1389,8 +1404,9 @@ function renderStats() {
   const tile = (v, l) => `<div class="tile"><b>${v}</b><span>${l}</span></div>`;
   $('#stats-body').innerHTML = `<div class="tiles">${tile(s.rounds, 'Rounds played')}${tile(avg, 'Average score')}${tile(s.best, 'Best round')}${tile(s.streak, 'Good-brew streak')}${tile(s.longest, 'Longest streak')}</div>
     <p class="mini" style="margin-top:8px">A good brew is a round of ${CONFIG.goodBrewScore} or more.</p>
-    <h3>Rewards collected</h3><div class="gem-row">${[3, 4, 5, 6].map(t => `<div>${rewardSVG(t)}<span>${s.tiers[t] || 0}<span class="sr-only"> ${esc(CONFIG.tiers[t].name)}</span></span></div>`).join('')}</div>
-    <div class="gem-row" style="margin-top:10px"><div>${rewardSVG(2)}<span>${s.tiers[2] || 0}<span class="sr-only"> Fool's Gold</span></span></div><div>${rewardSVG(1)}<span>${s.tiers[1] || 0}<span class="sr-only"> Ash</span></span></div><span class="mini">not kept on the shelf · ${s.tiers[0] || 0} prompts with no answer</span></div>
+    <h3>Rewards collected</h3><div class="gem-row">${[6, 5, 4, 3, 2, 1].map(t => `<div>${rewardSVG(t)}<span>${s.tiers[t] || 0}<span class="sr-only"> ${esc(CONFIG.tiers[t].name)}</span></span></div>`).join('')}</div>
+    <p class="mini" style="margin-top:8px">Prompts with no answer: ${s.tiers[0] || 0}</p>
+    <h3>By category</h3><table class="cat-table"><thead><tr><th scope="col">Category</th><th scope="col">Prompts</th><th scope="col">Avg points</th></tr></thead><tbody>${CONFIG.categories.slice(1).map(c => { const v = (s.cats || {})[c]; return `<tr><th scope="row">${esc(c)}</th><td>${v ? v.n : 0}</td><td>${v && v.n ? Math.round(v.pts / v.n) : '–'}</td></tr>`; }).join('')}</tbody></table>
     <h3>Rarest answer found</h3>${s.rarest ? `<p>${badge(s.rarest.tier)} <b>${esc(s.rarest.text)}</b><br><span class="mini">${esc(s.rarest.prompt)}</span></p>` : '<p class="mini">Nothing yet. Go and brew something strange.</p>'}`;
 }
 function renderGrimoire() {
@@ -1466,7 +1482,7 @@ function boot() {
   if (!Store.data.tutorialSeen) { helpStep = 0; renderHelp(); openModal('modal-help'); }
 }
 // small hook for automated self-tests (harmless in production)
-window.__RB = { CONFIG, normalize, matchAnswer, pickPrompts, dailyPrompts, poolFor, Store, state, Timer, FX, Seq, rewardSVG };
+window.__RB = { CONFIG, normalize, matchAnswer, pickPrompts, dailyPrompts, poolFor, Store, state, Timer, FX, Seq, rewardSVG, renderShelf, noteUsed };
 boot();
 </script>
 </body>

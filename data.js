@@ -1066,7 +1066,7 @@ const PROMPTS = [
     ]
   },
   {
-    id: "ghibli-01", category: "Film & TV", closed: false,
+    id: "ghibli-01", category: "Film & TV", closed: true,
     prompt: "Name a Studio Ghibli feature film",
     answers: [
       { text: "Spirited Away", aliases: [], tier: 1, z: 3.55 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
@@ -1408,7 +1408,7 @@ const PROMPTS = [
       { text: "Detroit Pistons", aliases: ["Pistons", "Detroit"], tier: 4, z: 3.3 },
       { text: "Minnesota Timberwolves", aliases: ["Wolves", "Timberwolves", "Minnesota"], tier: 4, z: 2.87 }, // override: auto 6 -> 4 (better known here than its text frequency suggests)
       { text: "Indiana Pacers", aliases: ["Pacers", "Indiana"], tier: 5, z: 3.27 },
-      { text: "Portland Trail Blazers", aliases: ["Trail Blazers", "Blazers", "Portland Trail"], tier: 5, z: 3.25 },
+      { text: "Portland Trail Blazers", aliases: ["Trail Blazers", "Portland"], tier: 5, z: 3.25 },
       { text: "Charlotte Hornets", aliases: ["Hornets", "Charlotte"], tier: 5, z: 3.21 },
       { text: "Dallas Mavericks", aliases: ["Mavs", "Mavericks", "Dallas"], tier: 5, z: 3.19 },
       { text: "New Orleans Pelicans", aliases: ["Pelicans", "New Orleans"], tier: 6, z: 3.13 }, // override: auto 5 -> 6 (rare but satisfying find)
@@ -1958,16 +1958,16 @@ const PROMPTS = [
     answers: [
       { text: "Peanut", aliases: ["Groundnut", "Monkey nut"], tier: 1, z: 3.9 },
       { text: "Walnut", aliases: [], tier: 1, z: 3.56 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
-      { text: "Almond", aliases: [], tier: 1, z: 3.53 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
-      { text: "Cashew", aliases: [], tier: 1, z: 2.75 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
-      { text: "Pistachio", aliases: [], tier: 2, z: 2.76 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Almond", aliases: [], tier: 1, z: 3.53 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Cashew", aliases: [], tier: 1, z: 2.75 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Pistachio", aliases: [], tier: 2, z: 2.76 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
       { text: "Macadamia", aliases: [], tier: 2, z: 2.53 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
       { text: "Brazil nut", aliases: ["Brazil"], tier: 3, z: 3.93 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
-      { text: "Chestnut", aliases: [], tier: 3, z: 3.46 },
+      { text: "Chestnut", aliases: [], tier: 3, z: 3.46 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
       { text: "Pecan", aliases: [], tier: 3, z: 2.93 },
-      { text: "Hazelnut", aliases: ["Cobnut", "Filbert"], tier: 3, z: 2.78 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hazelnut", aliases: ["Cobnut", "Filbert"], tier: 3, z: 2.78 },
       { text: "Coconut", aliases: [], tier: 4, z: 3.88 }, // override: auto 1 -> 4 (rare but satisfying find)
-      { text: "Pine nut", aliases: ["Pine nuts", "Pignoli", "Pine kernel"], tier: 4, z: 3.77 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pine nut", aliases: ["Pine nuts", "Pignoli", "Pine kernel"], tier: 4, z: 3.77 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
       { text: "Hickory", aliases: ["Hickory nut"], tier: 4, z: 3.12 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
       { text: "Acorn", aliases: [], tier: 4, z: 3.08 }, // override: auto 3 -> 4 (rare but satisfying find)
       { text: "Tiger nut", aliases: ["Tigernut", "Chufa"], tier: 5, z: 3.85 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
@@ -1977,14 +1977,28 @@ const PROMPTS = [
       { text: "Kola nut", aliases: ["Cola nut"], tier: 5, z: 2.53 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
       { text: "Betel nut", aliases: ["Areca nut", "Areca"], tier: 5, z: 2.52 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
       { text: "Ginkgo", aliases: ["Ginkgo nut"], tier: 5, z: 2.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Paradise nut", aliases: ["Sapucaia"], tier: 6, z: 3.8 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Monkey puzzle nut", aliases: ["Araucaria nut"], tier: 6, z: 3.54 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Oyster nut", aliases: [], tier: 6, z: 3.42 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Chilean hazelnut", aliases: ["Gevuina"], tier: 6, z: 2.69 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Butternut", aliases: ["White walnut"], tier: 6, z: 2.66 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Malabar chestnut", aliases: ["Pachira nut", "Saba nut"], tier: 6, z: 2.57 }, // override: auto 4 -> 6 (rare but satisfying find)
       { text: "Baru nut", aliases: ["Baru"], tier: 6, z: 2.53 }, // override: auto 4 -> 6 (rare but satisfying find)
-      { text: "Pili nut", aliases: ["Pili"], tier: 6, z: 2.14 }, // override: auto 5 -> 6 (rare but satisfying find)
-      { text: "Chinquapin", aliases: [], tier: 6, z: 1.42 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pili nut", aliases: ["Pili"], tier: 6, z: 2.14 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Marula nut", aliases: ["Marula"], tier: 6, z: 1.7 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Dika nut", aliases: ["Ogbono"], tier: 6, z: 1.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Chinquapin", aliases: [], tier: 6, z: 1.42 }, // override: auto 4 -> 6 (rare but satisfying find)
       { text: "Bunya nut", aliases: ["Bunya"], tier: 6, z: 1.37 }, // override: auto 5 -> 6 (rare but satisfying find)
       { text: "Sacha inchi", aliases: ["Inca nut"], tier: 6, z: 1.21 }, // override: auto 5 -> 6 (rare but satisfying find)
-      { text: "Candlenut", aliases: ["Kukui"], tier: 6, z: 0.0 },
-      { text: "Mongongo", aliases: [], tier: 6, z: 0.0 },
-      { text: "Breadnut", aliases: ["Maya nut"], tier: 6, z: 0.0 },
+      { text: "Galip nut", aliases: ["Canarium nut"], tier: 6, z: 1.04 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Candlenut", aliases: ["Kukui"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mongongo", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Breadnut", aliases: ["Maya nut"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Heartnut", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Yeheb", aliases: ["Yeheb nut"], tier: 6, z: 0.0 },
+      { text: "Karuka", aliases: ["Pandanus nut"], tier: 6, z: 0.0 },
+      { text: "Okari nut", aliases: [], tier: 6, z: 0.0 },
+      { text: "Souari nut", aliases: ["Pequi"], tier: 6, z: 0.0 },
     ]
   },
   {
@@ -2683,7 +2697,12 @@ const PROMPTS = [
       { text: "Larghetto", aliases: [], tier: 4, z: 1.48 },
       { text: "Maestoso", aliases: [], tier: 4, z: 1.43 },
       { text: "Ritardando", aliases: ["Rit"], tier: 4, z: 1.11 },
-      { text: "Rallentando", aliases: ["Rall"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rallentando", aliases: ["Rall"], tier: 4, z: 0.0 },
+      { text: "Con moto", aliases: [], tier: 5, z: 3.36 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Allegro con brio", aliases: [], tier: 5, z: 2.22 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Andante con moto", aliases: [], tier: 5, z: 2.22 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Molto allegro", aliases: [], tier: 5, z: 2.16 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Allegro ma non troppo", aliases: [], tier: 5, z: 1.9 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
       { text: "Allegro vivace", aliases: [], tier: 5, z: 1.79 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
       { text: "Allegro moderato", aliases: [], tier: 5, z: 1.77 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
       { text: "Più mosso", aliases: [], tier: 5, z: 1.55 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
@@ -2693,11 +2712,19 @@ const PROMPTS = [
       { text: "Stringendo", aliases: [], tier: 5, z: 0.0 },
       { text: "Allargando", aliases: [], tier: 5, z: 0.0 },
       { text: "Tempo di marcia", aliases: ["Alla marcia", "Marcia moderato"], tier: 6, z: 3.06 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Tempo primo", aliases: ["Tempo I"], tier: 6, z: 2.92 }, // override: auto 1 -> 6 (rare but satisfying find)
       { text: "Comodo", aliases: ["Tempo comodo"], tier: 6, z: 1.71 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Allegro assai", aliases: [], tier: 6, z: 1.6 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Doppio movimento", aliases: [], tier: 6, z: 1.42 }, // override: auto 4 -> 6 (rare but satisfying find)
       { text: "Larghissimo", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
-      { text: "Vivacissimo", aliases: [], tier: 6, z: 0.0 },
-      { text: "Allegrissimo", aliases: [], tier: 6, z: 0.0 },
-      { text: "Adagissimo", aliases: [], tier: 6, z: 0.0 },
+      { text: "Vivacissimo", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Allegrissimo", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Adagissimo", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lentissimo", aliases: [], tier: 6, z: 0.0 },
+      { text: "Largamente", aliases: [], tier: 6, z: 0.0 },
+      { text: "L'istesso tempo", aliases: [], tier: 6, z: 0.0 },
+      { text: "Affrettando", aliases: [], tier: 6, z: 0.0 },
+      { text: "Slargando", aliases: [], tier: 6, z: 0.0 },
     ]
   },
   {
@@ -3175,7 +3202,7 @@ const PROMPTS = [
     ]
   },
   {
-    id: "shakespeare-01", category: "Language", closed: false,
+    id: "shakespeare-01", category: "Language", closed: true,
     prompt: "Name a play by William Shakespeare",
     answers: [
       { text: "Hamlet", aliases: [], tier: 1, z: 3.65 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
@@ -3250,30 +3277,40 @@ const PROMPTS = [
       { text: "Exclamation mark", aliases: ["Exclamation point"], tier: 1, z: 3.09 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
       { text: "Semicolon", aliases: ["Semi-colon"], tier: 2, z: 2.48 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
       { text: "Interrobang", aliases: [], tier: 2, z: 1.36 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "At sign", aliases: ["At symbol", "At"], tier: 3, z: 5.07 }, // override: auto 1 -> 3 (better known here than its text frequency suggests)
+      { text: "Percent sign", aliases: ["Percent", "Percentage sign"], tier: 3, z: 4.76 }, // override: auto 1 -> 3 (better known here than its text frequency suggests)
       { text: "Dash", aliases: ["Em dash", "En dash"], tier: 3, z: 4.0 }, // override: auto 2 -> 3 (everyday word or name: text frequency misstates recall here)
       { text: "Colon", aliases: [], tier: 3, z: 3.6 },
       { text: "Brackets", aliases: ["Parentheses", "Parenthesis", "Round brackets", "Bracket"], tier: 3, z: 3.59 },
       { text: "Square brackets", aliases: ["Square bracket"], tier: 3, z: 3.57 },
       { text: "Angle brackets", aliases: ["Chevrons"], tier: 3, z: 3.53 },
       { text: "Quotation marks", aliases: ["Quotation mark", "Speech marks", "Inverted commas", "Quotes", "Quote marks"], tier: 3, z: 3.47 },
-      { text: "Inverted question mark", aliases: [], tier: 3, z: 3.4 },
-      { text: "Slash", aliases: ["Forward slash", "Solidus", "Stroke", "Oblique"], tier: 4, z: 3.65 }, // override: auto 2 -> 4 (everyday word or name: text frequency misstates recall here)
-      { text: "Hash", aliases: ["Octothorpe", "Pound sign", "Number sign"], tier: 4, z: 3.63 }, // override: auto 2 -> 4 (everyday word or name: text frequency misstates recall here)
+      { text: "Degree symbol", aliases: ["Degree sign"], tier: 4, z: 4.22 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Copyright symbol", aliases: ["Copyright sign", "Copyright"], tier: 4, z: 3.97 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Trademark symbol", aliases: ["Trademark sign", "Trademark"], tier: 4, z: 3.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Slash", aliases: ["Forward slash", "Solidus", "Stroke", "Oblique"], tier: 4, z: 3.65 }, // override: auto 3 -> 4 (everyday word or name: text frequency misstates recall here)
+      { text: "Hash", aliases: ["Octothorpe", "Pound sign", "Number sign"], tier: 4, z: 3.63 }, // override: auto 3 -> 4 (everyday word or name: text frequency misstates recall here)
+      { text: "Inverted question mark", aliases: [], tier: 4, z: 3.4 },
       { text: "Asterisk", aliases: [], tier: 4, z: 3.05 },
       { text: "Underscore", aliases: [], tier: 4, z: 2.97 },
       { text: "Inverted exclamation mark", aliases: [], tier: 4, z: 2.92 },
       { text: "Apostrophe", aliases: [], tier: 4, z: 2.76 },
       { text: "Hyphen", aliases: [], tier: 4, z: 2.64 },
-      { text: "Ellipsis", aliases: ["Ellipses"], tier: 4, z: 2.43 },
-      { text: "Bullet", aliases: ["Bullet point"], tier: 5, z: 4.24 }, // override: auto 1 -> 5 (everyday word or name: text frequency misstates recall here)
+      { text: "Prime", aliases: ["Prime symbol"], tier: 5, z: 4.81 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bullet", aliases: ["Bullet point"], tier: 5, z: 4.24 }, // override: auto 2 -> 5 (everyday word or name: text frequency misstates recall here)
       { text: "Dagger", aliases: ["Obelus", "Obelisk"], tier: 5, z: 3.54 }, // override: auto 3 -> 5 (everyday word or name: text frequency misstates recall here)
       { text: "Braces", aliases: ["Curly brackets", "Curly braces"], tier: 5, z: 3.49 }, // override: auto 3 -> 5 (everyday word or name: text frequency misstates recall here)
+      { text: "Ditto mark", aliases: ["Ditto"], tier: 5, z: 3.37 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ellipsis", aliases: ["Ellipses"], tier: 5, z: 2.43 },
       { text: "Tilde", aliases: [], tier: 5, z: 2.19 },
       { text: "Ampersand", aliases: [], tier: 5, z: 2.15 },
       { text: "Backslash", aliases: [], tier: 5, z: 2.08 },
       { text: "Caret", aliases: [], tier: 5, z: 1.91 },
+      { text: "Interpunct", aliases: ["Middle dot", "Interpoint"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
       { text: "Section sign", aliases: ["Silcrow"], tier: 6, z: 4.74 }, // override: auto 1 -> 6 (rare but satisfying find)
-      { text: "Vertical bar", aliases: ["Pipe"], tier: 6, z: 4.09 }, // override: auto 1 -> 6 (everyday word or name: text frequency misstates recall here)
+      { text: "Vertical bar", aliases: ["Pipe"], tier: 6, z: 4.09 }, // override: auto 2 -> 6 (everyday word or name: text frequency misstates recall here)
+      { text: "Double dagger", aliases: ["Diesis"], tier: 6, z: 3.53 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Asterism", aliases: [], tier: 6, z: 1.51 }, // override: auto 5 -> 6 (rare but satisfying find)
       { text: "Guillemets", aliases: ["Guillemet", "Angle quotes"], tier: 6, z: 0.0 },
       { text: "Pilcrow", aliases: ["Paragraph mark"], tier: 6, z: 0.0 },
       { text: "Manicule", aliases: [], tier: 6, z: 0.0 },
@@ -3378,7 +3415,7 @@ const PROMPTS = [
     ]
   },
   {
-    id: "roald-dahl-01", category: "Language", closed: false,
+    id: "roald-dahl-01", category: "Language", closed: true,
     prompt: "Name a children's book by Roald Dahl (stories, verse and childhood memoirs)",
     answers: [
       { text: "Charlie and the Chocolate Factory", aliases: [], tier: 1, z: 4.01 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
@@ -3404,6 +3441,7959 @@ const PROMPTS = [
       { text: "Rhyme Stew", aliases: [], tier: 6, z: 3.22 }, // override: auto 4 -> 6 (rare but satisfying find)
       { text: "The Gremlins", aliases: [], tier: 6, z: 2.58 }, // override: auto 4 -> 6 (rare but satisfying find)
       { text: "The Vicar of Nibbleswicke", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "pokemon-gen1-01", category: "Video Games", closed: true,
+    prompt: "Name one of the original 151 Pokémon (Generation I)",
+    answers: [
+      { text: "Pikachu", aliases: ["Pikachoo", "Pikachuu"], tier: 1, z: 3.18 },
+      { text: "Mewtwo", aliases: ["Mew two"], tier: 1, z: 2.61 },
+      { text: "Eevee", aliases: ["Evee"], tier: 1, z: 2.56 },
+      { text: "Charizard", aliases: [], tier: 1, z: 2.53 },
+      { text: "Snorlax", aliases: [], tier: 1, z: 2.46 },
+      { text: "Squirtle", aliases: [], tier: 1, z: 2.39 },
+      { text: "Charmander", aliases: [], tier: 1, z: 2.32 },
+      { text: "Bulbasaur", aliases: [], tier: 1, z: 2.29 },
+      { text: "Jigglypuff", aliases: [], tier: 1, z: 2.21 },
+      { text: "Meowth", aliases: [], tier: 1, z: 2.07 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Gengar", aliases: [], tier: 1, z: 1.94 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Psyduck", aliases: [], tier: 1, z: 1.74 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Ditto", aliases: [], tier: 2, z: 3.38 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Mr. Mime", aliases: ["Mister Mime"], tier: 2, z: 3.06 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Mew", aliases: [], tier: 2, z: 3.0 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Magikarp", aliases: [], tier: 2, z: 2.34 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Dragonite", aliases: [], tier: 2, z: 2.28 }, // override: auto 1 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Gyarados", aliases: [], tier: 2, z: 2.01 },
+      { text: "Farfetch'd", aliases: [], tier: 2, z: 1.3 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Abra", aliases: [], tier: 3, z: 2.68 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Slowpoke", aliases: [], tier: 3, z: 2.26 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Blastoise", aliases: [], tier: 3, z: 2.15 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Dratini", aliases: [], tier: 3, z: 2.13 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Raichu", aliases: [], tier: 3, z: 2.01 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Venusaur", aliases: [], tier: 3, z: 2.0 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Pidgey", aliases: [], tier: 3, z: 2.0 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Rattata", aliases: [], tier: 3, z: 2.0 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Alakazam", aliases: [], tier: 3, z: 2.0 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Onix", aliases: [], tier: 3, z: 2.0 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Vaporeon", aliases: [], tier: 3, z: 1.99 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Scyther", aliases: [], tier: 3, z: 1.91 },
+      { text: "Lapras", aliases: [], tier: 3, z: 1.89 },
+      { text: "Arcanine", aliases: [], tier: 3, z: 1.88 },
+      { text: "Vulpix", aliases: [], tier: 3, z: 1.83 },
+      { text: "Haunter", aliases: [], tier: 3, z: 1.83 },
+      { text: "Jolteon", aliases: [], tier: 3, z: 1.79 },
+      { text: "Cubone", aliases: [], tier: 3, z: 1.76 },
+      { text: "Geodude", aliases: [], tier: 3, z: 1.73 },
+      { text: "Gastly", aliases: [], tier: 3, z: 1.72 },
+      { text: "Clefairy", aliases: [], tier: 3, z: 1.71 },
+      { text: "Ninetales", aliases: ["Ninetails"], tier: 3, z: 1.71 },
+      { text: "Flareon", aliases: [], tier: 3, z: 1.71 },
+      { text: "Articuno", aliases: [], tier: 3, z: 1.7 },
+      { text: "Caterpie", aliases: [], tier: 3, z: 1.69 },
+      { text: "Zubat", aliases: [], tier: 3, z: 1.68 },
+      { text: "Charmeleon", aliases: [], tier: 3, z: 1.67 },
+      { text: "Growlithe", aliases: [], tier: 3, z: 1.67 },
+      { text: "Ponyta", aliases: [], tier: 3, z: 1.65 },
+      { text: "Oddish", aliases: [], tier: 3, z: 1.63 },
+      { text: "Zapdos", aliases: [], tier: 3, z: 1.63 },
+      { text: "Machop", aliases: [], tier: 3, z: 1.55 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Diglett", aliases: [], tier: 3, z: 1.54 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Machamp", aliases: [], tier: 3, z: 1.53 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Ivysaur", aliases: [], tier: 3, z: 1.49 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Koffing", aliases: [], tier: 3, z: 1.48 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Butterfree", aliases: [], tier: 3, z: 1.47 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Moltres", aliases: [], tier: 3, z: 1.35 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Wartortle", aliases: [], tier: 3, z: 1.29 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Persian", aliases: [], tier: 4, z: 3.83 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Electrode", aliases: [], tier: 4, z: 3.38 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Golem", aliases: [], tier: 4, z: 2.79 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Muk", aliases: [], tier: 4, z: 2.25 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Hypno", aliases: [], tier: 4, z: 2.21 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Krabby", aliases: [], tier: 4, z: 2.13 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Jynx", aliases: [], tier: 4, z: 2.12 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Chansey", aliases: [], tier: 4, z: 1.95 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Porygon", aliases: [], tier: 4, z: 1.94 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Dragonair", aliases: [], tier: 4, z: 1.93 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Tauros", aliases: [], tier: 4, z: 1.84 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Kadabra", aliases: [], tier: 4, z: 1.8 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Exeggutor", aliases: [], tier: 4, z: 1.8 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Sandshrew", aliases: [], tier: 4, z: 1.78 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Mankey", aliases: [], tier: 4, z: 1.77 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Magmar", aliases: [], tier: 4, z: 1.76 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Aerodactyl", aliases: [], tier: 4, z: 1.66 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Grimer", aliases: [], tier: 4, z: 1.65 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Weedle", aliases: [], tier: 4, z: 1.59 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Rhydon", aliases: [], tier: 4, z: 1.59 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Hitmonlee", aliases: [], tier: 4, z: 1.58 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Magnemite", aliases: [], tier: 4, z: 1.57 },
+      { text: "Marowak", aliases: [], tier: 4, z: 1.57 },
+      { text: "Weezing", aliases: [], tier: 4, z: 1.54 },
+      { text: "Nidoking", aliases: [], tier: 4, z: 1.53 },
+      { text: "Slowbro", aliases: [], tier: 4, z: 1.52 },
+      { text: "Pidgeot", aliases: [], tier: 4, z: 1.5 },
+      { text: "Electabuzz", aliases: [], tier: 4, z: 1.5 },
+      { text: "Voltorb", aliases: [], tier: 4, z: 1.49 },
+      { text: "Hitmonchan", aliases: [], tier: 4, z: 1.47 },
+      { text: "Staryu", aliases: [], tier: 4, z: 1.42 },
+      { text: "Beedrill", aliases: [], tier: 4, z: 1.4 },
+      { text: "Nidoqueen", aliases: [], tier: 4, z: 1.4 },
+      { text: "Starmie", aliases: [], tier: 4, z: 1.38 },
+      { text: "Pidgeotto", aliases: [], tier: 4, z: 1.37 },
+      { text: "Horsea", aliases: [], tier: 4, z: 1.37 },
+      { text: "Arbok", aliases: [], tier: 4, z: 1.36 },
+      { text: "Golduck", aliases: [], tier: 4, z: 1.35 },
+      { text: "Bellsprout", aliases: [], tier: 4, z: 1.34 },
+      { text: "Rapidash", aliases: [], tier: 4, z: 1.34 },
+      { text: "Cloyster", aliases: [], tier: 4, z: 1.32 },
+      { text: "Kangaskhan", aliases: [], tier: 4, z: 1.31 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Poliwag", aliases: [], tier: 4, z: 1.26 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ekans", aliases: [], tier: 4, z: 1.25 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Dugtrio", aliases: [], tier: 4, z: 1.18 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Vileplume", aliases: [], tier: 4, z: 1.17 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Tentacool", aliases: [], tier: 4, z: 1.16 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Poliwhirl", aliases: [], tier: 4, z: 1.14 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Metapod", aliases: [], tier: 4, z: 1.01 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Gloom", aliases: [], tier: 5, z: 3.31 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Paras", aliases: [], tier: 5, z: 2.68 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Kabuto", aliases: [], tier: 5, z: 2.26 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Seel", aliases: [], tier: 5, z: 2.07 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Magneton", aliases: [], tier: 5, z: 1.82 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Pinsir", aliases: [], tier: 5, z: 1.7 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Nidoran (female)", aliases: ["Nidoran", "Nidoran F", "Nidoran girl"], tier: 5, z: 1.53 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Nidoran (male)", aliases: ["Nidoran M", "Nidoran boy"], tier: 5, z: 1.53 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Clefable", aliases: [], tier: 5, z: 1.49 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Drowzee", aliases: [], tier: 5, z: 1.48 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Rhyhorn", aliases: [], tier: 5, z: 1.42 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Omanyte", aliases: [], tier: 5, z: 1.37 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Goldeen", aliases: [], tier: 5, z: 1.35 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Lickitung", aliases: [], tier: 5, z: 1.32 },
+      { text: "Machoke", aliases: [], tier: 5, z: 1.31 },
+      { text: "Golbat", aliases: [], tier: 5, z: 1.3 },
+      { text: "Tentacruel", aliases: [], tier: 5, z: 1.3 },
+      { text: "Doduo", aliases: [], tier: 5, z: 1.3 },
+      { text: "Sandslash", aliases: [], tier: 5, z: 1.29 },
+      { text: "Poliwrath", aliases: [], tier: 5, z: 1.29 },
+      { text: "Kingler", aliases: [], tier: 5, z: 1.28 },
+      { text: "Shellder", aliases: [], tier: 5, z: 1.27 },
+      { text: "Venonat", aliases: [], tier: 5, z: 1.23 },
+      { text: "Wigglytuff", aliases: [], tier: 5, z: 1.2 },
+      { text: "Spearow", aliases: [], tier: 5, z: 1.18 },
+      { text: "Kabutops", aliases: [], tier: 5, z: 1.16 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Primeape", aliases: [], tier: 5, z: 1.15 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Kakuna", aliases: [], tier: 5, z: 1.06 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Graveler", aliases: [], tier: 5, z: 1.01 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Victreebel", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Raticate", aliases: [], tier: 6, z: 1.53 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Tangela", aliases: [], tier: 6, z: 1.44 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Seaking", aliases: [], tier: 6, z: 1.42 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Exeggcute", aliases: [], tier: 6, z: 1.32 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Dewgong", aliases: [], tier: 6, z: 1.31 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Parasect", aliases: [], tier: 6, z: 1.23 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Dodrio", aliases: [], tier: 6, z: 1.19 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Venomoth", aliases: [], tier: 6, z: 1.09 },
+      { text: "Fearow", aliases: [], tier: 6, z: 1.04 },
+      { text: "Seadra", aliases: [], tier: 6, z: 1.01 },
+      { text: "Nidorina", aliases: [], tier: 6, z: 0.0 },
+      { text: "Nidorino", aliases: [], tier: 6, z: 0.0 },
+      { text: "Weepinbell", aliases: [], tier: 6, z: 0.0 },
+      { text: "Omastar", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "pokemon-types-01", category: "Video Games", closed: true,
+    prompt: "Name one of the 18 Pokémon types",
+    answers: [
+      { text: "Water", aliases: [], tier: 1, z: 5.52 },
+      { text: "Fire", aliases: [], tier: 1, z: 5.3 },
+      { text: "Electric", aliases: [], tier: 1, z: 4.72 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Grass", aliases: [], tier: 1, z: 4.38 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Normal", aliases: [], tier: 2, z: 5.01 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Fairy", aliases: [], tier: 2, z: 4.08 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Ice", aliases: [], tier: 3, z: 5.0 },
+      { text: "Fighting", aliases: [], tier: 3, z: 4.92 },
+      { text: "Ghost", aliases: [], tier: 3, z: 4.42 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Dragon", aliases: [], tier: 3, z: 4.41 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Psychic", aliases: [], tier: 3, z: 3.8 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Dark", aliases: [], tier: 4, z: 5.04 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Flying", aliases: [], tier: 4, z: 4.71 },
+      { text: "Bug", aliases: [], tier: 4, z: 4.2 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Rock", aliases: [], tier: 5, z: 5.03 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Steel", aliases: [], tier: 5, z: 4.71 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Poison", aliases: [], tier: 5, z: 4.08 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Ground", aliases: [], tier: 6, z: 5.15 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "nintendo-consoles-01", category: "Video Games", closed: true,
+    prompt: "Name a Nintendo home console or handheld (up to the end of 2025)",
+    answers: [
+      { text: "Game Boy", aliases: ["Gameboy"], tier: 1, z: 5.06 },
+      { text: "Nintendo Switch", aliases: ["Switch"], tier: 1, z: 3.97 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Wii", aliases: ["Nintendo Wii"], tier: 1, z: 3.68 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Virtual Boy", aliases: [], tier: 2, z: 4.26 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Nintendo 64", aliases: ["N64"], tier: 2, z: 3.98 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Nintendo DS", aliases: ["DS"], tier: 2, z: 3.59 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Game Boy Advance", aliases: ["GBA"], tier: 3, z: 4.51 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Nintendo Switch 2", aliases: ["Switch 2"], tier: 3, z: 3.96 },
+      { text: "Wii U", aliases: [], tier: 3, z: 3.66 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "NES", aliases: ["Nintendo Entertainment System", "Famicom"], tier: 3, z: 3.29 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Nintendo 3DS", aliases: ["3DS"], tier: 3, z: 3.27 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "GameCube", aliases: ["Game Cube", "Nintendo GameCube"], tier: 3, z: 2.88 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "SNES", aliases: ["Super Nintendo", "Super NES", "Super Famicom", "Super Nintendo Entertainment System"], tier: 3, z: 2.82 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Game Boy Color", aliases: ["Game Boy Colour", "GBC"], tier: 4, z: 4.68 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Game Boy Advance SP", aliases: ["GBA SP"], tier: 4, z: 3.91 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Nintendo Switch Lite", aliases: ["Switch Lite"], tier: 4, z: 3.39 },
+      { text: "Nintendo DSi", aliases: ["DSi"], tier: 4, z: 2.59 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Nintendo 2DS", aliases: ["2DS"], tier: 4, z: 1.92 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Game & Watch", aliases: [], tier: 5, z: 5.19 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Game Boy Pocket", aliases: [], tier: 5, z: 4.38 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Wii Mini", aliases: [], tier: 5, z: 3.61 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "New Nintendo 3DS", aliases: ["New 3DS"], tier: 5, z: 3.27 },
+      { text: "Nintendo DS Lite", aliases: ["DS Lite"], tier: 5, z: 3.26 },
+      { text: "Nintendo Switch OLED", aliases: ["Switch OLED", "OLED Switch"], tier: 5, z: 2.83 },
+      { text: "Game Boy Light", aliases: [], tier: 6, z: 4.87 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Color TV-Game", aliases: ["Colour TV-Game"], tier: 6, z: 4.69 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Game Boy Micro", aliases: [], tier: 6, z: 4.04 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Pokémon Mini", aliases: [], tier: 6, z: 3.63 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "other-consoles-01", category: "Video Games", closed: true,
+    prompt: "Name a console or handheld made by Sony, Microsoft or Sega (up to the end of 2025)",
+    answers: [
+      { text: "PlayStation 2", aliases: ["PS2"], tier: 1, z: 3.94 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "PlayStation 5", aliases: ["PS5"], tier: 1, z: 3.93 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "PlayStation 4", aliases: ["PS4"], tier: 1, z: 3.93 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Xbox 360", aliases: ["360"], tier: 1, z: 3.29 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Xbox", aliases: ["Original Xbox"], tier: 2, z: 4.19 }, // override: auto 1 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "PlayStation", aliases: ["PS1", "PSX", "PSone", "PlayStation 1", "PS One"], tier: 2, z: 3.94 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Dreamcast", aliases: ["Sega Dreamcast"], tier: 2, z: 2.64 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Xbox One", aliases: [], tier: 3, z: 4.19 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Xbox Series X", aliases: ["Series X"], tier: 3, z: 4.12 },
+      { text: "Mega Drive", aliases: ["Sega Mega Drive", "Sega Genesis", "Genesis"], tier: 3, z: 3.99 },
+      { text: "PlayStation 3", aliases: ["PS3"], tier: 3, z: 3.94 },
+      { text: "PSP", aliases: ["PlayStation Portable"], tier: 3, z: 3.23 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Master System", aliases: ["Sega Master System"], tier: 4, z: 4.84 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Game Gear", aliases: ["Sega Game Gear"], tier: 4, z: 4.44 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Xbox Series S", aliases: ["Series S"], tier: 4, z: 4.15 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "PlayStation Vita", aliases: ["PS Vita", "Vita"], tier: 4, z: 3.38 },
+      { text: "Sega Saturn", aliases: ["Saturn"], tier: 4, z: 3.06 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Xbox One S", aliases: [], tier: 5, z: 4.18 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Xbox One X", aliases: [], tier: 5, z: 4.15 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "PlayStation 4 Pro", aliases: ["PS4 Pro"], tier: 5, z: 3.89 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "PlayStation 5 Pro", aliases: ["PS5 Pro"], tier: 5, z: 3.89 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Sega CD", aliases: ["Mega-CD"], tier: 5, z: 3.2 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "PlayStation TV", aliases: ["PS TV", "Vita TV"], tier: 6, z: 3.92 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "PlayStation Portal", aliases: ["PS Portal"], tier: 6, z: 3.67 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Sega Nomad", aliases: ["Nomad", "Genesis Nomad"], tier: 6, z: 2.84 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Sega Pico", aliases: ["Pico"], tier: 6, z: 2.83 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "SG-1000", aliases: ["Sega SG-1000"], tier: 6, z: 2.09 },
+      { text: "Sega 32X", aliases: ["32X"], tier: 6, z: 1.75 },
+      { text: "PocketStation", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "mario-mainline-01", category: "Video Games", closed: true,
+    prompt: "Name a mainline Super Mario platform game (released up to the end of 2025)",
+    answers: [
+      { text: "Super Mario 64", aliases: ["Mario 64"], tier: 1, z: 4.05 },
+      { text: "Super Mario Galaxy", aliases: ["Mario Galaxy"], tier: 1, z: 3.92 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Bros.", aliases: ["SMB", "Super Mario Brothers"], tier: 1, z: 3.82 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Odyssey", aliases: ["Mario Odyssey", "Odyssey"], tier: 1, z: 3.46 }, // override: auto 5 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario World", aliases: ["SMW", "Mario World"], tier: 2, z: 4.16 }, // override: auto 1 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Sunshine", aliases: ["Mario Sunshine"], tier: 2, z: 3.87 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Super Mario Bros. 3", aliases: ["SMB3", "Mario 3", "Super Mario 3"], tier: 2, z: 3.82 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario 3D World", aliases: ["3D World", "Mario 3D World"], tier: 3, z: 3.99 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Galaxy 2", aliases: ["Mario Galaxy 2"], tier: 3, z: 3.92 },
+      { text: "Super Mario Maker", aliases: ["Mario Maker"], tier: 3, z: 3.9 },
+      { text: "New Super Mario Bros.", aliases: ["NSMB"], tier: 3, z: 3.82 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Bros. Wonder", aliases: ["Super Mario Wonder", "Mario Wonder"], tier: 3, z: 3.79 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Land", aliases: ["Mario Land"], tier: 4, z: 4.14 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario 3D Land", aliases: ["3D Land", "Mario 3D Land"], tier: 4, z: 3.97 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Maker 2", aliases: ["Mario Maker 2"], tier: 4, z: 3.9 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Bros. 2", aliases: ["SMB2", "Mario 2", "Super Mario 2"], tier: 4, z: 3.82 },
+      { text: "New Super Mario Bros. Wii", aliases: ["NSMB Wii"], tier: 4, z: 3.44 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "New Super Mario Bros. 2", aliases: ["NSMB 2", "NSMB2"], tier: 5, z: 3.82 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "New Super Mario Bros. U", aliases: ["NSMB U", "New Super Mario Bros. U Deluxe"], tier: 5, z: 3.8 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario World 2: Yoshi's Island", aliases: ["Yoshi's Island", "Super Mario World 2"], tier: 5, z: 2.24 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Bowser's Fury", aliases: [], tier: 5, z: 2.14 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Land 2: 6 Golden Coins", aliases: ["Super Mario Land 2", "Mario Land 2", "6 Golden Coins"], tier: 6, z: 3.81 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Super Mario Bros.: The Lost Levels", aliases: ["The Lost Levels"], tier: 6, z: 3.78 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "zelda-mainline-01", category: "Video Games", closed: true,
+    prompt: "Name a mainline Legend of Zelda game (released up to the end of 2025)",
+    answers: [
+      { text: "Breath of the Wild", aliases: ["BotW", "The Legend of Zelda: Breath of the Wild", "Zelda Breath of the Wild"], tier: 1, z: 4.34 },
+      { text: "Tears of the Kingdom", aliases: ["TotK", "Zelda Tears of the Kingdom"], tier: 1, z: 4.24 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Ocarina of Time", aliases: ["OoT", "Zelda Ocarina of Time"], tier: 1, z: 2.45 }, // override: auto 5 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Twilight Princess", aliases: [], tier: 2, z: 3.74 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "The Legend of Zelda", aliases: ["Zelda", "Zelda 1"], tier: 2, z: 3.5 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Majora's Mask", aliases: [], tier: 2, z: 2.13 }, // override: auto 6 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "A Link to the Past", aliases: ["ALttP"], tier: 3, z: 4.83 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Skyward Sword", aliases: [], tier: 3, z: 2.68 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Link's Awakening", aliases: [], tier: 3, z: 2.46 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "The Wind Waker", aliases: [], tier: 3, z: 2.2 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "A Link Between Worlds", aliases: [], tier: 4, z: 4.15 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Echoes of Wisdom", aliases: [], tier: 4, z: 3.51 },
+      { text: "Phantom Hourglass", aliases: [], tier: 4, z: 2.86 },
+      { text: "The Minish Cap", aliases: [], tier: 4, z: 1.79 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Spirit Tracks", aliases: [], tier: 5, z: 4.29 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Oracle of Seasons", aliases: [], tier: 5, z: 3.64 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Oracle of Ages", aliases: [], tier: 5, z: 3.64 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Zelda II: The Adventure of Link", aliases: ["Zelda 2", "Zelda II", "The Adventure of Link"], tier: 5, z: 3.47 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Four Swords", aliases: [], tier: 6, z: 3.75 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Four Swords Adventures", aliases: [], tier: 6, z: 3.61 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Tri Force Heroes", aliases: ["Triforce Heroes"], tier: 6, z: 3.61 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "smash-ultimate-01", category: "Video Games", closed: true,
+    prompt: "Name a playable fighter in Super Smash Bros. Ultimate (including DLC)",
+    answers: [
+      { text: "Link", aliases: [], tier: 1, z: 4.99 },
+      { text: "Mario", aliases: [], tier: 1, z: 4.23 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Sonic", aliases: [], tier: 1, z: 3.93 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Kirby", aliases: [], tier: 1, z: 3.65 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Donkey Kong", aliases: ["DK"], tier: 1, z: 3.56 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Pikachu", aliases: [], tier: 1, z: 3.18 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Steve", aliases: ["Minecraft Steve"], tier: 2, z: 4.71 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Cloud", aliases: ["Cloud Strife"], tier: 2, z: 4.46 }, // override: auto 1 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Joker", aliases: [], tier: 2, z: 3.74 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Sora", aliases: [], tier: 2, z: 2.99 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Sephiroth", aliases: [], tier: 2, z: 2.22 }, // override: auto 5 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Fox", aliases: ["Fox McCloud"], tier: 3, z: 4.66 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Snake", aliases: ["Solid Snake"], tier: 3, z: 4.23 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Mega Man", aliases: ["Megaman"], tier: 3, z: 4.01 },
+      { text: "Pac-Man", aliases: ["Pacman"], tier: 3, z: 3.92 },
+      { text: "Peach", aliases: ["Princess Peach"], tier: 3, z: 3.77 },
+      { text: "Captain Falcon", aliases: [], tier: 3, z: 3.71 },
+      { text: "Meta Knight", aliases: ["Metaknight"], tier: 3, z: 3.63 },
+      { text: "Ness", aliases: [], tier: 3, z: 3.6 },
+      { text: "Zelda", aliases: ["Princess Zelda"], tier: 3, z: 3.55 },
+      { text: "Luigi", aliases: [], tier: 3, z: 3.25 },
+      { text: "Ryu", aliases: [], tier: 3, z: 3.23 },
+      { text: "Bowser", aliases: [], tier: 3, z: 3.03 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Diddy Kong", aliases: [], tier: 3, z: 2.96 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Yoshi", aliases: [], tier: 3, z: 2.84 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Mewtwo", aliases: [], tier: 3, z: 2.61 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Samus", aliases: ["Samus Aran"], tier: 3, z: 2.4 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Wario", aliases: [], tier: 3, z: 2.27 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Jigglypuff", aliases: [], tier: 3, z: 2.21 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Marth", aliases: [], tier: 3, z: 2.2 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Ganondorf", aliases: ["Ganon"], tier: 3, z: 1.81 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "King Dedede", aliases: ["Dedede"], tier: 3, z: 1.75 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Mr. Game & Watch", aliases: ["Game & Watch"], tier: 4, z: 5.07 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Young Link", aliases: [], tier: 4, z: 4.86 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Hero", aliases: [], tier: 4, z: 4.68 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Simon", aliases: ["Simon Belmont"], tier: 4, z: 4.48 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Little Mac", aliases: [], tier: 4, z: 4.43 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Wolf", aliases: ["Wolf O'Donnell"], tier: 4, z: 4.35 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Robin", aliases: [], tier: 4, z: 4.33 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Pit", aliases: [], tier: 4, z: 4.27 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Roy", aliases: [], tier: 4, z: 4.25 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Terry", aliases: ["Terry Bogard"], tier: 4, z: 4.24 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ken", aliases: ["Ken Masters"], tier: 4, z: 4.21 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Min Min", aliases: [], tier: 4, z: 4.12 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Lucas", aliases: [], tier: 4, z: 4.09 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Daisy", aliases: ["Princess Daisy"], tier: 4, z: 3.78 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Pokémon Trainer", aliases: ["Squirtle", "Ivysaur", "Charizard"], tier: 4, z: 3.55 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ike", aliases: [], tier: 4, z: 3.42 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ridley", aliases: [], tier: 4, z: 3.34 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Isabelle", aliases: [], tier: 4, z: 3.3 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ice Climbers", aliases: [], tier: 4, z: 3.27 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Sheik", aliases: [], tier: 4, z: 3.1 },
+      { text: "Toon Link", aliases: [], tier: 4, z: 3.03 },
+      { text: "Bowser Jr.", aliases: ["Bowser Junior"], tier: 4, z: 3.02 },
+      { text: "Falco", aliases: ["Falco Lombardi"], tier: 4, z: 2.95 },
+      { text: "Inkling", aliases: [], tier: 4, z: 2.9 },
+      { text: "Villager", aliases: [], tier: 4, z: 2.9 },
+      { text: "Zero Suit Samus", aliases: ["ZSS"], tier: 4, z: 2.39 },
+      { text: "Bayonetta", aliases: [], tier: 4, z: 2.26 },
+      { text: "Kazuya", aliases: ["Kazuya Mishima"], tier: 4, z: 2.17 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Lucario", aliases: [], tier: 4, z: 2.04 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Banjo & Kazooie", aliases: ["Banjo-Kazooie", "Banjo"], tier: 4, z: 1.95 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Shulk", aliases: [], tier: 4, z: 1.88 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Rosalina & Luma", aliases: ["Rosalina"], tier: 4, z: 1.87 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Greninja", aliases: [], tier: 4, z: 1.82 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "King K. Rool", aliases: ["K Rool"], tier: 4, z: 1.78 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Palutena", aliases: [], tier: 4, z: 1.45 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Olimar", aliases: ["Captain Olimar"], tier: 4, z: 1.42 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Pyra/Mythra", aliases: ["Pyra", "Mythra"], tier: 4, z: 1.06 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Dark Pit", aliases: [], tier: 5, z: 4.2 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Dr. Mario", aliases: ["Doctor Mario"], tier: 5, z: 4.19 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Duck Hunt", aliases: ["Duck Hunt Duo"], tier: 5, z: 4.03 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Wii Fit Trainer", aliases: [], tier: 5, z: 3.52 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Richter", aliases: ["Richter Belmont"], tier: 5, z: 3.22 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Mii Fighter", aliases: ["Mii Brawler", "Mii Swordfighter", "Mii Gunner", "Mii"], tier: 5, z: 2.59 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Lucina", aliases: [], tier: 5, z: 2.34 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Corrin", aliases: [], tier: 5, z: 2.21 },
+      { text: "Chrom", aliases: [], tier: 5, z: 2.18 },
+      { text: "Pichu", aliases: [], tier: 5, z: 1.89 },
+      { text: "Byleth", aliases: [], tier: 5, z: 1.49 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "R.O.B.", aliases: ["R O B"], tier: 5, z: 1.42 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Incineroar", aliases: [], tier: 5, z: 1.1 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Piranha Plant", aliases: [], tier: 6, z: 2.75 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Dark Samus", aliases: [], tier: 6, z: 2.4 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "minecraft-mobs-01", category: "Video Games", closed: false,
+    prompt: "Name a Minecraft mob (as of the end of 2025)",
+    answers: [
+      { text: "Chicken", aliases: [], tier: 1, z: 4.63 },
+      { text: "Spider", aliases: [], tier: 1, z: 4.25 },
+      { text: "Sheep", aliases: [], tier: 1, z: 4.19 },
+      { text: "Pig", aliases: [], tier: 1, z: 4.14 },
+      { text: "Cow", aliases: [], tier: 1, z: 4.14 },
+      { text: "Zombie", aliases: [], tier: 1, z: 3.94 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Skeleton", aliases: [], tier: 1, z: 3.8 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Creeper", aliases: [], tier: 1, z: 2.94 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Villager", aliases: [], tier: 1, z: 2.9 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Enderman", aliases: [], tier: 1, z: 1.57 }, // override: auto 5 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Warden", aliases: [], tier: 2, z: 3.63 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Wither", aliases: [], tier: 2, z: 3.02 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Ender Dragon", aliases: ["Enderdragon"], tier: 2, z: 2.77 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Cat", aliases: [], tier: 3, z: 4.78 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Horse", aliases: [], tier: 3, z: 4.76 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Fox", aliases: [], tier: 3, z: 4.66 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Wolf", aliases: ["Dog"], tier: 3, z: 4.35 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Witch", aliases: [], tier: 3, z: 4.11 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Bee", aliases: [], tier: 3, z: 4.09 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Phantom", aliases: [], tier: 3, z: 3.78 },
+      { text: "Drowned", aliases: [], tier: 3, z: 3.74 },
+      { text: "Blaze", aliases: [], tier: 3, z: 3.69 },
+      { text: "Panda", aliases: [], tier: 3, z: 3.65 },
+      { text: "Squid", aliases: [], tier: 3, z: 3.44 },
+      { text: "Slime", aliases: [], tier: 3, z: 3.38 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Zombie Villager", aliases: [], tier: 3, z: 2.86 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Iron Golem", aliases: [], tier: 3, z: 2.79 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Axolotl", aliases: [], tier: 3, z: 2.02 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Ghast", aliases: [], tier: 3, z: 1.52 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Pillager", aliases: [], tier: 3, z: 1.46 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Piglin", aliases: [], tier: 3, z: 0.0 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Bat", aliases: [], tier: 4, z: 4.3 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Guardian", aliases: [], tier: 4, z: 4.26 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Rabbit", aliases: ["Bunny"], tier: 4, z: 4.05 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Goat", aliases: [], tier: 4, z: 4.02 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Cave Spider", aliases: [], tier: 4, z: 3.92 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Turtle", aliases: ["Sea turtle"], tier: 4, z: 3.91 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Polar Bear", aliases: [], tier: 4, z: 3.89 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Frog", aliases: [], tier: 4, z: 3.89 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Stray", aliases: [], tier: 4, z: 3.74 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Dolphin", aliases: [], tier: 4, z: 3.67 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Camel", aliases: [], tier: 4, z: 3.64 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Donkey", aliases: [], tier: 4, z: 3.62 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Parrot", aliases: [], tier: 4, z: 3.49 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Wandering Trader", aliases: [], tier: 4, z: 3.48 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Magma Cube", aliases: [], tier: 4, z: 3.1 },
+      { text: "Wither Skeleton", aliases: [], tier: 4, z: 2.95 },
+      { text: "Llama", aliases: [], tier: 4, z: 2.95 },
+      { text: "Vex", aliases: [], tier: 4, z: 2.85 },
+      { text: "Husk", aliases: [], tier: 4, z: 2.84 },
+      { text: "Snow Golem", aliases: ["Snowman"], tier: 4, z: 2.78 },
+      { text: "Allay", aliases: [], tier: 4, z: 2.69 },
+      { text: "Sniffer", aliases: [], tier: 4, z: 2.6 },
+      { text: "Strider", aliases: [], tier: 4, z: 2.5 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ocelot", aliases: [], tier: 4, z: 2.34 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Vindicator", aliases: [], tier: 4, z: 2.08 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Silverfish", aliases: [], tier: 4, z: 2.07 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ravager", aliases: [], tier: 4, z: 1.89 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Shulker", aliases: [], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Mooshroom", aliases: ["Mushroom cow"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Hoglin", aliases: [], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Zombified Piglin", aliases: ["Zombie Pigman", "Zombie Piglin"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Evoker", aliases: [], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Tropical Fish", aliases: [], tier: 5, z: 4.1 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Salmon", aliases: [], tier: 5, z: 4.01 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Cod", aliases: [], tier: 5, z: 3.89 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Breeze", aliases: [], tier: 5, z: 3.86 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Elder Guardian", aliases: [], tier: 5, z: 3.85 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Skeleton Horse", aliases: [], tier: 5, z: 3.76 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Mule", aliases: [], tier: 5, z: 3.44 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Glow Squid", aliases: [], tier: 5, z: 3.31 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Bogged", aliases: [], tier: 5, z: 2.99 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Trader Llama", aliases: [], tier: 5, z: 2.89 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Armadillo", aliases: [], tier: 5, z: 2.7 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Tadpole", aliases: [], tier: 5, z: 2.51 },
+      { text: "Pufferfish", aliases: [], tier: 5, z: 1.98 },
+      { text: "Endermite", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Piglin Brute", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Zoglin", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Giant", aliases: [], tier: 6, z: 4.62 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Zombie Horse", aliases: [], tier: 6, z: 3.88 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Killer Bunny", aliases: ["Killer Rabbit"], tier: 6, z: 3.78 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Creaking", aliases: [], tier: 6, z: 2.8 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Copper Golem", aliases: [], tier: 6, z: 2.78 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Happy Ghast", aliases: [], tier: 6, z: 1.52 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Illusioner", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "gta-games-01", category: "Video Games", closed: true,
+    prompt: "Name a Grand Theft Auto game or expansion (released up to the end of 2025)",
+    answers: [
+      { text: "Grand Theft Auto V", aliases: ["GTA V", "GTA 5", "Grand Theft Auto 5"], tier: 1, z: 3.89 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Grand Theft Auto: San Andreas", aliases: ["San Andreas", "GTA San Andreas", "GTA SA"], tier: 1, z: 3.34 }, // override: auto 6 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Grand Theft Auto: Vice City", aliases: ["Vice City", "GTA Vice City"], tier: 2, z: 3.85 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Grand Theft Auto IV", aliases: ["GTA IV", "GTA 4", "Grand Theft Auto 4"], tier: 2, z: 3.79 }, // override: auto 5 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Grand Theft Auto", aliases: ["GTA", "GTA 1", "Grand Theft Auto 1"], tier: 3, z: 3.92 },
+      { text: "Grand Theft Auto 2", aliases: ["GTA 2", "GTA II", "Grand Theft Auto II"], tier: 3, z: 3.92 },
+      { text: "Grand Theft Auto Online", aliases: ["GTA Online"], tier: 3, z: 3.9 },
+      { text: "Grand Theft Auto III", aliases: ["GTA III", "GTA 3", "Grand Theft Auto 3"], tier: 3, z: 3.84 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Vice City Stories", aliases: ["GTA Vice City Stories", "Grand Theft Auto: Vice City Stories"], tier: 4, z: 4.48 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Liberty City Stories", aliases: ["GTA Liberty City Stories", "Grand Theft Auto: Liberty City Stories"], tier: 4, z: 4.23 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Chinatown Wars", aliases: ["GTA Chinatown Wars", "Grand Theft Auto: Chinatown Wars"], tier: 4, z: 3.3 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "The Lost and Damned", aliases: [], tier: 5, z: 3.86 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "The Ballad of Gay Tony", aliases: [], tier: 5, z: 3.38 },
+      { text: "London 1969", aliases: ["GTA London 1969", "Grand Theft Auto: London 1969", "GTA London"], tier: 6, z: 4.26 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "London 1961", aliases: ["GTA London 1961", "Grand Theft Auto: London 1961"], tier: 6, z: 4.2 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Grand Theft Auto Advance", aliases: ["GTA Advance"], tier: 6, z: 3.85 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "street-fighter-2-01", category: "Video Games", closed: true,
+    prompt: "Name a playable character from the Street Fighter II series (up to Super Turbo)",
+    answers: [
+      { text: "Ken", aliases: ["Ken Masters"], tier: 1, z: 4.21 },
+      { text: "Chun-Li", aliases: [], tier: 1, z: 3.29 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Ryu", aliases: [], tier: 1, z: 3.23 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Guile", aliases: [], tier: 2, z: 2.75 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Blanka", aliases: [], tier: 2, z: 1.94 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "M. Bison", aliases: ["Bison", "Dictator"], tier: 3, z: 3.26 },
+      { text: "Akuma", aliases: ["Gouki"], tier: 3, z: 2.29 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Zangief", aliases: [], tier: 3, z: 1.6 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Dhalsim", aliases: [], tier: 3, z: 1.36 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "E. Honda", aliases: ["Honda", "Edmond Honda"], tier: 4, z: 3.9 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Vega", aliases: ["Claw"], tier: 4, z: 3.42 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Cammy", aliases: ["Cammy White"], tier: 4, z: 2.51 },
+      { text: "Sagat", aliases: [], tier: 4, z: 1.83 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Fei Long", aliases: [], tier: 5, z: 3.18 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Balrog", aliases: ["Boxer"], tier: 5, z: 2.11 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "T. Hawk", aliases: ["Thunder Hawk"], tier: 6, z: 3.8 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Dee Jay", aliases: ["Deejay"], tier: 6, z: 3.73 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "mario-kart-8-01", category: "Video Games", closed: true,
+    prompt: "Name a playable character in Mario Kart 8 Deluxe (including the Booster Course Pass)",
+    answers: [
+      { text: "Mario", aliases: [], tier: 1, z: 4.23 },
+      { text: "Peach", aliases: ["Princess Peach"], tier: 1, z: 3.77 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Toad", aliases: [], tier: 1, z: 3.34 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Luigi", aliases: [], tier: 1, z: 3.25 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Bowser", aliases: [], tier: 1, z: 3.03 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Yoshi", aliases: [], tier: 1, z: 2.84 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Donkey Kong", aliases: ["DK"], tier: 2, z: 3.56 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Wario", aliases: [], tier: 2, z: 2.27 }, // override: auto 5 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Waluigi", aliases: [], tier: 2, z: 1.95 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Link", aliases: [], tier: 3, z: 4.99 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Baby Mario", aliases: [], tier: 3, z: 4.19 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Shy Guy", aliases: [], tier: 3, z: 4.14 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "King Boo", aliases: [], tier: 3, z: 3.9 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Daisy", aliases: ["Princess Daisy"], tier: 3, z: 3.78 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Baby Luigi", aliases: [], tier: 3, z: 3.25 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Bowser Jr.", aliases: ["Bowser Junior"], tier: 3, z: 3.02 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Diddy Kong", aliases: [], tier: 3, z: 2.96 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Rosalina", aliases: [], tier: 3, z: 2.07 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Koopa Troopa", aliases: ["Koopa"], tier: 3, z: 1.21 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Toadette", aliases: [], tier: 3, z: 1.09 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Dry Bones", aliases: [], tier: 4, z: 4.18 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Metal Mario", aliases: [], tier: 4, z: 4.13 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Baby Daisy", aliases: [], tier: 4, z: 3.77 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Baby Peach", aliases: [], tier: 4, z: 3.76 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Funky Kong", aliases: [], tier: 4, z: 3.57 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Pauline", aliases: [], tier: 4, z: 3.48 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Isabelle", aliases: [], tier: 4, z: 3.3 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Inkling", aliases: ["Inkling Girl", "Inkling Boy"], tier: 4, z: 2.9 },
+      { text: "Villager", aliases: [], tier: 4, z: 2.9 },
+      { text: "Mii", aliases: [], tier: 4, z: 2.6 },
+      { text: "Birdo", aliases: [], tier: 4, z: 1.41 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Lakitu", aliases: [], tier: 4, z: 1.07 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Larry", aliases: ["Larry Koopa"], tier: 5, z: 4.28 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Roy", aliases: ["Roy Koopa"], tier: 5, z: 4.25 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Cat Peach", aliases: [], tier: 5, z: 3.73 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Pink Gold Peach", aliases: [], tier: 5, z: 3.68 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Ludwig", aliases: ["Ludwig von Koopa"], tier: 5, z: 3.32 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Dry Bowser", aliases: [], tier: 5, z: 3.02 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Petey Piranha", aliases: [], tier: 5, z: 2.35 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Baby Rosalina", aliases: [], tier: 5, z: 2.07 },
+      { text: "Wiggler", aliases: [], tier: 5, z: 1.72 },
+      { text: "Tanooki Mario", aliases: [], tier: 5, z: 1.09 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Kamek", aliases: [], tier: 5, z: 1.09 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Peachette", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Wendy", aliases: ["Wendy O. Koopa", "Wendy Koopa"], tier: 6, z: 3.84 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Morton", aliases: ["Morton Koopa Jr.", "Morton Koopa"], tier: 6, z: 3.64 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Iggy", aliases: ["Iggy Koopa"], tier: 6, z: 3.29 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Lemmy", aliases: ["Lemmy Koopa"], tier: 6, z: 2.46 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "sonic-characters-01", category: "Video Games", closed: false,
+    prompt: "Name a character from the Sonic the Hedgehog games",
+    answers: [
+      { text: "Shadow", aliases: ["Shadow the Hedgehog"], tier: 1, z: 4.44 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Sonic", aliases: ["Sonic the Hedgehog"], tier: 1, z: 3.93 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Tails", aliases: ["Miles Prower", "Miles Tails Prower"], tier: 1, z: 3.68 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Knuckles", aliases: ["Knuckles the Echidna"], tier: 1, z: 3.32 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Dr. Eggman", aliases: ["Eggman", "Dr. Robotnik", "Robotnik", "Doctor Eggman", "Doctor Robotnik"], tier: 1, z: 2.41 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Silver", aliases: ["Silver the Hedgehog"], tier: 2, z: 4.81 }, // override: auto 1 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Big the Cat", aliases: ["Big"], tier: 2, z: 4.73 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Amy Rose", aliases: ["Amy"], tier: 2, z: 4.11 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Cream", aliases: ["Cream the Rabbit"], tier: 3, z: 4.62 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Metal Sonic", aliases: [], tier: 3, z: 3.88 },
+      { text: "Blaze", aliases: ["Blaze the Cat"], tier: 3, z: 3.69 },
+      { text: "Rouge", aliases: ["Rouge the Bat"], tier: 3, z: 3.66 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Chao", aliases: [], tier: 3, z: 3.06 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Jet", aliases: ["Jet the Hawk"], tier: 4, z: 4.29 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Chaos", aliases: [], tier: 4, z: 4.27 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Vector", aliases: ["Vector the Crocodile"], tier: 4, z: 3.99 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Super Sonic", aliases: [], tier: 4, z: 3.9 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "E-123 Omega", aliases: ["Omega"], tier: 4, z: 3.45 },
+      { text: "Tikal", aliases: [], tier: 4, z: 2.08 },
+      { text: "Charmy", aliases: ["Charmy Bee"], tier: 4, z: 1.71 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Cubot", aliases: [], tier: 4, z: 1.31 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Orbot", aliases: [], tier: 4, z: 1.3 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Espio", aliases: ["Espio the Chameleon"], tier: 4, z: 1.03 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ray", aliases: ["Ray the Flying Squirrel"], tier: 5, z: 4.69 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Storm", aliases: ["Storm the Albatross"], tier: 5, z: 4.66 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Wave", aliases: ["Wave the Swallow"], tier: 5, z: 4.62 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Cheese", aliases: [], tier: 5, z: 4.57 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Maria", aliases: ["Maria Robotnik"], tier: 5, z: 4.34 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Infinite", aliases: [], tier: 5, z: 4.16 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Sticks", aliases: ["Sticks the Badger"], tier: 5, z: 4.14 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Mighty", aliases: ["Mighty the Armadillo"], tier: 5, z: 4.1 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Sage", aliases: [], tier: 5, z: 3.83 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "E-102 Gamma", aliases: ["Gamma"], tier: 5, z: 3.41 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Fang", aliases: ["Fang the Sniper", "Nack", "Fang the Hunter"], tier: 5, z: 3.34 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Froggy", aliases: [], tier: 5, z: 2.47 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Zavok", aliases: [], tier: 5, z: 0.0 },
+      { text: "Mephiles", aliases: ["Mephiles the Dark"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Omochao", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Trip", aliases: ["Trip the Sungazer"], tier: 6, z: 4.9 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Marine", aliases: ["Marine the Raccoon"], tier: 6, z: 4.53 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Chip", aliases: ["Light Gaia"], tier: 6, z: 4.31 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Bean", aliases: ["Bean the Dynamite"], tier: 6, z: 3.98 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Classic Sonic", aliases: [], tier: 6, z: 3.86 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Bark", aliases: ["Bark the Polar Bear"], tier: 6, z: 3.85 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Black Doom", aliases: [], tier: 6, z: 3.8 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Whisper", aliases: ["Whisper the Wolf"], tier: 6, z: 3.74 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Elise", aliases: ["Princess Elise"], tier: 6, z: 3.26 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Tangle", aliases: ["Tangle the Lemur"], tier: 6, z: 3.1 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Zor", aliases: [], tier: 6, z: 2.45 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Gerald Robotnik", aliases: ["Professor Gerald"], tier: 6, z: 2.05 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Eggman Nega", aliases: [], tier: 6, z: 2.02 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Zeena", aliases: [], tier: 6, z: 1.92 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Master Zik", aliases: [], tier: 6, z: 1.72 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Zazz", aliases: [], tier: 6, z: 1.25 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Merlina", aliases: [], tier: 6, z: 1.12 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Shahra", aliases: [], tier: 6, z: 0.0 },
+      { text: "Erazor Djinn", aliases: [], tier: 6, z: 0.0 },
+      { text: "Emerl", aliases: [], tier: 6, z: 0.0 },
+      { text: "Zomom", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "final-fantasy-01", category: "Video Games", closed: true,
+    prompt: "Name a numbered mainline Final Fantasy game (I to XVI)",
+    answers: [
+      { text: "Final Fantasy X", aliases: ["Final Fantasy 10", "Final Fantasy 10th", "Final Fantasy the 10th", "FF10", "FF 10", "FFX", "FF X"], tier: 1, z: 4.38 },
+      { text: "Final Fantasy VII", aliases: ["Final Fantasy 7", "Final Fantasy 7th", "Final Fantasy the 7th", "Final Fantasy the seventh", "FF7", "FF 7", "FFVII", "FF VII"], tier: 1, z: 3.75 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy XV", aliases: ["Final Fantasy 15", "Final Fantasy 15th", "Final Fantasy the 15th", "FF15", "FF 15", "FFXV", "FF XV"], tier: 2, z: 3.44 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy XIV", aliases: ["Final Fantasy 14", "Final Fantasy 14th", "Final Fantasy the 14th", "FF14", "FF 14", "FFXIV", "FF XIV"], tier: 2, z: 3.35 }, // override: auto 6 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Final Fantasy VI", aliases: ["Final Fantasy 6", "Final Fantasy 6th", "Final Fantasy the 6th", "Final Fantasy the sixth", "FF6", "FF 6", "FFVI", "FF VI"], tier: 3, z: 3.93 },
+      { text: "Final Fantasy VIII", aliases: ["Final Fantasy 8", "Final Fantasy 8th", "Final Fantasy the 8th", "Final Fantasy the eighth", "FF8", "FF 8", "FFVIII", "FF VIII"], tier: 3, z: 3.65 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy IX", aliases: ["Final Fantasy 9", "Final Fantasy 9th", "Final Fantasy the 9th", "FF9", "FF 9", "FFIX", "FF IX"], tier: 3, z: 3.62 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy XVI", aliases: ["Final Fantasy 16", "Final Fantasy 16th", "Final Fantasy the 16th", "FF16", "FF 16", "FFXVI", "FF XVI"], tier: 3, z: 3.36 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy I", aliases: ["Final Fantasy", "FF", "Final Fantasy 1", "Final Fantasy 1st", "Final Fantasy the 1st", "Final Fantasy the first", "FF1", "FF 1", "FFI", "FF I"], tier: 4, z: 4.45 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy IV", aliases: ["Final Fantasy 4", "Final Fantasy 4th", "Final Fantasy the 4th", "Final Fantasy the fourth", "FF4", "FF 4", "FFIV", "FF IV"], tier: 4, z: 4.11 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy XII", aliases: ["Final Fantasy 12", "Final Fantasy 12th", "Final Fantasy the 12th", "FF12", "FF 12", "FFXII", "FF XII"], tier: 4, z: 3.41 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy XIII", aliases: ["Final Fantasy 13", "Final Fantasy 13th", "Final Fantasy the 13th", "FF13", "FF 13", "FFXIII", "FF XIII"], tier: 4, z: 3.4 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy V", aliases: ["Final Fantasy 5", "Final Fantasy 5th", "Final Fantasy the 5th", "Final Fantasy the fifth", "FF5", "FF 5", "FFV", "FF V"], tier: 5, z: 4.35 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy III", aliases: ["Final Fantasy 3", "Final Fantasy 3rd", "Final Fantasy the 3rd", "Final Fantasy the third", "FF3", "FF 3", "FFIII", "FF III"], tier: 5, z: 4.23 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy XI", aliases: ["Final Fantasy 11", "Final Fantasy 11th", "Final Fantasy the 11th", "FF11", "FF 11", "FFXI", "FF XI"], tier: 5, z: 3.95 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Final Fantasy II", aliases: ["Final Fantasy 2", "Final Fantasy 2nd", "Final Fantasy the 2nd", "Final Fantasy the second", "FF2", "FF 2", "FFII", "FF II"], tier: 6, z: 4.35 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "overwatch-heroes-01", category: "Video Games", closed: true,
+    prompt: "Name an Overwatch hero (roster as of September 2025)",
+    answers: [
+      { text: "Mercy", aliases: [], tier: 1, z: 4.25 },
+      { text: "Reaper", aliases: [], tier: 1, z: 3.3 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Tracer", aliases: [], tier: 1, z: 3.19 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Genji", aliases: [], tier: 1, z: 2.82 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "D.Va", aliases: ["D Va"], tier: 1, z: 2.27 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Widowmaker", aliases: [], tier: 1, z: 2.19 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Winston", aliases: [], tier: 2, z: 3.92 }, // override: auto 1 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Wrecking Ball", aliases: ["Hammond"], tier: 2, z: 3.38 },
+      { text: "Reinhardt", aliases: [], tier: 2, z: 2.99 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Hanzo", aliases: [], tier: 2, z: 2.61 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Soldier: 76", aliases: ["Soldier"], tier: 3, z: 4.22 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Ana", aliases: [], tier: 3, z: 3.89 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Cassidy", aliases: ["McCree", "Cole Cassidy"], tier: 3, z: 3.48 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Mei", aliases: [], tier: 3, z: 3.39 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Bastion", aliases: [], tier: 3, z: 3.31 },
+      { text: "Sombra", aliases: [], tier: 3, z: 2.49 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Zenyatta", aliases: [], tier: 3, z: 2.38 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Pharah", aliases: [], tier: 3, z: 1.99 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Junkrat", aliases: [], tier: 3, z: 1.96 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Roadhog", aliases: [], tier: 3, z: 1.96 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Doomfist", aliases: [], tier: 3, z: 1.85 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Symmetra", aliases: [], tier: 3, z: 1.83 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Lúcio", aliases: [], tier: 3, z: 1.75 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Torbjörn", aliases: [], tier: 3, z: 1.73 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Kiriko", aliases: [], tier: 3, z: 1.63 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Echo", aliases: [], tier: 4, z: 4.04 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Sigma", aliases: [], tier: 4, z: 3.51 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Moira", aliases: [], tier: 4, z: 3.13 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ashe", aliases: [], tier: 4, z: 3.11 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Baptiste", aliases: [], tier: 4, z: 2.98 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Brigitte", aliases: [], tier: 4, z: 2.92 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Sojourn", aliases: [], tier: 4, z: 2.77 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Orisa", aliases: [], tier: 4, z: 2.41 },
+      { text: "Junker Queen", aliases: [], tier: 4, z: 2.4 },
+      { text: "Zarya", aliases: [], tier: 4, z: 2.33 },
+      { text: "Venture", aliases: [], tier: 5, z: 4.26 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Juno", aliases: [], tier: 5, z: 3.17 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Mauga", aliases: [], tier: 5, z: 1.09 },
+      { text: "Ramattra", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Lifeweaver", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Illari", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Hazard", aliases: [], tier: 6, z: 3.98 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Freja", aliases: [], tier: 6, z: 1.78 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Wuyang", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "valorant-agents-01", category: "Video Games", closed: true,
+    prompt: "Name a Valorant agent (roster as of June 2025)",
+    answers: [
+      { text: "Phoenix", aliases: [], tier: 1, z: 4.21 },
+      { text: "Sage", aliases: [], tier: 1, z: 3.83 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Jett", aliases: [], tier: 1, z: 2.79 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Reyna", aliases: [], tier: 1, z: 2.46 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Viper", aliases: [], tier: 2, z: 3.31 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Omen", aliases: [], tier: 2, z: 3.12 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Raze", aliases: [], tier: 2, z: 2.52 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Chamber", aliases: [], tier: 3, z: 4.47 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Neon", aliases: [], tier: 3, z: 3.64 },
+      { text: "Brimstone", aliases: [], tier: 3, z: 2.82 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Cypher", aliases: [], tier: 3, z: 2.8 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Killjoy", aliases: [], tier: 3, z: 2.26 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Sova", aliases: [], tier: 3, z: 1.78 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Breach", aliases: [], tier: 4, z: 4.13 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "KAY/O", aliases: ["KAYO"], tier: 4, z: 3.9 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Fade", aliases: [], tier: 4, z: 3.86 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Skye", aliases: [], tier: 4, z: 3.35 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Clove", aliases: [], tier: 4, z: 2.91 },
+      { text: "Gekko", aliases: [], tier: 4, z: 2.23 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Yoru", aliases: [], tier: 4, z: 2.06 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Harbor", aliases: [], tier: 5, z: 4.15 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Iso", aliases: [], tier: 5, z: 3.79 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Astra", aliases: [], tier: 5, z: 3.04 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Deadlock", aliases: [], tier: 5, z: 2.97 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Vyse", aliases: [], tier: 6, z: 1.77 },
+      { text: "Waylay", aliases: [], tier: 6, z: 1.59 },
+      { text: "Tejo", aliases: [], tier: 6, z: 1.47 },
+    ]
+  },
+  {
+    id: "animal-crossing-species-01", category: "Video Games", closed: true,
+    prompt: "Name one of the 35 villager species in Animal Crossing: New Horizons",
+    answers: [
+      { text: "Dog", aliases: [], tier: 1, z: 5.1 },
+      { text: "Cat", aliases: [], tier: 1, z: 4.78 },
+      { text: "Bear", aliases: [], tier: 1, z: 4.71 },
+      { text: "Rabbit", aliases: ["Bunny"], tier: 1, z: 4.05 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Frog", aliases: [], tier: 1, z: 3.89 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Wolf", aliases: [], tier: 2, z: 4.35 },
+      { text: "Deer", aliases: [], tier: 2, z: 4.12 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Octopus", aliases: [], tier: 2, z: 3.46 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Horse", aliases: [], tier: 3, z: 4.76 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Mouse", aliases: [], tier: 3, z: 4.31 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Tiger", aliases: [], tier: 3, z: 4.3 },
+      { text: "Lion", aliases: [], tier: 3, z: 4.25 },
+      { text: "Duck", aliases: [], tier: 3, z: 4.21 },
+      { text: "Pig", aliases: [], tier: 3, z: 4.14 },
+      { text: "Elephant", aliases: [], tier: 3, z: 4.08 },
+      { text: "Penguin", aliases: [], tier: 3, z: 3.78 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Squirrel", aliases: [], tier: 3, z: 3.69 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Koala", aliases: [], tier: 3, z: 3.04 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Bird", aliases: [], tier: 4, z: 4.63 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Chicken", aliases: [], tier: 4, z: 4.63 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Sheep", aliases: [], tier: 4, z: 4.19 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Cow", aliases: [], tier: 4, z: 4.14 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Eagle", aliases: [], tier: 4, z: 4.13 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Monkey", aliases: [], tier: 4, z: 4.07 },
+      { text: "Goat", aliases: [], tier: 4, z: 4.02 },
+      { text: "Kangaroo", aliases: [], tier: 4, z: 3.5 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Cub", aliases: ["Bear cub"], tier: 4, z: 3.49 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Hamster", aliases: [], tier: 4, z: 3.31 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Gorilla", aliases: [], tier: 5, z: 3.62 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Rhino", aliases: ["Rhinoceros"], tier: 5, z: 3.57 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Alligator", aliases: ["Crocodile", "Gator"], tier: 5, z: 3.32 },
+      { text: "Hippo", aliases: ["Hippopotamus"], tier: 5, z: 3.13 },
+      { text: "Ostrich", aliases: [], tier: 5, z: 3.05 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Bull", aliases: [], tier: 6, z: 4.34 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Anteater", aliases: [], tier: 6, z: 2.28 },
+    ]
+  },
+  {
+    id: "call-of-duty-01", category: "Video Games", closed: true,
+    prompt: "Name a main Call of Duty title (released up to the end of 2025; reboots count with the original)",
+    answers: [
+      { text: "Modern Warfare 2", aliases: ["Modern Warfare II", "MW2", "Call of Duty: Modern Warfare 2"], tier: 1, z: 4.0 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Black Ops", aliases: ["Call of Duty: Black Ops", "BO1"], tier: 1, z: 3.79 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Warzone", aliases: ["Call of Duty: Warzone"], tier: 1, z: 2.64 }, // override: auto 6 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "World at War", aliases: ["WaW"], tier: 2, z: 5.31 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Call of Duty 4: Modern Warfare", aliases: ["Modern Warfare", "Call of Duty 4", "CoD 4", "COD4"], tier: 2, z: 3.91 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Black Ops II", aliases: ["Black Ops 2", "BO2"], tier: 2, z: 3.77 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Modern Warfare 3", aliases: ["Modern Warfare III", "MW3"], tier: 3, z: 4.0 },
+      { text: "Black Ops 6", aliases: ["BO6"], tier: 3, z: 3.78 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Black Ops Cold War", aliases: ["Cold War"], tier: 3, z: 3.76 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Black Ops III", aliases: ["Black Ops 3", "BO3"], tier: 3, z: 3.73 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Call of Duty: WWII", aliases: ["WWII", "WW2", "Call of Duty WW2"], tier: 3, z: 3.57 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Advanced Warfare", aliases: [], tier: 4, z: 3.96 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Modern Warfare (2019)", aliases: ["MW 2019"], tier: 4, z: 3.93 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ghosts", aliases: ["Call of Duty: Ghosts"], tier: 4, z: 3.88 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Infinite Warfare", aliases: [], tier: 4, z: 3.8 },
+      { text: "Black Ops 4", aliases: ["Black Ops IIII", "BO4"], tier: 4, z: 3.79 },
+      { text: "Black Ops 7", aliases: ["BO7"], tier: 4, z: 3.78 },
+      { text: "Vanguard", aliases: [], tier: 4, z: 3.53 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Call of Duty", aliases: ["Call of Duty 1", "CoD", "CoD 1"], tier: 5, z: 4.65 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Call of Duty 2", aliases: ["CoD 2"], tier: 5, z: 4.63 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Call of Duty 3", aliases: ["CoD 3"], tier: 6, z: 4.62 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "pokemon-versions-01", category: "Video Games", closed: true,
+    prompt: "Name a mainline Pokémon game version (released up to the end of 2025)",
+    answers: [
+      { text: "Red", aliases: ["Pokémon Red"], tier: 1, z: 5.32 },
+      { text: "Gold", aliases: ["Pokémon Gold"], tier: 1, z: 5.17 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Blue", aliases: ["Pokémon Blue"], tier: 1, z: 5.13 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Silver", aliases: ["Pokémon Silver"], tier: 1, z: 4.81 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Yellow", aliases: ["Pokémon Yellow"], tier: 1, z: 4.69 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Sword", aliases: ["Pokémon Sword"], tier: 2, z: 4.37 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Shield", aliases: ["Pokémon Shield"], tier: 2, z: 4.3 }, // override: auto 3 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Violet", aliases: ["Pokémon Violet"], tier: 2, z: 3.84 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Scarlet", aliases: ["Pokémon Scarlet"], tier: 2, z: 3.64 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Emerald", aliases: ["Pokémon Emerald"], tier: 2, z: 3.6 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "White", aliases: ["Pokémon White"], tier: 3, z: 5.51 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Black", aliases: ["Pokémon Black"], tier: 3, z: 5.46 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "X", aliases: ["Pokémon X"], tier: 3, z: 5.2 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Y", aliases: ["Pokémon Y"], tier: 3, z: 5.03 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Sun", aliases: ["Pokémon Sun"], tier: 3, z: 4.97 },
+      { text: "Moon", aliases: ["Pokémon Moon"], tier: 3, z: 4.7 },
+      { text: "Diamond", aliases: ["Pokémon Diamond"], tier: 3, z: 4.42 },
+      { text: "Crystal", aliases: ["Pokémon Crystal"], tier: 3, z: 4.4 },
+      { text: "Pearl", aliases: ["Pokémon Pearl"], tier: 3, z: 4.14 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Platinum", aliases: ["Pokémon Platinum"], tier: 3, z: 4.02 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Ruby", aliases: ["Pokémon Ruby"], tier: 3, z: 3.98 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Sapphire", aliases: ["Pokémon Sapphire"], tier: 3, z: 3.44 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "FireRed", aliases: ["Fire Red", "Pokémon FireRed", "Pokémon Fire Red"], tier: 3, z: 1.71 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "HeartGold", aliases: ["Heart Gold", "Pokémon HeartGold", "Pokémon Heart Gold"], tier: 3, z: 1.62 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "SoulSilver", aliases: ["Soul Silver", "Pokémon SoulSilver", "Pokémon Soul Silver"], tier: 3, z: 1.58 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "LeafGreen", aliases: ["Leaf Green", "Pokémon LeafGreen", "Pokémon Leaf Green"], tier: 3, z: 1.43 }, // override: auto 6 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Brilliant Diamond", aliases: ["Pokémon Brilliant Diamond"], tier: 4, z: 4.18 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ultra Sun", aliases: ["Pokémon Ultra Sun"], tier: 4, z: 4.16 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Ultra Moon", aliases: ["Pokémon Ultra Moon"], tier: 4, z: 4.1 },
+      { text: "Shining Pearl", aliases: ["Pokémon Shining Pearl"], tier: 4, z: 3.75 },
+      { text: "Omega Ruby", aliases: ["Pokémon Omega Ruby"], tier: 4, z: 3.57 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Alpha Sapphire", aliases: ["Pokémon Alpha Sapphire"], tier: 4, z: 3.38 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Let's Go, Pikachu!", aliases: ["Pokémon Let's Go, Pikachu!"], tier: 4, z: 3.18 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Let's Go, Eevee!", aliases: ["Pokémon Let's Go, Eevee!"], tier: 4, z: 2.56 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Legends: Arceus", aliases: ["Arceus", "Pokémon Legends: Arceus", "Pokémon Arceus"], tier: 4, z: 1.88 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "White 2", aliases: ["Pokémon White 2"], tier: 5, z: 5.39 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Black 2", aliases: ["Pokémon Black 2"], tier: 5, z: 5.35 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Legends: Z-A", aliases: ["Legends ZA", "Z-A", "Pokémon Legends: Z-A", "Pokémon Legends ZA", "Pokémon Z-A"], tier: 5, z: 3.92 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Green", aliases: ["Pokémon Green"], tier: 6, z: 5.13 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+    ]
+  },
+  {
+    id: "mortal-kombat-01", category: "Video Games", closed: true,
+    prompt: "Name a character from the first three Mortal Kombat games (including Ultimate MK3)",
+    answers: [
+      { text: "Sub-Zero", aliases: ["Subzero"], tier: 1, z: 4.34 },
+      { text: "Scorpion", aliases: [], tier: 1, z: 3.37 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Liu Kang", aliases: [], tier: 1, z: 3.33 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Raiden", aliases: ["Rayden"], tier: 1, z: 2.38 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Johnny Cage", aliases: [], tier: 2, z: 3.93 }, // override: auto 1 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Goro", aliases: [], tier: 2, z: 2.52 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Kitana", aliases: [], tier: 2, z: 2.17 }, // override: auto 4 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Jax", aliases: ["Jax Briggs"], tier: 3, z: 3.31 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Kano", aliases: [], tier: 3, z: 3.16 },
+      { text: "Sonya Blade", aliases: ["Sonya"], tier: 3, z: 3.04 },
+      { text: "Shao Kahn", aliases: [], tier: 3, z: 2.63 },
+      { text: "Shang Tsung", aliases: [], tier: 3, z: 2.29 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Mileena", aliases: [], tier: 3, z: 1.82 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Smoke", aliases: [], tier: 4, z: 4.67 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Jade", aliases: [], tier: 4, z: 3.78 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Reptile", aliases: [], tier: 4, z: 3.25 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Kung Lao", aliases: [], tier: 4, z: 3.1 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Baraka", aliases: [], tier: 4, z: 2.61 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Sindel", aliases: [], tier: 4, z: 1.78 },
+      { text: "Cyrax", aliases: [], tier: 4, z: 1.36 }, // override: auto 5 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Noob Saibot", aliases: [], tier: 4, z: 1.24 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Rain", aliases: [], tier: 5, z: 4.71 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Stryker", aliases: ["Kurtis Stryker"], tier: 5, z: 2.79 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Sektor", aliases: [], tier: 5, z: 1.81 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Kintaro", aliases: [], tier: 5, z: 1.65 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Kabal", aliases: [], tier: 5, z: 1.6 },
+      { text: "Ermac", aliases: [], tier: 5, z: 1.36 },
+      { text: "Nightwolf", aliases: [], tier: 5, z: 1.29 },
+      { text: "Chameleon", aliases: [], tier: 6, z: 3.1 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Sheeva", aliases: [], tier: 6, z: 1.34 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Motaro", aliases: [], tier: 6, z: 0.0 },
+      { text: "Khameleon", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "game-genres-01", category: "Video Games", closed: false,
+    prompt: "Name a video game genre",
+    answers: [
+      { text: "Sports", aliases: ["Sports game"], tier: 1, z: 4.94 },
+      { text: "Fighting", aliases: ["Fighting game"], tier: 1, z: 4.92 },
+      { text: "Role-playing game", aliases: ["RPG", "Role-playing"], tier: 1, z: 4.88 },
+      { text: "Racing", aliases: ["Racing game"], tier: 1, z: 4.5 }, // override: auto 2 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "First-person shooter", aliases: ["FPS", "Shooter"], tier: 1, z: 4.03 }, // override: auto 3 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Battle royale", aliases: [], tier: 1, z: 3.37 }, // override: auto 4 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Platformer", aliases: ["Platform", "Platform game"], tier: 1, z: 2.56 }, // override: auto 5 -> 1 (game title/character: tiered by fame to a typical player)
+      { text: "Open world", aliases: [], tier: 2, z: 5.34 }, // override: auto 1 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Sandbox", aliases: [], tier: 2, z: 3.02 }, // override: auto 5 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "MMORPG", aliases: ["MMO", "Massively multiplayer online"], tier: 2, z: 2.73 }, // override: auto 5 -> 2 (game title/character: tiered by fame to a typical player)
+      { text: "Roguelike", aliases: ["Roguelite"], tier: 2, z: 2.1 }, // override: auto 6 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Metroidvania", aliases: [], tier: 2, z: 1.84 }, // override: auto 6 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Action", aliases: [], tier: 3, z: 5.25 }, // override: auto 1 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Strategy", aliases: [], tier: 3, z: 4.74 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Real-time strategy", aliases: ["RTS"], tier: 3, z: 4.67 }, // override: auto 2 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Adventure", aliases: ["Action-adventure"], tier: 3, z: 4.46 },
+      { text: "Horror", aliases: ["Survival horror"], tier: 3, z: 4.43 },
+      { text: "Survival", aliases: [], tier: 3, z: 4.37 },
+      { text: "Rhythm", aliases: ["Rhythm game", "Music game"], tier: 3, z: 4.05 },
+      { text: "Puzzle", aliases: [], tier: 3, z: 3.96 },
+      { text: "Simulation", aliases: ["Sim", "Simulator"], tier: 3, z: 3.94 },
+      { text: "Stealth", aliases: [], tier: 3, z: 3.53 }, // override: auto 4 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "MOBA", aliases: ["Multiplayer online battle arena"], tier: 3, z: 2.32 }, // override: auto 5 -> 3 (game title/character: tiered by fame to a typical player)
+      { text: "Party", aliases: ["Party game"], tier: 4, z: 5.49 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Card game", aliases: ["Deck-builder", "Deckbuilder", "Collectible card game"], tier: 4, z: 4.96 }, // override: auto 1 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Point-and-click", aliases: ["Point and click adventure"], tier: 4, z: 4.74 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Turn-based strategy", aliases: ["TBS"], tier: 4, z: 4.58 }, // override: auto 2 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Beat 'em up", aliases: ["Brawler"], tier: 4, z: 4.43 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Tower defense", aliases: ["Tower defence"], tier: 4, z: 4.36 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Visual novel", aliases: [], tier: 4, z: 4.26 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Third-person shooter", aliases: ["TPS"], tier: 4, z: 4.01 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Hero shooter", aliases: [], tier: 4, z: 3.96 }, // override: auto 3 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "City builder", aliases: ["City-building"], tier: 4, z: 3.84 },
+      { text: "Hack and slash", aliases: [], tier: 4, z: 3.5 },
+      { text: "JRPG", aliases: [], tier: 4, z: 2.03 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Soulslike", aliases: ["Souls-like"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (game title/character: tiered by fame to a typical player)
+      { text: "Match-three", aliases: ["Match 3"], tier: 5, z: 5.04 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Run and gun", aliases: [], tier: 5, z: 4.85 }, // override: auto 1 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Grand strategy", aliases: [], tier: 5, z: 4.52 }, // override: auto 2 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Text adventure", aliases: ["Interactive fiction"], tier: 5, z: 4.35 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Shoot 'em up", aliases: ["Shmup"], tier: 5, z: 4.34 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Bullet hell", aliases: [], tier: 5, z: 4.18 }, // override: auto 3 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Life simulation", aliases: ["Life sim"], tier: 5, z: 3.94 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Endless runner", aliases: [], tier: 5, z: 3.88 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Dating sim", aliases: [], tier: 5, z: 3.75 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Idle", aliases: ["Idle game", "Clicker", "Incremental"], tier: 5, z: 3.7 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Farming sim", aliases: ["Farming simulator"], tier: 5, z: 3.66 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Extraction shooter", aliases: [], tier: 5, z: 3.61 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Walking simulator", aliases: [], tier: 5, z: 3.59 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Flight simulator", aliases: ["Flight sim"], tier: 5, z: 3.59 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Tactical RPG", aliases: ["Strategy RPG", "SRPG"], tier: 5, z: 3.39 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "Kart racing", aliases: ["Kart racer"], tier: 5, z: 3.26 }, // override: auto 4 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "4X", aliases: [], tier: 5, z: 3.16 },
+      { text: "Dungeon crawler", aliases: [], tier: 5, z: 2.74 },
+      { text: "Looter shooter", aliases: [], tier: 5, z: 2.03 }, // override: auto 6 -> 5 (game title/character: tiered by fame to a typical player)
+      { text: "God game", aliases: [], tier: 6, z: 5.34 }, // override: auto 1 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Educational", aliases: ["Edutainment"], tier: 6, z: 4.6 }, // override: auto 2 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Survivors-like", aliases: ["Bullet heaven"], tier: 6, z: 4.1 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Light gun shooter", aliases: ["Light gun", "Rail shooter"], tier: 6, z: 3.98 }, // override: auto 3 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Cozy game", aliases: ["Cosy game"], tier: 6, z: 3.64 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Trivia", aliases: ["Quiz"], tier: 6, z: 3.47 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Social deduction", aliases: [], tier: 6, z: 3.45 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Boomer shooter", aliases: [], tier: 6, z: 3.21 }, // override: auto 4 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Tycoon", aliases: ["Business simulation", "Management sim"], tier: 6, z: 3.16 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Immersive sim", aliases: [], tier: 6, z: 3.14 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Pinball", aliases: [], tier: 6, z: 3.1 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Gacha", aliases: [], tier: 6, z: 2.4 }, // override: auto 5 -> 6 (game title/character: tiered by fame to a typical player)
+      { text: "Auto battler", aliases: ["Auto chess"], tier: 6, z: 2.25 },
+      { text: "Wargame", aliases: [], tier: 6, z: 2.25 },
+    ]
+  },
+  {
+    id: "planets-moons-01", category: "Science", closed: false,
+    prompt: "Name a planet, dwarf planet or named moon of the Solar System",
+    answers: [
+      { text: "Earth", aliases: [], tier: 1, z: 5.06 },
+      { text: "Moon", aliases: ["Luna"], tier: 1, z: 4.7 },
+      { text: "Mars", aliases: [], tier: 1, z: 4.27 },
+      { text: "Venus", aliases: [], tier: 1, z: 3.81 },
+      { text: "Jupiter", aliases: [], tier: 1, z: 3.68 },
+      { text: "Saturn", aliases: [], tier: 1, z: 3.54 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Titan", aliases: [], tier: 2, z: 3.69 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Europa", aliases: [], tier: 2, z: 3.6 },
+      { text: "Pluto", aliases: [], tier: 2, z: 3.35 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Mercury", aliases: [], tier: 3, z: 4.02 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Io", aliases: [], tier: 3, z: 3.41 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Neptune", aliases: [], tier: 3, z: 3.36 },
+      { text: "Uranus", aliases: [], tier: 3, z: 3.01 },
+      { text: "Ceres", aliases: [], tier: 3, z: 2.86 },
+      { text: "Ganymede", aliases: [], tier: 3, z: 2.5 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Phobos", aliases: [], tier: 3, z: 2.25 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Triton", aliases: [], tier: 4, z: 2.95 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Eris", aliases: [], tier: 4, z: 2.53 },
+      { text: "Charon", aliases: [], tier: 4, z: 2.44 },
+      { text: "Callisto", aliases: [], tier: 4, z: 2.31 },
+      { text: "Enceladus", aliases: [], tier: 4, z: 2.29 },
+      { text: "Deimos", aliases: [], tier: 4, z: 2.09 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Miranda", aliases: [], tier: 5, z: 3.84 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ariel", aliases: [], tier: 5, z: 3.54 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rhea", aliases: [], tier: 5, z: 3.01 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Oberon", aliases: [], tier: 5, z: 2.65 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Titania", aliases: [], tier: 5, z: 2.52 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dione", aliases: [], tier: 5, z: 2.16 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tethys", aliases: [], tier: 5, z: 2.07 },
+      { text: "Mimas", aliases: [], tier: 5, z: 1.83 },
+      { text: "Iapetus", aliases: [], tier: 5, z: 1.58 },
+      { text: "Haumea", aliases: [], tier: 5, z: 1.29 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Makemake", aliases: [], tier: 5, z: 1.27 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Umbriel", aliases: [], tier: 5, z: 1.23 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Puck", aliases: [], tier: 6, z: 3.63 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Pandora", aliases: [], tier: 6, z: 3.4 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Phoebe", aliases: [], tier: 6, z: 3.38 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Hydra", aliases: [], tier: 6, z: 3.31 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Prometheus", aliases: [], tier: 6, z: 3.13 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Janus", aliases: [], tier: 6, z: 3.02 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Nix", aliases: [], tier: 6, z: 3.0 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Hyperion", aliases: [], tier: 6, z: 2.77 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Larissa", aliases: [], tier: 6, z: 2.75 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Proteus", aliases: [], tier: 6, z: 2.74 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Styx", aliases: [], tier: 6, z: 2.6 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Metis", aliases: [], tier: 6, z: 2.33 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kerberos", aliases: [], tier: 6, z: 2.12 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Thebe", aliases: [], tier: 6, z: 1.69 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Epimetheus", aliases: [], tier: 6, z: 1.45 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nereid", aliases: [], tier: 6, z: 1.44 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Amalthea", aliases: [], tier: 6, z: 1.44 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Himalia", aliases: [], tier: 6, z: 0.0 },
+      { text: "Dysnomia", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "geological-time-01", category: "Science", closed: true,
+    prompt: "Name a geological era, period or epoch of the Phanerozoic (the last 541 million years)",
+    answers: [
+      { text: "Jurassic", aliases: [], tier: 1, z: 3.5 },
+      { text: "Cretaceous", aliases: [], tier: 1, z: 3.22 },
+      { text: "Triassic", aliases: [], tier: 1, z: 2.79 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Pleistocene", aliases: [], tier: 2, z: 3.01 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Cambrian", aliases: [], tier: 2, z: 2.97 },
+      { text: "Permian", aliases: [], tier: 3, z: 3.0 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Carboniferous", aliases: [], tier: 3, z: 2.92 },
+      { text: "Devonian", aliases: [], tier: 3, z: 2.9 },
+      { text: "Mesozoic", aliases: [], tier: 3, z: 2.68 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Holocene", aliases: [], tier: 3, z: 2.64 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Miocene", aliases: [], tier: 4, z: 2.89 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Quaternary", aliases: [], tier: 4, z: 2.85 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Eocene", aliases: [], tier: 4, z: 2.82 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Silurian", aliases: [], tier: 4, z: 2.7 },
+      { text: "Paleozoic", aliases: ["Palaeozoic"], tier: 4, z: 2.69 },
+      { text: "Ordovician", aliases: [], tier: 4, z: 2.66 },
+      { text: "Cenozoic", aliases: ["Cainozoic"], tier: 4, z: 2.43 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tertiary", aliases: [], tier: 5, z: 3.53 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pliocene", aliases: [], tier: 5, z: 2.68 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Oligocene", aliases: [], tier: 5, z: 2.46 },
+      { text: "Paleocene", aliases: ["Palaeocene"], tier: 5, z: 2.17 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Neogene", aliases: [], tier: 5, z: 2.05 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mississippian", aliases: [], tier: 6, z: 2.51 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pennsylvanian", aliases: [], tier: 6, z: 2.38 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Paleogene", aliases: ["Palaeogene"], tier: 6, z: 1.91 },
+    ]
+  },
+  {
+    id: "organs-01", category: "Science", closed: false,
+    prompt: "Name an organ of the human body",
+    answers: [
+      { text: "Heart", aliases: [], tier: 1, z: 5.31 },
+      { text: "Brain", aliases: [], tier: 1, z: 4.94 },
+      { text: "Stomach", aliases: [], tier: 1, z: 4.42 },
+      { text: "Liver", aliases: [], tier: 1, z: 4.18 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Lungs", aliases: ["Lung"], tier: 1, z: 3.97 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Kidneys", aliases: ["Kidney"], tier: 1, z: 3.49 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Skin", aliases: [], tier: 2, z: 4.91 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Appendix", aliases: [], tier: 2, z: 3.51 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Eyes", aliases: ["Eye"], tier: 3, z: 5.21 }, // override: auto 1 -> 3 (everyday word or name: text frequency misstates recall here)
+      { text: "Bladder", aliases: ["Urinary bladder"], tier: 3, z: 3.62 },
+      { text: "Thyroid", aliases: ["Thyroid gland"], tier: 3, z: 3.53 },
+      { text: "Uterus", aliases: ["Womb"], tier: 3, z: 3.4 },
+      { text: "Small intestine", aliases: ["Intestines", "Intestine", "Gut"], tier: 3, z: 3.23 },
+      { text: "Large intestine", aliases: ["Colon", "Bowel"], tier: 3, z: 3.23 },
+      { text: "Ovaries", aliases: ["Ovary"], tier: 3, z: 3.16 },
+      { text: "Pancreas", aliases: [], tier: 3, z: 3.14 },
+      { text: "Spleen", aliases: [], tier: 3, z: 3.14 },
+      { text: "Nose", aliases: [], tier: 4, z: 4.51 }, // override: auto 1 -> 4 (everyday word or name: text frequency misstates recall here)
+      { text: "Tongue", aliases: [], tier: 4, z: 4.37 }, // override: auto 2 -> 4 (everyday word or name: text frequency misstates recall here)
+      { text: "Ears", aliases: ["Ear"], tier: 4, z: 4.36 }, // override: auto 2 -> 4 (everyday word or name: text frequency misstates recall here)
+      { text: "Prostate", aliases: ["Prostate gland"], tier: 4, z: 3.67 }, // override: auto 2 -> 4 (better known here than its text frequency suggests)
+      { text: "Spinal cord", aliases: [], tier: 4, z: 3.61 }, // override: auto 3 -> 4 (multi-word phrase: common component words skew the score)
+      { text: "Diaphragm", aliases: [], tier: 4, z: 3.09 },
+      { text: "Placenta", aliases: [], tier: 4, z: 3.09 },
+      { text: "Rectum", aliases: [], tier: 4, z: 2.96 },
+      { text: "Urethra", aliases: [], tier: 4, z: 2.85 },
+      { text: "Gallbladder", aliases: ["Gall bladder"], tier: 4, z: 2.81 },
+      { text: "Pituitary gland", aliases: ["Pituitary"], tier: 4, z: 2.81 },
+      { text: "Tonsils", aliases: ["Tonsil"], tier: 4, z: 2.79 },
+      { text: "Testes", aliases: ["Testicles", "Testis"], tier: 4, z: 2.71 },
+      { text: "Larynx", aliases: ["Voice box"], tier: 4, z: 2.71 },
+      { text: "Trachea", aliases: ["Windpipe"], tier: 4, z: 2.68 },
+      { text: "Hypothalamus", aliases: [], tier: 4, z: 2.67 },
+      { text: "Teeth", aliases: ["Tooth"], tier: 5, z: 4.58 }, // override: auto 1 -> 5 (everyday word or name: text frequency misstates recall here)
+      { text: "Bone marrow", aliases: [], tier: 5, z: 3.48 }, // override: auto 3 -> 5 (multi-word phrase: common component words skew the score)
+      { text: "Lymph nodes", aliases: ["Lymph node"], tier: 5, z: 3.1 }, // override: auto 4 -> 5 (multi-word phrase: common component words skew the score)
+      { text: "Adrenal glands", aliases: ["Adrenal gland", "Adrenals"], tier: 5, z: 2.84 }, // override: auto 4 -> 5 (multi-word phrase: common component words skew the score)
+      { text: "Cerebellum", aliases: [], tier: 5, z: 2.67 },
+      { text: "Salivary glands", aliases: ["Salivary gland"], tier: 5, z: 2.59 },
+      { text: "Thymus", aliases: [], tier: 5, z: 2.58 },
+      { text: "Fallopian tubes", aliases: ["Fallopian tube", "Oviduct"], tier: 5, z: 2.56 },
+      { text: "Oesophagus", aliases: ["Esophagus", "Gullet"], tier: 5, z: 2.35 },
+      { text: "Pharynx", aliases: ["Throat"], tier: 5, z: 2.33 },
+      { text: "Pineal gland", aliases: ["Pineal"], tier: 6, z: 2.45 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Parathyroid glands", aliases: ["Parathyroid"], tier: 6, z: 2.29 },
+      { text: "Duodenum", aliases: [], tier: 6, z: 2.28 },
+      { text: "Bronchi", aliases: ["Bronchus"], tier: 6, z: 2.0 },
+      { text: "Ureters", aliases: ["Ureter"], tier: 6, z: 1.75 },
+      { text: "Mesentery", aliases: [], tier: 6, z: 1.6 },
+    ]
+  },
+  {
+    id: "clouds-01", category: "Science", closed: true,
+    prompt: "Name a type of cloud (the ten basic types or a well-known special cloud)",
+    answers: [
+      { text: "Cirrus", aliases: [], tier: 1, z: 2.65 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Cumulus", aliases: [], tier: 1, z: 2.57 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Stratus", aliases: [], tier: 1, z: 2.41 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Cumulonimbus", aliases: ["Thundercloud", "Storm cloud"], tier: 1, z: 1.86 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Mammatus", aliases: [], tier: 2, z: 1.4 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Fog", aliases: [], tier: 3, z: 3.9 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Funnel cloud", aliases: ["Funnel"], tier: 3, z: 3.43 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Stratocumulus", aliases: [], tier: 3, z: 1.34 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Altocumulus", aliases: [], tier: 3, z: 1.31 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Nimbostratus", aliases: ["Nimbus"], tier: 3, z: 1.18 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Wall cloud", aliases: [], tier: 4, z: 4.36 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shelf cloud", aliases: ["Arcus"], tier: 4, z: 3.89 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lenticular", aliases: ["Lenticularis", "Lenticular cloud"], tier: 4, z: 2.49 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Contrail", aliases: ["Contrails", "Vapour trail", "Vapor trail"], tier: 4, z: 1.89 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Altostratus", aliases: [], tier: 4, z: 1.04 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cirrostratus", aliases: [], tier: 4, z: 1.03 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cirrocumulus", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Roll cloud", aliases: ["Volutus"], tier: 5, z: 4.28 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Anvil cloud", aliases: ["Incus", "Anvil"], tier: 5, z: 3.03 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pileus", aliases: ["Cap cloud"], tier: 5, z: 1.59 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Noctilucent", aliases: ["Noctilucent cloud"], tier: 5, z: 1.58 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Virga", aliases: [], tier: 5, z: 1.54 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nacreous", aliases: ["Polar stratospheric cloud", "Mother-of-pearl cloud"], tier: 5, z: 1.41 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Morning Glory cloud", aliases: ["Morning Glory"], tier: 6, z: 4.08 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Kelvin-Helmholtz", aliases: ["Fluctus", "Kelvin-Helmholtz cloud"], tier: 6, z: 2.48 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Asperitas", aliases: ["Undulatus asperatus"], tier: 6, z: 0.0 },
+      { text: "Castellanus", aliases: [], tier: 6, z: 0.0 },
+      { text: "Pyrocumulus", aliases: ["Flammagenitus", "Pyrocumulonimbus"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "programming-languages-01", category: "Science", closed: false,
+    prompt: "Name a programming language",
+    answers: [
+      { text: "C++", aliases: ["CPP"], tier: 1, z: 5.33 },
+      { text: "C", aliases: [], tier: 1, z: 5.33 },
+      { text: "Java", aliases: [], tier: 1, z: 4.0 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Python", aliases: [], tier: 1, z: 3.78 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "JavaScript", aliases: ["JS"], tier: 1, z: 3.5 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "C#", aliases: ["CSharp"], tier: 2, z: 5.33 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Scratch", aliases: [], tier: 2, z: 4.16 },
+      { text: "SQL", aliases: [], tier: 2, z: 3.38 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Go", aliases: ["Golang"], tier: 3, z: 6.03 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "R", aliases: [], tier: 3, z: 5.35 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Swift", aliases: [], tier: 3, z: 4.15 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ruby", aliases: [], tier: 3, z: 3.98 },
+      { text: "Rust", aliases: [], tier: 3, z: 3.74 },
+      { text: "PHP", aliases: [], tier: 3, z: 3.42 },
+      { text: "MATLAB", aliases: [], tier: 3, z: 2.79 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "TypeScript", aliases: ["TS"], tier: 3, z: 2.59 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Kotlin", aliases: [], tier: 3, z: 2.08 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "BASIC", aliases: ["Visual Basic", "VB", "VBA"], tier: 4, z: 4.89 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Assembly", aliases: ["Assembly language", "ASM", "Assembler"], tier: 4, z: 4.61 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Objective-C", aliases: ["ObjC"], tier: 4, z: 4.32 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bash", aliases: ["Shell", "Shell script"], tier: 4, z: 3.81 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dart", aliases: [], tier: 4, z: 3.52 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pascal", aliases: [], tier: 4, z: 3.39 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Haskell", aliases: [], tier: 4, z: 3.26 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Scala", aliases: [], tier: 4, z: 3.01 },
+      { text: "Perl", aliases: [], tier: 4, z: 2.97 },
+      { text: "Lua", aliases: [], tier: 4, z: 2.69 },
+      { text: "Fortran", aliases: [], tier: 4, z: 2.69 },
+      { text: "COBOL", aliases: [], tier: 4, z: 2.49 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "F#", aliases: ["FSharp"], tier: 5, z: 5.08 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Scheme", aliases: [], tier: 5, z: 4.57 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Logo", aliases: [], tier: 5, z: 4.28 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Julia", aliases: [], tier: 5, z: 4.12 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ada", aliases: [], tier: 5, z: 3.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Elixir", aliases: [], tier: 5, z: 3.16 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Groovy", aliases: [], tier: 5, z: 3.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Zig", aliases: [], tier: 5, z: 3.05 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Delphi", aliases: ["Object Pascal"], tier: 5, z: 3.01 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lisp", aliases: ["Common Lisp"], tier: 5, z: 3.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "PowerShell", aliases: [], tier: 5, z: 2.72 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Solidity", aliases: [], tier: 5, z: 2.63 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Prolog", aliases: [], tier: 5, z: 2.34 },
+      { text: "Erlang", aliases: [], tier: 5, z: 2.29 },
+      { text: "Clojure", aliases: [], tier: 5, z: 2.27 },
+      { text: "Smalltalk", aliases: [], tier: 5, z: 2.27 },
+      { text: "OCaml", aliases: [], tier: 5, z: 1.86 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "D", aliases: [], tier: 6, z: 5.46 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Carbon", aliases: [], tier: 6, z: 4.55 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Forth", aliases: [], tier: 6, z: 4.4 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Crystal", aliases: [], tier: 6, z: 4.4 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Hack", aliases: [], tier: 6, z: 4.05 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "PL/I", aliases: ["PL/1"], tier: 6, z: 3.88 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "ML", aliases: ["Standard ML"], tier: 6, z: 3.84 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Apex", aliases: [], tier: 6, z: 3.71 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Elm", aliases: [], tier: 6, z: 3.36 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Racket", aliases: [], tier: 6, z: 3.33 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mojo", aliases: [], tier: 6, z: 3.32 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Eiffel", aliases: [], tier: 6, z: 3.23 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Odin", aliases: [], tier: 6, z: 3.23 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ballerina", aliases: [], tier: 6, z: 3.1 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Gleam", aliases: [], tier: 6, z: 2.97 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nim", aliases: [], tier: 6, z: 2.82 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "APL", aliases: [], tier: 6, z: 2.57 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tcl", aliases: [], tier: 6, z: 2.53 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "AWK", aliases: [], tier: 6, z: 2.31 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "ALGOL", aliases: [], tier: 6, z: 2.05 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "VHDL", aliases: [], tier: 6, z: 1.96 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Verilog", aliases: [], tier: 6, z: 1.9 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "ABAP", aliases: [], tier: 6, z: 1.71 },
+      { text: "Simula", aliases: [], tier: 6, z: 1.71 },
+      { text: "Modula-2", aliases: ["Modula"], tier: 6, z: 1.56 },
+      { text: "Haxe", aliases: [], tier: 6, z: 1.43 },
+      { text: "PureScript", aliases: [], tier: 6, z: 0.0 },
+      { text: "GDScript", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "imperial-units-01", category: "Science", closed: false,
+    prompt: "Name a unit of the imperial or US customary measurement systems",
+    answers: [
+      { text: "Foot", aliases: ["Feet", "ft"], tier: 1, z: 4.87 },
+      { text: "Mile", aliases: [], tier: 1, z: 4.59 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Inch", aliases: [], tier: 1, z: 4.49 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Pound", aliases: ["lb", "lbs"], tier: 1, z: 4.32 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Ounce", aliases: ["oz"], tier: 1, z: 3.8 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Gallon", aliases: [], tier: 1, z: 3.75 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Stone", aliases: [], tier: 2, z: 4.8 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Yard", aliases: [], tier: 2, z: 4.57 },
+      { text: "Pint", aliases: [], tier: 2, z: 3.66 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Fahrenheit", aliases: ["Degree Fahrenheit", "Degrees Fahrenheit"], tier: 2, z: 3.24 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Cup", aliases: [], tier: 3, z: 5.11 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ton", aliases: ["Long ton", "Short ton"], tier: 3, z: 4.29 },
+      { text: "Acre", aliases: [], tier: 3, z: 3.93 },
+      { text: "Fluid ounce", aliases: ["fl oz"], tier: 3, z: 3.66 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Horsepower", aliases: ["hp"], tier: 3, z: 3.49 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Teaspoon", aliases: ["tsp"], tier: 3, z: 3.3 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tablespoon", aliases: ["tbsp"], tier: 3, z: 3.15 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Quart", aliases: [], tier: 3, z: 3.01 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hand", aliases: [], tier: 4, z: 5.41 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "League", aliases: [], tier: 4, z: 5.13 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mile per hour", aliases: ["mph", "Miles per hour"], tier: 4, z: 4.45 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Barrel", aliases: [], tier: 4, z: 4.17 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pound per square inch", aliases: ["PSI"], tier: 4, z: 4.01 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "British thermal unit", aliases: ["BTU"], tier: 4, z: 3.96 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nautical mile", aliases: [], tier: 4, z: 3.46 },
+      { text: "Fathom", aliases: [], tier: 4, z: 3.25 },
+      { text: "Furlong", aliases: [], tier: 4, z: 2.8 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bushel", aliases: [], tier: 4, z: 2.79 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hundredweight", aliases: ["cwt"], tier: 4, z: 1.86 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Chain", aliases: [], tier: 5, z: 4.65 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Square foot", aliases: ["Square feet"], tier: 5, z: 4.55 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Square mile", aliases: [], tier: 5, z: 4.4 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Foot-pound", aliases: ["ft-lb"], tier: 5, z: 4.21 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Grain", aliases: [], tier: 5, z: 4.18 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Thou", aliases: ["Mil"], tier: 5, z: 4.16 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rod", aliases: ["Pole", "Perch"], tier: 5, z: 4.14 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Knot", aliases: [], tier: 5, z: 3.72 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cubic foot", aliases: ["Cubic feet"], tier: 5, z: 3.68 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gill", aliases: [], tier: 5, z: 3.63 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Peck", aliases: [], tier: 5, z: 3.46 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dram", aliases: ["Drachm"], tier: 5, z: 2.94 },
+      { text: "Link", aliases: [], tier: 6, z: 4.99 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Board foot", aliases: [], tier: 6, z: 4.72 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Quarter", aliases: [], tier: 6, z: 4.72 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Cable", aliases: [], tier: 6, z: 4.54 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Cord", aliases: [], tier: 6, z: 3.98 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Troy ounce", aliases: [], tier: 6, z: 3.57 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Slug", aliases: [], tier: 6, z: 3.31 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rood", aliases: [], tier: 6, z: 2.58 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Therm", aliases: [], tier: 6, z: 2.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Minim", aliases: [], tier: 6, z: 1.99 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Scruple", aliases: [], tier: 6, z: 1.89 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hogshead", aliases: [], tier: 6, z: 1.89 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Firkin", aliases: [], tier: 6, z: 1.77 },
+      { text: "Barleycorn", aliases: [], tier: 6, z: 1.61 },
+      { text: "Pennyweight", aliases: [], tier: 6, z: 1.21 },
+      { text: "Poundal", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kilderkin", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "shapes-2d-01", category: "Science", closed: false,
+    prompt: "Name a two-dimensional (flat) geometric shape",
+    answers: [
+      { text: "Square", aliases: [], tier: 1, z: 4.84 },
+      { text: "Circle", aliases: [], tier: 1, z: 4.55 },
+      { text: "Triangle", aliases: [], tier: 1, z: 3.93 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Rectangle", aliases: ["Oblong"], tier: 1, z: 3.24 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Pentagon", aliases: [], tier: 2, z: 3.7 },
+      { text: "Octagon", aliases: [], tier: 2, z: 2.91 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Hexagon", aliases: [], tier: 2, z: 2.84 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Rhombus", aliases: ["Diamond"], tier: 2, z: 2.12 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Heart", aliases: [], tier: 3, z: 5.31 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Star", aliases: ["Pentagram"], tier: 3, z: 5.19 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Oval", aliases: ["Ellipse"], tier: 3, z: 3.98 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Crescent", aliases: [], tier: 3, z: 3.57 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Kite", aliases: [], tier: 3, z: 3.55 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Semicircle", aliases: [], tier: 3, z: 2.27 },
+      { text: "Parallelogram", aliases: [], tier: 3, z: 2.18 },
+      { text: "Trapezium", aliases: ["Trapezoid"], tier: 3, z: 1.8 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Cross", aliases: [], tier: 4, z: 5.0 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sector", aliases: [], tier: 4, z: 4.66 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Right-angled triangle", aliases: ["Right triangle"], tier: 4, z: 3.18 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Polygon", aliases: [], tier: 4, z: 3.04 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Quadrilateral", aliases: [], tier: 4, z: 2.37 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Equilateral triangle", aliases: [], tier: 4, z: 2.34 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Isosceles triangle", aliases: [], tier: 4, z: 2.2 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Scalene triangle", aliases: [], tier: 4, z: 1.62 },
+      { text: "Nonagon", aliases: ["Enneagon"], tier: 4, z: 1.48 },
+      { text: "Heptagon", aliases: ["Septagon"], tier: 4, z: 1.33 },
+      { text: "Decagon", aliases: [], tier: 4, z: 1.17 },
+      { text: "Dodecagon", aliases: [], tier: 4, z: 1.13 },
+      { text: "Segment", aliases: [], tier: 5, z: 4.26 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Acute triangle", aliases: [], tier: 5, z: 3.66 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Quadrant", aliases: [], tier: 5, z: 3.28 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Obtuse triangle", aliases: [], tier: 5, z: 2.99 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Arrowhead", aliases: ["Chevron", "Dart"], tier: 5, z: 2.86 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lune", aliases: [], tier: 5, z: 2.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Annulus", aliases: ["Ring"], tier: 5, z: 2.26 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Trefoil", aliases: [], tier: 5, z: 2.23 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hexagram", aliases: ["Star of David"], tier: 5, z: 1.95 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rhomboid", aliases: [], tier: 5, z: 1.91 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Quatrefoil", aliases: [], tier: 5, z: 1.78 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hendecagon", aliases: ["Undecagon"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Icosagon", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Stadium", aliases: ["Discorectangle"], tier: 6, z: 4.63 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Lens", aliases: [], tier: 6, z: 4.17 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Deltoid", aliases: [], tier: 6, z: 2.13 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cardioid", aliases: [], tier: 6, z: 1.75 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Astroid", aliases: [], tier: 6, z: 1.39 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Reuleaux triangle", aliases: [], tier: 6, z: 1.27 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Lemniscate", aliases: [], tier: 6, z: 1.17 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Vesica piscis", aliases: [], tier: 6, z: 1.15 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tridecagon", aliases: ["Triskaidecagon"], tier: 6, z: 0.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tetradecagon", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pentadecagon", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hexadecagon", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Heptadecagon", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Octadecagon", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Enneadecagon", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Chiliagon", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Myriagon", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Squircle", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Superellipse", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Salinon", aliases: [], tier: 6, z: 0.0 },
+      { text: "Arbelos", aliases: [], tier: 6, z: 0.0 },
+      { text: "Digon", aliases: [], tier: 6, z: 0.0 },
+      { text: "Monogon", aliases: ["Henagon"], tier: 6, z: 0.0 },
+      { text: "Nephroid", aliases: [], tier: 6, z: 0.0 },
+      { text: "Apeirogon", aliases: [], tier: 6, z: 0.0 },
+      { text: "Megagon", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "vitamins-minerals-01", category: "Science", closed: true,
+    prompt: "Name a vitamin or an essential dietary mineral",
+    answers: [
+      { text: "Iron", aliases: [], tier: 1, z: 4.74 },
+      { text: "Vitamin C", aliases: ["Ascorbic acid"], tier: 1, z: 3.99 },
+      { text: "Vitamin D", aliases: ["Calciferol"], tier: 1, z: 3.99 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Calcium", aliases: [], tier: 1, z: 3.82 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Vitamin A", aliases: ["Retinol"], tier: 2, z: 4.01 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Zinc", aliases: [], tier: 2, z: 3.65 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Vitamin B12", aliases: ["Cobalamin", "B12", "Vitamin B"], tier: 2, z: 2.08 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Vitamin E", aliases: ["Tocopherol"], tier: 3, z: 3.99 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Vitamin K", aliases: [], tier: 3, z: 3.96 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sodium", aliases: ["Salt"], tier: 3, z: 3.87 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Potassium", aliases: [], tier: 3, z: 3.58 },
+      { text: "Magnesium", aliases: [], tier: 3, z: 3.49 },
+      { text: "Vitamin B9", aliases: ["Folate", "Folic acid", "B9"], tier: 3, z: 2.31 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Copper", aliases: [], tier: 4, z: 4.27 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Phosphorus", aliases: ["Phosphate"], tier: 4, z: 3.25 },
+      { text: "Iodine", aliases: [], tier: 4, z: 3.19 },
+      { text: "Vitamin B1", aliases: ["Thiamine", "Thiamin", "B1"], tier: 4, z: 3.14 },
+      { text: "Vitamin B2", aliases: ["Riboflavin", "B2"], tier: 4, z: 3.13 },
+      { text: "Vitamin B3", aliases: ["Niacin", "B3"], tier: 4, z: 2.89 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vitamin B6", aliases: ["Pyridoxine", "B6"], tier: 4, z: 2.76 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Chloride", aliases: ["Chlorine"], tier: 5, z: 3.39 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fluoride", aliases: ["Fluorine"], tier: 5, z: 3.25 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Manganese", aliases: [], tier: 5, z: 3.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Selenium", aliases: [], tier: 5, z: 2.92 },
+      { text: "Vitamin B5", aliases: ["Pantothenic acid", "B5"], tier: 5, z: 2.8 },
+      { text: "Vitamin B7", aliases: ["Biotin", "B7"], tier: 5, z: 2.48 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sulfur", aliases: ["Sulphur"], tier: 6, z: 3.43 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cobalt", aliases: [], tier: 6, z: 3.37 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Chromium", aliases: [], tier: 6, z: 3.14 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Molybdenum", aliases: [], tier: 6, z: 2.74 }, // override: auto 5 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "gemstones-01", category: "Science", closed: false,
+    prompt: "Name a gemstone",
+    answers: [
+      { text: "Diamond", aliases: [], tier: 1, z: 4.42 },
+      { text: "Ruby", aliases: [], tier: 1, z: 3.98 },
+      { text: "Emerald", aliases: [], tier: 1, z: 3.6 },
+      { text: "Sapphire", aliases: [], tier: 1, z: 3.44 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Pearl", aliases: [], tier: 2, z: 4.14 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Opal", aliases: [], tier: 2, z: 3.2 },
+      { text: "Amethyst", aliases: [], tier: 2, z: 3.01 },
+      { text: "Topaz", aliases: [], tier: 2, z: 2.87 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Amber", aliases: [], tier: 3, z: 3.97 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jade", aliases: [], tier: 3, z: 3.78 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Quartz", aliases: [], tier: 3, z: 3.7 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Turquoise", aliases: [], tier: 3, z: 3.33 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Garnet", aliases: [], tier: 3, z: 3.17 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Onyx", aliases: [], tier: 3, z: 2.99 },
+      { text: "Moonstone", aliases: [], tier: 3, z: 2.62 },
+      { text: "Aquamarine", aliases: [], tier: 3, z: 2.51 },
+      { text: "Lapis lazuli", aliases: ["Lapis"], tier: 3, z: 2.25 },
+      { text: "Jet", aliases: [], tier: 4, z: 4.29 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Coral", aliases: [], tier: 4, z: 3.86 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rose quartz", aliases: [], tier: 4, z: 3.67 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jasper", aliases: [], tier: 4, z: 3.59 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Obsidian", aliases: [], tier: 4, z: 2.95 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Agate", aliases: [], tier: 4, z: 2.81 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tiger's eye", aliases: ["Tiger eye"], tier: 4, z: 2.78 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Zircon", aliases: [], tier: 4, z: 2.6 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tourmaline", aliases: [], tier: 4, z: 2.54 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Peridot", aliases: [], tier: 4, z: 2.5 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Malachite", aliases: [], tier: 4, z: 2.48 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Citrine", aliases: [], tier: 4, z: 2.32 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tanzanite", aliases: [], tier: 4, z: 1.89 },
+      { text: "Beryl", aliases: [], tier: 5, z: 2.91 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hematite", aliases: ["Haematite"], tier: 5, z: 2.48 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Spinel", aliases: [], tier: 5, z: 2.31 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Carnelian", aliases: ["Cornelian"], tier: 5, z: 2.17 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bloodstone", aliases: ["Heliotrope"], tier: 5, z: 2.12 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sunstone", aliases: [], tier: 5, z: 2.08 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chalcedony", aliases: [], tier: 5, z: 2.08 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Labradorite", aliases: [], tier: 5, z: 2.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Alexandrite", aliases: [], tier: 5, z: 1.83 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Morganite", aliases: [], tier: 5, z: 1.73 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sodalite", aliases: [], tier: 5, z: 1.67 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Aventurine", aliases: [], tier: 5, z: 1.65 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rhodonite", aliases: [], tier: 5, z: 1.53 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Iolite", aliases: [], tier: 5, z: 1.48 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Amazonite", aliases: [], tier: 5, z: 1.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kunzite", aliases: [], tier: 5, z: 1.33 },
+      { text: "Smoky quartz", aliases: [], tier: 6, z: 3.18 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Fluorite", aliases: [], tier: 6, z: 2.33 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Moissanite", aliases: [], tier: 6, z: 1.84 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sardonyx", aliases: [], tier: 6, z: 1.6 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Prehnite", aliases: [], tier: 6, z: 1.48 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rhodochrosite", aliases: [], tier: 6, z: 1.42 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Chrysoprase", aliases: [], tier: 6, z: 1.3 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sugilite", aliases: [], tier: 6, z: 1.24 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Chrysoberyl", aliases: [], tier: 6, z: 1.19 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Larimar", aliases: [], tier: 6, z: 1.18 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Howlite", aliases: [], tier: 6, z: 1.18 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tsavorite", aliases: [], tier: 6, z: 1.03 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Heliodor", aliases: [], tier: 6, z: 1.02 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Benitoite", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Painite", aliases: [], tier: 6, z: 0.0 },
+      { text: "Charoite", aliases: [], tier: 6, z: 0.0 },
+      { text: "Demantoid", aliases: [], tier: 6, z: 0.0 },
+      { text: "Taaffeite", aliases: [], tier: 6, z: 0.0 },
+      { text: "Jeremejevite", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ametrine", aliases: [], tier: 6, z: 0.0 },
+      { text: "Unakite", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "muscles-01", category: "Science", closed: false,
+    prompt: "Name a muscle in the human body",
+    answers: [
+      { text: "Biceps", aliases: ["Bicep", "Biceps brachii"], tier: 1, z: 3.06 },
+      { text: "Triceps", aliases: ["Tricep"], tier: 1, z: 2.61 },
+      { text: "Hamstrings", aliases: ["Hamstring"], tier: 1, z: 2.61 },
+      { text: "Quadriceps", aliases: ["Quads", "Quad"], tier: 1, z: 2.37 },
+      { text: "Abdominals", aliases: ["Abs", "Rectus abdominis", "Six-pack"], tier: 1, z: 1.83 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Pectorals", aliases: ["Pecs", "Pectoralis major", "Pectoralis", "Chest"], tier: 1, z: 1.73 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Heart", aliases: ["Cardiac muscle"], tier: 2, z: 5.31 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Tongue", aliases: [], tier: 2, z: 4.37 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Calf", aliases: ["Calves", "Gastrocnemius"], tier: 2, z: 3.71 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Deltoid", aliases: ["Deltoids", "Delts"], tier: 2, z: 2.13 },
+      { text: "Gluteus maximus", aliases: ["Glutes", "Gluteals", "Glute"], tier: 2, z: 2.1 },
+      { text: "Diaphragm", aliases: [], tier: 3, z: 3.09 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rotator cuff", aliases: [], tier: 3, z: 2.59 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hip flexors", aliases: ["Iliopsoas", "Psoas"], tier: 3, z: 2.23 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Obliques", aliases: ["Oblique", "External oblique", "Internal oblique"], tier: 3, z: 1.93 },
+      { text: "Trapezius", aliases: ["Traps"], tier: 3, z: 1.89 },
+      { text: "Latissimus dorsi", aliases: ["Lats"], tier: 3, z: 1.44 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sartorius", aliases: [], tier: 4, z: 2.33 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tibialis anterior", aliases: [], tier: 4, z: 1.96 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Serratus anterior", aliases: [], tier: 4, z: 1.86 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gluteus medius", aliases: [], tier: 4, z: 1.7 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Soleus", aliases: [], tier: 4, z: 1.67 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Masseter", aliases: [], tier: 4, z: 1.61 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Adductors", aliases: ["Adductor"], tier: 4, z: 1.47 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sternocleidomastoid", aliases: [], tier: 4, z: 1.45 },
+      { text: "Rhomboids", aliases: ["Rhomboid"], tier: 4, z: 1.41 },
+      { text: "Brachialis", aliases: [], tier: 4, z: 1.36 },
+      { text: "Erector spinae", aliases: [], tier: 4, z: 1.24 },
+      { text: "Intercostals", aliases: ["Intercostal"], tier: 4, z: 1.04 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gracilis", aliases: [], tier: 5, z: 2.28 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pectoralis minor", aliases: [], tier: 5, z: 2.05 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Teres minor", aliases: [], tier: 5, z: 1.99 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Teres major", aliases: [], tier: 5, z: 1.99 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gluteus minimus", aliases: [], tier: 5, z: 1.8 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Piriformis", aliases: [], tier: 5, z: 1.76 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Biceps femoris", aliases: [], tier: 5, z: 1.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Orbicularis oris", aliases: [], tier: 5, z: 1.61 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rectus femoris", aliases: [], tier: 5, z: 1.6 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Temporalis", aliases: [], tier: 5, z: 1.53 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vastus lateralis", aliases: [], tier: 5, z: 1.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Orbicularis oculi", aliases: [], tier: 5, z: 1.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Supraspinatus", aliases: [], tier: 5, z: 1.4 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Levator scapulae", aliases: [], tier: 5, z: 1.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Subscapularis", aliases: [], tier: 5, z: 1.31 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Brachioradialis", aliases: [], tier: 5, z: 1.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Transversus abdominis", aliases: ["Transverse abdominis"], tier: 5, z: 1.25 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Infraspinatus", aliases: [], tier: 5, z: 1.22 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vastus medialis", aliases: [], tier: 5, z: 1.2 },
+      { text: "Extensor digitorum", aliases: [], tier: 6, z: 1.57 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Detrusor", aliases: [], tier: 6, z: 1.57 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Plantaris", aliases: [], tier: 6, z: 1.46 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Vastus intermedius", aliases: [], tier: 6, z: 1.37 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Buccinator", aliases: [], tier: 6, z: 1.32 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Flexor carpi radialis", aliases: [], tier: 6, z: 1.27 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pronator teres", aliases: [], tier: 6, z: 1.24 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Peroneus longus", aliases: ["Fibularis longus"], tier: 6, z: 1.16 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tensor fasciae latae", aliases: ["TFL"], tier: 6, z: 1.16 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Platysma", aliases: [], tier: 6, z: 1.14 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Multifidus", aliases: [], tier: 6, z: 1.12 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Zygomaticus", aliases: ["Zygomaticus major"], tier: 6, z: 1.11 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Supinator", aliases: [], tier: 6, z: 1.07 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Semitendinosus", aliases: [], tier: 6, z: 1.01 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Stapedius", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Popliteus", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Risorius", aliases: [], tier: 6, z: 0.0 },
+      { text: "Coracobrachialis", aliases: [], tier: 6, z: 0.0 },
+      { text: "Anconeus", aliases: [], tier: 6, z: 0.0 },
+      { text: "Semimembranosus", aliases: [], tier: 6, z: 0.0 },
+      { text: "Splenius capitis", aliases: [], tier: 6, z: 0.0 },
+      { text: "Quadratus lumborum", aliases: ["QL"], tier: 6, z: 0.0 },
+      { text: "Arrector pili", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "dog-breeds-01", category: "Science", closed: false,
+    prompt: "Name a breed of dog",
+    answers: [
+      { text: "German Shepherd", aliases: ["Alsatian"], tier: 1, z: 3.86 },
+      { text: "Bulldog", aliases: ["English Bulldog", "British Bulldog"], tier: 1, z: 3.38 },
+      { text: "Labrador", aliases: ["Labrador Retriever", "Lab"], tier: 1, z: 3.3 },
+      { text: "Husky", aliases: ["Siberian Husky"], tier: 1, z: 3.29 },
+      { text: "Chihuahua", aliases: [], tier: 1, z: 3.21 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Pug", aliases: [], tier: 1, z: 3.11 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Poodle", aliases: [], tier: 1, z: 3.02 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Golden Retriever", aliases: [], tier: 1, z: 2.98 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Beagle", aliases: [], tier: 2, z: 3.06 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Corgi", aliases: ["Pembroke Welsh Corgi", "Welsh Corgi"], tier: 2, z: 2.83 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Dalmatian", aliases: [], tier: 2, z: 2.66 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Dachshund", aliases: ["Sausage dog"], tier: 2, z: 2.64 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Rottweiler", aliases: [], tier: 2, z: 2.59 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Shiba Inu", aliases: ["Shiba"], tier: 2, z: 2.22 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Jack Russell", aliases: ["Jack Russell Terrier"], tier: 3, z: 4.21 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Pit Bull", aliases: ["Pitbull", "American Pit Bull Terrier"], tier: 3, z: 4.0 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "St Bernard", aliases: ["Saint Bernard"], tier: 3, z: 3.99 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Boxer", aliases: [], tier: 3, z: 3.74 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Great Dane", aliases: [], tier: 3, z: 3.47 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "French Bulldog", aliases: ["Frenchie"], tier: 3, z: 3.37 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Yorkshire Terrier", aliases: ["Yorkie"], tier: 3, z: 3.18 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Greyhound", aliases: [], tier: 3, z: 3.17 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Border Collie", aliases: ["Collie", "Rough Collie"], tier: 3, z: 2.97 },
+      { text: "Staffordshire Bull Terrier", aliases: ["Staffy", "Staffie"], tier: 3, z: 2.96 },
+      { text: "Shih Tzu", aliases: [], tier: 3, z: 2.68 },
+      { text: "Pomeranian", aliases: [], tier: 3, z: 2.58 },
+      { text: "Cocker Spaniel", aliases: ["Spaniel"], tier: 3, z: 2.51 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Doberman", aliases: ["Dobermann", "Doberman Pinscher"], tier: 3, z: 2.5 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Australian Shepherd", aliases: ["Aussie"], tier: 4, z: 3.86 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Newfoundland", aliases: [], tier: 4, z: 3.38 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Scottish Terrier", aliases: ["Scottie"], tier: 4, z: 3.22 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bull Terrier", aliases: [], tier: 4, z: 3.21 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Chow Chow", aliases: ["Chow"], tier: 4, z: 3.13 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "West Highland Terrier", aliases: ["Westie", "West Highland White Terrier"], tier: 4, z: 3.11 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Maltese", aliases: [], tier: 4, z: 3.03 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Irish Setter", aliases: ["Red Setter"], tier: 4, z: 2.98 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Springer Spaniel", aliases: ["English Springer Spaniel"], tier: 4, z: 2.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bloodhound", aliases: [], tier: 4, z: 2.7 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cavalier King Charles Spaniel", aliases: ["King Charles Spaniel", "Cavalier"], tier: 4, z: 2.66 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mastiff", aliases: ["English Mastiff"], tier: 4, z: 2.58 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Basset Hound", aliases: [], tier: 4, z: 2.56 },
+      { text: "Akita", aliases: [], tier: 4, z: 2.49 },
+      { text: "Old English Sheepdog", aliases: [], tier: 4, z: 2.45 },
+      { text: "Schnauzer", aliases: ["Miniature Schnauzer"], tier: 4, z: 2.27 },
+      { text: "Whippet", aliases: [], tier: 4, z: 2.25 },
+      { text: "Bernese Mountain Dog", aliases: ["Bernese"], tier: 4, z: 2.23 },
+      { text: "Labradoodle", aliases: [], tier: 4, z: 2.03 },
+      { text: "Alaskan Malamute", aliases: ["Malamute"], tier: 4, z: 1.9 },
+      { text: "Samoyed", aliases: [], tier: 4, z: 1.88 },
+      { text: "Bichon Frise", aliases: ["Bichon"], tier: 4, z: 1.7 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cockapoo", aliases: [], tier: 4, z: 1.57 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pointer", aliases: ["German Shorthaired Pointer"], tier: 5, z: 3.62 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Afghan Hound", aliases: [], tier: 5, z: 3.29 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Border Terrier", aliases: [], tier: 5, z: 3.23 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Boston Terrier", aliases: [], tier: 5, z: 3.23 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Great Pyrenees", aliases: ["Pyrenean Mountain Dog"], tier: 5, z: 2.87 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cairn Terrier", aliases: [], tier: 5, z: 2.72 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cane Corso", aliases: [], tier: 5, z: 2.68 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Papillon", aliases: [], tier: 5, z: 2.52 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shar Pei", aliases: [], tier: 5, z: 2.38 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shetland Sheepdog", aliases: ["Sheltie"], tier: 5, z: 2.37 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Airedale", aliases: ["Airedale Terrier"], tier: 5, z: 2.02 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Irish Wolfhound", aliases: ["Wolfhound"], tier: 5, z: 1.99 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vizsla", aliases: [], tier: 5, z: 1.88 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Belgian Malinois", aliases: ["Malinois"], tier: 5, z: 1.88 },
+      { text: "Pekingese", aliases: [], tier: 5, z: 1.86 },
+      { text: "Rhodesian Ridgeback", aliases: ["Ridgeback"], tier: 5, z: 1.78 },
+      { text: "Weimaraner", aliases: [], tier: 5, z: 1.75 },
+      { text: "Saluki", aliases: [], tier: 5, z: 1.73 },
+      { text: "Lhasa Apso", aliases: [], tier: 5, z: 1.53 },
+      { text: "Havanese", aliases: [], tier: 5, z: 1.46 },
+      { text: "Dogue de Bordeaux", aliases: [], tier: 5, z: 1.37 },
+      { text: "Kerry Blue Terrier", aliases: ["Kerry Blue"], tier: 6, z: 3.14 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Pharaoh Hound", aliases: [], tier: 6, z: 3.07 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Chinese Crested", aliases: [], tier: 6, z: 2.88 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tibetan Mastiff", aliases: [], tier: 6, z: 2.53 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Finnish Spitz", aliases: [], tier: 6, z: 2.51 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nova Scotia Duck Tolling Retriever", aliases: ["Toller"], tier: 6, z: 2.43 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Brussels Griffon", aliases: ["Griffon Bruxellois"], tier: 6, z: 2.36 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Puli", aliases: [], tier: 6, z: 2.11 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bedlington Terrier", aliases: ["Bedlington"], tier: 6, z: 1.71 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Borzoi", aliases: [], tier: 6, z: 1.66 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Basenji", aliases: [], tier: 6, z: 1.56 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Leonberger", aliases: [], tier: 6, z: 1.35 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Norwegian Elkhound", aliases: ["Elkhound"], tier: 6, z: 1.24 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Keeshond", aliases: [], tier: 6, z: 1.17 },
+      { text: "Komondor", aliases: [], tier: 6, z: 1.14 },
+      { text: "Dandie Dinmont Terrier", aliases: ["Dandie Dinmont"], tier: 6, z: 0.94 },
+      { text: "Schipperke", aliases: [], tier: 6, z: 0.0 },
+      { text: "Xoloitzcuintli", aliases: ["Xolo", "Mexican Hairless"], tier: 6, z: 0.0 },
+      { text: "Lagotto Romagnolo", aliases: ["Lagotto"], tier: 6, z: 0.0 },
+      { text: "Otterhound", aliases: [], tier: 6, z: 0.0 },
+      { text: "Affenpinscher", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kuvasz", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "cell-parts-01", category: "Science", closed: true,
+    prompt: "Name a part of a cell (an organelle or cell structure)",
+    answers: [
+      { text: "Cell membrane", aliases: ["Plasma membrane", "Membrane"], tier: 1, z: 3.78 },
+      { text: "Nucleus", aliases: [], tier: 1, z: 3.59 },
+      { text: "Mitochondria", aliases: ["Mitochondrion"], tier: 1, z: 3.09 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Cell wall", aliases: [], tier: 2, z: 4.65 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Cytoplasm", aliases: [], tier: 2, z: 2.77 },
+      { text: "Ribosome", aliases: ["Ribosomes"], tier: 2, z: 2.42 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Chloroplast", aliases: ["Chloroplasts"], tier: 2, z: 2.31 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Chromosome", aliases: ["Chromosomes"], tier: 3, z: 3.48 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Golgi apparatus", aliases: ["Golgi body", "Golgi", "Golgi complex"], tier: 3, z: 2.44 },
+      { text: "Endoplasmic reticulum", aliases: ["ER", "Rough ER", "Smooth ER", "Rough endoplasmic reticulum", "Smooth endoplasmic reticulum"], tier: 3, z: 2.15 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Vacuole", aliases: [], tier: 3, z: 1.94 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lysosome", aliases: ["Lysosomes"], tier: 3, z: 1.91 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Nuclear envelope", aliases: ["Nuclear membrane"], tier: 4, z: 3.8 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cilia", aliases: ["Cilium"], tier: 4, z: 2.65 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vesicle", aliases: ["Vesicles"], tier: 4, z: 2.42 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cytoskeleton", aliases: [], tier: 4, z: 2.3 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Flagellum", aliases: ["Flagella"], tier: 4, z: 2.11 },
+      { text: "Nucleolus", aliases: [], tier: 4, z: 1.82 },
+      { text: "Centriole", aliases: ["Centrioles", "Centrosome"], tier: 4, z: 1.3 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Capsule", aliases: ["Slime capsule"], tier: 5, z: 3.7 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Plasmid", aliases: ["Plasmids"], tier: 5, z: 2.68 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Microtubule", aliases: ["Microtubules"], tier: 5, z: 2.32 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cytosol", aliases: [], tier: 5, z: 2.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pili", aliases: ["Pilus"], tier: 5, z: 2.15 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Peroxisome", aliases: [], tier: 5, z: 1.86 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Proteasome", aliases: [], tier: 6, z: 2.12 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Thylakoid", aliases: [], tier: 6, z: 1.6 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Plasmodesmata", aliases: ["Plasmodesma"], tier: 6, z: 1.36 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nucleoid", aliases: [], tier: 6, z: 1.29 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tonoplast", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Amyloplast", aliases: [], tier: 6, z: 0.0 },
+      { text: "Glyoxysome", aliases: [], tier: 6, z: 0.0 },
+      { text: "Microfilament", aliases: ["Microfilaments", "Actin filaments"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "oceania-01", category: "Geography", closed: true,
+    prompt: "Name a country or territory in Oceania",
+    answers: [
+      { text: "Australia", aliases: [], tier: 1, z: 5.06 },
+      { text: "New Zealand", aliases: ["Aotearoa", "NZ"], tier: 1, z: 4.49 },
+      { text: "Fiji", aliases: [], tier: 2, z: 3.61 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Samoa", aliases: [], tier: 2, z: 3.39 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Papua New Guinea", aliases: ["PNG"], tier: 2, z: 3.33 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Hawaii", aliases: [], tier: 3, z: 4.21 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Solomon Islands", aliases: [], tier: 3, z: 3.73 },
+      { text: "Guam", aliases: [], tier: 3, z: 3.25 },
+      { text: "Tonga", aliases: [], tier: 3, z: 3.1 },
+      { text: "Vanuatu", aliases: [], tier: 3, z: 2.78 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Cook Islands", aliases: [], tier: 4, z: 4.27 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Marshall Islands", aliases: [], tier: 4, z: 4.05 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "American Samoa", aliases: [], tier: 4, z: 3.39 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "New Caledonia", aliases: [], tier: 4, z: 2.95 },
+      { text: "Nauru", aliases: [], tier: 4, z: 2.94 },
+      { text: "French Polynesia", aliases: ["Tahiti"], tier: 4, z: 2.76 },
+      { text: "Palau", aliases: [], tier: 4, z: 2.68 },
+      { text: "Micronesia", aliases: ["Federated States of Micronesia", "FSM"], tier: 4, z: 2.61 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kiribati", aliases: [], tier: 4, z: 2.5 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tuvalu", aliases: [], tier: 4, z: 2.31 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Easter Island", aliases: ["Rapa Nui"], tier: 5, z: 4.07 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Norfolk Island", aliases: [], tier: 5, z: 3.81 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Northern Mariana Islands", aliases: ["Northern Marianas", "Saipan"], tier: 5, z: 3.05 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pitcairn Islands", aliases: ["Pitcairn"], tier: 5, z: 2.35 },
+      { text: "Niue", aliases: [], tier: 5, z: 2.32 },
+      { text: "Tokelau", aliases: [], tier: 6, z: 1.95 },
+      { text: "Wallis and Futuna", aliases: [], tier: 6, z: 1.85 },
+    ]
+  },
+  {
+    id: "rivers-01", category: "Geography", closed: false,
+    prompt: "Name a major river",
+    answers: [
+      { text: "Amazon", aliases: [], tier: 1, z: 4.55 },
+      { text: "Mississippi", aliases: [], tier: 1, z: 4.19 },
+      { text: "Thames", aliases: [], tier: 1, z: 3.73 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Nile", aliases: [], tier: 1, z: 3.64 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Congo", aliases: [], tier: 2, z: 3.75 },
+      { text: "Seine", aliases: [], tier: 2, z: 3.17 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Danube", aliases: [], tier: 2, z: 3.14 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Ganges", aliases: ["Ganga"], tier: 2, z: 2.92 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Yangtze", aliases: ["Chang Jiang"], tier: 2, z: 2.7 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Yellow River", aliases: ["Huang He", "Yellow"], tier: 3, z: 4.53 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jordan", aliases: [], tier: 3, z: 4.51 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Colorado", aliases: [], tier: 3, z: 4.46 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Missouri", aliases: [], tier: 3, z: 4.26 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hudson", aliases: [], tier: 3, z: 4.03 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rio Grande", aliases: [], tier: 3, z: 3.82 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Niger", aliases: [], tier: 3, z: 3.45 },
+      { text: "Rhine", aliases: [], tier: 3, z: 3.28 },
+      { text: "Indus", aliases: [], tier: 3, z: 3.08 },
+      { text: "Euphrates", aliases: [], tier: 3, z: 2.89 },
+      { text: "Mekong", aliases: [], tier: 3, z: 2.83 },
+      { text: "Tigris", aliases: [], tier: 3, z: 2.77 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Volga", aliases: [], tier: 3, z: 2.76 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Zambezi", aliases: [], tier: 3, z: 2.45 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ohio", aliases: [], tier: 4, z: 4.61 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Don", aliases: [], tier: 4, z: 4.6 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Columbia", aliases: [], tier: 4, z: 4.4 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Murray", aliases: [], tier: 4, z: 4.27 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "St. Lawrence", aliases: ["Saint Lawrence"], tier: 4, z: 4.26 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Darling", aliases: [], tier: 4, z: 4.09 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Po", aliases: [], tier: 4, z: 3.97 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shannon", aliases: [], tier: 4, z: 3.76 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Clyde", aliases: [], tier: 4, z: 3.72 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Potomac", aliases: [], tier: 4, z: 3.31 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Yukon", aliases: [], tier: 4, z: 3.19 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tyne", aliases: [], tier: 4, z: 3.17 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Severn", aliases: [], tier: 4, z: 3.03 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Loire", aliases: [], tier: 4, z: 2.75 },
+      { text: "Mersey", aliases: [], tier: 4, z: 2.65 },
+      { text: "Tiber", aliases: [], tier: 4, z: 2.6 },
+      { text: "Elbe", aliases: [], tier: 4, z: 2.53 },
+      { text: "Limpopo", aliases: [], tier: 4, z: 2.51 },
+      { text: "Rhône", aliases: [], tier: 4, z: 2.37 },
+      { text: "Orinoco", aliases: [], tier: 4, z: 2.32 },
+      { text: "Brahmaputra", aliases: [], tier: 4, z: 2.15 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dnieper", aliases: ["Dnipro"], tier: 4, z: 2.15 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Red River", aliases: ["Red"], tier: 5, z: 4.85 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Orange", aliases: [], tier: 5, z: 4.62 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Snake", aliases: [], tier: 5, z: 4.23 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pearl River", aliases: ["Pearl", "Zhujiang"], tier: 5, z: 4.09 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Arkansas", aliases: [], tier: 5, z: 4.05 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Trent", aliases: [], tier: 5, z: 3.8 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Uruguay", aliases: [], tier: 5, z: 3.7 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rio Negro", aliases: ["Negro"], tier: 5, z: 3.64 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lena", aliases: [], tier: 5, z: 3.62 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mackenzie", aliases: [], tier: 5, z: 3.59 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Avon", aliases: [], tier: 5, z: 3.45 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ob", aliases: [], tier: 5, z: 3.43 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Senegal", aliases: [], tier: 5, z: 3.38 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Paraguay", aliases: [], tier: 5, z: 3.23 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Madeira", aliases: [], tier: 5, z: 2.96 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Magdalena", aliases: [], tier: 5, z: 2.82 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Oder", aliases: [], tier: 5, z: 2.81 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ural", aliases: [], tier: 5, z: 2.61 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Amur", aliases: [], tier: 5, z: 2.48 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ebro", aliases: [], tier: 5, z: 2.34 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Irrawaddy", aliases: ["Ayeyarwady"], tier: 5, z: 2.24 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Douro", aliases: [], tier: 5, z: 2.23 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vistula", aliases: [], tier: 5, z: 2.22 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Okavango", aliases: [], tier: 5, z: 2.17 },
+      { text: "Tagus", aliases: [], tier: 5, z: 2.09 },
+      { text: "Garonne", aliases: [], tier: 5, z: 2.05 },
+      { text: "Paraná", aliases: [], tier: 5, z: 2.01 },
+      { text: "Chao Phraya", aliases: [], tier: 5, z: 1.77 },
+      { text: "Yenisei", aliases: ["Yenisey"], tier: 5, z: 1.55 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Salween", aliases: [], tier: 5, z: 1.47 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Main", aliases: [], tier: 6, z: 5.24 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Tennessee", aliases: [], tier: 6, z: 4.21 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Fraser", aliases: [], tier: 6, z: 3.82 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Krishna", aliases: [], tier: 6, z: 3.48 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "São Francisco", aliases: [], tier: 6, z: 3.31 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tweed", aliases: [], tier: 6, z: 3.25 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tay", aliases: [], tier: 6, z: 3.14 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Volta", aliases: [], tier: 6, z: 2.98 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Platte", aliases: [], tier: 6, z: 2.84 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Wye", aliases: [], tier: 6, z: 2.77 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Helmand", aliases: [], tier: 6, z: 2.7 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Neva", aliases: [], tier: 6, z: 2.68 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Meuse", aliases: ["Maas"], tier: 6, z: 2.41 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sava", aliases: [], tier: 6, z: 2.39 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Yamuna", aliases: [], tier: 6, z: 2.36 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Liffey", aliases: [], tier: 6, z: 2.32 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Moselle", aliases: [], tier: 6, z: 2.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Godavari", aliases: [], tier: 6, z: 2.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Spey", aliases: [], tier: 6, z: 2.23 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Narmada", aliases: [], tier: 6, z: 2.2 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kasai", aliases: [], tier: 6, z: 2.18 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Amu Darya", aliases: ["Oxus"], tier: 6, z: 2.09 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kaveri", aliases: ["Cauvery"], tier: 6, z: 2.05 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Syr Darya", aliases: [], tier: 6, z: 2.03 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Scheldt", aliases: [], tier: 6, z: 2.02 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dniester", aliases: [], tier: 6, z: 1.89 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Karun", aliases: [], tier: 6, z: 1.89 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Guadalquivir", aliases: [], tier: 6, z: 1.82 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tocantins", aliases: [], tier: 6, z: 1.82 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Xingu", aliases: [], tier: 6, z: 1.79 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Murrumbidgee", aliases: [], tier: 6, z: 1.78 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pechora", aliases: [], tier: 6, z: 1.77 },
+      { text: "Kolyma", aliases: [], tier: 6, z: 1.71 },
+      { text: "Vltava", aliases: ["Moldau"], tier: 6, z: 1.69 },
+      { text: "Shatt al-Arab", aliases: [], tier: 6, z: 1.68 },
+      { text: "Ucayali", aliases: [], tier: 6, z: 1.66 },
+      { text: "Daugava", aliases: [], tier: 6, z: 1.54 },
+      { text: "Ubangi", aliases: [], tier: 6, z: 1.44 },
+      { text: "Drava", aliases: [], tier: 6, z: 1.34 },
+      { text: "Indigirka", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "deserts-01", category: "Geography", closed: false,
+    prompt: "Name a desert",
+    answers: [
+      { text: "Sahara", aliases: ["Sahara Desert"], tier: 1, z: 3.4 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Gobi", aliases: ["Gobi Desert"], tier: 1, z: 2.54 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Kalahari", aliases: ["Kalahari Desert"], tier: 1, z: 2.52 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Antarctica", aliases: ["Antarctic", "Antarctica Desert", "Antarctic Desert"], tier: 2, z: 3.53 },
+      { text: "Arabian", aliases: ["Arabian Desert"], tier: 2, z: 3.53 },
+      { text: "Mojave", aliases: ["Mojave Desert"], tier: 2, z: 3.0 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Atacama", aliases: ["Atacama Desert"], tier: 2, z: 2.4 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Great Victoria", aliases: ["Great Victoria Desert"], tier: 3, z: 4.42 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Arctic", aliases: ["Arctic Desert"], tier: 3, z: 4.03 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sinai", aliases: ["Sinai Desert"], tier: 3, z: 3.45 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Thar", aliases: ["Great Indian Desert", "Thar Desert"], tier: 3, z: 2.68 },
+      { text: "Negev", aliases: ["Negev Desert"], tier: 3, z: 2.55 },
+      { text: "Sonoran", aliases: ["Sonoran Desert"], tier: 3, z: 2.36 },
+      { text: "Patagonian", aliases: ["Patagonia", "Patagonian Desert", "Patagonia Desert"], tier: 3, z: 2.19 },
+      { text: "Namib", aliases: ["Namib Desert"], tier: 3, z: 2.09 },
+      { text: "Great Sandy", aliases: ["Great Sandy Desert"], tier: 4, z: 4.18 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Syrian", aliases: ["Syrian Desert"], tier: 4, z: 4.14 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Great Basin", aliases: ["Great Basin Desert"], tier: 4, z: 4.07 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Painted Desert", aliases: [], tier: 4, z: 4.07 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Simpson", aliases: ["Simpson Desert"], tier: 4, z: 4.01 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gibson", aliases: ["Gibson Desert"], tier: 4, z: 3.9 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Libyan", aliases: ["Libyan Desert"], tier: 4, z: 3.42 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nubian", aliases: ["Nubian Desert"], tier: 4, z: 2.63 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rub' al Khali", aliases: ["Empty Quarter", "Rub' al Khali Desert", "Empty Quarter Desert"], tier: 4, z: 2.32 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Judean", aliases: ["Judaean", "Judean Desert", "Judaean Desert"], tier: 4, z: 2.28 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Chihuahuan", aliases: ["Chihuahuan Desert"], tier: 4, z: 1.57 },
+      { text: "Karakum", aliases: ["Kara Kum", "Karakum Desert", "Kara Kum Desert"], tier: 4, z: 1.46 },
+      { text: "Taklamakan", aliases: ["Taklimakan", "Taklamakan Desert", "Taklimakan Desert"], tier: 4, z: 1.34 },
+      { text: "Black Rock", aliases: ["Black Rock Desert"], tier: 5, z: 4.89 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Colorado Desert", aliases: [], tier: 5, z: 4.13 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Karoo", aliases: ["Karoo Desert"], tier: 5, z: 2.28 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ordos", aliases: ["Ordos Desert"], tier: 5, z: 1.8 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dasht-e Lut", aliases: ["Lut", "Dasht-e Lut Desert", "Lut Desert"], tier: 5, z: 1.49 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Danakil", aliases: ["Danakil Desert"], tier: 5, z: 1.26 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tanami", aliases: ["Tanami Desert"], tier: 5, z: 1.23 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dasht-e Kavir", aliases: ["Great Salt Desert", "Kavir", "Dasht-e Kavir Desert", "Kavir Desert"], tier: 5, z: 1.04 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ténéré", aliases: ["Ténéré Desert"], tier: 5, z: 1.01 },
+      { text: "Kyzylkum", aliases: ["Kyzyl Kum", "Kyzylkum Desert", "Kyzyl Kum Desert"], tier: 5, z: 0.0 },
+      { text: "Tabernas", aliases: ["Tabernas Desert"], tier: 5, z: 0.0 },
+      { text: "Nefud", aliases: ["An Nafud", "Nefud Desert", "An Nafud Desert"], tier: 5, z: 0.0 },
+      { text: "Sechura", aliases: ["Sechura Desert"], tier: 5, z: 0.0 },
+      { text: "Little Sandy", aliases: ["Little Sandy Desert"], tier: 6, z: 4.18 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Monte", aliases: ["Monte Desert"], tier: 6, z: 3.69 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Lop", aliases: ["Lop Desert"], tier: 6, z: 2.7 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Sturt Stony", aliases: ["Sturt", "Sturt Stony Desert", "Sturt Desert"], tier: 6, z: 2.55 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Thal", aliases: ["Thal Desert"], tier: 6, z: 2.08 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Alvord", aliases: ["Alvord Desert"], tier: 6, z: 2.03 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ogaden", aliases: ["Ogaden Desert"], tier: 6, z: 1.85 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Guajira", aliases: ["La Guajira", "Guajira Desert", "La Guajira Desert"], tier: 6, z: 1.56 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Strzelecki", aliases: ["Strzelecki Desert"], tier: 6, z: 1.51 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tengger", aliases: ["Tengger Desert"], tier: 6, z: 1.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Registan", aliases: ["Registan Desert"], tier: 6, z: 1.17 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kharan", aliases: ["Kharan Desert"], tier: 6, z: 1.02 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Cholistan", aliases: ["Cholistan Desert"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Wahiba Sands", aliases: ["Wahiba", "Sharqiya Sands", "Wahiba Sands Desert", "Wahiba Desert", "Sharqiya Sands Desert"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Chalbi", aliases: ["Chalbi Desert"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ad-Dahna", aliases: ["Dahna", "Ad-Dahna Desert", "Dahna Desert"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bayuda", aliases: ["Bayuda Desert"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Badain Jaran", aliases: ["Badain Jaran Desert"], tier: 6, z: 0.0 },
+      { text: "Kumtag", aliases: ["Kumtag Desert"], tier: 6, z: 0.0 },
+      { text: "Nyiri", aliases: ["Nyiri Desert"], tier: 6, z: 0.0 },
+      { text: "Ferlo", aliases: ["Ferlo Desert"], tier: 6, z: 0.0 },
+      { text: "Accona", aliases: ["Accona Desert"], tier: 6, z: 0.0 },
+      { text: "Błędów", aliases: ["Błędów Desert"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "seas-01", category: "Geography", closed: false,
+    prompt: "Name a sea",
+    answers: [
+      { text: "Black", aliases: ["Black Sea"], tier: 1, z: 5.46 },
+      { text: "North", aliases: ["North Sea"], tier: 1, z: 5.34 },
+      { text: "Red", aliases: ["Red Sea"], tier: 1, z: 5.32 },
+      { text: "Dead", aliases: ["Dead Sea"], tier: 1, z: 5.19 },
+      { text: "Caribbean", aliases: ["Caribbean Sea"], tier: 1, z: 4.12 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Mediterranean", aliases: ["Mediterranean Sea"], tier: 1, z: 3.99 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "South China", aliases: ["South China Sea"], tier: 2, z: 4.92 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Baltic", aliases: ["Baltic Sea"], tier: 2, z: 3.57 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Arabian", aliases: ["Arabian Sea"], tier: 2, z: 3.53 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Caspian", aliases: ["Caspian Sea"], tier: 2, z: 3.03 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Yellow", aliases: ["Yellow Sea"], tier: 3, z: 4.69 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sea of Japan", aliases: ["East Sea", "Japan Sea"], tier: 3, z: 4.66 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Irish", aliases: ["Irish Sea"], tier: 3, z: 4.54 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Coral", aliases: ["Coral Sea"], tier: 3, z: 3.86 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Aegean", aliases: ["Aegean Sea"], tier: 3, z: 2.93 },
+      { text: "Adriatic", aliases: ["Adriatic Sea"], tier: 3, z: 2.93 },
+      { text: "Bering", aliases: ["Bering Sea"], tier: 3, z: 2.89 },
+      { text: "Tasman", aliases: ["Tasman Sea"], tier: 3, z: 2.85 },
+      { text: "Sargasso", aliases: ["Sargasso Sea"], tier: 3, z: 2.06 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "East China", aliases: ["East China Sea"], tier: 4, z: 4.83 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ross", aliases: ["Ross Sea"], tier: 4, z: 4.39 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Celtic", aliases: ["Celtic Sea"], tier: 4, z: 4.0 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Java", aliases: ["Java Sea"], tier: 4, z: 4.0 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Norwegian", aliases: ["Norwegian Sea"], tier: 4, z: 3.95 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Philippine", aliases: ["Philippine Sea"], tier: 4, z: 3.76 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Labrador", aliases: ["Labrador Sea"], tier: 4, z: 3.3 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Timor", aliases: ["Timor Sea"], tier: 4, z: 3.27 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sea of Galilee", aliases: ["Galilee", "Galilee Sea"], tier: 4, z: 3.11 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Beaufort", aliases: ["Beaufort Sea"], tier: 4, z: 3.06 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Andaman", aliases: ["Andaman Sea"], tier: 4, z: 2.74 },
+      { text: "Ionian", aliases: ["Ionian Sea"], tier: 4, z: 2.62 },
+      { text: "Sea of Azov", aliases: ["Azov", "Azov Sea"], tier: 4, z: 2.47 },
+      { text: "Barents", aliases: ["Barents Sea"], tier: 4, z: 2.41 },
+      { text: "Aral", aliases: ["Aral Sea"], tier: 4, z: 2.39 },
+      { text: "Sea of Marmara", aliases: ["Marmara", "Marmara Sea"], tier: 4, z: 2.23 },
+      { text: "Weddell", aliases: ["Weddell Sea"], tier: 4, z: 2.16 },
+      { text: "Tyrrhenian", aliases: ["Tyrrhenian Sea"], tier: 4, z: 1.86 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "White", aliases: ["White Sea"], tier: 5, z: 5.51 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Solomon", aliases: ["Solomon Sea"], tier: 5, z: 3.81 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kara", aliases: ["Kara Sea"], tier: 5, z: 3.55 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Scotia", aliases: ["Scotia Sea"], tier: 5, z: 3.49 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Greenland", aliases: ["Greenland Sea"], tier: 5, z: 3.42 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "East Siberian", aliases: ["East Siberian Sea"], tier: 5, z: 3.3 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Flores", aliases: ["Flores Sea"], tier: 5, z: 3.3 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bismarck", aliases: ["Bismarck Sea"], tier: 5, z: 3.17 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sea of Cortez", aliases: ["Gulf of California", "Cortez", "Gulf of California Sea", "Cortez Sea"], tier: 5, z: 3.16 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Banda", aliases: ["Banda Sea"], tier: 5, z: 3.0 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sulu", aliases: ["Sulu Sea"], tier: 5, z: 2.79 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Balearic", aliases: ["Balearic Sea"], tier: 5, z: 2.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Salton", aliases: ["Salton Sea"], tier: 5, z: 2.26 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chukchi", aliases: ["Chukchi Sea"], tier: 5, z: 2.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Celebes", aliases: ["Sulawesi", "Celebes Sea", "Sulawesi Sea"], tier: 5, z: 2.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ligurian", aliases: ["Ligurian Sea"], tier: 5, z: 2.03 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sea of Okhotsk", aliases: ["Okhotsk", "Okhotsk Sea"], tier: 5, z: 2.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bohai", aliases: ["Bohai Sea"], tier: 5, z: 1.75 },
+      { text: "Wadden", aliases: ["Wadden Sea"], tier: 5, z: 1.68 },
+      { text: "Arafura", aliases: ["Arafura Sea"], tier: 5, z: 1.44 },
+      { text: "Laptev", aliases: ["Laptev Sea"], tier: 5, z: 1.43 },
+      { text: "Molucca", aliases: ["Maluku", "Molucca Sea", "Maluku Sea"], tier: 5, z: 1.34 },
+      { text: "Alboran", aliases: ["Alboran Sea"], tier: 5, z: 1.17 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Davis", aliases: ["Davis Sea"], tier: 6, z: 4.49 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Lincoln", aliases: ["Lincoln Sea"], tier: 6, z: 4.31 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Bali", aliases: ["Bali Sea"], tier: 6, z: 3.69 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Libyan", aliases: ["Libyan Sea"], tier: 6, z: 3.42 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Sea of Crete", aliases: ["Cretan", "Cretan Sea"], tier: 6, z: 3.19 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Sea of the Hebrides", aliases: ["Hebrides", "Hebrides Sea"], tier: 6, z: 2.84 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mawson", aliases: ["Mawson Sea"], tier: 6, z: 2.51 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Thracian", aliases: ["Thracian Sea"], tier: 6, z: 2.45 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Cosmonauts", aliases: ["Cosmonauts Sea"], tier: 6, z: 2.44 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Amundsen", aliases: ["Amundsen Sea"], tier: 6, z: 2.38 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bohol", aliases: ["Mindanao Sea", "Bohol Sea"], tier: 6, z: 2.33 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Koro", aliases: ["Koro Sea"], tier: 6, z: 2.27 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Seto Inland", aliases: ["Inland", "Seto Inland Sea", "Inland Sea"], tier: 6, z: 2.23 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Levantine", aliases: ["Levantine Sea"], tier: 6, z: 2.15 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pechora", aliases: ["Pechora Sea"], tier: 6, z: 1.77 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ceram", aliases: ["Seram", "Ceram Sea", "Seram Sea"], tier: 6, z: 1.67 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dumont d'Urville", aliases: ["D'Urville", "Dumont d'Urville Sea", "D'Urville Sea"], tier: 6, z: 1.64 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Visayan", aliases: ["Visayan Sea"], tier: 6, z: 1.63 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Wandel", aliases: ["Wandel Sea"], tier: 6, z: 1.61 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lazarev", aliases: ["Lazarev Sea"], tier: 6, z: 1.52 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bellingshausen", aliases: ["Bellingshausen Sea"], tier: 6, z: 1.37 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Halmahera", aliases: ["Halmahera Sea"], tier: 6, z: 1.3 },
+      { text: "Somov", aliases: ["Somov Sea"], tier: 6, z: 1.17 },
+      { text: "Savu", aliases: ["Savu Sea"], tier: 6, z: 1.14 },
+      { text: "Camotes", aliases: ["Camotes Sea"], tier: 6, z: 1.08 },
+      { text: "Sibuyan", aliases: ["Sibuyan Sea"], tier: 6, z: 0.0 },
+      { text: "Myrtoan", aliases: ["Myrtoan Sea"], tier: 6, z: 0.0 },
+      { text: "Irminger", aliases: ["Irminger Sea"], tier: 6, z: 0.0 },
+      { text: "Riiser-Larsen", aliases: ["Riiser-Larsen Sea"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "us-national-parks-01", category: "Geography", closed: true,
+    prompt: "Name one of the 63 US national parks",
+    answers: [
+      { text: "Grand Canyon", aliases: ["Grand Canyon National Park"], tier: 1, z: 3.91 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Yellowstone", aliases: ["Yellowstone National Park"], tier: 1, z: 3.28 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Yosemite", aliases: ["Yosemite National Park"], tier: 1, z: 3.28 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Death Valley", aliases: ["Death Valley National Park"], tier: 2, z: 4.64 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Rocky Mountain", aliases: ["Rocky Mountains", "Rocky Mountain National Park", "Rocky Mountains National Park"], tier: 2, z: 4.06 },
+      { text: "Zion", aliases: ["Zion National Park"], tier: 2, z: 3.46 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Great Smoky Mountains", aliases: ["Smoky Mountains", "Great Smokies", "Smokies", "Great Smoky Mountains National Park", "Smoky Mountains National Park", "Great Smokies National Park", "Smokies National Park"], tier: 2, z: 3.3 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Everglades", aliases: ["Everglades National Park"], tier: 2, z: 2.93 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Olympic", aliases: ["Olympic National Park"], tier: 3, z: 4.49 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Joshua Tree", aliases: ["Joshua Tree National Park"], tier: 3, z: 3.87 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Glacier", aliases: ["Glacier National Park"], tier: 3, z: 3.58 },
+      { text: "Arches", aliases: ["Arches National Park"], tier: 3, z: 3.45 },
+      { text: "Bryce Canyon", aliases: ["Bryce", "Bryce Canyon National Park", "Bryce National Park"], tier: 3, z: 3.39 },
+      { text: "Redwood", aliases: ["Redwoods", "Redwood National Park", "Redwoods National Park"], tier: 3, z: 3.22 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mount Rainier", aliases: ["Rainier", "Mount Rainier National Park", "Rainier National Park"], tier: 3, z: 2.86 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Shenandoah", aliases: ["Shenandoah National Park"], tier: 3, z: 2.85 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Badlands", aliases: ["Badlands National Park"], tier: 3, z: 2.83 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sequoia", aliases: ["Sequoia National Park"], tier: 3, z: 2.82 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Acadia", aliases: ["Acadia National Park"], tier: 3, z: 2.72 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Grand Teton", aliases: ["Grand Tetons", "Teton", "Grand Teton National Park", "Grand Tetons National Park", "Teton National Park"], tier: 3, z: 2.65 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Denali", aliases: ["Denali National Park"], tier: 3, z: 2.62 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hot Springs", aliases: ["Hot Springs National Park"], tier: 4, z: 4.19 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Big Bend", aliases: ["Big Bend National Park"], tier: 4, z: 4.12 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kings Canyon", aliases: ["Kings Canyon National Park"], tier: 4, z: 3.83 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "White Sands", aliases: ["White Sands National Park"], tier: 4, z: 3.8 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Capitol Reef", aliases: ["Capitol Reef National Park"], tier: 4, z: 3.61 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gateway Arch", aliases: ["Gateway Arch National Park"], tier: 4, z: 3.61 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Glacier Bay", aliases: ["Glacier Bay National Park"], tier: 4, z: 3.55 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Crater Lake", aliases: ["Crater Lake National Park"], tier: 4, z: 3.53 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mammoth Cave", aliases: ["Mammoth Cave National Park"], tier: 4, z: 3.34 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Great Sand Dunes", aliases: ["Great Sand Dunes National Park"], tier: 4, z: 3.33 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mesa Verde", aliases: ["Mesa Verde National Park"], tier: 4, z: 3.08 },
+      { text: "Petrified Forest", aliases: ["Petrified Forest National Park"], tier: 4, z: 3.02 },
+      { text: "Carlsbad Caverns", aliases: ["Carlsbad Caverns National Park"], tier: 4, z: 2.61 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Saguaro", aliases: ["Saguaro National Park"], tier: 4, z: 2.12 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Canyonlands", aliases: ["Canyonlands National Park"], tier: 4, z: 2.01 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hawaiʻi Volcanoes", aliases: ["Hawaii Volcanoes", "Volcanoes", "Hawaiʻi Volcanoes National Park", "Hawaii Volcanoes National Park", "Volcanoes National Park"], tier: 4, z: 1.83 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Haleakalā", aliases: ["Haleakalā National Park"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Channel Islands", aliases: ["Channel Islands National Park"], tier: 5, z: 4.34 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Virgin Islands", aliases: ["Virgin Islands National Park"], tier: 5, z: 4.12 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Wind Cave", aliases: ["Wind Cave National Park"], tier: 5, z: 4.11 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Great Basin", aliases: ["Great Basin National Park"], tier: 5, z: 4.07 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Theodore Roosevelt", aliases: ["Theodore Roosevelt National Park"], tier: 5, z: 3.47 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "New River Gorge", aliases: ["New River Gorge National Park"], tier: 5, z: 3.39 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Indiana Dunes", aliases: ["Indiana Dunes National Park"], tier: 5, z: 3.32 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Isle Royale", aliases: ["Isle Royale National Park"], tier: 5, z: 3.25 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "North Cascades", aliases: ["North Cascades National Park"], tier: 5, z: 2.99 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Guadalupe Mountains", aliases: ["Guadalupe Mountains National Park"], tier: 5, z: 2.91 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cuyahoga Valley", aliases: ["Cuyahoga Valley National Park"], tier: 5, z: 2.74 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Biscayne", aliases: ["Biscayne National Park"], tier: 5, z: 2.58 },
+      { text: "Pinnacles", aliases: ["Pinnacles National Park"], tier: 5, z: 2.49 },
+      { text: "Lassen Volcanic", aliases: ["Lassen", "Lassen Volcanic National Park", "Lassen National Park"], tier: 5, z: 2.48 },
+      { text: "Kenai Fjords", aliases: ["Kenai Fjords National Park"], tier: 5, z: 2.27 },
+      { text: "Voyageurs", aliases: ["Voyageurs National Park"], tier: 5, z: 2.0 },
+      { text: "Dry Tortugas", aliases: ["Dry Tortugas National Park"], tier: 5, z: 1.97 },
+      { text: "Katmai", aliases: ["Katmai National Park"], tier: 5, z: 1.89 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lake Clark", aliases: ["Lake Clark National Park"], tier: 6, z: 4.25 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Gates of the Arctic", aliases: ["Gates of the Arctic National Park"], tier: 6, z: 3.84 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "American Samoa", aliases: ["National Park of American Samoa", "American Samoa National Park"], tier: 6, z: 3.39 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Black Canyon of the Gunnison", aliases: ["Black Canyon", "Black Canyon of the Gunnison National Park", "Black Canyon National Park"], tier: 6, z: 2.48 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Wrangell–St. Elias", aliases: ["Wrangell–St. Elias National Park"], tier: 6, z: 1.89 },
+      { text: "Congaree", aliases: ["Congaree National Park"], tier: 6, z: 1.69 },
+      { text: "Kobuk Valley", aliases: ["Kobuk Valley National Park"], tier: 6, z: 1.42 },
+    ]
+  },
+  {
+    id: "g20-01", category: "Geography", closed: true,
+    prompt: "Name a member of the G20 (as of 2025)",
+    answers: [
+      { text: "United States", aliases: ["USA", "US", "America", "United States of America"], tier: 1, z: 5.19 },
+      { text: "China", aliases: [], tier: 1, z: 5.1 },
+      { text: "France", aliases: [], tier: 1, z: 4.94 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Germany", aliases: [], tier: 1, z: 4.9 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Japan", aliases: [], tier: 1, z: 4.89 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "United Kingdom", aliases: ["UK", "Great Britain", "Britain", "GB", "England"], tier: 1, z: 4.56 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "India", aliases: [], tier: 2, z: 5.04 },
+      { text: "Canada", aliases: [], tier: 2, z: 4.97 },
+      { text: "Russia", aliases: ["Russian Federation"], tier: 2, z: 4.93 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "European Union", aliases: ["EU"], tier: 2, z: 4.78 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Australia", aliases: [], tier: 3, z: 5.06 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Italy", aliases: [], tier: 3, z: 4.66 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Brazil", aliases: [], tier: 3, z: 4.58 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "South Korea", aliases: ["Korea", "Republic of Korea"], tier: 3, z: 4.58 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Saudi Arabia", aliases: ["KSA"], tier: 3, z: 3.9 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "South Africa", aliases: [], tier: 4, z: 4.8 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mexico", aliases: [], tier: 4, z: 4.75 },
+      { text: "Turkey", aliases: ["Türkiye"], tier: 4, z: 4.56 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Indonesia", aliases: [], tier: 4, z: 4.25 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Argentina", aliases: [], tier: 5, z: 4.22 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "African Union", aliases: ["AU"], tier: 6, z: 4.63 }, // override: auto 4 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "currencies-01", category: "Geography", closed: false,
+    prompt: "Name a currency in use today (as of 2025), such as the \"dollar\"",
+    answers: [
+      { text: "Dollar", aliases: ["US dollar", "Dollars"], tier: 1, z: 4.59 },
+      { text: "Pound", aliases: ["Pound sterling", "Sterling", "Pounds"], tier: 1, z: 4.32 },
+      { text: "Euro", aliases: ["Euros"], tier: 1, z: 4.09 },
+      { text: "Yen", aliases: [], tier: 1, z: 3.73 },
+      { text: "Yuan", aliases: ["Renminbi", "RMB"], tier: 2, z: 3.7 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Franc", aliases: ["Swiss franc", "CFA franc", "Francs"], tier: 2, z: 3.11 },
+      { text: "Rupee", aliases: ["Rupees"], tier: 2, z: 3.04 },
+      { text: "Peso", aliases: ["Pesos"], tier: 2, z: 3.0 },
+      { text: "Dirham", aliases: ["Dirhams"], tier: 2, z: 2.02 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Real", aliases: ["Reais"], tier: 3, z: 5.6 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Won", aliases: [], tier: 3, z: 5.2 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rand", aliases: [], tier: 3, z: 3.83 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lira", aliases: [], tier: 3, z: 2.99 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Baht", aliases: [], tier: 3, z: 2.94 },
+      { text: "Ruble", aliases: ["Rouble"], tier: 3, z: 2.62 },
+      { text: "Dinar", aliases: [], tier: 3, z: 2.58 },
+      { text: "Krona", aliases: ["Krone", "Kroner", "Kronor"], tier: 3, z: 2.22 },
+      { text: "Shekel", aliases: ["New shekel"], tier: 3, z: 2.21 },
+      { text: "Riyal", aliases: ["Rial"], tier: 3, z: 1.69 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dong", aliases: [], tier: 4, z: 3.79 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shilling", aliases: [], tier: 4, z: 3.17 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lev", aliases: [], tier: 4, z: 3.15 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Taka", aliases: [], tier: 4, z: 2.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Naira", aliases: [], tier: 4, z: 2.63 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Leu", aliases: [], tier: 4, z: 2.46 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rupiah", aliases: [], tier: 4, z: 2.35 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ringgit", aliases: [], tier: 4, z: 2.2 },
+      { text: "Zloty", aliases: [], tier: 4, z: 2.05 },
+      { text: "Forint", aliases: [], tier: 4, z: 1.79 },
+      { text: "Hryvnia", aliases: [], tier: 4, z: 1.72 },
+      { text: "Koruna", aliases: ["Crown"], tier: 4, z: 1.58 },
+      { text: "Sol", aliases: [], tier: 5, z: 3.69 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Som", aliases: ["Sum"], tier: 5, z: 3.19 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kip", aliases: [], tier: 5, z: 3.04 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dram", aliases: [], tier: 5, z: 2.94 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Afghani", aliases: [], tier: 5, z: 2.48 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lek", aliases: [], tier: 5, z: 2.33 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Riel", aliases: [], tier: 5, z: 2.23 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bolívar", aliases: [], tier: 5, z: 2.18 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Colón", aliases: [], tier: 5, z: 2.14 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Birr", aliases: [], tier: 5, z: 2.1 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lari", aliases: [], tier: 5, z: 2.06 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Quetzal", aliases: [], tier: 5, z: 2.01 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cedi", aliases: [], tier: 5, z: 1.96 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tenge", aliases: [], tier: 5, z: 1.86 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kwacha", aliases: [], tier: 5, z: 1.84 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Guaraní", aliases: [], tier: 5, z: 1.81 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kyat", aliases: [], tier: 5, z: 1.65 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gourde", aliases: [], tier: 5, z: 1.51 },
+      { text: "Boliviano", aliases: [], tier: 5, z: 1.44 },
+      { text: "Manat", aliases: [], tier: 5, z: 1.42 },
+      { text: "Denar", aliases: [], tier: 5, z: 1.21 },
+      { text: "Tugrik", aliases: ["Tögrög"], tier: 5, z: 0.0 },
+      { text: "Pataca", aliases: [], tier: 5, z: 0.0 },
+      { text: "Leone", aliases: [], tier: 6, z: 3.64 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Balboa", aliases: [], tier: 6, z: 2.95 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tala", aliases: [], tier: 6, z: 2.39 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Florin", aliases: ["Guilder"], tier: 6, z: 2.37 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Pula", aliases: [], tier: 6, z: 2.35 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Kina", aliases: [], tier: 6, z: 2.26 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Córdoba", aliases: [], tier: 6, z: 2.25 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Loti", aliases: ["Maloti"], tier: 6, z: 1.83 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kwanza", aliases: [], tier: 6, z: 1.81 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Escudo", aliases: [], tier: 6, z: 1.67 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Dobra", aliases: [], tier: 6, z: 1.39 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Somoni", aliases: [], tier: 6, z: 1.21 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lempira", aliases: [], tier: 6, z: 1.17 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Vatu", aliases: [], tier: 6, z: 1.13 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Paʻanga", aliases: ["Paanga"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ngultrum", aliases: [], tier: 6, z: 0.0 },
+      { text: "Rufiyaa", aliases: [], tier: 6, z: 0.0 },
+      { text: "Dalasi", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ouguiya", aliases: [], tier: 6, z: 0.0 },
+      { text: "Metical", aliases: [], tier: 6, z: 0.0 },
+      { text: "Lilangeni", aliases: ["Emalangeni"], tier: 6, z: 0.0 },
+      { text: "Ariary", aliases: [], tier: 6, z: 0.0 },
+      { text: "Nakfa", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "india-states-01", category: "Geography", closed: true,
+    prompt: "Name a state or union territory of India",
+    answers: [
+      { text: "Delhi", aliases: ["New Delhi", "NCT of Delhi"], tier: 1, z: 4.29 },
+      { text: "Punjab", aliases: [], tier: 1, z: 3.69 },
+      { text: "Kerala", aliases: [], tier: 1, z: 3.53 },
+      { text: "Goa", aliases: [], tier: 1, z: 3.4 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Gujarat", aliases: [], tier: 2, z: 3.54 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Maharashtra", aliases: [], tier: 2, z: 3.34 },
+      { text: "Rajasthan", aliases: [], tier: 2, z: 3.33 },
+      { text: "Tamil Nadu", aliases: [], tier: 2, z: 3.11 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Jammu and Kashmir", aliases: ["Kashmir", "J&K"], tier: 2, z: 3.0 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "West Bengal", aliases: ["Bengal"], tier: 3, z: 3.67 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Assam", aliases: [], tier: 3, z: 3.29 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bihar", aliases: [], tier: 3, z: 3.28 },
+      { text: "Karnataka", aliases: [], tier: 3, z: 3.25 },
+      { text: "Haryana", aliases: [], tier: 3, z: 3.17 },
+      { text: "Uttar Pradesh", aliases: ["UP"], tier: 3, z: 3.08 },
+      { text: "Andhra Pradesh", aliases: [], tier: 3, z: 3.06 },
+      { text: "Telangana", aliases: [], tier: 3, z: 2.89 },
+      { text: "Odisha", aliases: ["Orissa"], tier: 4, z: 2.86 },
+      { text: "Madhya Pradesh", aliases: ["MP"], tier: 4, z: 2.84 },
+      { text: "Himachal Pradesh", aliases: [], tier: 4, z: 2.66 },
+      { text: "Chhattisgarh", aliases: [], tier: 4, z: 2.63 },
+      { text: "Jharkhand", aliases: [], tier: 4, z: 2.61 },
+      { text: "Sikkim", aliases: [], tier: 4, z: 2.6 },
+      { text: "Uttarakhand", aliases: ["Uttaranchal"], tier: 4, z: 2.6 },
+      { text: "Ladakh", aliases: [], tier: 4, z: 2.59 },
+      { text: "Nagaland", aliases: [], tier: 4, z: 2.43 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Chandigarh", aliases: [], tier: 5, z: 2.96 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Manipur", aliases: [], tier: 5, z: 2.79 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tripura", aliases: [], tier: 5, z: 2.52 },
+      { text: "Arunachal Pradesh", aliases: [], tier: 5, z: 2.49 },
+      { text: "Mizoram", aliases: [], tier: 5, z: 2.28 },
+      { text: "Meghalaya", aliases: [], tier: 5, z: 2.24 },
+      { text: "Andaman and Nicobar Islands", aliases: ["Andaman and Nicobar", "Andaman Islands", "Andamans"], tier: 5, z: 2.14 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Puducherry", aliases: ["Pondicherry"], tier: 5, z: 2.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lakshadweep", aliases: [], tier: 6, z: 1.64 },
+      { text: "Dadra and Nagar Haveli and Daman and Diu", aliases: ["Daman and Diu", "Dadra and Nagar Haveli"], tier: 6, z: 1.21 },
+    ]
+  },
+  {
+    id: "german-states-01", category: "Geography", closed: true,
+    prompt: "Name one of the 16 federal states of Germany",
+    answers: [
+      { text: "Berlin", aliases: [], tier: 1, z: 4.38 },
+      { text: "Bavaria", aliases: ["Bayern"], tier: 1, z: 3.18 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Hamburg", aliases: [], tier: 2, z: 3.62 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Saxony", aliases: ["Sachsen"], tier: 2, z: 2.95 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Bremen", aliases: [], tier: 3, z: 2.99 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Brandenburg", aliases: [], tier: 3, z: 2.94 },
+      { text: "Hesse", aliases: ["Hessen"], tier: 3, z: 2.87 },
+      { text: "Baden-Württemberg", aliases: [], tier: 3, z: 2.22 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lower Saxony", aliases: ["Niedersachsen"], tier: 4, z: 2.95 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "North Rhine-Westphalia", aliases: ["NRW", "Nordrhein-Westfalen"], tier: 4, z: 2.55 },
+      { text: "Thuringia", aliases: ["Thüringen"], tier: 4, z: 2.22 },
+      { text: "Schleswig-Holstein", aliases: [], tier: 5, z: 2.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rhineland-Palatinate", aliases: ["Rheinland-Pfalz"], tier: 5, z: 2.09 },
+      { text: "Saarland", aliases: [], tier: 5, z: 1.96 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Saxony-Anhalt", aliases: ["Sachsen-Anhalt"], tier: 6, z: 1.99 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mecklenburg-Vorpommern", aliases: ["Mecklenburg-Western Pomerania", "Mecklenburg"], tier: 6, z: 1.5 },
+    ]
+  },
+  {
+    id: "volcanoes-01", category: "Geography", closed: false,
+    prompt: "Name a volcano",
+    answers: [
+      { text: "Fuji", aliases: ["Fujiyama", "Mount Fuji", "Mount Fujiyama"], tier: 1, z: 3.22 },
+      { text: "St. Helens", aliases: ["Saint Helens", "Mount St. Helens", "Mount Saint Helens"], tier: 1, z: 2.96 },
+      { text: "Vesuvius", aliases: ["Mount Vesuvius"], tier: 1, z: 2.67 },
+      { text: "Etna", aliases: ["Mount Etna"], tier: 1, z: 2.65 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Krakatoa", aliases: ["Krakatau", "Mount Krakatoa", "Mount Krakatau"], tier: 1, z: 2.08 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Yellowstone", aliases: ["Yellowstone Caldera", "Mount Yellowstone", "Mount Yellowstone Caldera"], tier: 2, z: 3.28 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Kilimanjaro", aliases: ["Mount Kilimanjaro"], tier: 2, z: 2.72 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Mauna Loa", aliases: ["Mount Mauna Loa"], tier: 2, z: 2.37 },
+      { text: "Kilauea", aliases: ["Mount Kilauea"], tier: 2, z: 2.36 },
+      { text: "Eyjafjallajökull", aliases: ["Mount Eyjafjallajökull"], tier: 2, z: 1.76 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Rainier", aliases: ["Mount Rainier"], tier: 3, z: 2.87 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Olympus Mons", aliases: ["Mount Olympus Mons"], tier: 3, z: 2.84 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Santorini", aliases: ["Thera", "Mount Santorini", "Mount Thera"], tier: 3, z: 2.62 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mauna Kea", aliases: ["Mount Mauna Kea"], tier: 3, z: 2.23 },
+      { text: "Stromboli", aliases: ["Mount Stromboli"], tier: 3, z: 2.18 },
+      { text: "Pinatubo", aliases: ["Mount Pinatubo"], tier: 3, z: 1.89 },
+      { text: "Cotopaxi", aliases: ["Mount Cotopaxi"], tier: 3, z: 1.76 },
+      { text: "Tambora", aliases: ["Mount Tambora"], tier: 3, z: 1.65 },
+      { text: "Teide", aliases: ["El Teide", "Mount Teide", "Mount El Teide"], tier: 3, z: 1.65 },
+      { text: "Popocatépetl", aliases: ["Mount Popocatépetl"], tier: 3, z: 0.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "White Island", aliases: ["Whakaari", "Mount White Island", "Mount Whakaari"], tier: 4, z: 4.89 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hood", aliases: ["Mount Hood"], tier: 4, z: 4.21 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shasta", aliases: ["Mount Shasta"], tier: 4, z: 2.85 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Erebus", aliases: ["Mount Erebus"], tier: 4, z: 2.49 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ararat", aliases: ["Mount Ararat"], tier: 4, z: 2.49 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Taal", aliases: ["Mount Taal"], tier: 4, z: 2.04 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mayon", aliases: ["Mount Mayon"], tier: 4, z: 1.87 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Merapi", aliases: ["Mount Merapi"], tier: 4, z: 1.81 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Elbrus", aliases: ["Mount Elbrus"], tier: 4, z: 1.66 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hekla", aliases: ["Mount Hekla"], tier: 4, z: 1.57 },
+      { text: "Ruapehu", aliases: ["Mount Ruapehu"], tier: 4, z: 1.53 },
+      { text: "Katla", aliases: ["Mount Katla"], tier: 4, z: 1.51 },
+      { text: "Sakurajima", aliases: ["Mount Sakurajima"], tier: 4, z: 1.49 },
+      { text: "Surtsey", aliases: ["Mount Surtsey"], tier: 4, z: 1.48 },
+      { text: "Nyiragongo", aliases: ["Mount Nyiragongo"], tier: 4, z: 1.43 },
+      { text: "Cumbre Vieja", aliases: ["La Palma", "Mount Cumbre Vieja", "Mount La Palma"], tier: 4, z: 1.35 },
+      { text: "Hunga Tonga", aliases: ["Hunga Tonga–Hunga Haʻapai", "Mount Hunga Tonga", "Mount Hunga Tonga–Hunga Haʻapai"], tier: 4, z: 1.28 },
+      { text: "Damavand", aliases: ["Mount Damavand"], tier: 4, z: 1.17 },
+      { text: "Pelée", aliases: ["Mount Pelée"], tier: 4, z: 1.14 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Soufrière Hills", aliases: ["Soufriere", "Montserrat", "Mount Soufrière Hills", "Mount Soufriere", "Mount Montserrat"], tier: 4, z: 1.09 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Paricutín", aliases: ["Mount Paricutín"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Baker", aliases: ["Mount Baker"], tier: 5, z: 4.23 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cameroon", aliases: ["Mount Cameroon"], tier: 5, z: 3.53 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Aso", aliases: ["Mount Aso"], tier: 5, z: 2.75 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lassen Peak", aliases: ["Lassen", "Mount Lassen Peak", "Mount Lassen"], tier: 5, z: 2.51 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Taranaki", aliases: ["Egmont", "Mount Taranaki", "Mount Egmont"], tier: 5, z: 2.35 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bromo", aliases: ["Mount Bromo"], tier: 5, z: 2.31 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Agung", aliases: ["Mount Agung"], tier: 5, z: 2.16 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Arenal", aliases: ["Mount Arenal"], tier: 5, z: 1.98 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Laki", aliases: ["Mount Laki"], tier: 5, z: 1.95 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Katmai", aliases: ["Novarupta", "Mount Katmai", "Mount Novarupta"], tier: 5, z: 1.89 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vulcano", aliases: ["Mount Vulcano"], tier: 5, z: 1.74 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tongariro", aliases: ["Mount Tongariro"], tier: 5, z: 1.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Erta Ale", aliases: ["Mount Erta Ale"], tier: 5, z: 1.62 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chimborazo", aliases: ["Mount Chimborazo"], tier: 5, z: 1.61 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rinjani", aliases: ["Mount Rinjani"], tier: 5, z: 1.58 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nevado del Ruiz", aliases: ["Mount Nevado del Ruiz"], tier: 5, z: 1.57 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Unzen", aliases: ["Mount Unzen"], tier: 5, z: 1.34 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Villarrica", aliases: ["Mount Villarrica"], tier: 5, z: 1.3 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Piton de la Fournaise", aliases: ["Mount Piton de la Fournaise"], tier: 5, z: 1.2 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Semeru", aliases: ["Mount Semeru"], tier: 5, z: 1.13 },
+      { text: "Ngauruhoe", aliases: ["Mount Doom", "Mount Ngauruhoe", "Mount Mount Doom"], tier: 5, z: 0.0 },
+      { text: "Fagradalsfjall", aliases: ["Mount Fagradalsfjall"], tier: 5, z: 0.0 },
+      { text: "Grímsvötn", aliases: ["Mount Grímsvötn"], tier: 5, z: 0.0 },
+      { text: "Campi Flegrei", aliases: ["Phlegraean Fields", "Mount Campi Flegrei", "Mount Phlegraean Fields"], tier: 5, z: 0.0 },
+      { text: "Ol Doinyo Lengai", aliases: ["Mount Ol Doinyo Lengai"], tier: 5, z: 0.0 },
+      { text: "Augustine", aliases: ["Mount Augustine"], tier: 6, z: 3.51 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Fuego", aliases: ["Volcán de Fuego", "Mount Fuego", "Mount Volcán de Fuego"], tier: 6, z: 2.7 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Redoubt", aliases: ["Mount Redoubt"], tier: 6, z: 2.42 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Tristan da Cunha", aliases: ["Queen Mary's Peak", "Mount Tristan da Cunha", "Mount Queen Mary's Peak"], tier: 6, z: 2.31 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Kirishima", aliases: ["Mount Kirishima"], tier: 6, z: 2.23 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Masaya", aliases: ["Mount Masaya"], tier: 6, z: 2.21 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Spurr", aliases: ["Mount Spurr"], tier: 6, z: 2.08 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Pico do Fogo", aliases: ["Fogo", "Mount Pico do Fogo", "Mount Fogo"], tier: 6, z: 2.05 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Colima", aliases: ["Volcán de Colima", "Mount Colima", "Mount Volcán de Colima"], tier: 6, z: 1.98 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Ojos del Salado", aliases: ["Mount Ojos del Salado"], tier: 6, z: 1.66 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Yasur", aliases: ["Mount Yasur"], tier: 6, z: 1.61 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Misti", aliases: ["El Misti", "Mount Misti", "Mount El Misti"], tier: 6, z: 1.6 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Asama", aliases: ["Mount Asama"], tier: 6, z: 1.45 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tungurahua", aliases: ["Mount Tungurahua"], tier: 6, z: 1.4 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sinabung", aliases: ["Mount Sinabung"], tier: 6, z: 1.4 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Manam", aliases: ["Mount Manam"], tier: 6, z: 1.39 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Askja", aliases: ["Mount Askja"], tier: 6, z: 1.33 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pacaya", aliases: ["Mount Pacaya"], tier: 6, z: 1.28 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Galeras", aliases: ["Mount Galeras"], tier: 6, z: 1.19 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ambrym", aliases: ["Mount Ambrym"], tier: 6, z: 1.16 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ontake", aliases: ["Mount Ontake"], tier: 6, z: 1.07 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Poás", aliases: ["Mount Poás"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Klyuchevskaya", aliases: ["Klyuchevskaya Sopka", "Mount Klyuchevskaya", "Mount Klyuchevskaya Sopka"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bezymianny", aliases: ["Mount Bezymianny"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nyamuragira", aliases: ["Mount Nyamuragira"], tier: 6, z: 0.0 },
+      { text: "Llullaillaco", aliases: ["Mount Llullaillaco"], tier: 6, z: 0.0 },
+      { text: "Reventador", aliases: ["Mount Reventador"], tier: 6, z: 0.0 },
+      { text: "Ubinas", aliases: ["Mount Ubinas"], tier: 6, z: 0.0 },
+      { text: "Shishaldin", aliases: ["Mount Shishaldin"], tier: 6, z: 0.0 },
+      { text: "Bárðarbunga", aliases: ["Mount Bárðarbunga"], tier: 6, z: 0.0 },
+      { text: "Krafla", aliases: ["Mount Krafla"], tier: 6, z: 0.0 },
+      { text: "Kelud", aliases: ["Mount Kelud"], tier: 6, z: 0.0 },
+      { text: "Tavurvur", aliases: ["Rabaul", "Mount Tavurvur", "Mount Rabaul"], tier: 6, z: 0.0 },
+      { text: "Ulawun", aliases: ["Mount Ulawun"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "drives-on-left-01", category: "Geography", closed: true,
+    prompt: "Name a country where traffic drives on the left (Hong Kong and Macau also count)",
+    answers: [
+      { text: "Australia", aliases: [], tier: 1, z: 5.06 },
+      { text: "India", aliases: [], tier: 1, z: 5.04 },
+      { text: "Japan", aliases: [], tier: 1, z: 4.89 },
+      { text: "United Kingdom", aliases: ["UK", "Great Britain", "Britain", "GB", "England", "Scotland", "Wales"], tier: 1, z: 4.56 },
+      { text: "South Africa", aliases: [], tier: 2, z: 4.8 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Ireland", aliases: ["Republic of Ireland"], tier: 2, z: 4.66 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "New Zealand", aliases: ["NZ"], tier: 2, z: 4.49 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Pakistan", aliases: [], tier: 3, z: 4.55 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Singapore", aliases: [], tier: 3, z: 4.35 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Malaysia", aliases: [], tier: 3, z: 4.28 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Indonesia", aliases: [], tier: 3, z: 4.25 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Thailand", aliases: [], tier: 3, z: 4.22 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hong Kong", aliases: [], tier: 3, z: 4.21 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Kenya", aliases: [], tier: 3, z: 4.13 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jamaica", aliases: [], tier: 3, z: 3.92 },
+      { text: "Sri Lanka", aliases: [], tier: 3, z: 3.69 },
+      { text: "Bangladesh", aliases: [], tier: 4, z: 3.96 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nepal", aliases: [], tier: 4, z: 3.83 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Uganda", aliases: [], tier: 4, z: 3.78 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Zimbabwe", aliases: [], tier: 4, z: 3.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cyprus", aliases: [], tier: 4, z: 3.71 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fiji", aliases: [], tier: 4, z: 3.61 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tanzania", aliases: [], tier: 4, z: 3.57 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Malta", aliases: [], tier: 4, z: 3.54 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bahamas", aliases: [], tier: 4, z: 3.53 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Barbados", aliases: [], tier: 4, z: 3.5 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Zambia", aliases: [], tier: 4, z: 3.43 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Maldives", aliases: [], tier: 4, z: 3.35 },
+      { text: "Namibia", aliases: [], tier: 4, z: 3.25 },
+      { text: "Botswana", aliases: [], tier: 4, z: 3.24 },
+      { text: "Trinidad and Tobago", aliases: ["Trinidad"], tier: 4, z: 3.21 },
+      { text: "Mauritius", aliases: [], tier: 4, z: 3.21 },
+      { text: "Saint Lucia", aliases: ["St Lucia"], tier: 5, z: 3.4 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Samoa", aliases: [], tier: 5, z: 3.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Papua New Guinea", aliases: ["PNG"], tier: 5, z: 3.33 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Malawi", aliases: [], tier: 5, z: 3.33 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mozambique", aliases: [], tier: 5, z: 3.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Macau", aliases: ["Macao"], tier: 5, z: 3.28 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Guyana", aliases: [], tier: 5, z: 3.26 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Brunei", aliases: [], tier: 5, z: 3.19 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tonga", aliases: [], tier: 5, z: 3.1 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bhutan", aliases: [], tier: 5, z: 3.09 },
+      { text: "Grenada", aliases: [], tier: 5, z: 3.02 },
+      { text: "Seychelles", aliases: [], tier: 5, z: 2.91 },
+      { text: "Lesotho", aliases: [], tier: 5, z: 2.86 },
+      { text: "Eswatini", aliases: ["Swaziland"], tier: 5, z: 1.12 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Solomon Islands", aliases: [], tier: 6, z: 3.73 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Nauru", aliases: [], tier: 6, z: 2.94 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dominica", aliases: [], tier: 6, z: 2.93 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Suriname", aliases: ["Surinam"], tier: 6, z: 2.62 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Saint Vincent and the Grenadines", aliases: ["St Vincent and the Grenadines", "St Vincent"], tier: 6, z: 2.54 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kiribati", aliases: [], tier: 6, z: 2.5 },
+      { text: "Saint Kitts and Nevis", aliases: ["St Kitts and Nevis", "St Kitts"], tier: 6, z: 2.48 },
+      { text: "Timor-Leste", aliases: ["East Timor"], tier: 6, z: 2.44 },
+      { text: "Antigua and Barbuda", aliases: ["Antigua"], tier: 6, z: 2.33 },
+      { text: "Tuvalu", aliases: [], tier: 6, z: 2.31 },
+    ]
+  },
+  {
+    id: "mediterranean-01", category: "Geography", closed: true,
+    prompt: "Name a country with a coastline on the Mediterranean Sea",
+    answers: [
+      { text: "France", aliases: [], tier: 1, z: 4.94 },
+      { text: "Italy", aliases: [], tier: 1, z: 4.66 },
+      { text: "Spain", aliases: [], tier: 1, z: 4.59 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Greece", aliases: [], tier: 1, z: 4.28 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Turkey", aliases: ["Türkiye"], tier: 2, z: 4.56 },
+      { text: "Egypt", aliases: [], tier: 2, z: 4.45 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Cyprus", aliases: [], tier: 2, z: 3.71 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Malta", aliases: [], tier: 2, z: 3.54 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Israel", aliases: [], tier: 3, z: 4.77 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Libya", aliases: [], tier: 3, z: 3.82 },
+      { text: "Morocco", aliases: [], tier: 3, z: 3.8 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Croatia", aliases: [], tier: 3, z: 3.74 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Algeria", aliases: [], tier: 3, z: 3.62 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tunisia", aliases: [], tier: 3, z: 3.57 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Syria", aliases: [], tier: 4, z: 4.4 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lebanon", aliases: [], tier: 4, z: 4.01 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Monaco", aliases: [], tier: 4, z: 3.65 },
+      { text: "Albania", aliases: [], tier: 4, z: 3.35 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Palestine", aliases: ["Gaza", "State of Palestine"], tier: 5, z: 3.99 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Slovenia", aliases: [], tier: 5, z: 3.41 },
+      { text: "Montenegro", aliases: [], tier: 5, z: 3.15 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "United Kingdom", aliases: ["UK", "Gibraltar", "Akrotiri and Dhekelia"], tier: 6, z: 4.56 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Bosnia and Herzegovina", aliases: ["Bosnia"], tier: 6, z: 2.95 },
+    ]
+  },
+  {
+    id: "star-wars-screen-01", category: "Film & TV", closed: true,
+    prompt: "Name a Star Wars film or live-action series (released up to the end of 2025)",
+    answers: [
+      { text: "A New Hope", aliases: ["Star Wars", "Episode IV", "Episode 4", "Star Wars: A New Hope"], tier: 1, z: 5.37 },
+      { text: "The Empire Strikes Back", aliases: ["Episode V", "Episode 5"], tier: 1, z: 4.06 },
+      { text: "The Mandalorian", aliases: [], tier: 1, z: 2.37 }, // override: auto 6 -> 1 (famous/obvious answer in this category)
+      { text: "Rogue One", aliases: ["Rogue One: A Star Wars Story"], tier: 2, z: 3.89 },
+      { text: "Return of the Jedi", aliases: ["Episode VI", "Episode 6"], tier: 2, z: 3.61 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Phantom Menace", aliases: ["Episode I", "Episode 1"], tier: 2, z: 3.34 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Attack of the Clones", aliases: ["Episode II", "Episode 2"], tier: 3, z: 3.39 },
+      { text: "The Force Awakens", aliases: ["Episode VII", "Episode 7"], tier: 3, z: 3.21 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Revenge of the Sith", aliases: ["Episode III", "Episode 3"], tier: 3, z: 2.95 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Andor", aliases: [], tier: 3, z: 2.36 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Solo", aliases: ["Solo: A Star Wars Story"], tier: 4, z: 4.61 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Last Jedi", aliases: ["Episode VIII", "Episode 8"], tier: 4, z: 3.62 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Rise of Skywalker", aliases: ["Episode IX", "Episode 9"], tier: 4, z: 3.12 },
+      { text: "Obi-Wan Kenobi", aliases: ["Kenobi"], tier: 4, z: 2.61 },
+      { text: "Ahsoka", aliases: [], tier: 4, z: 2.52 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Clone Wars", aliases: ["Star Wars: The Clone Wars"], tier: 5, z: 3.63 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Book of Boba Fett", aliases: ["Boba Fett"], tier: 5, z: 2.43 },
+      { text: "The Acolyte", aliases: [], tier: 5, z: 2.41 },
+      { text: "Skeleton Crew", aliases: [], tier: 6, z: 3.75 }, // override: auto 2 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "hp-characters-01", category: "Film & TV", closed: false,
+    prompt: "Name a character from the Harry Potter series",
+    answers: [
+      { text: "Harry Potter", aliases: ["Harry"], tier: 1, z: 4.01 },
+      { text: "Lord Voldemort", aliases: ["Voldemort", "Tom Riddle", "He Who Must Not Be Named", "You-Know-Who"], tier: 1, z: 3.01 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Hermione Granger", aliases: ["Hermione"], tier: 1, z: 2.99 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Ron Weasley", aliases: ["Ron", "Ronald Weasley"], tier: 1, z: 2.72 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Severus Snape", aliases: ["Snape"], tier: 1, z: 2.56 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Hagrid", aliases: ["Rubeus Hagrid"], tier: 1, z: 2.56 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Albus Dumbledore", aliases: ["Dumbledore"], tier: 1, z: 2.47 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Sirius Black", aliases: ["Sirius"], tier: 2, z: 3.26 },
+      { text: "Dobby", aliases: [], tier: 2, z: 2.63 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Draco Malfoy", aliases: ["Draco", "Malfoy"], tier: 2, z: 2.48 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Neville Longbottom", aliases: ["Neville"], tier: 2, z: 2.2 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Luna Lovegood", aliases: ["Luna"], tier: 2, z: 1.82 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Mad-Eye Moody", aliases: ["Moody", "Alastor Moody"], tier: 3, z: 3.64 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "George Weasley", aliases: ["George"], tier: 3, z: 2.73 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Fred Weasley", aliases: ["Fred"], tier: 3, z: 2.72 },
+      { text: "Hedwig", aliases: [], tier: 3, z: 2.65 },
+      { text: "Ginny Weasley", aliases: ["Ginny", "Ginevra Weasley"], tier: 3, z: 2.54 },
+      { text: "Remus Lupin", aliases: ["Lupin"], tier: 3, z: 2.51 },
+      { text: "Lucius Malfoy", aliases: ["Lucius"], tier: 3, z: 2.51 },
+      { text: "Dolores Umbridge", aliases: ["Umbridge"], tier: 3, z: 2.29 },
+      { text: "Minerva McGonagall", aliases: ["McGonagall", "Professor McGonagall"], tier: 3, z: 2.25 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dudley Dursley", aliases: ["Dudley"], tier: 3, z: 2.02 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Cedric Diggory", aliases: ["Cedric"], tier: 3, z: 1.85 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bellatrix Lestrange", aliases: ["Bellatrix"], tier: 3, z: 1.8 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dean Thomas", aliases: ["Dean"], tier: 4, z: 4.26 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "James Potter", aliases: ["James"], tier: 4, z: 4.07 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lily Potter", aliases: ["Lily", "Lily Evans"], tier: 4, z: 3.72 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cho Chang", aliases: ["Cho"], tier: 4, z: 3.29 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Moaning Myrtle", aliases: ["Myrtle"], tier: 4, z: 3.08 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nearly Headless Nick", aliases: ["Sir Nicholas"], tier: 4, z: 2.99 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Arthur Weasley", aliases: ["Arthur", "Mr Weasley"], tier: 4, z: 2.72 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Molly Weasley", aliases: ["Molly", "Mrs Weasley"], tier: 4, z: 2.7 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fawkes", aliases: [], tier: 4, z: 2.7 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Peter Pettigrew", aliases: ["Pettigrew", "Wormtail", "Scabbers"], tier: 4, z: 2.58 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Crabbe", aliases: ["Vincent Crabbe"], tier: 4, z: 2.48 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Viktor Krum", aliases: ["Krum"], tier: 4, z: 2.19 },
+      { text: "Seamus Finnigan", aliases: ["Seamus"], tier: 4, z: 2.18 },
+      { text: "Vernon Dursley", aliases: ["Vernon", "Uncle Vernon"], tier: 4, z: 2.02 },
+      { text: "Argus Filch", aliases: ["Filch"], tier: 4, z: 1.94 },
+      { text: "Petunia Dursley", aliases: ["Petunia", "Aunt Petunia"], tier: 4, z: 1.9 },
+      { text: "Horace Slughorn", aliases: ["Slughorn"], tier: 4, z: 1.89 },
+      { text: "Fleur Delacour", aliases: ["Fleur"], tier: 4, z: 1.8 },
+      { text: "Professor Quirrell", aliases: ["Quirrell", "Quirinus Quirrell"], tier: 4, z: 1.64 },
+      { text: "Goyle", aliases: ["Gregory Goyle"], tier: 4, z: 1.63 },
+      { text: "Nagini", aliases: [], tier: 4, z: 1.59 },
+      { text: "Kreacher", aliases: [], tier: 4, z: 1.56 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gilderoy Lockhart", aliases: ["Lockhart"], tier: 4, z: 1.53 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Buckbeak", aliases: [], tier: 4, z: 1.48 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nymphadora Tonks", aliases: ["Tonks"], tier: 4, z: 1.19 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sybill Trelawney", aliases: ["Trelawney", "Professor Trelawney"], tier: 4, z: 1.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lee Jordan", aliases: [], tier: 5, z: 4.31 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Oliver Wood", aliases: ["Wood"], tier: 5, z: 4.11 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Katie Bell", aliases: [], tier: 5, z: 3.87 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fluffy", aliases: [], tier: 5, z: 3.59 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Angelina Johnson", aliases: ["Angelina"], tier: 5, z: 3.46 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lavender Brown", aliases: ["Lavender"], tier: 5, z: 3.43 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fang", aliases: [], tier: 5, z: 3.34 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cornelius Fudge", aliases: ["Fudge"], tier: 5, z: 3.0 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bill Weasley", aliases: ["Bill"], tier: 5, z: 2.73 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Charlie Weasley", aliases: ["Charlie"], tier: 5, z: 2.72 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Percy Weasley", aliases: ["Percy"], tier: 5, z: 2.68 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pomona Sprout", aliases: ["Sprout", "Professor Sprout"], tier: 5, z: 2.68 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pansy Parkinson", aliases: ["Pansy"], tier: 5, z: 2.64 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Madam Hooch", aliases: ["Hooch"], tier: 5, z: 2.54 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rita Skeeter", aliases: [], tier: 5, z: 2.48 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Winky", aliases: [], tier: 5, z: 2.46 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Barty Crouch", aliases: ["Barty Crouch Jr", "Bartemius Crouch", "Crouch"], tier: 5, z: 2.37 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Parvati Patil", aliases: ["Parvati"], tier: 5, z: 2.36 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Padma Patil", aliases: ["Padma"], tier: 5, z: 2.33 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Narcissa Malfoy", aliases: ["Narcissa"], tier: 5, z: 1.98 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gellert Grindelwald", aliases: ["Grindelwald"], tier: 5, z: 1.68 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Crookshanks", aliases: [], tier: 5, z: 1.52 },
+      { text: "Colin Creevey", aliases: ["Colin"], tier: 5, z: 1.52 },
+      { text: "Filius Flitwick", aliases: ["Flitwick", "Professor Flitwick"], tier: 5, z: 1.49 },
+      { text: "Aragog", aliases: [], tier: 5, z: 1.42 },
+      { text: "Madam Pomfrey", aliases: ["Poppy Pomfrey", "Pomfrey"], tier: 5, z: 1.34 },
+      { text: "Aberforth Dumbledore", aliases: ["Aberforth"], tier: 5, z: 1.32 },
+      { text: "Fenrir Greyback", aliases: ["Greyback"], tier: 5, z: 1.29 },
+      { text: "Griphook", aliases: [], tier: 5, z: 1.12 },
+      { text: "Kingsley Shacklebolt", aliases: ["Kingsley"], tier: 5, z: 1.05 },
+      { text: "The Fat Lady", aliases: [], tier: 6, z: 4.6 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Grey Lady", aliases: ["Helena Ravenclaw"], tier: 6, z: 4.35 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Susan Bones", aliases: [], tier: 6, z: 3.98 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Trevor", aliases: [], tier: 6, z: 3.86 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Bloody Baron", aliases: [], tier: 6, z: 3.73 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Marcus Flint", aliases: [], tier: 6, z: 3.6 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Hannah Abbott", aliases: [], tier: 6, z: 3.59 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Ernie Macmillan", aliases: [], tier: 6, z: 3.2 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Teddy Lupin", aliases: [], tier: 6, z: 2.82 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Norbert", aliases: ["Norberta"], tier: 6, z: 2.8 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Ariana Dumbledore", aliases: [], tier: 6, z: 2.79 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Madame Maxime", aliases: ["Olympe Maxime"], tier: 6, z: 2.63 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Salazar Slytherin", aliases: [], tier: 6, z: 2.55 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Peeves", aliases: [], tier: 6, z: 2.53 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Firenze", aliases: [], tier: 6, z: 2.45 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Albus Severus Potter", aliases: ["Albus Potter"], tier: 6, z: 2.38 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Regulus Black", aliases: ["Regulus"], tier: 6, z: 2.3 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Helga Hufflepuff", aliases: [], tier: 6, z: 2.27 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Frank Longbottom", aliases: [], tier: 6, z: 2.22 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Professor Binns", aliases: ["Binns"], tier: 6, z: 2.22 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Alice Longbottom", aliases: [], tier: 6, z: 2.21 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Augusta Longbottom", aliases: [], tier: 6, z: 2.2 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Scorpius Malfoy", aliases: [], tier: 6, z: 2.17 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Charity Burbage", aliases: [], tier: 6, z: 2.17 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rowena Ravenclaw", aliases: [], tier: 6, z: 2.12 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Marge Dursley", aliases: ["Aunt Marge"], tier: 6, z: 1.99 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ludo Bagman", aliases: ["Bagman"], tier: 6, z: 1.92 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Gabrielle Delacour", aliases: [], tier: 6, z: 1.82 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Godric Gryffindor", aliases: [], tier: 6, z: 1.77 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nicolas Flamel", aliases: ["Flamel"], tier: 6, z: 1.73 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Alecto Carrow", aliases: [], tier: 6, z: 1.61 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Walden Macnair", aliases: [], tier: 6, z: 1.58 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Dennis Creevey", aliases: [], tier: 6, z: 1.52 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Rufus Scrimgeour", aliases: ["Scrimgeour"], tier: 6, z: 1.47 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Corban Yaxley", aliases: ["Yaxley"], tier: 6, z: 1.44 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Garrick Ollivander", aliases: ["Ollivander", "Mr Ollivander"], tier: 6, z: 1.41 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Romilda Vane", aliases: [], tier: 6, z: 1.31 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pius Thicknesse", aliases: [], tier: 6, z: 1.1 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Stan Shunpike", aliases: [], tier: 6, z: 1.02 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mundungus Fletcher", aliases: ["Mundungus"], tier: 6, z: 0.0 },
+      { text: "Xenophilius Lovegood", aliases: ["Xenophilius"], tier: 6, z: 0.0 },
+      { text: "Igor Karkaroff", aliases: ["Karkaroff"], tier: 6, z: 0.0 },
+      { text: "Bathilda Bagshot", aliases: [], tier: 6, z: 0.0 },
+      { text: "Grawp", aliases: [], tier: 6, z: 0.0 },
+      { text: "Pigwidgeon", aliases: ["Pig"], tier: 6, z: 0.0 },
+      { text: "Justin Finch-Fletchley", aliases: [], tier: 6, z: 0.0 },
+      { text: "Blaise Zabini", aliases: [], tier: 6, z: 0.0 },
+      { text: "Alicia Spinnet", aliases: [], tier: 6, z: 0.0 },
+      { text: "Cormac McLaggen", aliases: [], tier: 6, z: 0.0 },
+      { text: "Amycus Carrow", aliases: [], tier: 6, z: 0.0 },
+      { text: "Antonin Dolohov", aliases: ["Dolohov"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "dreamworks-01", category: "Film & TV", closed: true,
+    prompt: "Name a theatrical feature film from DreamWorks Animation (released up to the end of 2025)",
+    answers: [
+      { text: "How to Train Your Dragon", aliases: ["HTTYD"], tier: 1, z: 4.29 },
+      { text: "Madagascar", aliases: [], tier: 1, z: 3.39 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Shrek", aliases: [], tier: 1, z: 3.27 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Kung Fu Panda", aliases: [], tier: 1, z: 3.21 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "The Prince of Egypt", aliases: [], tier: 2, z: 4.26 },
+      { text: "Bee Movie", aliases: [], tier: 2, z: 4.05 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Shrek 2", aliases: [], tier: 2, z: 3.27 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Megamind", aliases: [], tier: 2, z: 2.01 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Bad Guys", aliases: [], tier: 3, z: 5.16 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Boss Baby", aliases: [], tier: 3, z: 4.64 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chicken Run", aliases: [], tier: 3, z: 4.57 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "How to Train Your Dragon 2", aliases: ["HTTYD 2"], tier: 3, z: 4.29 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Wild Robot", aliases: [], tier: 3, z: 4.13 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Shark Tale", aliases: [], tier: 3, z: 3.88 },
+      { text: "Monsters vs. Aliens", aliases: ["Monsters versus Aliens"], tier: 3, z: 3.76 },
+      { text: "Trolls", aliases: [], tier: 3, z: 3.62 },
+      { text: "Kung Fu Panda 2", aliases: [], tier: 3, z: 3.21 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Puss in Boots", aliases: [], tier: 3, z: 3.01 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Puss in Boots: The Last Wish", aliases: ["The Last Wish", "Puss in Boots 2"], tier: 3, z: 3.0 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Croods", aliases: [], tier: 3, z: 1.89 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Home", aliases: [], tier: 4, z: 5.81 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "How to Train Your Dragon: The Hidden World", aliases: ["The Hidden World", "HTTYD 3", "How to Train Your Dragon 3"], tier: 4, z: 4.09 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rise of the Guardians", aliases: [], tier: 4, z: 3.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Over the Hedge", aliases: [], tier: 4, z: 3.74 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Trolls World Tour", aliases: ["Trolls 2"], tier: 4, z: 3.6 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Madagascar: Escape 2 Africa", aliases: ["Madagascar 2", "Escape 2 Africa"], tier: 4, z: 3.35 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shrek the Third", aliases: ["Shrek 3"], tier: 4, z: 3.27 },
+      { text: "Shrek Forever After", aliases: ["Shrek 4", "Shrek Forever"], tier: 4, z: 3.26 },
+      { text: "Kung Fu Panda 3", aliases: [], tier: 4, z: 3.21 },
+      { text: "Kung Fu Panda 4", aliases: [], tier: 4, z: 3.21 },
+      { text: "Penguins of Madagascar", aliases: [], tier: 4, z: 3.21 },
+      { text: "Madagascar 3: Europe's Most Wanted", aliases: ["Madagascar 3"], tier: 4, z: 3.14 },
+      { text: "The Road to El Dorado", aliases: ["El Dorado"], tier: 4, z: 3.01 },
+      { text: "Captain Underpants: The First Epic Movie", aliases: ["Captain Underpants"], tier: 4, z: 2.9 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Spirit: Stallion of the Cimarron", aliases: ["Spirit"], tier: 4, z: 2.2 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Antz", aliases: [], tier: 4, z: 1.68 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Bad Guys 2", aliases: [], tier: 5, z: 5.1 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dog Man", aliases: [], tier: 5, z: 5.03 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Boss Baby: Family Business", aliases: ["Boss Baby 2", "Family Business"], tier: 5, z: 4.56 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Turbo", aliases: [], tier: 5, z: 3.74 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Trolls Band Together", aliases: ["Trolls 3"], tier: 5, z: 3.59 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Flushed Away", aliases: [], tier: 5, z: 3.27 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mr. Peabody & Sherman", aliases: ["Peabody & Sherman"], tier: 5, z: 3.19 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Abominable", aliases: [], tier: 5, z: 2.85 },
+      { text: "Wallace & Gromit: The Curse of the Were-Rabbit", aliases: ["Curse of the Were-Rabbit", "Wallace & Gromit"], tier: 5, z: 2.3 },
+      { text: "The Croods: A New Age", aliases: ["Croods 2", "A New Age"], tier: 5, z: 1.89 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Spirit Untamed", aliases: [], tier: 6, z: 2.75 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sinbad: Legend of the Seven Seas", aliases: ["Sinbad"], tier: 6, z: 2.56 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ruby Gillman, Teenage Kraken", aliases: ["Ruby Gillman"], tier: 6, z: 2.16 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Gabby's Dollhouse: The Movie", aliases: ["Gabby's Dollhouse"], tier: 6, z: 1.84 },
+    ]
+  },
+  {
+    id: "nolan-tarantino-01", category: "Film & TV", closed: true,
+    prompt: "Name a feature film directed by Christopher Nolan or Quentin Tarantino (released up to the end of 2025)",
+    answers: [
+      { text: "The Dark Knight", aliases: [], tier: 1, z: 4.21 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Inception", aliases: [], tier: 1, z: 3.65 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Pulp Fiction", aliases: [], tier: 1, z: 3.61 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Interstellar", aliases: [], tier: 1, z: 3.34 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Oppenheimer", aliases: [], tier: 1, z: 2.93 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Kill Bill: Volume 1", aliases: ["Kill Bill", "Kill Bill Vol. 1", "Kill Bill 1"], tier: 2, z: 4.47 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Memento", aliases: [], tier: 2, z: 2.93 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Django Unchained", aliases: ["Django"], tier: 2, z: 2.6 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Once Upon a Time in Hollywood", aliases: [], tier: 3, z: 4.38 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Batman Begins", aliases: [], tier: 3, z: 4.08 },
+      { text: "Reservoir Dogs", aliases: [], tier: 3, z: 3.85 },
+      { text: "The Dark Knight Rises", aliases: [], tier: 3, z: 3.83 },
+      { text: "Dunkirk", aliases: [], tier: 3, z: 3.14 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tenet", aliases: [], tier: 3, z: 3.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Inglourious Basterds", aliases: ["Inglorious Bastards", "Inglorious Basterds"], tier: 3, z: 1.85 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Kill Bill: Volume 2", aliases: ["Kill Bill Vol. 2", "Kill Bill 2"], tier: 4, z: 4.47 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Prestige", aliases: [], tier: 4, z: 3.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Hateful Eight", aliases: ["Hateful 8"], tier: 4, z: 3.51 },
+      { text: "Jackie Brown", aliases: [], tier: 5, z: 3.93 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Insomnia", aliases: [], tier: 5, z: 3.43 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Following", aliases: [], tier: 6, z: 5.46 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Death Proof", aliases: [], tier: 6, z: 4.62 }, // override: auto 1 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "animated-oscar-01", category: "Film & TV", closed: true,
+    prompt: "Name a film that won the Oscar for Best Animated Feature (2002 to 2025 ceremonies)",
+    answers: [
+      { text: "Frozen", aliases: [], tier: 1, z: 4.32 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Toy Story 3", aliases: [], tier: 1, z: 4.26 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Shrek", aliases: [], tier: 1, z: 3.27 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Finding Nemo", aliases: [], tier: 1, z: 3.16 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Spider-Man: Into the Spider-Verse", aliases: ["Into the Spider-Verse", "Spider-Verse", "Spiderverse"], tier: 2, z: 3.74 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Spirited Away", aliases: [], tier: 2, z: 3.55 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Coco", aliases: [], tier: 2, z: 3.49 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Encanto", aliases: [], tier: 2, z: 1.65 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Up", aliases: [], tier: 3, z: 6.39 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Inside Out", aliases: [], tier: 3, z: 5.16 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "WALL-E", aliases: ["Walle"], tier: 3, z: 4.84 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Soul", aliases: [], tier: 3, z: 4.81 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Toy Story 4", aliases: [], tier: 3, z: 4.26 },
+      { text: "The Incredibles", aliases: [], tier: 3, z: 2.64 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ratatouille", aliases: [], tier: 3, z: 2.52 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Zootopia", aliases: ["Zootropolis"], tier: 3, z: 2.46 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Happy Feet", aliases: [], tier: 4, z: 4.83 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Big Hero 6", aliases: [], tier: 4, z: 4.59 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Brave", aliases: [], tier: 4, z: 4.33 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Boy and the Heron", aliases: [], tier: 4, z: 3.09 },
+      { text: "Guillermo del Toro's Pinocchio", aliases: ["Pinocchio"], tier: 4, z: 1.97 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wallace & Gromit: The Curse of the Were-Rabbit", aliases: ["Curse of the Were-Rabbit", "Wallace & Gromit"], tier: 5, z: 2.3 },
+      { text: "Rango", aliases: [], tier: 5, z: 2.04 },
+      { text: "Flow", aliases: [], tier: 6, z: 4.68 }, // override: auto 2 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "spongebob-01", category: "Film & TV", closed: false,
+    prompt: "Name a character from SpongeBob SquarePants",
+    answers: [
+      { text: "Patrick Star", aliases: ["Patrick"], tier: 1, z: 4.31 },
+      { text: "Plankton", aliases: ["Sheldon Plankton", "Sheldon J. Plankton"], tier: 1, z: 3.05 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "SpongeBob SquarePants", aliases: ["SpongeBob"], tier: 1, z: 2.54 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Squidward Tentacles", aliases: ["Squidward"], tier: 1, z: 2.45 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Mr. Krabs", aliases: ["Eugene Krabs", "Krabs"], tier: 1, z: 2.45 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Sandy Cheeks", aliases: ["Sandy"], tier: 2, z: 3.67 },
+      { text: "Gary the Snail", aliases: ["Gary"], tier: 2, z: 3.59 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "DoodleBob", aliases: [], tier: 2, z: 0.0 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Karen", aliases: ["Karen Plankton"], tier: 3, z: 4.09 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Larry the Lobster", aliases: ["Larry"], tier: 3, z: 3.56 },
+      { text: "Mrs. Puff", aliases: [], tier: 3, z: 3.53 },
+      { text: "Mermaid Man", aliases: [], tier: 3, z: 3.47 },
+      { text: "The Flying Dutchman", aliases: [], tier: 3, z: 3.05 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Barnacle Boy", aliases: [], tier: 3, z: 2.55 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Pearl Krabs", aliases: ["Pearl"], tier: 3, z: 2.44 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Man Ray", aliases: [], tier: 4, z: 4.66 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bubble Buddy", aliases: [], tier: 4, z: 3.96 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bubble Bass", aliases: [], tier: 4, z: 3.91 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Old Man Jenkins", aliases: [], tier: 4, z: 3.83 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "King Neptune", aliases: ["Neptune"], tier: 4, z: 3.35 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Patchy the Pirate", aliases: ["Patchy"], tier: 4, z: 2.89 },
+      { text: "The Hash-Slinging Slasher", aliases: [], tier: 4, z: 2.51 },
+      { text: "Squilliam Fancyson", aliases: ["Squilliam"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Smitty Werbenjägermanjensen", aliases: ["Smitty"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fred", aliases: ["Fred Rechid", "My Leg Guy"], tier: 5, z: 4.21 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dennis", aliases: [], tier: 5, z: 4.1 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Dirty Bubble", aliases: [], tier: 5, z: 4.01 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "French Narrator", aliases: ["The Narrator"], tier: 5, z: 3.79 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kevin C. Cucumber", aliases: ["Kevin", "Kevin the Sea Cucumber"], tier: 5, z: 3.37 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Perch Perkins", aliases: [], tier: 5, z: 3.13 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Princess Mindy", aliases: ["Mindy"], tier: 5, z: 3.08 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Potty the Parrot", aliases: ["Potty"], tier: 5, z: 3.06 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Grandma SquarePants", aliases: ["Grandma"], tier: 5, z: 2.63 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Margaret SquarePants", aliases: ["Margaret"], tier: 5, z: 2.63 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Harold SquarePants", aliases: ["Harold"], tier: 5, z: 2.62 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Betsy Krabs", aliases: ["Mama Krabs"], tier: 5, z: 2.41 },
+      { text: "Wormy", aliases: [], tier: 5, z: 2.03 },
+      { text: "Painty the Pirate", aliases: ["Painty"], tier: 5, z: 1.22 },
+      { text: "Tom", aliases: ["Chocolate Guy", "Tom Smith"], tier: 6, z: 4.83 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Miss Appear", aliases: [], tier: 6, z: 4.7 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Old Man Walker", aliases: [], tier: 6, z: 4.38 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Kenny the Cat", aliases: [], tier: 6, z: 3.96 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Hans", aliases: ["The Hand"], tier: 6, z: 3.82 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Evelyn", aliases: [], tier: 6, z: 3.6 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Scooter", aliases: [], tier: 6, z: 3.57 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Nat Peterson", aliases: ["Nat"], tier: 6, z: 3.5 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Sandals", aliases: [], tier: 6, z: 3.46 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Lord Royal Highness", aliases: [], tier: 6, z: 3.32 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Captain Magma", aliases: [], tier: 6, z: 3.18 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "BlackJack", aliases: [], tier: 6, z: 3.16 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Nancy Suzy Fish", aliases: [], tier: 6, z: 3.1 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Puffy Fluffy", aliases: [], tier: 6, z: 3.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Triton", aliases: [], tier: 6, z: 2.95 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Mr. Doodles", aliases: [], tier: 6, z: 2.82 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Flats the Flounder", aliases: ["Flats"], tier: 6, z: 2.74 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "The Elastic Waistband", aliases: [], tier: 6, z: 2.68 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Stanley S. SquarePants", aliases: ["Stanley"], tier: 6, z: 2.63 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Mystery the Seahorse", aliases: ["Mystery"], tier: 6, z: 2.5 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nosferatu", aliases: ["Count Orlok"], tier: 6, z: 2.41 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Queen Amphitrite", aliases: ["Amphitrite"], tier: 6, z: 1.58 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Squidina", aliases: [], tier: 6, z: 0.0 },
+      { text: "The Quickster", aliases: [], tier: 6, z: 0.0 },
+      { text: "Snellie", aliases: [], tier: 6, z: 0.0 },
+      { text: "Shubie", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "best-actor-01", category: "Film & TV", closed: true,
+    prompt: "Name an actor who won the Best Actor Oscar at a ceremony from 2001 to 2025",
+    answers: [
+      { text: "Will Smith", aliases: [], tier: 1, z: 4.88 },
+      { text: "Joaquin Phoenix", aliases: [], tier: 1, z: 3.3 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Leonardo DiCaprio", aliases: ["DiCaprio", "Leo DiCaprio"], tier: 1, z: 3.05 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Cillian Murphy", aliases: [], tier: 1, z: 2.21 }, // override: auto 6 -> 1 (famous/obvious answer in this category)
+      { text: "Daniel Day-Lewis", aliases: ["Day-Lewis"], tier: 2, z: 4.24 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Anthony Hopkins", aliases: [], tier: 2, z: 3.78 },
+      { text: "Russell Crowe", aliases: [], tier: 2, z: 3.15 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Denzel Washington", aliases: ["Denzel"], tier: 2, z: 2.97 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Brendan Fraser", aliases: [], tier: 3, z: 3.45 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Colin Firth", aliases: [], tier: 3, z: 3.13 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jamie Foxx", aliases: [], tier: 3, z: 2.96 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Gary Oldman", aliases: [], tier: 3, z: 2.7 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Matthew McConaughey", aliases: ["McConaughey"], tier: 3, z: 2.65 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rami Malek", aliases: [], tier: 3, z: 2.56 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Eddie Redmayne", aliases: [], tier: 3, z: 2.36 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jeff Bridges", aliases: [], tier: 4, z: 3.94 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sean Penn", aliases: [], tier: 4, z: 3.76 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Philip Seymour Hoffman", aliases: ["Philip Hoffman"], tier: 4, z: 3.28 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Forest Whitaker", aliases: [], tier: 4, z: 3.23 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Adrien Brody", aliases: [], tier: 4, z: 2.7 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Casey Affleck", aliases: [], tier: 5, z: 3.16 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jean Dujardin", aliases: ["Dujardin"], tier: 6, z: 2.13 },
+    ]
+  },
+  {
+    id: "illumination-01", category: "Film & TV", closed: true,
+    prompt: "Name a feature film from Illumination, the Minions studio (released up to the end of 2025)",
+    answers: [
+      { text: "The Super Mario Bros. Movie", aliases: ["Mario Movie", "Super Mario Movie"], tier: 1, z: 3.8 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Despicable Me", aliases: [], tier: 1, z: 3.46 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Minions", aliases: [], tier: 1, z: 3.29 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Sing", aliases: [], tier: 2, z: 4.54 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Secret Life of Pets", aliases: [], tier: 2, z: 4.02 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Lorax", aliases: ["Dr. Seuss' The Lorax"], tier: 2, z: 2.13 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Despicable Me 2", aliases: [], tier: 3, z: 3.46 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Despicable Me 3", aliases: [], tier: 3, z: 3.46 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Grinch", aliases: ["Dr. Seuss' The Grinch"], tier: 3, z: 2.87 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Minions: The Rise of Gru", aliases: ["The Rise of Gru", "Minions 2"], tier: 3, z: 2.64 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sing 2", aliases: [], tier: 4, z: 4.53 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Secret Life of Pets 2", aliases: ["Pets 2"], tier: 4, z: 4.01 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Despicable Me 4", aliases: [], tier: 4, z: 3.46 },
+      { text: "Migration", aliases: [], tier: 5, z: 4.14 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hop", aliases: [], tier: 6, z: 4.4 }, // override: auto 2 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "dceu-01", category: "Film & TV", closed: true,
+    prompt: "Name a film in the DC Extended Universe (2013 to 2023)",
+    answers: [
+      { text: "Wonder Woman", aliases: [], tier: 1, z: 4.79 },
+      { text: "Man of Steel", aliases: [], tier: 1, z: 4.68 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Aquaman", aliases: [], tier: 1, z: 2.95 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Justice League", aliases: [], tier: 2, z: 4.74 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Suicide Squad", aliases: ["Suicide Squad 2016"], tier: 2, z: 4.34 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Batman v Superman: Dawn of Justice", aliases: ["Batman v Superman", "Batman vs Superman", "BvS", "Dawn of Justice"], tier: 2, z: 3.64 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Zack Snyder's Justice League", aliases: ["Snyder Cut"], tier: 2, z: 2.55 }, // override: auto 6 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "The Flash", aliases: [], tier: 3, z: 4.45 },
+      { text: "The Suicide Squad (2021)", aliases: ["The Suicide Squad 2"], tier: 3, z: 4.19 },
+      { text: "Shazam!", aliases: [], tier: 3, z: 2.94 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Black Adam", aliases: [], tier: 4, z: 4.52 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wonder Woman 1984", aliases: ["WW84", "Wonder Woman 84"], tier: 4, z: 4.27 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Birds of Prey", aliases: ["Harley Quinn: Birds of Prey"], tier: 4, z: 3.89 },
+      { text: "Blue Beetle", aliases: [], tier: 5, z: 3.52 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Aquaman and the Lost Kingdom", aliases: ["Aquaman 2", "The Lost Kingdom"], tier: 5, z: 2.94 },
+      { text: "Shazam! Fury of the Gods", aliases: ["Shazam 2", "Fury of the Gods"], tier: 6, z: 2.88 },
+    ]
+  },
+  {
+    id: "star-wars-characters-01", category: "Film & TV", closed: false,
+    prompt: "Name a character from Star Wars (films or series)",
+    answers: [
+      { text: "Han Solo", aliases: ["Han"], tier: 1, z: 3.85 },
+      { text: "R2-D2", aliases: ["R2D2", "Artoo"], tier: 1, z: 3.15 },
+      { text: "Luke Skywalker", aliases: ["Luke"], tier: 1, z: 3.11 },
+      { text: "Yoda", aliases: [], tier: 1, z: 3.11 },
+      { text: "Princess Leia", aliases: ["Leia", "Leia Organa"], tier: 1, z: 3.04 },
+      { text: "Darth Vader", aliases: ["Vader", "Anakin Skywalker", "Anakin"], tier: 1, z: 2.96 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Chewbacca", aliases: ["Chewie"], tier: 1, z: 2.71 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "C-3PO", aliases: ["C3PO", "Threepio"], tier: 1, z: 2.37 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Obi-Wan Kenobi", aliases: ["Obi-Wan", "Ben Kenobi", "Kenobi"], tier: 2, z: 2.61 },
+      { text: "Kylo Ren", aliases: ["Ben Solo", "Kylo"], tier: 2, z: 2.47 },
+      { text: "Boba Fett", aliases: [], tier: 2, z: 2.43 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Jar Jar Binks", aliases: ["Jar Jar"], tier: 2, z: 2.37 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Grogu", aliases: ["Baby Yoda", "The Child"], tier: 2, z: 0.0 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "BB-8", aliases: ["BB8"], tier: 3, z: 3.83 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rey", aliases: ["Rey Skywalker"], tier: 3, z: 3.79 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Finn", aliases: [], tier: 3, z: 3.78 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Darth Maul", aliases: ["Maul"], tier: 3, z: 2.73 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Emperor Palpatine", aliases: ["Palpatine", "Darth Sidious", "The Emperor", "Sidious"], tier: 3, z: 2.47 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Qui-Gon Jinn", aliases: ["Qui-Gon"], tier: 3, z: 2.45 },
+      { text: "The Mandalorian", aliases: ["Din Djarin", "Mando"], tier: 3, z: 2.37 },
+      { text: "Jabba the Hutt", aliases: ["Jabba"], tier: 3, z: 2.37 },
+      { text: "Mace Windu", aliases: ["Windu"], tier: 3, z: 2.09 },
+      { text: "Ahsoka Tano", aliases: ["Ahsoka"], tier: 3, z: 2.05 },
+      { text: "Lando Calrissian", aliases: ["Lando"], tier: 3, z: 1.89 },
+      { text: "Padmé Amidala", aliases: ["Padmé", "Queen Amidala", "Amidala"], tier: 3, z: 1.67 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Uncle Owen", aliases: ["Owen Lars"], tier: 4, z: 3.9 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Captain Rex", aliases: ["Rex"], tier: 4, z: 3.85 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wicket", aliases: ["Wicket W. Warrick"], tier: 4, z: 3.59 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "General Grievous", aliases: ["Grievous"], tier: 4, z: 3.18 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wedge Antilles", aliases: ["Wedge"], tier: 4, z: 2.7 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Count Dooku", aliases: ["Dooku", "Darth Tyranus"], tier: 4, z: 2.43 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rose Tico", aliases: ["Rose"], tier: 4, z: 2.22 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Maz Kanata", aliases: ["Maz"], tier: 4, z: 2.17 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jango Fett", aliases: [], tier: 4, z: 2.13 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Grand Admiral Thrawn", aliases: ["Thrawn"], tier: 4, z: 2.08 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "General Hux", aliases: ["Hux"], tier: 4, z: 2.01 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cassian Andor", aliases: ["Andor", "Cassian"], tier: 4, z: 1.99 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Poe Dameron", aliases: ["Poe"], tier: 4, z: 1.97 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Supreme Leader Snoke", aliases: ["Snoke"], tier: 4, z: 1.97 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Watto", aliases: [], tier: 4, z: 1.95 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Greedo", aliases: [], tier: 4, z: 1.89 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Admiral Ackbar", aliases: ["Ackbar"], tier: 4, z: 1.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Aunt Beru", aliases: ["Beru Lars", "Beru"], tier: 4, z: 1.76 },
+      { text: "Captain Phasma", aliases: ["Phasma"], tier: 4, z: 1.74 },
+      { text: "Jyn Erso", aliases: ["Jyn"], tier: 4, z: 1.7 },
+      { text: "Grand Moff Tarkin", aliases: ["Tarkin"], tier: 4, z: 1.59 },
+      { text: "Mon Mothma", aliases: [], tier: 4, z: 1.59 },
+      { text: "K-2SO", aliases: ["K2SO"], tier: 4, z: 1.51 },
+      { text: "Shmi Skywalker", aliases: ["Shmi"], tier: 4, z: 1.45 },
+      { text: "Asajj Ventress", aliases: ["Ventress"], tier: 4, z: 1.12 },
+      { text: "Bo-Katan Kryze", aliases: ["Bo-Katan"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "D-O", aliases: [], tier: 5, z: 4.96 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "DJ", aliases: [], tier: 5, z: 4.23 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "IG-11", aliases: [], tier: 5, z: 3.62 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "IG-88", aliases: [], tier: 5, z: 3.58 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chopper", aliases: [], tier: 5, z: 3.31 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tobias Beckett", aliases: ["Beckett"], tier: 5, z: 3.05 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cara Dune", aliases: [], tier: 5, z: 3.05 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cad Bane", aliases: [], tier: 5, z: 3.03 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sabine Wren", aliases: ["Sabine"], tier: 5, z: 2.85 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "L3-37", aliases: [], tier: 5, z: 2.82 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ezra Bridger", aliases: ["Ezra"], tier: 5, z: 2.64 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dryden Vos", aliases: [], tier: 5, z: 2.61 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Zeb", aliases: ["Garazeb Orrelios"], tier: 5, z: 2.53 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bib Fortuna", aliases: [], tier: 5, z: 2.52 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bodhi Rook", aliases: [], tier: 5, z: 2.49 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Boss Nass", aliases: [], tier: 5, z: 2.46 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ki-Adi-Mundi", aliases: [], tier: 5, z: 2.44 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Salacious Crumb", aliases: [], tier: 5, z: 2.34 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bail Organa", aliases: [], tier: 5, z: 2.16 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Plo Koon", aliases: [], tier: 5, z: 2.06 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fennec Shand", aliases: ["Fennec"], tier: 5, z: 1.89 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Moff Gideon", aliases: ["Gideon"], tier: 5, z: 1.84 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dengar", aliases: [], tier: 5, z: 1.7 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Orson Krennic", aliases: ["Krennic"], tier: 5, z: 1.6 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Oola", aliases: [], tier: 5, z: 1.57 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Max Rebo", aliases: [], tier: 5, z: 1.53 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bossk", aliases: [], tier: 5, z: 1.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Babu Frik", aliases: [], tier: 5, z: 1.41 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kit Fisto", aliases: [], tier: 5, z: 1.38 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shaak Ti", aliases: [], tier: 5, z: 1.32 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Saw Gerrera", aliases: [], tier: 5, z: 1.22 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nute Gunray", aliases: [], tier: 5, z: 1.18 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sebulba", aliases: [], tier: 5, z: 1.17 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Aayla Secura", aliases: [], tier: 5, z: 1.17 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kanan Jarrus", aliases: ["Kanan"], tier: 5, z: 1.17 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hera Syndulla", aliases: ["Hera"], tier: 5, z: 1.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vice Admiral Holdo", aliases: ["Holdo", "Amilyn Holdo"], tier: 5, z: 1.1 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Captain Panaka", aliases: ["Panaka"], tier: 5, z: 1.09 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Qi'ra", aliases: [], tier: 5, z: 1.09 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nien Nunb", aliases: [], tier: 5, z: 0.0 },
+      { text: "Lobot", aliases: [], tier: 5, z: 0.0 },
+      { text: "Luminara Unduli", aliases: ["Luminara"], tier: 5, z: 0.0 },
+      { text: "Zam Wesell", aliases: [], tier: 5, z: 0.0 },
+      { text: "Dexter Jettster", aliases: ["Dex"], tier: 5, z: 0.0 },
+      { text: "Chirrut Îmwe", aliases: ["Chirrut"], tier: 5, z: 0.0 },
+      { text: "Baze Malbus", aliases: ["Baze"], tier: 5, z: 0.0 },
+      { text: "Greef Karga", aliases: [], tier: 5, z: 0.0 },
+      { text: "Kuiil", aliases: [], tier: 5, z: 0.0 },
+      { text: "Luthen Rael", aliases: ["Luthen"], tier: 5, z: 0.0 },
+      { text: "Zorii Bliss", aliases: [], tier: 5, z: 0.0 },
+      { text: "San Hill", aliases: [], tier: 6, z: 4.59 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Commander Cody", aliases: ["Cody"], tier: 6, z: 3.7 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Rio Durant", aliases: [], tier: 6, z: 3.43 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Lama Su", aliases: [], tier: 6, z: 3.35 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Sly Moore", aliases: [], tier: 6, z: 3.35 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "General Veers", aliases: ["Veers"], tier: 6, z: 2.54 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Kino Loy", aliases: [], tier: 6, z: 2.41 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Lady Proxima", aliases: [], tier: 6, z: 2.37 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "4-LOM", aliases: [], tier: 6, z: 2.3 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Wat Tambor", aliases: [], tier: 6, z: 2.24 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Jocasta Nu", aliases: [], tier: 6, z: 2.21 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Shin Hati", aliases: [], tier: 6, z: 2.17 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Adi Gallia", aliases: [], tier: 6, z: 2.11 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Captain Needa", aliases: ["Needa"], tier: 6, z: 2.04 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "The Armorer", aliases: [], tier: 6, z: 1.95 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Agen Kolar", aliases: [], tier: 6, z: 1.87 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Paz Vizsla", aliases: [], tier: 6, z: 1.86 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Galen Erso", aliases: [], tier: 6, z: 1.83 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Morgan Elsbeth", aliases: [], tier: 6, z: 1.79 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Peli Motto", aliases: [], tier: 6, z: 1.63 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ponda Baba", aliases: [], tier: 6, z: 1.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sio Bibble", aliases: [], tier: 6, z: 1.47 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Taun We", aliases: [], tier: 6, z: 1.45 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Savage Opress", aliases: [], tier: 6, z: 1.31 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Lor San Tekka", aliases: [], tier: 6, z: 1.25 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Poggle the Lesser", aliases: ["Poggle"], tier: 6, z: 1.17 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Captain Typho", aliases: ["Typho"], tier: 6, z: 1.17 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Admiral Piett", aliases: ["Piett"], tier: 6, z: 1.14 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Biggs Darklighter", aliases: ["Biggs"], tier: 6, z: 1.09 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tion Medon", aliases: [], tier: 6, z: 1.08 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Yaddle", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dr. Evazan", aliases: ["Evazan"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Figrin D'an", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Momaw Nadon", aliases: ["Hammerhead"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Wuher", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Garindan", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Jek Porkins", aliases: ["Porkins"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Admiral Ozzel", aliases: ["Ozzel"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Zuckuss", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mas Amedda", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sabé", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ric Olié", aliases: [], tier: 6, z: 0.0 },
+      { text: "Oppo Rancisis", aliases: [], tier: 6, z: 0.0 },
+      { text: "Even Piell", aliases: [], tier: 6, z: 0.0 },
+      { text: "Saesee Tiin", aliases: [], tier: 6, z: 0.0 },
+      { text: "Eeth Koth", aliases: [], tier: 6, z: 0.0 },
+      { text: "Yarael Poof", aliases: [], tier: 6, z: 0.0 },
+      { text: "Depa Billaba", aliases: [], tier: 6, z: 0.0 },
+      { text: "Hondo Ohnaka", aliases: ["Hondo"], tier: 6, z: 0.0 },
+      { text: "Dedra Meero", aliases: ["Dedra"], tier: 6, z: 0.0 },
+      { text: "Syril Karn", aliases: ["Syril"], tier: 6, z: 0.0 },
+      { text: "Maarva Andor", aliases: ["Maarva"], tier: 6, z: 0.0 },
+      { text: "Enfys Nest", aliases: [], tier: 6, z: 0.0 },
+      { text: "Baylan Skoll", aliases: ["Baylan"], tier: 6, z: 0.0 },
+      { text: "Huyang", aliases: [], tier: 6, z: 0.0 },
+      { text: "Unkar Plutt", aliases: [], tier: 6, z: 0.0 },
+      { text: "Admiral Raddus", aliases: ["Raddus"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "the-office-01", category: "Film & TV", closed: false,
+    prompt: "Name a character from The Office (US version)",
+    answers: [
+      { text: "Michael Scott", aliases: ["Michael", "Prison Mike", "Date Mike"], tier: 1, z: 4.56 },
+      { text: "Jim Halpert", aliases: ["Jim"], tier: 1, z: 2.2 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Dwight Schrute", aliases: ["Dwight"], tier: 1, z: 2.18 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Pam Beesly", aliases: ["Pam", "Pam Halpert"], tier: 1, z: 1.47 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Angela Martin", aliases: ["Angela"], tier: 2, z: 3.94 },
+      { text: "Stanley Hudson", aliases: ["Stanley"], tier: 2, z: 3.8 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Kevin Malone", aliases: ["Kevin"], tier: 2, z: 3.52 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Creed Bratton", aliases: ["Creed"], tier: 2, z: 2.55 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Ryan Howard", aliases: ["Ryan"], tier: 3, z: 4.23 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Andy Bernard", aliases: ["Andy"], tier: 3, z: 3.88 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Oscar Martinez", aliases: ["Oscar"], tier: 3, z: 3.6 },
+      { text: "Meredith Palmer", aliases: ["Meredith"], tier: 3, z: 3.51 },
+      { text: "Kelly Kapoor", aliases: ["Kelly"], tier: 3, z: 3.26 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Phyllis Vance", aliases: ["Phyllis", "Phyllis Lapin"], tier: 3, z: 3.08 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Erin Hannon", aliases: ["Erin"], tier: 3, z: 2.43 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Darryl Philbin", aliases: ["Darryl"], tier: 3, z: 2.38 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Toby Flenderson", aliases: ["Toby"], tier: 3, z: 1.24 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Robert California", aliases: [], tier: 4, z: 4.62 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "David Wallace", aliases: [], tier: 4, z: 4.02 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Roy Anderson", aliases: ["Roy"], tier: 4, z: 4.0 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bob Vance", aliases: [], tier: 4, z: 3.41 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gabe Lewis", aliases: ["Gabe"], tier: 4, z: 3.28 },
+      { text: "Todd Packer", aliases: ["Packer"], tier: 4, z: 3.2 },
+      { text: "Holly Flax", aliases: ["Holly"], tier: 4, z: 2.99 },
+      { text: "Jan Levinson", aliases: ["Jan"], tier: 4, z: 2.85 },
+      { text: "Nellie Bertram", aliases: ["Nellie"], tier: 4, z: 2.72 },
+      { text: "Mose Schrute", aliases: ["Mose"], tier: 4, z: 2.04 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Karen Filippelli", aliases: ["Karen"], tier: 4, z: 1.22 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hunter", aliases: [], tier: 5, z: 4.37 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Clark Green", aliases: ["Clark"], tier: 5, z: 4.31 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pete Miller", aliases: ["Pete", "Plop"], tier: 5, z: 3.97 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Josh Porter", aliases: ["Josh"], tier: 5, z: 3.83 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Devon White", aliases: ["Devon"], tier: 5, z: 3.83 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jo Bennett", aliases: ["Jo"], tier: 5, z: 3.73 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Val Johnson", aliases: ["Val"], tier: 5, z: 3.67 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Charles Miner", aliases: [], tier: 5, z: 3.55 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hank Tate", aliases: ["Hank"], tier: 5, z: 3.42 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Carol Stills", aliases: ["Carol"], tier: 5, z: 3.21 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cathy Simms", aliases: ["Cathy"], tier: 5, z: 2.93 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Senator Robert Lipton", aliases: ["Robert Lipton", "The Senator"], tier: 5, z: 2.75 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nate Nickerson", aliases: ["Nate"], tier: 5, z: 2.49 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Deangelo Vickers", aliases: ["Deangelo"], tier: 5, z: 2.38 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Danny Cordray", aliases: ["Danny"], tier: 5, z: 1.9 },
+      { text: "Helene Beesly", aliases: ["Helene"], tier: 5, z: 1.46 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Isabel Poreba", aliases: ["Isabel"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ed Truck", aliases: [], tier: 6, z: 4.41 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Jessica", aliases: [], tier: 6, z: 4.17 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Brian the boom guy", aliases: ["Brian"], tier: 6, z: 4.07 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Luke Cooper", aliases: ["Luke"], tier: 6, z: 4.05 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Glenn", aliases: [], tier: 6, z: 3.97 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Billy Merchant", aliases: [], tier: 6, z: 3.89 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Trevor", aliases: [], tier: 6, z: 3.86 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Walter Bernard", aliases: [], tier: 6, z: 3.86 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Martin Nash", aliases: [], tier: 6, z: 3.79 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Jake Palmer", aliases: [], tier: 6, z: 3.79 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tony Gardner", aliases: [], tier: 6, z: 3.71 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Dan Gore", aliases: [], tier: 6, z: 3.68 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Katy Moore", aliases: ["Katy"], tier: 6, z: 3.56 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Broccoli Rob", aliases: ["Rob"], tier: 6, z: 3.44 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Jordan Garfield", aliases: ["Jordan"], tier: 6, z: 3.39 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Vikram", aliases: [], tier: 6, z: 2.98 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rolf Ahl", aliases: ["Rolf"], tier: 6, z: 2.86 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Astrid Levinson", aliases: ["Astrid"], tier: 6, z: 2.62 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Madge Madsen", aliases: ["Madge"], tier: 6, z: 2.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Merv Bronte", aliases: [], tier: 6, z: 2.37 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tom Halpert", aliases: [], tier: 6, z: 2.2 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pete Halpert", aliases: [], tier: 6, z: 2.2 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Zeke Schrute", aliases: ["Zeke"], tier: 6, z: 2.15 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lonny Collins", aliases: ["Lonny"], tier: 6, z: 2.14 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Cece Halpert", aliases: ["Cece"], tier: 6, z: 2.09 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Troy Underbridge", aliases: ["Troy"], tier: 6, z: 1.04 },
+      { text: "Hidetoshi Hasagawa", aliases: ["Hide"], tier: 6, z: 0.0 },
+      { text: "Esther Bruegger", aliases: ["Esther"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "wizards-rings-films-01", category: "Film & TV", closed: true,
+    prompt: "Name a film in the Harry Potter, Fantastic Beasts, Lord of the Rings or Hobbit series (released up to the end of 2025)",
+    answers: [
+      { text: "The Return of the King", aliases: ["The Lord of the Rings: The Return of the King"], tier: 1, z: 4.88 },
+      { text: "The Fellowship of the Ring", aliases: ["The Lord of the Rings: The Fellowship of the Ring"], tier: 1, z: 3.81 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Harry Potter and the Philosopher's Stone", aliases: ["Philosopher's Stone", "Sorcerer's Stone", "Harry Potter and the Sorcerer's Stone", "Harry Potter 1"], tier: 1, z: 2.59 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Harry Potter and the Deathly Hallows – Part 2", aliases: ["Deathly Hallows Part 2", "Deathly Hallows 2", "Harry Potter 8"], tier: 1, z: 2.51 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "The Two Towers", aliases: ["The Lord of the Rings: The Two Towers"], tier: 2, z: 4.02 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Harry Potter and the Chamber of Secrets", aliases: ["Chamber of Secrets", "Harry Potter 2"], tier: 2, z: 3.75 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Harry Potter and the Prisoner of Azkaban", aliases: ["Prisoner of Azkaban", "Harry Potter 3"], tier: 2, z: 2.48 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Harry Potter and the Half-Blood Prince", aliases: ["Half-Blood Prince", "Harry Potter 6"], tier: 3, z: 3.89 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Harry Potter and the Order of the Phoenix", aliases: ["Order of the Phoenix", "Harry Potter 5"], tier: 3, z: 3.79 },
+      { text: "The Hobbit: An Unexpected Journey", aliases: ["An Unexpected Journey", "The Hobbit"], tier: 3, z: 3.31 },
+      { text: "Harry Potter and the Goblet of Fire", aliases: ["Goblet of Fire", "Harry Potter 4"], tier: 3, z: 2.85 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Harry Potter and the Deathly Hallows – Part 1", aliases: ["Deathly Hallows Part 1", "Deathly Hallows", "Deathly Hallows 1", "Harry Potter 7"], tier: 3, z: 2.51 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Fantastic Beasts and Where to Find Them", aliases: ["Fantastic Beasts"], tier: 4, z: 3.65 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Hobbit: The Battle of the Five Armies", aliases: ["The Battle of the Five Armies"], tier: 4, z: 3.26 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Hobbit: The Desolation of Smaug", aliases: ["The Desolation of Smaug"], tier: 4, z: 2.37 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fantastic Beasts: The Crimes of Grindelwald", aliases: ["The Crimes of Grindelwald"], tier: 5, z: 2.22 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fantastic Beasts: The Secrets of Dumbledore", aliases: ["The Secrets of Dumbledore"], tier: 6, z: 2.93 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "The Lord of the Rings: The War of the Rohirrim", aliases: ["The War of the Rohirrim"], tier: 6, z: 1.66 },
+    ]
+  },
+  {
+    id: "mlb-01", category: "Sport", closed: true,
+    prompt: "Name a Major League Baseball team",
+    answers: [
+      { text: "New York Yankees", aliases: ["Yankees"], tier: 1, z: 3.91 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Chicago Cubs", aliases: ["Cubs"], tier: 1, z: 3.84 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Boston Red Sox", aliases: ["Red Sox", "Boston"], tier: 1, z: 3.77 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Los Angeles Dodgers", aliases: ["LA Dodgers", "Dodgers"], tier: 1, z: 3.76 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "San Francisco Giants", aliases: ["Giants", "San Francisco"], tier: 2, z: 4.05 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "New York Mets", aliases: ["Mets"], tier: 2, z: 3.67 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Houston Astros", aliases: ["Astros", "Houston"], tier: 2, z: 3.31 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Texas Rangers", aliases: ["Rangers", "Texas"], tier: 3, z: 4.14 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Los Angeles Angels", aliases: ["LA Angels", "Anaheim Angels", "Angels"], tier: 3, z: 4.05 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Detroit Tigers", aliases: ["Tigers", "Detroit"], tier: 3, z: 3.94 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chicago White Sox", aliases: ["White Sox"], tier: 3, z: 3.79 },
+      { text: "St. Louis Cardinals", aliases: ["Cardinals", "St. Louis"], tier: 3, z: 3.72 },
+      { text: "Atlanta Braves", aliases: ["Braves", "Atlanta"], tier: 3, z: 3.5 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Toronto Blue Jays", aliases: ["Jays", "Blue Jays", "Toronto"], tier: 3, z: 3.43 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Philadelphia Phillies", aliases: ["Phillies", "Philadelphia"], tier: 3, z: 3.31 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Baltimore Orioles", aliases: ["Orioles", "Baltimore"], tier: 3, z: 3.29 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Minnesota Twins", aliases: ["Twins", "Minnesota"], tier: 4, z: 3.92 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Washington Nationals", aliases: ["Nats", "Nationals", "Washington"], tier: 4, z: 3.88 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Athletics", aliases: ["Oakland Athletics", "A's", "Oakland A's", "Sacramento Athletics"], tier: 4, z: 3.82 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pittsburgh Pirates", aliases: ["Pirates", "Pittsburgh"], tier: 4, z: 3.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cleveland Guardians", aliases: ["Cleveland Indians", "Indians", "Guardians", "Cleveland"], tier: 4, z: 3.67 },
+      { text: "Cincinnati Reds", aliases: ["Reds", "Cincinnati"], tier: 4, z: 3.63 },
+      { text: "Kansas City Royals", aliases: ["Royals", "Kansas City"], tier: 4, z: 3.63 },
+      { text: "Seattle Mariners", aliases: ["Mariners", "Seattle"], tier: 4, z: 3.51 },
+      { text: "Milwaukee Brewers", aliases: ["Brewers", "Milwaukee"], tier: 4, z: 3.4 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "San Diego Padres", aliases: ["Padres", "San Diego"], tier: 4, z: 3.18 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Colorado Rockies", aliases: ["Rockies", "Colorado"], tier: 5, z: 3.35 },
+      { text: "Miami Marlins", aliases: ["Florida Marlins", "Marlins", "Miami"], tier: 5, z: 3.21 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Arizona Diamondbacks", aliases: ["D-backs", "Dbacks", "Diamondbacks", "Arizona"], tier: 5, z: 2.98 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tampa Bay Rays", aliases: ["Devil Rays", "Rays", "Tampa Bay"], tier: 6, z: 3.63 }, // override: auto 4 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "nhl-01", category: "Sport", closed: true,
+    prompt: "Name a National Hockey League team (2025–26 season)",
+    answers: [
+      { text: "New York Rangers", aliases: ["Rangers"], tier: 1, z: 4.2 },
+      { text: "Toronto Maple Leafs", aliases: ["Leafs", "Maple Leafs", "Toronto"], tier: 1, z: 3.35 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Chicago Blackhawks", aliases: ["Blackhawks", "Chicago"], tier: 1, z: 3.33 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Montreal Canadiens", aliases: ["Habs", "Canadiens", "Montreal"], tier: 1, z: 3.03 }, // override: auto 6 -> 1 (famous/obvious answer in this category)
+      { text: "Detroit Red Wings", aliases: ["Red Wings", "Detroit"], tier: 2, z: 4.07 },
+      { text: "Boston Bruins", aliases: ["Bruins", "Boston"], tier: 2, z: 3.54 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Pittsburgh Penguins", aliases: ["Pens", "Penguins", "Pittsburgh"], tier: 2, z: 3.54 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Seattle Kraken", aliases: ["Kraken", "Seattle"], tier: 2, z: 2.84 }, // override: auto 6 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Los Angeles Kings", aliases: ["LA Kings", "Kings", "Los Angeles"], tier: 3, z: 4.13 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Vegas Golden Knights", aliases: ["Las Vegas Golden Knights", "Golden Knights", "Vegas"], tier: 3, z: 3.83 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tampa Bay Lightning", aliases: ["Bolts", "Lightning", "Tampa Bay"], tier: 3, z: 3.7 },
+      { text: "Philadelphia Flyers", aliases: ["Flyers", "Philadelphia"], tier: 3, z: 3.62 },
+      { text: "Washington Capitals", aliases: ["Caps", "Capitals", "Washington"], tier: 3, z: 3.59 },
+      { text: "Calgary Flames", aliases: ["Flames", "Calgary"], tier: 3, z: 3.59 },
+      { text: "Colorado Avalanche", aliases: ["Avs", "Avalanche", "Colorado"], tier: 3, z: 3.44 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Vancouver Canucks", aliases: ["Canucks", "Vancouver"], tier: 3, z: 3.31 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Edmonton Oilers", aliases: ["Oilers", "Edmonton"], tier: 3, z: 3.15 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dallas Stars", aliases: ["Stars", "Dallas"], tier: 4, z: 4.29 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "St. Louis Blues", aliases: ["Blues", "St. Louis"], tier: 4, z: 4.17 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Florida Panthers", aliases: ["Panthers", "Florida"], tier: 4, z: 3.78 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "San Jose Sharks", aliases: ["Sharks", "San Jose"], tier: 4, z: 3.74 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "New Jersey Devils", aliases: ["Devils", "New Jersey"], tier: 4, z: 3.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ottawa Senators", aliases: ["Sens", "Senators", "Ottawa"], tier: 4, z: 3.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Winnipeg Jets", aliases: ["Jets", "Winnipeg"], tier: 4, z: 3.47 },
+      { text: "New York Islanders", aliases: ["Islanders"], tier: 4, z: 3.44 },
+      { text: "Anaheim Ducks", aliases: ["Mighty Ducks", "Ducks", "Anaheim"], tier: 4, z: 3.33 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Buffalo Sabres", aliases: ["Sabres", "Buffalo"], tier: 4, z: 3.13 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Minnesota Wild", aliases: ["Wild", "Minnesota"], tier: 5, z: 4.19 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nashville Predators", aliases: ["Preds", "Predators", "Nashville"], tier: 5, z: 3.54 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Carolina Hurricanes", aliases: ["Canes", "Hurricanes", "Carolina"], tier: 5, z: 3.53 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Columbus Blue Jackets", aliases: ["Blue Jackets", "Columbus"], tier: 6, z: 3.6 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Utah Mammoth", aliases: ["Utah Hockey Club", "Mammoth", "Utah"], tier: 6, z: 3.34 }, // override: auto 5 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "world-cup-hosts-01", category: "Sport", closed: true,
+    prompt: "Name a country that hosted the men's FIFA World Cup between 1930 and 2022",
+    answers: [
+      { text: "Russia", aliases: [], tier: 1, z: 4.93 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Germany", aliases: ["West Germany"], tier: 1, z: 4.9 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Brazil", aliases: [], tier: 1, z: 4.58 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Qatar", aliases: [], tier: 1, z: 3.78 }, // override: auto 6 -> 1 (famous/obvious answer in this category)
+      { text: "England", aliases: ["United Kingdom", "UK"], tier: 2, z: 5.12 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "France", aliases: [], tier: 2, z: 4.94 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "South Africa", aliases: [], tier: 2, z: 4.8 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Uruguay", aliases: [], tier: 2, z: 3.7 }, // override: auto 6 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "United States", aliases: ["USA", "US", "America"], tier: 3, z: 5.19 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mexico", aliases: [], tier: 3, z: 4.75 },
+      { text: "Italy", aliases: [], tier: 3, z: 4.66 },
+      { text: "Spain", aliases: [], tier: 3, z: 4.59 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Argentina", aliases: [], tier: 3, z: 4.22 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Japan", aliases: [], tier: 4, z: 4.89 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "South Korea", aliases: ["Korea", "Korea Republic"], tier: 4, z: 4.58 },
+      { text: "Sweden", aliases: [], tier: 5, z: 4.4 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Switzerland", aliases: [], tier: 5, z: 4.23 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chile", aliases: [], tier: 6, z: 4.06 }, // override: auto 5 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "grand-slam-champions-01", category: "Sport", closed: true,
+    prompt: "Name a tennis player who won a Grand Slam singles title (men's or women's) between 2000 and 2025",
+    answers: [
+      { text: "Serena Williams", aliases: ["Serena"], tier: 1, z: 3.6 },
+      { text: "Roger Federer", aliases: ["Federer"], tier: 1, z: 3.19 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Rafael Nadal", aliases: ["Nadal", "Rafa Nadal"], tier: 1, z: 3.18 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Novak Djokovic", aliases: ["Djokovic"], tier: 1, z: 2.98 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Andy Murray", aliases: ["Murray"], tier: 2, z: 4.04 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Venus Williams", aliases: ["Venus"], tier: 2, z: 3.75 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Maria Sharapova", aliases: ["Sharapova"], tier: 2, z: 2.61 },
+      { text: "Carlos Alcaraz", aliases: ["Alcaraz"], tier: 2, z: 1.88 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Jannik Sinner", aliases: ["Sinner"], tier: 2, z: 1.81 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Naomi Osaka", aliases: ["Osaka"], tier: 3, z: 3.3 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Stan Wawrinka", aliases: ["Wawrinka", "Stanislas Wawrinka"], tier: 3, z: 2.58 },
+      { text: "Andre Agassi", aliases: ["Agassi"], tier: 3, z: 2.47 },
+      { text: "Andy Roddick", aliases: ["Roddick"], tier: 3, z: 2.38 },
+      { text: "Pete Sampras", aliases: ["Sampras"], tier: 3, z: 2.35 },
+      { text: "Ashleigh Barty", aliases: ["Ash Barty", "Barty"], tier: 3, z: 2.26 },
+      { text: "Simona Halep", aliases: ["Halep"], tier: 3, z: 2.15 },
+      { text: "Daniil Medvedev", aliases: ["Medvedev"], tier: 3, z: 2.1 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Iga Świątek", aliases: ["Swiatek"], tier: 3, z: 0.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Coco Gauff", aliases: ["Gauff"], tier: 3, z: 0.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Aryna Sabalenka", aliases: ["Sabalenka"], tier: 3, z: 0.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Emma Raducanu", aliases: ["Raducanu"], tier: 3, z: 0.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Li Na", aliases: ["Na Li"], tier: 4, z: 4.03 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lindsay Davenport", aliases: ["Davenport"], tier: 4, z: 3.22 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Caroline Wozniacki", aliases: ["Wozniacki"], tier: 4, z: 2.43 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Angelique Kerber", aliases: ["Kerber"], tier: 4, z: 2.4 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Victoria Azarenka", aliases: ["Azarenka"], tier: 4, z: 2.32 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dominic Thiem", aliases: ["Thiem"], tier: 4, z: 2.28 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Juan Martín del Potro", aliases: ["Del Potro"], tier: 4, z: 2.27 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Justine Henin", aliases: ["Henin", "Justine Henin-Hardenne"], tier: 4, z: 2.11 },
+      { text: "Lleyton Hewitt", aliases: ["Hewitt"], tier: 4, z: 2.0 },
+      { text: "Kim Clijsters", aliases: ["Clijsters"], tier: 4, z: 1.9 },
+      { text: "Amélie Mauresmo", aliases: ["Mauresmo"], tier: 4, z: 1.78 },
+      { text: "Marat Safin", aliases: ["Safin"], tier: 4, z: 1.76 },
+      { text: "Jennifer Capriati", aliases: ["Capriati"], tier: 4, z: 1.55 },
+      { text: "Garbiñe Muguruza", aliases: ["Muguruza"], tier: 4, z: 1.01 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Petra Kvitová", aliases: ["Kvitova"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Marin Čilić", aliases: ["Cilic"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Elena Rybakina", aliases: ["Rybakina"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Goran Ivanišević", aliases: ["Ivanisevic"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Madison Keys", aliases: ["Keys"], tier: 5, z: 3.97 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mary Pierce", aliases: ["Pierce"], tier: 5, z: 3.87 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sloane Stephens", aliases: ["Stephens"], tier: 5, z: 3.06 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ana Ivanovic", aliases: ["Ivanovic"], tier: 5, z: 2.6 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Juan Carlos Ferrero", aliases: ["Ferrero"], tier: 5, z: 2.46 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Marion Bartoli", aliases: ["Bartoli"], tier: 5, z: 2.32 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Samantha Stosur", aliases: ["Sam Stosur", "Stosur"], tier: 5, z: 2.21 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Svetlana Kuznetsova", aliases: ["Kuznetsova"], tier: 5, z: 1.98 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gustavo Kuerten", aliases: ["Kuerten", "Guga"], tier: 5, z: 1.13 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bianca Andreescu", aliases: ["Andreescu"], tier: 5, z: 1.03 },
+      { text: "Sofia Kenin", aliases: ["Kenin"], tier: 5, z: 1.01 },
+      { text: "Jeļena Ostapenko", aliases: ["Ostapenko"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Barbora Krejčíková", aliases: ["Krejcikova"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Markéta Vondroušová", aliases: ["Vondrousova"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Albert Costa", aliases: ["Costa"], tier: 6, z: 3.89 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Thomas Johansson", aliases: ["Johansson"], tier: 6, z: 3.2 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Francesca Schiavone", aliases: ["Schiavone"], tier: 6, z: 1.96 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Flavia Pennetta", aliases: ["Pennetta"], tier: 6, z: 1.87 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Gastón Gaudio", aliases: ["Gaudio"], tier: 6, z: 1.47 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Anastasia Myskina", aliases: ["Myskina"], tier: 6, z: 1.09 }, // override: auto 5 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "martial-arts-01", category: "Sport", closed: false,
+    prompt: "Name a martial art or combat sport",
+    answers: [
+      { text: "Boxing", aliases: [], tier: 1, z: 4.17 },
+      { text: "Karate", aliases: [], tier: 1, z: 3.55 },
+      { text: "Kung fu", aliases: ["Wushu"], tier: 1, z: 3.4 },
+      { text: "Judo", aliases: [], tier: 1, z: 3.25 },
+      { text: "Taekwondo", aliases: ["Tae kwon do"], tier: 1, z: 2.84 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "MMA", aliases: ["Mixed martial arts"], tier: 2, z: 3.59 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Sumo", aliases: [], tier: 2, z: 3.06 },
+      { text: "Muay Thai", aliases: ["Thai boxing"], tier: 2, z: 2.83 },
+      { text: "Jiu-jitsu", aliases: ["Brazilian jiu-jitsu", "BJJ", "Jujitsu", "Jujutsu", "Ju-jitsu"], tier: 2, z: 2.64 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Capoeira", aliases: [], tier: 2, z: 2.41 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Krav Maga", aliases: [], tier: 2, z: 2.34 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Wrestling", aliases: [], tier: 3, z: 4.14 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Fencing", aliases: [], tier: 3, z: 3.56 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tai chi", aliases: ["Taiji", "Tai chi chuan"], tier: 3, z: 3.37 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Kickboxing", aliases: [], tier: 3, z: 2.88 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Aikido", aliases: [], tier: 3, z: 2.67 },
+      { text: "Kendo", aliases: [], tier: 3, z: 2.49 },
+      { text: "Ninjutsu", aliases: [], tier: 3, z: 2.07 },
+      { text: "Wing Chun", aliases: [], tier: 4, z: 3.32 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Greco-Roman wrestling", aliases: ["Greco-Roman"], tier: 4, z: 2.95 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sambo", aliases: [], tier: 4, z: 2.51 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kenpo", aliases: ["Kempo"], tier: 4, z: 1.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Silat", aliases: ["Pencak silat"], tier: 4, z: 1.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shotokan", aliases: [], tier: 4, z: 1.8 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hapkido", aliases: [], tier: 4, z: 1.79 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jeet Kune Do", aliases: ["JKD"], tier: 4, z: 1.76 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kyokushin", aliases: [], tier: 4, z: 1.66 },
+      { text: "Savate", aliases: [], tier: 4, z: 1.33 },
+      { text: "Eskrima", aliases: ["Arnis", "Kali"], tier: 4, z: 1.18 },
+      { text: "Catch wrestling", aliases: [], tier: 5, z: 4.06 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tang Soo Do", aliases: [], tier: 5, z: 3.37 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shaolin kung fu", aliases: ["Shaolin"], tier: 5, z: 2.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vale tudo", aliases: [], tier: 5, z: 2.09 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sanda", aliases: ["Sanshou"], tier: 5, z: 2.02 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Systema", aliases: [], tier: 5, z: 1.91 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Naginata", aliases: ["Naginatajutsu"], tier: 5, z: 1.62 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Luta livre", aliases: [], tier: 5, z: 1.57 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pankration", aliases: [], tier: 5, z: 1.51 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Goju-ryu", aliases: [], tier: 5, z: 1.47 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Iaido", aliases: [], tier: 5, z: 1.42 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kobudo", aliases: [], tier: 5, z: 1.36 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bartitsu", aliases: [], tier: 5, z: 1.17 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kalaripayattu", aliases: [], tier: 5, z: 1.13 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lethwei", aliases: [], tier: 5, z: 1.13 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kyudo", aliases: [], tier: 5, z: 1.06 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Glima", aliases: [], tier: 5, z: 0.0 },
+      { text: "Bojutsu", aliases: ["Bo staff"], tier: 5, z: 0.0 },
+      { text: "Hung Gar", aliases: [], tier: 6, z: 2.96 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Hwa Rang Do", aliases: [], tier: 6, z: 2.88 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Choy Li Fut", aliases: [], tier: 6, z: 2.35 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Shuai jiao", aliases: [], tier: 6, z: 1.95 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Jogo do pau", aliases: [], tier: 6, z: 1.9 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Canne de combat", aliases: ["La canne"], tier: 6, z: 1.59 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kuk Sool Won", aliases: [], tier: 6, z: 1.55 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Wado-ryu", aliases: [], tier: 6, z: 1.24 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Shito-ryu", aliases: [], tier: 6, z: 1.21 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Gatka", aliases: [], tier: 6, z: 1.16 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Vovinam", aliases: [], tier: 6, z: 1.03 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Taekkyeon", aliases: ["Taekkyon"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bokator", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Baguazhang", aliases: ["Bagua"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Xingyiquan", aliases: ["Xingyi"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Shorinji Kempo", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kurash", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Schwingen", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pradal serey", aliases: ["Kun Khmer"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dambe", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Silambam", aliases: [], tier: 6, z: 0.0 },
+      { text: "Varzesh-e Bastani", aliases: ["Pahlevani", "Zurkhaneh"], tier: 6, z: 0.0 },
+      { text: "Yağlı güreş", aliases: ["Oil wrestling"], tier: 6, z: 0.0 },
+      { text: "Ssireum", aliases: [], tier: 6, z: 0.0 },
+      { text: "Bajiquan", aliases: [], tier: 6, z: 0.0 },
+      { text: "Krabi-krabong", aliases: [], tier: 6, z: 0.0 },
+      { text: "Shootfighting", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "ballon-dor-01", category: "Sport", closed: true,
+    prompt: "Name a winner of the men's Ballon d'Or (1956 to 2025)",
+    answers: [
+      { text: "Lionel Messi", aliases: ["Messi", "Leo Messi"], tier: 1, z: 3.45 },
+      { text: "Cristiano Ronaldo", aliases: ["Cristiano", "CR7"], tier: 1, z: 3.2 },
+      { text: "Ronaldinho", aliases: [], tier: 1, z: 2.53 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Zinedine Zidane", aliases: ["Zidane", "Zizou"], tier: 1, z: 2.28 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Michael Owen", aliases: ["Owen"], tier: 2, z: 4.01 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Karim Benzema", aliases: ["Benzema"], tier: 2, z: 2.66 },
+      { text: "Johan Cruyff", aliases: ["Cruyff", "Cruijff"], tier: 2, z: 2.38 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Kaká", aliases: [], tier: 2, z: 1.8 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Luka Modrić", aliases: ["Modric"], tier: 2, z: 1.38 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Ronaldo Nazário", aliases: ["Ronaldo", "R9", "Ronaldo Luís Nazário de Lima"], tier: 2, z: 0.0 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "George Best", aliases: ["Best"], tier: 3, z: 4.98 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bobby Charlton", aliases: ["Charlton"], tier: 3, z: 3.21 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Michel Platini", aliases: ["Platini"], tier: 3, z: 2.21 },
+      { text: "Franz Beckenbauer", aliases: ["Beckenbauer"], tier: 3, z: 2.05 },
+      { text: "Roberto Baggio", aliases: ["Baggio"], tier: 3, z: 1.99 },
+      { text: "Rivaldo", aliases: [], tier: 3, z: 1.96 },
+      { text: "Luís Figo", aliases: ["Figo"], tier: 3, z: 1.94 },
+      { text: "Marco van Basten", aliases: ["Van Basten"], tier: 3, z: 1.89 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ousmane Dembélé", aliases: ["Dembele"], tier: 3, z: 1.73 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rodri", aliases: ["Rodrigo Hernández"], tier: 3, z: 1.58 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Eusébio", aliases: [], tier: 3, z: 1.31 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Kevin Keegan", aliases: ["Keegan"], tier: 4, z: 3.04 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gerd Müller", aliases: ["Muller", "Mueller"], tier: 4, z: 2.55 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Andriy Shevchenko", aliases: ["Shevchenko"], tier: 4, z: 2.12 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "George Weah", aliases: ["Weah"], tier: 4, z: 2.06 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lev Yashin", aliases: ["Yashin"], tier: 4, z: 2.01 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fabio Cannavaro", aliases: ["Cannavaro"], tier: 4, z: 1.88 },
+      { text: "Ruud Gullit", aliases: ["Gullit"], tier: 4, z: 1.85 },
+      { text: "Karl-Heinz Rummenigge", aliases: ["Rummenigge"], tier: 4, z: 1.79 },
+      { text: "Alfredo Di Stéfano", aliases: ["Di Stefano"], tier: 4, z: 1.7 },
+      { text: "Lothar Matthäus", aliases: ["Matthaus"], tier: 4, z: 1.57 },
+      { text: "Hristo Stoichkov", aliases: ["Stoichkov"], tier: 4, z: 1.38 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pavel Nedvěd", aliases: ["Nedved"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Stanley Matthews", aliases: ["Matthews"], tier: 5, z: 3.63 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Denis Law", aliases: ["Law"], tier: 5, z: 3.61 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Paolo Rossi", aliases: ["Rossi"], tier: 5, z: 3.1 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gianni Rivera", aliases: ["Rivera"], tier: 5, z: 2.8 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Raymond Kopa", aliases: ["Kopa"], tier: 5, z: 1.74 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jean-Pierre Papin", aliases: ["Papin"], tier: 5, z: 1.69 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Matthias Sammer", aliases: ["Sammer"], tier: 5, z: 1.52 },
+      { text: "Allan Simonsen", aliases: ["Simonsen"], tier: 6, z: 2.19 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Oleg Blokhin", aliases: ["Blokhin"], tier: 6, z: 1.09 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Luis Suárez Miramontes", aliases: ["Luis Suárez", "Suarez"], tier: 6, z: 1.03 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Omar Sívori", aliases: ["Sivori"], tier: 6, z: 0.0 },
+      { text: "Josef Masopust", aliases: ["Masopust"], tier: 6, z: 0.0 },
+      { text: "Flórián Albert", aliases: ["Albert"], tier: 6, z: 0.0 },
+      { text: "Igor Belanov", aliases: ["Belanov"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "athletics-events-01", category: "Sport", closed: true,
+    prompt: "Name an event on the Olympic athletics (track and field) programme",
+    answers: [
+      { text: "Long jump", aliases: [], tier: 1, z: 4.66 },
+      { text: "High jump", aliases: [], tier: 1, z: 4.65 },
+      { text: "Marathon", aliases: [], tier: 1, z: 4.16 },
+      { text: "100 metres", aliases: ["100 metre sprint", "Sprint", "100m", "100 m", "100 meters", "100 metre", "100 meter"], tier: 1, z: 3.6 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Shot put", aliases: ["Shot"], tier: 2, z: 5.09 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Pole vault", aliases: [], tier: 2, z: 3.73 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "200 metres", aliases: ["200m", "200 m", "200 meters", "200 metre", "200 meter"], tier: 2, z: 3.42 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Javelin throw", aliases: ["Javelin"], tier: 2, z: 2.89 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Decathlon", aliases: [], tier: 2, z: 2.57 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Triple jump", aliases: [], tier: 3, z: 4.16 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "4 × 100 metres relay", aliases: ["4x100", "4x100m", "4x100m relay", "4x100 relay", "Relay", "Sprint relay", "4 × 100m relay", "4 × 100 m relay", "4 × 100 meters relay", "4 × 100 metre relay", "4 × 100 meter relay"], tier: 3, z: 3.41 },
+      { text: "110 metres hurdles", aliases: ["100 metres hurdles", "100m hurdles", "Sprint hurdles", "Hurdles", "110m hurdles", "110 m hurdles", "110 meters hurdles", "110 metre hurdles", "110 meter hurdles", "100 m hurdles", "100 meters hurdles", "100 metre hurdles", "100 meter hurdles"], tier: 3, z: 3.27 },
+      { text: "400 metres", aliases: ["400m", "400 m", "400 meters", "400 metre", "400 meter"], tier: 3, z: 3.19 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "800 metres", aliases: ["800m", "800 m", "800 meters", "800 metre", "800 meter"], tier: 3, z: 2.93 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Discus throw", aliases: ["Discus"], tier: 3, z: 2.76 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "1500 metres", aliases: ["Metric mile", "1500m", "1500 m", "1500 meters", "1500 metre", "1500 meter"], tier: 3, z: 2.11 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hammer throw", aliases: ["Hammer"], tier: 4, z: 4.08 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "400 metres hurdles", aliases: ["400m hurdles", "400 m hurdles", "400 meters hurdles", "400 metre hurdles", "400 meter hurdles"], tier: 4, z: 3.03 },
+      { text: "Heptathlon", aliases: [], tier: 4, z: 2.33 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "5000 metres", aliases: ["5k", "5000m", "5000 m", "5000 meters", "5000 metre", "5000 meter"], tier: 4, z: 1.52 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "10,000 metres", aliases: ["10000 metres", "10000m", "10k", "10000 m", "10000 meters", "10000 metre", "10000 meter"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "20 kilometres race walk", aliases: ["20km walk", "Race walk", "Walk", "Race walking", "20km race walk"], tier: 5, z: 3.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "4 × 400 metres relay", aliases: ["4x400", "4x400m", "4x400m relay", "4x400 relay", "4 × 400m relay", "4 × 400 m relay", "4 × 400 meters relay", "4 × 400 metre relay", "4 × 400 meter relay"], tier: 5, z: 3.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "3000 metres steeplechase", aliases: ["Steeplechase", "3000m steeplechase", "3000 m steeplechase", "3000 meters steeplechase", "3000 metre steeplechase", "3000 meter steeplechase"], tier: 5, z: 1.67 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Marathon race walk mixed relay", aliases: ["Mixed walk relay", "Marathon walk relay", "Race walk relay"], tier: 6, z: 3.61 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mixed 4 × 400 metres relay", aliases: ["Mixed relay", "Mixed 4x400", "Mixed 4x400m relay", "Mixed 4 × 400m relay", "Mixed 4 × 400 m relay", "Mixed 4 × 400 meters relay", "Mixed 4 × 400 metre relay", "Mixed 4 × 400 meter relay"], tier: 6, z: 3.1 }, // override: auto 4 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "nba-mvps-01", category: "Sport", closed: true,
+    prompt: "Name a player who won the NBA regular-season MVP award between 2000 and 2025",
+    answers: [
+      { text: "LeBron James", aliases: ["LeBron"], tier: 1, z: 3.88 },
+      { text: "Stephen Curry", aliases: ["Steph Curry", "Curry"], tier: 1, z: 3.85 },
+      { text: "Kobe Bryant", aliases: ["Kobe"], tier: 1, z: 3.43 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Shaquille O'Neal", aliases: ["Shaq"], tier: 2, z: 2.47 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Giannis Antetokounmpo", aliases: ["Giannis"], tier: 2, z: 2.01 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Nikola Jokić", aliases: ["Jokic"], tier: 2, z: 1.32 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "James Harden", aliases: ["Harden"], tier: 3, z: 3.51 },
+      { text: "Kevin Durant", aliases: ["KD", "Durant"], tier: 3, z: 3.45 },
+      { text: "Russell Westbrook", aliases: ["Westbrook"], tier: 3, z: 3.35 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Joel Embiid", aliases: ["Embiid"], tier: 3, z: 2.62 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Shai Gilgeous-Alexander", aliases: ["SGA", "Shai"], tier: 3, z: 0.0 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tim Duncan", aliases: ["Duncan"], tier: 4, z: 3.9 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Allen Iverson", aliases: ["Iverson"], tier: 4, z: 2.77 },
+      { text: "Dirk Nowitzki", aliases: ["Dirk", "Nowitzki"], tier: 4, z: 2.45 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Derrick Rose", aliases: ["D Rose"], tier: 5, z: 3.47 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kevin Garnett", aliases: ["KG", "Garnett"], tier: 5, z: 2.98 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Steve Nash", aliases: ["Nash"], tier: 6, z: 3.79 }, // override: auto 2 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "f1-calendar-2025-01", category: "Sport", closed: true,
+    prompt: "Name a Grand Prix on the 2025 Formula 1 calendar (the country, city or circuit all count)",
+    answers: [
+      { text: "British", aliases: ["Great Britain", "Britain", "Silverstone", "UK", "England", "British Grand Prix", "Great Britain Grand Prix", "Britain Grand Prix", "Silverstone Grand Prix", "UK Grand Prix", "England Grand Prix"], tier: 1, z: 5.18 },
+      { text: "Italian", aliases: ["Italy", "Monza", "Italian Grand Prix", "Italy Grand Prix", "Monza Grand Prix"], tier: 1, z: 4.66 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Monaco", aliases: ["Monte Carlo", "Monaco Grand Prix", "Monte Carlo Grand Prix"], tier: 1, z: 3.65 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Abu Dhabi", aliases: ["Yas Marina", "Yas Island", "UAE", "Abu Dhabi Grand Prix", "Yas Marina Grand Prix", "Yas Island Grand Prix", "UAE Grand Prix"], tier: 1, z: 3.32 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Japanese", aliases: ["Japan", "Suzuka", "Japanese Grand Prix", "Japan Grand Prix", "Suzuka Grand Prix"], tier: 2, z: 4.81 },
+      { text: "Singapore", aliases: ["Marina Bay", "Singapore Grand Prix", "Marina Bay Grand Prix"], tier: 2, z: 4.35 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Las Vegas", aliases: ["Vegas", "Las Vegas Grand Prix", "Vegas Grand Prix"], tier: 2, z: 4.04 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Belgian", aliases: ["Belgium", "Spa", "Spa-Francorchamps", "Belgian Grand Prix", "Belgium Grand Prix", "Spa Grand Prix", "Spa-Francorchamps Grand Prix"], tier: 2, z: 3.82 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "United States", aliases: ["USA", "US", "Austin", "COTA", "Circuit of the Americas", "America", "United States Grand Prix", "USA Grand Prix", "US Grand Prix", "Austin Grand Prix", "COTA Grand Prix", "Circuit of the Americas Grand Prix", "America Grand Prix"], tier: 3, z: 5.19 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Australian", aliases: ["Australia", "Melbourne", "Albert Park", "Australian Grand Prix", "Australia Grand Prix", "Melbourne Grand Prix", "Albert Park Grand Prix"], tier: 3, z: 4.93 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Spanish", aliases: ["Spain", "Barcelona", "Catalunya", "Spanish Grand Prix", "Spain Grand Prix", "Barcelona Grand Prix", "Catalunya Grand Prix"], tier: 3, z: 4.73 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Canadian", aliases: ["Canada", "Montreal", "Canadian Grand Prix", "Canada Grand Prix", "Montreal Grand Prix"], tier: 3, z: 4.7 },
+      { text: "Mexico City", aliases: ["Mexico", "Mexican", "Mexico City Grand Prix", "Mexico Grand Prix", "Mexican Grand Prix"], tier: 3, z: 4.69 },
+      { text: "Miami", aliases: ["Miami Grand Prix"], tier: 3, z: 4.47 },
+      { text: "Dutch", aliases: ["Netherlands", "Zandvoort", "Holland", "Dutch Grand Prix", "Netherlands Grand Prix", "Zandvoort Grand Prix", "Holland Grand Prix"], tier: 3, z: 4.41 },
+      { text: "Bahrain", aliases: ["Sakhir", "Bahrain Grand Prix", "Sakhir Grand Prix"], tier: 3, z: 3.59 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Saudi Arabian", aliases: ["Saudi Arabia", "Jeddah", "Saudi Arabian Grand Prix", "Saudi Arabia Grand Prix", "Jeddah Grand Prix"], tier: 3, z: 3.46 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "São Paulo", aliases: ["Brazil", "Brazilian", "Interlagos", "São Paulo Grand Prix", "Brazil Grand Prix", "Brazilian Grand Prix", "Interlagos Grand Prix"], tier: 3, z: 3.2 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chinese", aliases: ["China", "Shanghai", "Chinese Grand Prix", "China Grand Prix", "Shanghai Grand Prix"], tier: 4, z: 5.01 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Austrian", aliases: ["Austria", "Red Bull Ring", "Spielberg", "Austrian Grand Prix", "Austria Grand Prix", "Red Bull Ring Grand Prix", "Spielberg Grand Prix"], tier: 4, z: 3.8 },
+      { text: "Hungarian", aliases: ["Hungary", "Hungaroring", "Budapest", "Hungarian Grand Prix", "Hungary Grand Prix", "Hungaroring Grand Prix", "Budapest Grand Prix"], tier: 4, z: 3.79 },
+      { text: "Qatar", aliases: ["Lusail", "Losail", "Qatar Grand Prix", "Lusail Grand Prix", "Losail Grand Prix"], tier: 4, z: 3.78 },
+      { text: "Azerbaijan", aliases: ["Baku", "Azerbaijan Grand Prix", "Baku Grand Prix"], tier: 5, z: 3.48 },
+      { text: "Emilia Romagna", aliases: ["Imola", "Emilia Romagna Grand Prix", "Imola Grand Prix"], tier: 6, z: 2.23 },
+    ]
+  },
+  {
+    id: "chess-champions-01", category: "Sport", closed: true,
+    prompt: "Name an undisputed (classical) World Chess Champion, from Steinitz in 1886 to 2025",
+    answers: [
+      { text: "Bobby Fischer", aliases: ["Fischer"], tier: 1, z: 3.44 },
+      { text: "Magnus Carlsen", aliases: ["Carlsen", "Magnus"], tier: 1, z: 2.55 },
+      { text: "Garry Kasparov", aliases: ["Kasparov"], tier: 1, z: 2.41 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Anatoly Karpov", aliases: ["Karpov"], tier: 2, z: 2.18 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Viswanathan Anand", aliases: ["Anand", "Vishy Anand"], tier: 2, z: 2.06 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Gukesh Dommaraju", aliases: ["Gukesh", "D Gukesh", "Gukesh D"], tier: 2, z: 0.0 }, // override: auto 6 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Mikhail Tal", aliases: ["Tal"], tier: 3, z: 3.01 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Boris Spassky", aliases: ["Spassky"], tier: 3, z: 2.03 },
+      { text: "Vladimir Kramnik", aliases: ["Kramnik"], tier: 3, z: 1.47 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "José Raúl Capablanca", aliases: ["Capablanca"], tier: 3, z: 1.44 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ding Liren", aliases: ["Ding"], tier: 3, z: 1.13 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Emanuel Lasker", aliases: ["Lasker"], tier: 4, z: 2.14 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Alexander Alekhine", aliases: ["Alekhine"], tier: 4, z: 1.4 },
+      { text: "Mikhail Botvinnik", aliases: ["Botvinnik"], tier: 4, z: 1.23 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wilhelm Steinitz", aliases: ["Steinitz"], tier: 5, z: 2.17 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tigran Petrosian", aliases: ["Petrosian"], tier: 5, z: 1.47 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vasily Smyslov", aliases: ["Smyslov"], tier: 6, z: 1.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Max Euwe", aliases: ["Euwe"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "world-cup-2022-01", category: "Sport", closed: true,
+    prompt: "Name a team that played at the 2022 men's FIFA World Cup in Qatar",
+    answers: [
+      { text: "England", aliases: [], tier: 1, z: 5.12 },
+      { text: "France", aliases: [], tier: 1, z: 4.94 },
+      { text: "Brazil", aliases: [], tier: 1, z: 4.58 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Argentina", aliases: [], tier: 1, z: 4.22 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Germany", aliases: [], tier: 2, z: 4.9 },
+      { text: "Spain", aliases: [], tier: 2, z: 4.59 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Portugal", aliases: [], tier: 2, z: 4.1 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Morocco", aliases: [], tier: 2, z: 3.8 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Qatar", aliases: [], tier: 2, z: 3.78 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Croatia", aliases: [], tier: 2, z: 3.74 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "United States", aliases: ["USA", "US", "America"], tier: 3, z: 5.19 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Japan", aliases: [], tier: 3, z: 4.89 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mexico", aliases: [], tier: 3, z: 4.75 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Netherlands", aliases: ["Holland"], tier: 3, z: 4.28 },
+      { text: "Belgium", aliases: [], tier: 3, z: 4.15 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Saudi Arabia", aliases: [], tier: 3, z: 3.9 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Uruguay", aliases: [], tier: 3, z: 3.7 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Australia", aliases: [], tier: 4, z: 5.06 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wales", aliases: [], tier: 4, z: 4.6 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "South Korea", aliases: ["Korea", "Korea Republic"], tier: 4, z: 4.58 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Poland", aliases: [], tier: 4, z: 4.24 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Switzerland", aliases: [], tier: 4, z: 4.23 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Denmark", aliases: [], tier: 4, z: 4.04 },
+      { text: "Ghana", aliases: [], tier: 4, z: 3.9 },
+      { text: "Cameroon", aliases: [], tier: 4, z: 3.53 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Senegal", aliases: [], tier: 4, z: 3.38 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Canada", aliases: [], tier: 5, z: 4.97 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Iran", aliases: ["IR Iran"], tier: 5, z: 4.62 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Serbia", aliases: [], tier: 5, z: 3.71 },
+      { text: "Ecuador", aliases: [], tier: 5, z: 3.64 },
+      { text: "Tunisia", aliases: [], tier: 5, z: 3.57 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Costa Rica", aliases: [], tier: 6, z: 3.6 }, // override: auto 5 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "winter-olympic-hosts-01", category: "Sport", closed: true,
+    prompt: "Name a town or city that hosted the Winter Olympics between 1924 and 2022",
+    answers: [
+      { text: "Salt Lake City", aliases: [], tier: 1, z: 4.37 },
+      { text: "Vancouver", aliases: [], tier: 1, z: 4.16 },
+      { text: "Beijing", aliases: [], tier: 1, z: 4.12 },
+      { text: "Sochi", aliases: [], tier: 1, z: 3.04 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Calgary", aliases: [], tier: 2, z: 3.78 },
+      { text: "Turin", aliases: ["Torino"], tier: 2, z: 3.31 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Pyeongchang", aliases: [], tier: 2, z: 2.67 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Lillehammer", aliases: [], tier: 2, z: 2.23 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Oslo", aliases: [], tier: 3, z: 3.51 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sarajevo", aliases: [], tier: 3, z: 3.1 },
+      { text: "Lake Placid", aliases: [], tier: 3, z: 3.0 },
+      { text: "St. Moritz", aliases: ["Saint Moritz", "Sankt Moritz"], tier: 3, z: 2.86 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Nagano", aliases: [], tier: 3, z: 2.6 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Innsbruck", aliases: [], tier: 3, z: 2.6 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Grenoble", aliases: [], tier: 4, z: 2.91 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sapporo", aliases: [], tier: 4, z: 2.59 },
+      { text: "Chamonix", aliases: [], tier: 4, z: 2.42 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Albertville", aliases: [], tier: 4, z: 2.06 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Squaw Valley", aliases: ["Palisades Tahoe"], tier: 5, z: 2.68 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cortina d'Ampezzo", aliases: ["Cortina"], tier: 5, z: 1.5 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Garmisch-Partenkirchen", aliases: ["Garmisch"], tier: 6, z: 1.43 },
+    ]
+  },
+  {
+    id: "fish-seafood-01", category: "Food", closed: false,
+    prompt: "Name a fish or type of seafood that people eat",
+    answers: [
+      { text: "Salmon", aliases: [], tier: 1, z: 4.01 },
+      { text: "Cod", aliases: [], tier: 1, z: 3.89 },
+      { text: "Crab", aliases: [], tier: 1, z: 3.76 },
+      { text: "Lobster", aliases: [], tier: 1, z: 3.65 },
+      { text: "Tuna", aliases: [], tier: 1, z: 3.64 },
+      { text: "Prawn", aliases: ["Prawns", "Shrimp"], tier: 1, z: 2.87 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Octopus", aliases: [], tier: 2, z: 3.46 },
+      { text: "Squid", aliases: ["Calamari"], tier: 2, z: 3.44 },
+      { text: "Caviar", aliases: [], tier: 2, z: 3.15 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Sea bass", aliases: ["Bass", "Seabass"], tier: 3, z: 4.21 }, // override: auto 1 -> 3 (multi-word phrase: common component words skew the score)
+      { text: "Trout", aliases: [], tier: 3, z: 3.78 }, // override: auto 1 -> 3 (better known here than its text frequency suggests)
+      { text: "Oyster", aliases: ["Oysters"], tier: 3, z: 3.54 }, // override: auto 1 -> 3 (better known here than its text frequency suggests)
+      { text: "Herring", aliases: ["Kipper"], tier: 3, z: 3.48 }, // override: auto 2 -> 3 (better known here than its text frequency suggests)
+      { text: "Perch", aliases: [], tier: 3, z: 3.29 },
+      { text: "Eel", aliases: [], tier: 3, z: 3.23 },
+      { text: "Pollock", aliases: ["Pollack"], tier: 3, z: 3.23 },
+      { text: "Clam", aliases: ["Clams"], tier: 3, z: 3.22 },
+      { text: "Carp", aliases: [], tier: 3, z: 3.18 },
+      { text: "Mackerel", aliases: [], tier: 3, z: 3.08 },
+      { text: "Marlin", aliases: [], tier: 3, z: 3.01 },
+      { text: "Snapper", aliases: ["Red snapper"], tier: 3, z: 3.0 },
+      { text: "Crayfish", aliases: ["Crawfish"], tier: 3, z: 2.85 },
+      { text: "Shad", aliases: [], tier: 3, z: 2.84 },
+      { text: "Haddock", aliases: [], tier: 3, z: 2.83 },
+      { text: "Conch", aliases: [], tier: 3, z: 2.79 },
+      { text: "Scallop", aliases: ["Scallops"], tier: 3, z: 2.75 }, // override: auto 4 -> 3 (better known here than its text frequency suggests)
+      { text: "Mussel", aliases: ["Mussels"], tier: 3, z: 2.74 }, // override: auto 4 -> 3 (better known here than its text frequency suggests)
+      { text: "Sole", aliases: ["Dover sole", "Lemon sole"], tier: 4, z: 4.29 }, // override: auto 1 -> 4 (everyday word or name: text frequency misstates recall here)
+      { text: "Shark", aliases: ["Dogfish", "Rock salmon"], tier: 4, z: 4.1 }, // override: auto 1 -> 4 (everyday word or name: text frequency misstates recall here)
+      { text: "Catfish", aliases: [], tier: 4, z: 3.35 }, // override: auto 2 -> 4 (better known here than its text frequency suggests)
+      { text: "Flounder", aliases: [], tier: 4, z: 2.78 },
+      { text: "Halibut", aliases: [], tier: 4, z: 2.71 },
+      { text: "Winkle", aliases: ["Periwinkle"], tier: 4, z: 2.71 },
+      { text: "Sea bream", aliases: ["Bream"], tier: 4, z: 2.69 },
+      { text: "Swordfish", aliases: [], tier: 4, z: 2.67 },
+      { text: "Sardine", aliases: ["Sardines", "Pilchard"], tier: 4, z: 2.66 },
+      { text: "Abalone", aliases: [], tier: 4, z: 2.66 },
+      { text: "Tilapia", aliases: [], tier: 4, z: 2.64 },
+      { text: "Zander", aliases: [], tier: 4, z: 2.6 },
+      { text: "Anchovy", aliases: ["Anchovies"], tier: 4, z: 2.58 },
+      { text: "Wahoo", aliases: [], tier: 4, z: 2.57 },
+      { text: "Grouper", aliases: [], tier: 4, z: 2.54 },
+      { text: "Cuttlefish", aliases: [], tier: 4, z: 2.53 },
+      { text: "Bonito", aliases: [], tier: 4, z: 2.5 },
+      { text: "Mahi-mahi", aliases: ["Dorado"], tier: 4, z: 2.44 },
+      { text: "Hake", aliases: [], tier: 4, z: 2.42 },
+      { text: "Coley", aliases: ["Saithe"], tier: 4, z: 2.4 },
+      { text: "Whitebait", aliases: [], tier: 4, z: 1.76 }, // override: auto 6 -> 4 (better known here than its text frequency suggests)
+      { text: "Langoustine", aliases: ["Scampi", "Dublin Bay prawn"], tier: 4, z: 1.63 }, // override: auto 6 -> 4 (better known here than its text frequency suggests)
+      { text: "Skate", aliases: ["Ray"], tier: 5, z: 3.74 }, // override: auto 1 -> 5 (everyday word or name: text frequency misstates recall here)
+      { text: "Pike", aliases: [], tier: 5, z: 3.68 }, // override: auto 1 -> 5 (everyday word or name: text frequency misstates recall here)
+      { text: "Sturgeon", aliases: [], tier: 5, z: 3.34 }, // override: auto 2 -> 5 (better known here than its text frequency suggests)
+      { text: "John Dory", aliases: [], tier: 5, z: 3.1 }, // override: auto 3 -> 5 (multi-word phrase: common component words skew the score)
+      { text: "Mullet", aliases: ["Red mullet"], tier: 5, z: 2.97 }, // override: auto 3 -> 5 (everyday word or name: text frequency misstates recall here)
+      { text: "Sea urchin", aliases: ["Uni"], tier: 5, z: 2.79 }, // override: auto 3 -> 5 (multi-word phrase: common component words skew the score)
+      { text: "Cockle", aliases: ["Cockles"], tier: 5, z: 2.34 },
+      { text: "Pomfret", aliases: [], tier: 5, z: 2.25 },
+      { text: "Yellowtail", aliases: ["Hamachi"], tier: 5, z: 2.22 },
+      { text: "Turbot", aliases: [], tier: 5, z: 2.19 },
+      { text: "Plaice", aliases: [], tier: 5, z: 2.16 },
+      { text: "Monkfish", aliases: [], tier: 5, z: 2.12 },
+      { text: "Kingfish", aliases: [], tier: 5, z: 2.12 },
+      { text: "Bluefish", aliases: [], tier: 5, z: 2.12 },
+      { text: "Sprat", aliases: ["Sprats"], tier: 5, z: 1.98 },
+      { text: "Whelk", aliases: ["Whelks"], tier: 5, z: 1.9 },
+      { text: "Barramundi", aliases: [], tier: 5, z: 1.89 },
+      { text: "Gurnard", aliases: [], tier: 5, z: 1.79 },
+      { text: "Orange roughy", aliases: [], tier: 5, z: 1.79 },
+      { text: "Ling", aliases: [], tier: 6, z: 3.51 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Sea cucumber", aliases: [], tier: 6, z: 3.4 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Arctic char", aliases: ["Char"], tier: 6, z: 3.36 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Dab", aliases: [], tier: 6, z: 3.32 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Jellyfish", aliases: [], tier: 6, z: 3.25 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Razor clam", aliases: [], tier: 6, z: 3.1 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Brill", aliases: [], tier: 6, z: 3.06 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Smelt", aliases: [], tier: 6, z: 2.99 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Barnacle", aliases: ["Goose barnacle", "Percebes"], tier: 6, z: 2.55 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Amberjack", aliases: [], tier: 6, z: 1.64 },
+      { text: "Geoduck", aliases: [], tier: 6, z: 1.48 },
+      { text: "Milkfish", aliases: [], tier: 6, z: 1.44 },
+      { text: "Patagonian toothfish", aliases: ["Chilean sea bass"], tier: 6, z: 1.27 },
+      { text: "Hilsa", aliases: [], tier: 6, z: 1.26 },
+      { text: "Pangasius", aliases: ["Basa"], tier: 6, z: 1.23 },
+    ]
+  },
+  {
+    id: "tea-01", category: "Food", closed: false,
+    prompt: "Name a type of tea or herbal infusion",
+    answers: [
+      { text: "Black tea", aliases: ["Black"], tier: 1, z: 4.66 },
+      { text: "Green tea", aliases: ["Green"], tier: 1, z: 4.58 },
+      { text: "English Breakfast", aliases: ["Breakfast tea"], tier: 1, z: 4.51 },
+      { text: "Earl Grey", aliases: [], tier: 1, z: 4.0 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Chai", aliases: ["Masala chai"], tier: 1, z: 3.29 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Bubble tea", aliases: ["Boba", "Boba tea", "Pearl milk tea"], tier: 2, z: 4.06 },
+      { text: "Matcha", aliases: [], tier: 2, z: 2.67 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Chamomile", aliases: ["Camomile"], tier: 2, z: 2.62 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "White tea", aliases: ["White"], tier: 3, z: 4.66 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jasmine", aliases: ["Jasmine tea"], tier: 3, z: 3.61 },
+      { text: "Iced tea", aliases: ["Ice tea"], tier: 3, z: 3.44 },
+      { text: "Herbal tea", aliases: ["Herbal", "Tisane"], tier: 3, z: 3.34 },
+      { text: "Assam", aliases: [], tier: 3, z: 3.29 },
+      { text: "Peppermint", aliases: ["Mint tea", "Mint"], tier: 3, z: 3.09 },
+      { text: "Darjeeling", aliases: [], tier: 3, z: 2.59 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Oolong", aliases: [], tier: 3, z: 2.38 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rooibos", aliases: ["Redbush", "Red bush"], tier: 3, z: 1.89 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Milk tea", aliases: [], tier: 4, z: 4.39 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fruit tea", aliases: [], tier: 4, z: 4.34 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Thai tea", aliases: ["Thai iced tea"], tier: 4, z: 4.06 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lemon tea", aliases: ["Lemon"], tier: 4, z: 4.01 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ginger tea", aliases: ["Ginger", "Lemon and ginger"], tier: 4, z: 3.87 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ceylon", aliases: [], tier: 4, z: 3.22 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hibiscus", aliases: [], tier: 4, z: 2.76 },
+      { text: "Kombucha", aliases: [], tier: 4, z: 2.45 },
+      { text: "Yerba mate", aliases: ["Mate"], tier: 4, z: 2.34 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pu-erh", aliases: ["Puer"], tier: 4, z: 2.26 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sencha", aliases: [], tier: 4, z: 1.67 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lapsang souchong", aliases: ["Lapsang"], tier: 4, z: 1.26 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sweet tea", aliases: [], tier: 5, z: 4.51 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yellow tea", aliases: ["Yellow"], tier: 5, z: 4.41 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dragon Well", aliases: ["Longjing", "Lung Ching"], tier: 5, z: 4.4 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lady Grey", aliases: [], tier: 5, z: 4.35 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Irish Breakfast", aliases: [], tier: 5, z: 4.27 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Butter tea", aliases: ["Po cha"], tier: 5, z: 4.23 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Russian Caravan", aliases: [], tier: 5, z: 3.6 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Barley tea", aliases: ["Mugicha", "Boricha"], tier: 5, z: 3.47 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Moroccan mint", aliases: ["Maghrebi mint tea"], tier: 5, z: 3.34 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gunpowder", aliases: ["Gunpowder tea"], tier: 5, z: 3.26 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Noon chai", aliases: ["Kashmiri chai", "Pink tea"], tier: 5, z: 3.23 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fennel tea", aliases: ["Fennel"], tier: 5, z: 2.95 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Turmeric tea", aliases: ["Turmeric"], tier: 5, z: 2.86 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nettle", aliases: ["Nettle tea"], tier: 5, z: 2.71 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chrysanthemum", aliases: ["Chrysanthemum tea"], tier: 5, z: 2.57 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rosehip", aliases: ["Rose hip"], tier: 5, z: 2.0 },
+      { text: "Karak", aliases: ["Karak chai"], tier: 5, z: 2.0 },
+      { text: "Gyokuro", aliases: [], tier: 5, z: 1.13 },
+      { text: "Genmaicha", aliases: [], tier: 5, z: 0.0 },
+      { text: "Hojicha", aliases: [], tier: 5, z: 0.0 },
+      { text: "Keemun", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tieguanyin", aliases: ["Iron Goddess", "Tie Guan Yin"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rose tea", aliases: ["Rose"], tier: 6, z: 4.47 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Mountain tea", aliases: ["Sideritis", "Greek mountain tea"], tier: 6, z: 4.43 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Prince of Wales", aliases: [], tier: 6, z: 4.35 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Hong Kong milk tea", aliases: ["Pantyhose tea"], tier: 6, z: 3.99 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Silver Needle", aliases: ["Baihao Yinzhen"], tier: 6, z: 3.92 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Lavender tea", aliases: ["Lavender"], tier: 6, z: 3.42 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Linden", aliases: ["Lime flower", "Linden tea"], tier: 6, z: 3.2 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Da Hong Pao", aliases: ["Big Red Robe"], tier: 6, z: 3.07 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Yunnan", aliases: ["Dianhong"], tier: 6, z: 2.92 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Dandelion tea", aliases: ["Dandelion"], tier: 6, z: 2.89 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Buckwheat tea", aliases: ["Soba cha"], tier: 6, z: 2.79 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tulsi", aliases: ["Holy basil"], tier: 6, z: 2.65 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "White Peony", aliases: ["Bai Mudan"], tier: 6, z: 2.57 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Teh tarik", aliases: [], tier: 6, z: 2.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Lemongrass tea", aliases: ["Lemongrass"], tier: 6, z: 2.43 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nilgiri", aliases: [], tier: 6, z: 1.77 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kukicha", aliases: ["Twig tea"], tier: 6, z: 0.0 },
+      { text: "Bancha", aliases: [], tier: 6, z: 0.0 },
+      { text: "Honeybush", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kuding", aliases: [], tier: 6, z: 0.0 },
+      { text: "Guayusa", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "beef-cuts-01", category: "Food", closed: false,
+    prompt: "Name a cut of beef or type of steak",
+    answers: [
+      { text: "T-bone", aliases: [], tier: 1, z: 4.42 },
+      { text: "Rump", aliases: ["Rump steak"], tier: 1, z: 3.05 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Fillet", aliases: ["Fillet steak", "Filet mignon", "Tenderloin"], tier: 1, z: 2.97 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Sirloin", aliases: ["Sirloin steak"], tier: 1, z: 2.52 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Ribeye", aliases: ["Rib-eye"], tier: 1, z: 2.25 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Tomahawk", aliases: [], tier: 2, z: 2.89 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Brisket", aliases: [], tier: 2, z: 2.87 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Porterhouse", aliases: [], tier: 2, z: 2.05 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Chuck", aliases: ["Chuck steak", "Braising steak"], tier: 3, z: 4.17 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Skirt", aliases: ["Skirt steak"], tier: 3, z: 3.96 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Strip steak", aliases: ["New York strip", "Striploin", "NY strip"], tier: 3, z: 3.82 },
+      { text: "Flank", aliases: ["Flank steak"], tier: 3, z: 3.64 },
+      { text: "Short rib", aliases: ["Short ribs"], tier: 3, z: 3.58 },
+      { text: "Prime rib", aliases: ["Rib roast", "Rib of beef", "Fore rib"], tier: 3, z: 3.56 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Topside", aliases: [], tier: 3, z: 2.41 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Oxtail", aliases: [], tier: 3, z: 2.13 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Silverside", aliases: [], tier: 3, z: 1.42 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Round", aliases: ["Top round", "Bottom round"], tier: 4, z: 5.14 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Flat iron", aliases: [], tier: 4, z: 4.43 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cheek", aliases: ["Ox cheek", "Beef cheek"], tier: 4, z: 3.96 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shin", aliases: ["Shank", "Beef shin"], tier: 4, z: 3.69 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tri-tip", aliases: [], tier: 4, z: 3.65 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hanger", aliases: ["Hanger steak", "Onglet"], tier: 4, z: 3.24 },
+      { text: "Chateaubriand", aliases: [], tier: 4, z: 2.13 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Picanha", aliases: ["Rump cap"], tier: 4, z: 1.06 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bavette", aliases: ["Flap"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Neck", aliases: ["Clod"], tier: 5, z: 4.63 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Plate", aliases: ["Short plate"], tier: 5, z: 4.55 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tongue", aliases: ["Ox tongue"], tier: 5, z: 4.37 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Denver", aliases: ["Denver steak"], tier: 5, z: 4.23 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Blade", aliases: ["Feather blade", "Blade steak"], tier: 5, z: 4.19 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Club steak", aliases: [], tier: 5, z: 3.94 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Minute steak", aliases: [], tier: 5, z: 3.93 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cube steak", aliases: ["Cubed steak"], tier: 5, z: 3.59 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Thick flank", aliases: ["Top rump"], tier: 5, z: 3.58 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Delmonico", aliases: [], tier: 5, z: 1.76 },
+      { text: "Heel", aliases: [], tier: 6, z: 3.84 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Spider steak", aliases: ["Oyster steak", "Pope's eye"], tier: 6, z: 3.79 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mock tender", aliases: [], tier: 6, z: 3.65 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Goose skirt", aliases: [], tier: 6, z: 3.59 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Leg of mutton cut", aliases: ["LMC"], tier: 6, z: 3.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Jacob's ladder", aliases: [], tier: 6, z: 2.9 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Merlot steak", aliases: [], tier: 6, z: 2.72 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Teres major", aliases: ["Petite tender", "Shoulder tender"], tier: 6, z: 1.99 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Spinalis", aliases: ["Ribeye cap"], tier: 6, z: 1.28 },
+      { text: "Vacio", aliases: [], tier: 6, z: 0.0 },
+      { text: "Coulotte", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "grains-01", category: "Food", closed: true,
+    prompt: "Name a cereal grain or pseudocereal grown for food",
+    answers: [
+      { text: "Rice", aliases: [], tier: 1, z: 4.55 },
+      { text: "Corn", aliases: ["Maize", "Sweetcorn"], tier: 1, z: 4.19 },
+      { text: "Wheat", aliases: [], tier: 1, z: 4.01 },
+      { text: "Oats", aliases: ["Oat"], tier: 1, z: 3.4 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Rye", aliases: [], tier: 2, z: 3.52 },
+      { text: "Barley", aliases: [], tier: 2, z: 3.49 },
+      { text: "Quinoa", aliases: [], tier: 2, z: 3.01 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Wild rice", aliases: [], tier: 3, z: 4.36 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Spelt", aliases: [], tier: 3, z: 3.18 },
+      { text: "Millet", aliases: [], tier: 3, z: 2.98 },
+      { text: "Sorghum", aliases: [], tier: 3, z: 2.83 },
+      { text: "Buckwheat", aliases: [], tier: 3, z: 2.79 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Amaranth", aliases: [], tier: 4, z: 2.38 },
+      { text: "Durum", aliases: ["Durum wheat"], tier: 4, z: 2.08 },
+      { text: "Farro", aliases: ["Emmer"], tier: 4, z: 2.03 },
+      { text: "Teff", aliases: [], tier: 4, z: 1.85 },
+      { text: "Chia", aliases: [], tier: 5, z: 3.02 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Triticale", aliases: [], tier: 5, z: 1.55 },
+      { text: "Einkorn", aliases: [], tier: 5, z: 1.45 },
+      { text: "Kamut", aliases: ["Khorasan", "Khorasan wheat"], tier: 5, z: 1.33 },
+      { text: "Freekeh", aliases: ["Farik"], tier: 5, z: 1.23 },
+      { text: "Finger millet", aliases: ["Ragi"], tier: 6, z: 2.97 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Pearl millet", aliases: ["Bajra"], tier: 6, z: 2.95 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Job's tears", aliases: ["Adlay", "Coix"], tier: 6, z: 2.59 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Foxtail millet", aliases: [], tier: 6, z: 1.94 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Fonio", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kañiwa", aliases: ["Canihua"], tier: 6, z: 0.0 },
+      { text: "Kernza", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "sauces-01", category: "Food", closed: false,
+    prompt: "Name a sauce, dip or condiment",
+    answers: [
+      { text: "Hot sauce", aliases: ["Chilli sauce", "Chili sauce"], tier: 1, z: 4.24 },
+      { text: "Mustard", aliases: [], tier: 1, z: 3.69 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "BBQ sauce", aliases: ["Barbecue sauce", "Barbecue", "BBQ"], tier: 1, z: 3.57 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Soy sauce", aliases: ["Soya sauce"], tier: 1, z: 3.55 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Ketchup", aliases: ["Tomato ketchup", "Tomato sauce", "Catsup"], tier: 1, z: 3.46 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Mayonnaise", aliases: ["Mayo"], tier: 1, z: 3.24 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Vinegar", aliases: ["Malt vinegar"], tier: 2, z: 3.64 },
+      { text: "Salsa", aliases: [], tier: 2, z: 3.53 },
+      { text: "Gravy", aliases: [], tier: 2, z: 3.48 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Worcestershire sauce", aliases: ["Worcester sauce", "Worcestershire"], tier: 2, z: 3.05 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Pesto", aliases: [], tier: 2, z: 2.88 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Sriracha", aliases: [], tier: 2, z: 2.72 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Brown sauce", aliases: ["HP sauce", "HP"], tier: 3, z: 4.22 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Cheese sauce", aliases: ["Nacho cheese"], tier: 3, z: 4.11 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ranch", aliases: ["Ranch dressing"], tier: 3, z: 4.03 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Salad cream", aliases: [], tier: 3, z: 4.03 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Burger sauce", aliases: ["Special sauce"], tier: 3, z: 3.87 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Garlic sauce", aliases: ["Garlic mayo", "Aioli", "Toum"], tier: 3, z: 3.77 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mint sauce", aliases: [], tier: 3, z: 3.77 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Caesar dressing", aliases: ["Caesar"], tier: 3, z: 3.65 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sweet chilli", aliases: ["Sweet chili sauce", "Sweet chilli sauce"], tier: 3, z: 3.28 },
+      { text: "Hummus", aliases: ["Houmous"], tier: 3, z: 3.0 },
+      { text: "Guacamole", aliases: [], tier: 3, z: 2.91 },
+      { text: "Tabasco", aliases: [], tier: 3, z: 2.63 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Teriyaki", aliases: ["Teriyaki sauce"], tier: 3, z: 2.53 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Marinara", aliases: ["Pizza sauce"], tier: 3, z: 2.53 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tartare sauce", aliases: ["Tartar sauce", "Tartare"], tier: 3, z: 2.34 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hollandaise", aliases: [], tier: 3, z: 2.3 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Thousand Island", aliases: ["Thousand Island dressing"], tier: 4, z: 4.49 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fish sauce", aliases: ["Nam pla", "Nuoc mam"], tier: 4, z: 4.2 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Apple sauce", aliases: ["Applesauce"], tier: 4, z: 4.17 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Buffalo sauce", aliases: ["Buffalo"], tier: 4, z: 3.91 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sour cream", aliases: [], tier: 4, z: 3.81 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Curry sauce", aliases: [], tier: 4, z: 3.8 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Honey mustard", aliases: [], tier: 4, z: 3.61 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Oyster sauce", aliases: [], tier: 4, z: 3.47 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Relish", aliases: [], tier: 4, z: 3.32 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Alfredo", aliases: ["Alfredo sauce"], tier: 4, z: 3.27 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cranberry sauce", aliases: [], tier: 4, z: 3.14 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wasabi", aliases: [], tier: 4, z: 2.77 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Chutney", aliases: ["Mango chutney"], tier: 4, z: 2.74 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Balsamic vinegar", aliases: ["Balsamic", "Balsamic glaze"], tier: 4, z: 2.69 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Horseradish", aliases: ["Horseradish sauce"], tier: 4, z: 2.68 },
+      { text: "Vinaigrette", aliases: ["French dressing"], tier: 4, z: 2.62 },
+      { text: "Tahini", aliases: [], tier: 4, z: 2.31 },
+      { text: "Piri-piri", aliases: ["Peri-peri", "Peri peri sauce"], tier: 4, z: 1.99 },
+      { text: "Harissa", aliases: [], tier: 4, z: 1.96 },
+      { text: "Tzatziki", aliases: [], tier: 4, z: 1.92 },
+      { text: "Hoisin", aliases: ["Hoisin sauce"], tier: 4, z: 1.81 },
+      { text: "Chimichurri", aliases: [], tier: 4, z: 1.78 },
+      { text: "Béchamel", aliases: ["White sauce"], tier: 4, z: 1.74 },
+      { text: "Marie Rose", aliases: ["Cocktail sauce", "Seafood sauce"], tier: 5, z: 4.1 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bread sauce", aliases: [], tier: 5, z: 4.09 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sweet and sour", aliases: ["Sweet and sour sauce"], tier: 5, z: 3.84 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jerk sauce", aliases: ["Jerk"], tier: 5, z: 3.82 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fry sauce", aliases: [], tier: 5, z: 3.75 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mole", aliases: ["Mole poblano"], tier: 5, z: 3.67 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Plum sauce", aliases: [], tier: 5, z: 3.48 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chilli oil", aliases: ["Chili oil", "Chili crisp", "Chilli crisp"], tier: 5, z: 3.28 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yum yum sauce", aliases: [], tier: 5, z: 3.13 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Miso", aliases: [], tier: 5, z: 2.77 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dijon", aliases: ["Dijon mustard"], tier: 5, z: 2.76 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Peppercorn sauce", aliases: ["Pepper sauce"], tier: 5, z: 2.26 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Satay sauce", aliases: ["Peanut sauce", "Satay"], tier: 5, z: 2.24 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sambal", aliases: ["Sambal oelek"], tier: 5, z: 2.15 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Amba", aliases: [], tier: 5, z: 2.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Raita", aliases: [], tier: 5, z: 1.92 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tapenade", aliases: [], tier: 5, z: 1.82 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gochujang", aliases: [], tier: 5, z: 1.8 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ponzu", aliases: [], tier: 5, z: 1.69 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tonkatsu sauce", aliases: ["Katsu sauce"], tier: 5, z: 1.61 },
+      { text: "Remoulade", aliases: [], tier: 5, z: 1.59 },
+      { text: "Béarnaise", aliases: [], tier: 5, z: 1.58 },
+      { text: "Piccalilli", aliases: [], tier: 5, z: 1.49 },
+      { text: "Romesco", aliases: [], tier: 5, z: 1.43 },
+      { text: "Ajvar", aliases: [], tier: 5, z: 1.1 },
+      { text: "Zhug", aliases: ["Zhoug"], tier: 5, z: 0.0 },
+      { text: "Cumberland sauce", aliases: [], tier: 6, z: 3.39 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Banana ketchup", aliases: [], tier: 6, z: 3.35 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "XO sauce", aliases: ["XO"], tier: 6, z: 3.1 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Salsa verde", aliases: [], tier: 6, z: 3.09 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Gentleman's Relish", aliases: ["Patum Peperium"], tier: 6, z: 2.81 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Pico de gallo", aliases: [], tier: 6, z: 2.75 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mumbo sauce", aliases: [], tier: 6, z: 2.56 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Henderson's Relish", aliases: ["Hendersons"], tier: 6, z: 2.52 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tare", aliases: [], tier: 6, z: 2.33 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Beurre blanc", aliases: [], tier: 6, z: 2.04 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Mornay", aliases: [], tier: 6, z: 2.02 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Chasseur", aliases: [], tier: 6, z: 1.76 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sauce vierge", aliases: ["Vierge"], tier: 6, z: 1.66 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Espagnole", aliases: [], tier: 6, z: 1.62 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nuoc cham", aliases: [], tier: 6, z: 1.45 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bordelaise", aliases: [], tier: 6, z: 1.4 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Velouté", aliases: [], tier: 6, z: 1.32 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Garum", aliases: [], tier: 6, z: 1.32 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nam prik", aliases: ["Nam phrik"], tier: 6, z: 1.27 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Shito", aliases: [], tier: 6, z: 1.22 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kecap manis", aliases: [], tier: 6, z: 1.08 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Gribiche", aliases: [], tier: 6, z: 0.0 },
+      { text: "Doubanjiang", aliases: [], tier: 6, z: 0.0 },
+      { text: "Muhammara", aliases: [], tier: 6, z: 0.0 },
+      { text: "Skordalia", aliases: [], tier: 6, z: 0.0 },
+      { text: "Tkemali", aliases: [], tier: 6, z: 0.0 },
+      { text: "Adjika", aliases: ["Ajika"], tier: 6, z: 0.0 },
+      { text: "Colatura", aliases: [], tier: 6, z: 0.0 },
+      { text: "Mostarda", aliases: [], tier: 6, z: 0.0 },
+      { text: "Mentsuyu", aliases: ["Tsuyu"], tier: 6, z: 0.0 },
+      { text: "Chermoula", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ssamjang", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "desserts-01", category: "Food", closed: false,
+    prompt: "Name a dessert or sweet dish",
+    answers: [
+      { text: "Ice cream", aliases: [], tier: 1, z: 4.47 },
+      { text: "Chocolate cake", aliases: [], tier: 1, z: 4.21 },
+      { text: "Apple pie", aliases: [], tier: 1, z: 4.09 },
+      { text: "Cheesecake", aliases: [], tier: 1, z: 3.22 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Brownie", aliases: ["Brownies", "Chocolate brownie"], tier: 1, z: 3.21 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Tiramisu", aliases: [], tier: 2, z: 2.46 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Pavlova", aliases: [], tier: 2, z: 2.39 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Crème brûlée", aliases: [], tier: 2, z: 2.05 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Cookie", aliases: ["Cookies", "Biscuit"], tier: 3, z: 4.07 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Fruit salad", aliases: [], tier: 3, z: 4.01 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jelly", aliases: ["Jello"], tier: 3, z: 3.77 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Carrot cake", aliases: [], tier: 3, z: 3.57 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rice pudding", aliases: [], tier: 3, z: 3.56 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tart", aliases: ["Fruit tart", "Lemon tart", "Tarte au citron"], tier: 3, z: 3.37 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Cupcake", aliases: ["Cupcakes"], tier: 3, z: 3.35 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Pancake", aliases: ["Pancakes", "Crêpe", "Crepes"], tier: 3, z: 3.35 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Muffin", aliases: [], tier: 3, z: 3.35 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Waffle", aliases: ["Waffles"], tier: 3, z: 3.3 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Apple crumble", aliases: ["Crumble"], tier: 3, z: 3.28 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Doughnut", aliases: ["Donut", "Doughnuts"], tier: 3, z: 3.17 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Custard", aliases: [], tier: 3, z: 3.17 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chocolate mousse", aliases: ["Mousse"], tier: 3, z: 2.95 },
+      { text: "Trifle", aliases: [], tier: 3, z: 2.93 },
+      { text: "Meringue", aliases: [], tier: 3, z: 2.79 },
+      { text: "Gelato", aliases: [], tier: 3, z: 2.78 },
+      { text: "Sticky toffee pudding", aliases: [], tier: 3, z: 2.77 },
+      { text: "Sundae", aliases: ["Ice cream sundae"], tier: 3, z: 2.76 },
+      { text: "Lemon meringue pie", aliases: ["Lemon meringue"], tier: 3, z: 2.75 },
+      { text: "Sorbet", aliases: [], tier: 3, z: 2.64 },
+      { text: "Baklava", aliases: [], tier: 3, z: 2.36 },
+      { text: "Panna cotta", aliases: [], tier: 3, z: 2.29 },
+      { text: "Churros", aliases: ["Churro"], tier: 3, z: 2.29 },
+      { text: "Macaron", aliases: ["Macarons", "Macaroon"], tier: 3, z: 2.11 },
+      { text: "Éclair", aliases: [], tier: 3, z: 1.75 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Profiteroles", aliases: ["Profiterole", "Cream puff"], tier: 3, z: 1.71 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Banoffee pie", aliases: ["Banoffee"], tier: 3, z: 1.62 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Swiss roll", aliases: ["Roulade"], tier: 4, z: 4.1 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Spotted dick", aliases: [], tier: 4, z: 4.07 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Banana split", aliases: [], tier: 4, z: 3.91 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Turkish delight", aliases: ["Lokum"], tier: 4, z: 3.8 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Red velvet cake", aliases: ["Red velvet"], tier: 4, z: 3.69 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Key lime pie", aliases: [], tier: 4, z: 3.68 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pumpkin pie", aliases: [], tier: 4, z: 3.67 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lava cake", aliases: ["Molten chocolate cake", "Chocolate fondant", "Fondant"], tier: 4, z: 3.67 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cinnamon roll", aliases: ["Cinnamon bun"], tier: 4, z: 3.66 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Frozen yogurt", aliases: ["Froyo", "Frozen yoghurt"], tier: 4, z: 3.55 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Victoria sponge", aliases: ["Victoria sandwich", "Sponge cake"], tier: 4, z: 3.53 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bread and butter pudding", aliases: ["Bread pudding"], tier: 4, z: 3.5 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fudge", aliases: [], tier: 4, z: 3.33 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lemon drizzle", aliases: ["Lemon drizzle cake"], tier: 4, z: 3.1 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Eton mess", aliases: [], tier: 4, z: 3.09 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pecan pie", aliases: [], tier: 4, z: 2.91 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cobbler", aliases: ["Peach cobbler"], tier: 4, z: 2.82 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Flan", aliases: ["Crème caramel"], tier: 4, z: 2.48 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Parfait", aliases: [], tier: 4, z: 2.48 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Knickerbocker glory", aliases: [], tier: 4, z: 2.43 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Treacle tart", aliases: [], tier: 4, z: 2.43 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bakewell tart", aliases: ["Bakewell"], tier: 4, z: 2.43 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mochi", aliases: [], tier: 4, z: 2.42 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jam roly-poly", aliases: ["Roly-poly"], tier: 4, z: 2.35 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cannoli", aliases: [], tier: 4, z: 2.34 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Strudel", aliases: ["Apple strudel"], tier: 4, z: 2.32 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Soufflé", aliases: [], tier: 4, z: 2.26 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Black Forest gateau", aliases: ["Black Forest cake", "Black Forest"], tier: 4, z: 1.88 },
+      { text: "Battenberg", aliases: [], tier: 4, z: 1.88 },
+      { text: "Blancmange", aliases: [], tier: 4, z: 1.83 },
+      { text: "Tarte Tatin", aliases: [], tier: 4, z: 1.75 },
+      { text: "Kheer", aliases: [], tier: 4, z: 1.73 },
+      { text: "Jalebi", aliases: [], tier: 4, z: 1.67 },
+      { text: "Kulfi", aliases: [], tier: 4, z: 1.64 },
+      { text: "Tres leches", aliases: ["Tres leches cake"], tier: 4, z: 1.57 },
+      { text: "Halva", aliases: ["Halwa"], tier: 4, z: 1.56 },
+      { text: "Gulab jamun", aliases: [], tier: 4, z: 1.55 },
+      { text: "Affogato", aliases: [], tier: 4, z: 1.36 },
+      { text: "Semifreddo", aliases: [], tier: 4, z: 1.09 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Opera cake", aliases: [], tier: 5, z: 4.08 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Arctic roll", aliases: [], tier: 5, z: 3.95 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Baked Alaska", aliases: [], tier: 5, z: 3.73 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bananas Foster", aliases: [], tier: 5, z: 3.61 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Summer pudding", aliases: [], tier: 5, z: 3.6 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Christmas pudding", aliases: ["Plum pudding"], tier: 5, z: 3.59 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Umm Ali", aliases: ["Om Ali"], tier: 5, z: 3.5 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Halo-halo", aliases: [], tier: 5, z: 3.45 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Funnel cake", aliases: [], tier: 5, z: 3.43 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mango sticky rice", aliases: ["Sticky rice"], tier: 5, z: 3.33 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Butter tart", aliases: [], tier: 5, z: 3.33 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cherries jubilee", aliases: [], tier: 5, z: 3.05 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Anzac biscuit", aliases: [], tier: 5, z: 2.9 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Paris-Brest", aliases: [], tier: 5, z: 2.72 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Queen of puddings", aliases: [], tier: 5, z: 2.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "S'mores", aliases: [], tier: 5, z: 2.57 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Eve's pudding", aliases: [], tier: 5, z: 2.56 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nanaimo bar", aliases: [], tier: 5, z: 2.52 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Peach Melba", aliases: [], tier: 5, z: 2.44 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pear Belle Hélène", aliases: ["Poire belle Hélène"], tier: 5, z: 2.4 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pastel de nata", aliases: ["Portuguese custard tart", "Custard tart", "Egg tart"], tier: 5, z: 2.37 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dulce de leche", aliases: [], tier: 5, z: 2.3 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Leche flan", aliases: [], tier: 5, z: 2.21 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Whoopie pie", aliases: [], tier: 5, z: 2.15 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Barfi", aliases: ["Burfi"], tier: 5, z: 2.01 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lamington", aliases: [], tier: 5, z: 1.85 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ras malai", aliases: ["Rasmalai"], tier: 5, z: 1.82 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mille-feuille", aliases: ["Millefeuille", "Napoleon"], tier: 5, z: 1.69 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ladoo", aliases: ["Laddu"], tier: 5, z: 1.69 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Posset", aliases: ["Lemon posset"], tier: 5, z: 1.6 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Beignet", aliases: ["Beignets"], tier: 5, z: 1.54 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Linzer torte", aliases: ["Linzertorte"], tier: 5, z: 1.52 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Brigadeiro", aliases: [], tier: 5, z: 1.34 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Croquembouche", aliases: [], tier: 5, z: 1.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sachertorte", aliases: ["Sacher torte"], tier: 5, z: 1.26 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Taiyaki", aliases: [], tier: 5, z: 1.25 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Clafoutis", aliases: [], tier: 5, z: 1.23 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Zabaglione", aliases: ["Sabayon"], tier: 5, z: 1.16 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rasgulla", aliases: [], tier: 5, z: 1.16 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Syllabub", aliases: [], tier: 5, z: 1.14 },
+      { text: "Alfajores", aliases: ["Alfajor"], tier: 5, z: 1.13 },
+      { text: "Stroopwafel", aliases: [], tier: 5, z: 1.04 },
+      { text: "Dorayaki", aliases: [], tier: 5, z: 1.03 },
+      { text: "Kunafa", aliases: ["Knafeh", "Kanafeh", "Kunafeh"], tier: 5, z: 0.0 },
+      { text: "Basbousa", aliases: [], tier: 5, z: 0.0 },
+      { text: "Luqaimat", aliases: ["Loukoumades", "Lokma"], tier: 5, z: 0.0 },
+      { text: "Faloodeh", aliases: ["Falooda", "Faluda"], tier: 5, z: 0.0 },
+      { text: "Bingsu", aliases: ["Patbingsu"], tier: 5, z: 0.0 },
+      { text: "Kaiserschmarrn", aliases: [], tier: 5, z: 0.0 },
+      { text: "Poffertjes", aliases: [], tier: 5, z: 0.0 },
+      { text: "Charlotte", aliases: ["Charlotte russe"], tier: 6, z: 4.22 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Floating island", aliases: ["Île flottante", "Oeufs à la neige"], tier: 6, z: 4.12 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Rum baba", aliases: ["Baba au rhum", "Baba"], tier: 6, z: 3.3 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Far Breton", aliases: [], tier: 6, z: 3.06 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Gaz", aliases: [], tier: 6, z: 2.92 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mysore pak", aliases: [], tier: 6, z: 2.8 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Pandan cake", aliases: ["Pandan chiffon"], tier: 6, z: 2.01 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sandesh", aliases: [], tier: 6, z: 1.71 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Malva pudding", aliases: [], tier: 6, z: 1.7 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sohan", aliases: [], tier: 6, z: 1.68 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Savarin", aliases: [], tier: 6, z: 1.65 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Turon", aliases: [], tier: 6, z: 1.6 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kuih", aliases: ["Kueh"], tier: 6, z: 1.45 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Cassata", aliases: [], tier: 6, z: 1.44 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ais kacang", aliases: [], tier: 6, z: 1.44 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Buko pie", aliases: [], tier: 6, z: 1.44 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bubur cha cha", aliases: [], tier: 6, z: 1.38 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Zuppa inglese", aliases: [], tier: 6, z: 1.29 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bastani", aliases: ["Bastani sonnati"], tier: 6, z: 1.25 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Payasam", aliases: [], tier: 6, z: 1.25 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Semla", aliases: [], tier: 6, z: 1.22 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Cendol", aliases: [], tier: 6, z: 1.2 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rabri", aliases: [], tier: 6, z: 1.19 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Zeppole", aliases: [], tier: 6, z: 1.13 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dobos torte", aliases: [], tier: 6, z: 1.12 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sholeh zard", aliases: [], tier: 6, z: 1.04 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bavarois", aliases: ["Bavarian cream"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dacquoise", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kouign-amann", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Canelé", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sfogliatella", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Budino", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Prinsesstårta", aliases: ["Princess cake"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Esterházy torte", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kürtőskalács", aliases: ["Chimney cake"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Papanași", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Medovik", aliases: ["Honey cake"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pashka", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Syrniki", aliases: [], tier: 6, z: 0.0 },
+      { text: "Šakotis", aliases: [], tier: 6, z: 0.0 },
+      { text: "Tavuk göğsü", aliases: [], tier: 6, z: 0.0 },
+      { text: "Sütlaç", aliases: [], tier: 6, z: 0.0 },
+      { text: "Aşure", aliases: ["Ashure", "Noah's pudding"], tier: 6, z: 0.0 },
+      { text: "Koeksister", aliases: [], tier: 6, z: 0.0 },
+      { text: "Melktert", aliases: ["Milk tart"], tier: 6, z: 0.0 },
+      { text: "Zoolbia", aliases: ["Zulbia"], tier: 6, z: 0.0 },
+      { text: "Ranginak", aliases: [], tier: 6, z: 0.0 },
+      { text: "Qottab", aliases: [], tier: 6, z: 0.0 },
+      { text: "Chè", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ube halaya", aliases: [], tier: 6, z: 0.0 },
+      { text: "Picarones", aliases: [], tier: 6, z: 0.0 },
+      { text: "Suspiro limeño", aliases: ["Suspiro de limeña"], tier: 6, z: 0.0 },
+      { text: "Chajá", aliases: [], tier: 6, z: 0.0 },
+      { text: "Quindim", aliases: [], tier: 6, z: 0.0 },
+      { text: "Pudim", aliases: [], tier: 6, z: 0.0 },
+      { text: "Shrikhand", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "mushrooms-01", category: "Food", closed: false,
+    prompt: "Name an edible mushroom or fungus",
+    answers: [
+      { text: "Button mushroom", aliases: ["Button", "White mushroom", "Champignon"], tier: 1, z: 3.58 },
+      { text: "Truffle", aliases: ["Black truffle", "White truffle"], tier: 1, z: 3.06 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Portobello", aliases: ["Portabella", "Portobella"], tier: 1, z: 2.61 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Shiitake", aliases: [], tier: 1, z: 2.17 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Oyster mushroom", aliases: ["Oyster"], tier: 2, z: 3.28 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Chestnut mushroom", aliases: ["Chestnut", "Cremini", "Crimini", "Baby bella"], tier: 2, z: 3.24 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Porcini", aliases: ["Cep", "Penny bun", "King bolete"], tier: 2, z: 2.0 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Field mushroom", aliases: [], tier: 3, z: 3.62 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Morel", aliases: ["Morels"], tier: 3, z: 2.62 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chanterelle", aliases: ["Girolle"], tier: 3, z: 1.78 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Enoki", aliases: ["Enokitake"], tier: 3, z: 1.68 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Wood ear", aliases: ["Black fungus", "Cloud ear"], tier: 4, z: 4.27 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "King oyster", aliases: ["King trumpet", "Eryngii"], tier: 4, z: 3.53 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lion's mane", aliases: [], tier: 4, z: 2.95 },
+      { text: "Puffball", aliases: ["Giant puffball"], tier: 4, z: 1.77 },
+      { text: "Shimeji", aliases: ["Beech mushroom"], tier: 4, z: 1.25 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Maitake", aliases: ["Hen of the woods"], tier: 4, z: 1.19 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Chicken of the woods", aliases: ["Sulphur shelf"], tier: 5, z: 4.23 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Black trumpet", aliases: ["Horn of plenty", "Trompette de la mort"], tier: 5, z: 3.57 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Straw mushroom", aliases: ["Paddy straw"], tier: 5, z: 3.47 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hedgehog mushroom", aliases: ["Hedgehog", "Pied de mouton"], tier: 5, z: 3.1 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Reishi", aliases: ["Lingzhi"], tier: 5, z: 1.6 },
+      { text: "Matsutake", aliases: [], tier: 5, z: 1.23 },
+      { text: "Huitlacoche", aliases: ["Corn smut", "Cuitlacoche"], tier: 5, z: 1.07 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nameko", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Turkey tail", aliases: [], tier: 6, z: 4.14 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Snow fungus", aliases: ["Tremella", "White fungus"], tier: 6, z: 3.5 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Fairy ring mushroom", aliases: ["Mousseron"], tier: 6, z: 3.48 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Honey fungus", aliases: ["Honey mushroom"], tier: 6, z: 3.47 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "St George's mushroom", aliases: [], tier: 6, z: 3.3 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Bamboo fungus", aliases: ["Veiled lady"], tier: 6, z: 3.29 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Saffron milk cap", aliases: ["Milk cap"], tier: 6, z: 3.17 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Shaggy ink cap", aliases: ["Shaggy mane", "Lawyer's wig"], tier: 6, z: 3.11 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cauliflower fungus", aliases: [], tier: 6, z: 3.03 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Velvet shank", aliases: [], tier: 6, z: 2.99 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Caesar's mushroom", aliases: [], tier: 6, z: 2.85 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Parasol mushroom", aliases: ["Parasol"], tier: 6, z: 2.59 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Beefsteak fungus", aliases: [], tier: 6, z: 2.06 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Cordyceps", aliases: [], tier: 6, z: 1.81 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Chaga", aliases: [], tier: 6, z: 1.62 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Blewit", aliases: ["Wood blewit"], tier: 6, z: 0.0 },
+      { text: "Pioppino", aliases: ["Black poplar mushroom"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "legumes-01", category: "Food", closed: false,
+    prompt: "Name a bean, pea, lentil or other legume eaten as food",
+    answers: [
+      { text: "Green bean", aliases: ["Green beans", "French bean", "String bean"], tier: 1, z: 3.95 },
+      { text: "Kidney bean", aliases: ["Kidney beans", "Red kidney bean"], tier: 1, z: 3.7 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Pea", aliases: ["Peas", "Garden pea", "Green pea"], tier: 1, z: 3.54 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Lentil", aliases: ["Lentils", "Red lentil", "Green lentil", "Puy lentil"], tier: 1, z: 2.66 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Chickpea", aliases: ["Chickpeas", "Garbanzo", "Garbanzo bean"], tier: 1, z: 2.5 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Black bean", aliases: ["Black beans", "Black turtle bean"], tier: 2, z: 3.97 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Peanut", aliases: ["Peanuts", "Groundnut"], tier: 2, z: 3.9 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Soybean", aliases: ["Soya bean", "Soy", "Soya", "Edamame"], tier: 2, z: 3.09 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Broad bean", aliases: ["Broad beans", "Fava bean", "Fava"], tier: 3, z: 3.87 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Butter bean", aliases: ["Butter beans", "Lima bean", "Lima"], tier: 3, z: 3.84 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Runner bean", aliases: ["Runner beans"], tier: 3, z: 3.77 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Split pea", aliases: ["Split peas", "Yellow split pea"], tier: 3, z: 3.51 },
+      { text: "Black-eyed pea", aliases: ["Black-eyed bean", "Black-eyed peas", "Cowpea"], tier: 3, z: 3.4 },
+      { text: "Pinto bean", aliases: ["Pinto"], tier: 3, z: 3.06 },
+      { text: "Cannellini", aliases: ["Cannellini bean", "White kidney bean"], tier: 3, z: 1.59 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Haricot bean", aliases: ["Haricot", "Navy bean", "Baked beans"], tier: 3, z: 1.5 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Great Northern bean", aliases: ["Great Northern"], tier: 4, z: 3.92 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mung bean", aliases: ["Mung", "Moong", "Green gram"], tier: 4, z: 2.36 },
+      { text: "Adzuki bean", aliases: ["Adzuki", "Azuki", "Aduki"], tier: 4, z: 1.45 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Flageolet", aliases: ["Flageolet bean"], tier: 4, z: 1.45 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Borlotti", aliases: ["Borlotti bean", "Cranberry bean"], tier: 4, z: 1.19 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mangetout", aliases: ["Snow pea", "Sugar snap", "Sugar snap pea"], tier: 4, z: 1.16 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pigeon pea", aliases: ["Toor dal", "Gungo pea", "Arhar"], tier: 5, z: 3.27 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lupin", aliases: ["Lupini", "Lupin bean"], tier: 5, z: 2.86 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Alfalfa", aliases: ["Alfalfa sprouts"], tier: 5, z: 2.82 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tamarind", aliases: [], tier: 5, z: 2.59 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Carob", aliases: [], tier: 5, z: 2.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Urad", aliases: ["Black gram", "Urad dal"], tier: 5, z: 1.57 },
+      { text: "Marrowfat pea", aliases: ["Marrowfat", "Mushy peas"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yardlong bean", aliases: ["Long bean", "Snake bean", "Asparagus bean"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jack bean", aliases: [], tier: 6, z: 3.92 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Rice bean", aliases: [], tier: 6, z: 3.88 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Sword bean", aliases: [], tier: 6, z: 3.83 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Horse gram", aliases: ["Kulthi"], tier: 6, z: 3.72 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Velvet bean", aliases: [], tier: 6, z: 3.56 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Moth bean", aliases: ["Matki"], tier: 6, z: 3.38 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Winged bean", aliases: [], tier: 6, z: 3.33 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mesquite", aliases: [], tier: 6, z: 2.73 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Hyacinth bean", aliases: ["Lablab"], tier: 6, z: 2.71 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Guar", aliases: ["Cluster bean"], tier: 6, z: 2.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Fenugreek", aliases: ["Methi"], tier: 6, z: 2.09 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bambara groundnut", aliases: ["Bambara"], tier: 6, z: 1.74 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Jicama", aliases: ["Yam bean"], tier: 6, z: 1.67 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tepary bean", aliases: ["Tepary"], tier: 6, z: 0.0 },
+      { text: "Tarwi", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "fast-food-01", category: "Food", closed: false,
+    prompt: "Name a fast-food chain (operating as of 2025)",
+    answers: [
+      { text: "Subway", aliases: [], tier: 1, z: 4.05 },
+      { text: "Burger King", aliases: ["BK"], tier: 1, z: 4.04 },
+      { text: "McDonald's", aliases: ["Maccies", "Mickey D's"], tier: 1, z: 3.9 },
+      { text: "Pizza Hut", aliases: [], tier: 1, z: 3.74 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "KFC", aliases: ["Kentucky Fried Chicken"], tier: 1, z: 3.28 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Domino's", aliases: ["Domino's Pizza"], tier: 1, z: 2.9 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Five Guys", aliases: [], tier: 2, z: 5.13 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Starbucks", aliases: [], tier: 2, z: 3.77 },
+      { text: "Taco Bell", aliases: [], tier: 2, z: 3.64 },
+      { text: "Wendy's", aliases: [], tier: 2, z: 3.12 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Nando's", aliases: [], tier: 2, z: 2.24 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "In-N-Out", aliases: ["In-N-Out Burger", "In and Out"], tier: 3, z: 5.12 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dairy Queen", aliases: ["DQ"], tier: 3, z: 4.02 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Papa John's", aliases: [], tier: 3, z: 3.51 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Shake Shack", aliases: [], tier: 3, z: 3.38 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chick-fil-A", aliases: ["Chickfila"], tier: 3, z: 3.25 },
+      { text: "Chipotle", aliases: [], tier: 3, z: 3.13 },
+      { text: "Little Caesars", aliases: [], tier: 3, z: 2.99 },
+      { text: "Dunkin'", aliases: ["Dunkin Donuts"], tier: 3, z: 2.91 },
+      { text: "Tim Hortons", aliases: ["Tims"], tier: 3, z: 2.74 },
+      { text: "Carl's Jr.", aliases: ["Hardee's"], tier: 3, z: 2.72 },
+      { text: "Baskin-Robbins", aliases: [], tier: 3, z: 2.59 },
+      { text: "Greggs", aliases: [], tier: 3, z: 2.49 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Popeyes", aliases: [], tier: 3, z: 2.3 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Krispy Kreme", aliases: [], tier: 3, z: 2.29 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Wingstop", aliases: [], tier: 3, z: 1.55 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "A&W", aliases: [], tier: 4, z: 5.21 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jack in the Box", aliases: [], tier: 4, z: 4.61 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Texas Chicken", aliases: ["Church's Chicken", "Church's"], tier: 4, z: 4.44 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "White Castle", aliases: [], tier: 4, z: 4.41 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sonic", aliases: ["Sonic Drive-In"], tier: 4, z: 3.93 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Leon", aliases: [], tier: 4, z: 3.92 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Johnny Rockets", aliases: [], tier: 4, z: 3.83 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jimmy John's", aliases: [], tier: 4, z: 3.65 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Panda Express", aliases: [], tier: 4, z: 3.61 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hungry Jack's", aliases: [], tier: 4, z: 3.25 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jersey Mike's", aliases: [], tier: 4, z: 3.1 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wimpy", aliases: [], tier: 4, z: 2.76 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Auntie Anne's", aliases: [], tier: 4, z: 2.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Arby's", aliases: [], tier: 4, z: 2.59 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Panera", aliases: ["Panera Bread"], tier: 4, z: 2.52 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pret A Manger", aliases: ["Pret"], tier: 4, z: 2.32 },
+      { text: "Whataburger", aliases: [], tier: 4, z: 2.29 },
+      { text: "Cinnabon", aliases: [], tier: 4, z: 2.15 },
+      { text: "Raising Cane's", aliases: ["Cane's"], tier: 4, z: 1.93 },
+      { text: "Jollibee", aliases: [], tier: 4, z: 1.9 },
+      { text: "Al Baik", aliases: ["Albaik"], tier: 4, z: 1.81 },
+      { text: "Culver's", aliases: [], tier: 4, z: 1.79 },
+      { text: "Wagamama", aliases: [], tier: 4, z: 1.63 },
+      { text: "Itsu", aliases: [], tier: 4, z: 1.48 },
+      { text: "Quick", aliases: [], tier: 5, z: 4.98 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Max", aliases: ["Max Burgers"], tier: 5, z: 4.66 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chicken Cottage", aliases: [], tier: 5, z: 3.91 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Steak 'n Shake", aliases: [], tier: 5, z: 3.79 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Blaze Pizza", aliases: [], tier: 5, z: 3.62 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Del Taco", aliases: [], tier: 5, z: 3.6 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mary Brown's", aliases: [], tier: 5, z: 3.49 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "MOS Burger", aliases: [], tier: 5, z: 3.34 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Red Rooster", aliases: [], tier: 5, z: 3.31 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Checkers", aliases: ["Rally's"], tier: 5, z: 3.1 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Swiss Chalet", aliases: [], tier: 5, z: 3.03 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Captain D's", aliases: [], tier: 5, z: 2.98 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dave's Hot Chicken", aliases: [], tier: 5, z: 2.94 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Guzman y Gomez", aliases: ["GYG"], tier: 5, z: 2.83 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Firehouse Subs", aliases: [], tier: 5, z: 2.81 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Harvey's", aliases: [], tier: 5, z: 2.8 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nathan's", aliases: ["Nathan's Famous"], tier: 5, z: 2.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Freddy's", aliases: [], tier: 5, z: 2.66 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Long John Silver's", aliases: [], tier: 5, z: 2.54 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pollo Tropical", aliases: [], tier: 5, z: 2.46 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "El Pollo Loco", aliases: [], tier: 5, z: 2.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bojangles", aliases: [], tier: 5, z: 2.3 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Oporto", aliases: [], tier: 5, z: 2.19 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "German Doner Kebab", aliases: ["GDK"], tier: 5, z: 2.09 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Quiznos", aliases: [], tier: 5, z: 2.02 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Potbelly", aliases: [], tier: 5, z: 2.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sbarro", aliases: [], tier: 5, z: 1.82 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Qdoba", aliases: [], tier: 5, z: 1.77 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Portillo's", aliases: [], tier: 5, z: 1.69 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Morley's", aliases: [], tier: 5, z: 1.64 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fatburger", aliases: [], tier: 5, z: 1.57 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Zaxby's", aliases: [], tier: 5, z: 1.53 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Smashburger", aliases: [], tier: 5, z: 1.43 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Wienerschnitzel", aliases: [], tier: 5, z: 1.39 },
+      { text: "Yoshinoya", aliases: [], tier: 5, z: 1.37 },
+      { text: "Dixy Chicken", aliases: ["Dixy"], tier: 5, z: 1.21 },
+      { text: "Telepizza", aliases: [], tier: 5, z: 0.0 },
+      { text: "Lotteria", aliases: [], tier: 5, z: 0.0 },
+      { text: "Supermac's", aliases: [], tier: 5, z: 0.0 },
+      { text: "Hesburger", aliases: [], tier: 5, z: 0.0 },
+      { text: "Cook Out", aliases: ["Cookout"], tier: 6, z: 4.64 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Favorite Chicken", aliases: ["Favorite"], tier: 6, z: 4.47 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Chicken Republic", aliases: [], tier: 6, z: 4.31 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Roy Rogers", aliases: [], tier: 6, z: 3.86 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Mom's Touch", aliases: [], tier: 6, z: 3.78 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Bob's", aliases: [], tier: 6, z: 3.22 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Freshness Burger", aliases: [], tier: 6, z: 3.08 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Steers", aliases: [], tier: 6, z: 2.9 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Dodo Pizza", aliases: ["Dodo"], tier: 6, z: 2.87 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Krystal", aliases: [], tier: 6, z: 2.8 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Operation Falafel", aliases: [], tier: 6, z: 2.64 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Big Fernand", aliases: [], tier: 6, z: 2.5 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kudu", aliases: [], tier: 6, z: 2.13 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pepe's", aliases: ["Pepe's Piri Piri"], tier: 6, z: 2.06 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Habib's", aliases: [], tier: 6, z: 1.46 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nordsee", aliases: [], tier: 6, z: 1.35 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sukiya", aliases: [], tier: 6, z: 1.25 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pollo Campero", aliases: [], tier: 6, z: 1.13 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mang Inasal", aliases: [], tier: 6, z: 1.13 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Chicken Licken", aliases: [], tier: 6, z: 1.05 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Herfy", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bembos", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Giraffas", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mr Bigg's", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Debonairs", aliases: ["Debonairs Pizza"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dicos", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mixue", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Chowking", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Matsuya", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kyochon", aliases: [], tier: 6, z: 0.0 },
+      { text: "Teremok", aliases: [], tier: 6, z: 0.0 },
+      { text: "O'Tacos", aliases: [], tier: 6, z: 0.0 },
+      { text: "100 Montaditos", aliases: [], tier: 6, z: 0.0 },
+      { text: "Barburrito", aliases: [], tier: 6, z: 0.0 },
+      { text: "Chopstix", aliases: [], tier: 6, z: 0.0 },
+      { text: "Zambrero", aliases: [], tier: 6, z: 0.0 },
+      { text: "BurgerFuel", aliases: ["Burger Fuel"], tier: 6, z: 0.0 },
+      { text: "Shawarmer", aliases: [], tier: 6, z: 0.0 },
+      { text: "Man'oushe Street", aliases: [], tier: 6, z: 0.0 },
+      { text: "Marrybrown", aliases: [], tier: 6, z: 0.0 },
+      { text: "ChicKing", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "indian-dishes-01", category: "Food", closed: false,
+    prompt: "Name a dish from the cuisines of the Indian subcontinent",
+    answers: [
+      { text: "Butter chicken", aliases: ["Murgh makhani"], tier: 1, z: 4.2 },
+      { text: "Naan", aliases: ["Nan"], tier: 1, z: 2.58 },
+      { text: "Biryani", aliases: ["Biriyani"], tier: 1, z: 2.49 },
+      { text: "Chicken tikka masala", aliases: ["Tikka masala"], tier: 1, z: 2.37 },
+      { text: "Samosa", aliases: ["Samosas"], tier: 1, z: 2.13 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Madras", aliases: [], tier: 2, z: 3.38 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Dal", aliases: ["Dhal", "Daal", "Dal makhani", "Tarka dal"], tier: 2, z: 3.25 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Tandoori chicken", aliases: ["Tandoori"], tier: 2, z: 2.36 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Vindaloo", aliases: [], tier: 2, z: 2.0 },
+      { text: "Korma", aliases: [], tier: 2, z: 1.91 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Poppadom", aliases: ["Papadum", "Papad", "Poppadoms"], tier: 2, z: 1.22 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Rogan josh", aliases: [], tier: 3, z: 2.82 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chicken tikka", aliases: ["Tikka"], tier: 3, z: 2.53 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dosa", aliases: ["Masala dosa"], tier: 3, z: 2.32 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chana masala", aliases: ["Chole", "Chana"], tier: 3, z: 2.22 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Paneer tikka", aliases: ["Paneer"], tier: 3, z: 2.1 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Balti", aliases: [], tier: 3, z: 2.1 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lassi", aliases: ["Mango lassi"], tier: 3, z: 2.0 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Aloo gobi", aliases: [], tier: 3, z: 1.97 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Paratha", aliases: [], tier: 3, z: 1.96 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Raita", aliases: [], tier: 3, z: 1.92 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chapati", aliases: ["Roti", "Chapatti"], tier: 3, z: 1.91 },
+      { text: "Chaat", aliases: ["Chat"], tier: 3, z: 1.87 },
+      { text: "Onion bhaji", aliases: ["Bhaji", "Pakora", "Pakoras", "Bhajia"], tier: 3, z: 1.85 },
+      { text: "Saag paneer", aliases: ["Palak paneer", "Saag"], tier: 3, z: 1.64 },
+      { text: "Pilau", aliases: ["Pilau rice", "Pulao"], tier: 3, z: 1.58 },
+      { text: "Gulab jamun", aliases: [], tier: 3, z: 1.55 },
+      { text: "Keema", aliases: ["Keema matar"], tier: 3, z: 1.51 },
+      { text: "Bhuna", aliases: [], tier: 3, z: 1.25 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jalfrezi", aliases: [], tier: 3, z: 1.23 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dhansak", aliases: [], tier: 3, z: 0.0 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chicken 65", aliases: [], tier: 4, z: 4.34 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kebab", aliases: ["Seekh kebab", "Shami kebab"], tier: 4, z: 3.03 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Momo", aliases: ["Momos"], tier: 4, z: 3.01 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Puri", aliases: ["Poori"], tier: 4, z: 2.82 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vada", aliases: ["Medu vada"], tier: 4, z: 2.33 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kati roll", aliases: ["Kathi roll"], tier: 4, z: 2.3 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pani puri", aliases: ["Golgappa", "Puchka", "Gol gappa"], tier: 4, z: 2.26 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vada pav", aliases: [], tier: 4, z: 2.09 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sambar", aliases: [], tier: 4, z: 2.08 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dum aloo", aliases: [], tier: 4, z: 2.07 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Barfi", aliases: [], tier: 4, z: 2.01 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shahi paneer", aliases: [], tier: 4, z: 1.97 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Halwa", aliases: ["Gajar ka halwa"], tier: 4, z: 1.95 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bhel puri", aliases: ["Bhelpuri"], tier: 4, z: 1.92 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Thali", aliases: [], tier: 4, z: 1.91 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Matar paneer", aliases: ["Mutter paneer"], tier: 4, z: 1.89 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dahi vada", aliases: ["Dahi bhalla"], tier: 4, z: 1.85 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ras malai", aliases: ["Rasmalai"], tier: 4, z: 1.82 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Idli", aliases: [], tier: 4, z: 1.8 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pav bhaji", aliases: [], tier: 4, z: 1.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kheer", aliases: [], tier: 4, z: 1.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jalebi", aliases: [], tier: 4, z: 1.67 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Aloo tikki", aliases: [], tier: 4, z: 1.67 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kulfi", aliases: [], tier: 4, z: 1.64 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Laddu", aliases: ["Ladoo"], tier: 4, z: 1.64 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Upma", aliases: [], tier: 4, z: 1.6 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Poha", aliases: [], tier: 4, z: 1.55 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Haleem", aliases: [], tier: 4, z: 1.52 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rasam", aliases: [], tier: 4, z: 1.48 },
+      { text: "Khichdi", aliases: ["Kitchari"], tier: 4, z: 1.46 },
+      { text: "Malai kofta", aliases: ["Kofta"], tier: 4, z: 1.45 },
+      { text: "Rajma", aliases: [], tier: 4, z: 1.42 },
+      { text: "Bhindi masala", aliases: ["Bhindi"], tier: 4, z: 1.39 },
+      { text: "Kulcha", aliases: [], tier: 4, z: 1.38 },
+      { text: "Karahi", aliases: ["Kadai paneer", "Kadai chicken", "Karahi chicken"], tier: 4, z: 1.2 },
+      { text: "Rasgulla", aliases: [], tier: 4, z: 1.16 },
+      { text: "Nihari", aliases: [], tier: 4, z: 1.1 },
+      { text: "Bhatura", aliases: ["Chole bhature"], tier: 4, z: 1.03 },
+      { text: "Baingan bharta", aliases: ["Bharta"], tier: 4, z: 0.8 },
+      { text: "Pasanda", aliases: [], tier: 4, z: 0.0 },
+      { text: "Dopiaza", aliases: ["Do pyaza"], tier: 4, z: 0.0 },
+      { text: "Phall", aliases: ["Phaal"], tier: 4, z: 0.0 },
+      { text: "Uttapam", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bombay duck", aliases: ["Bombil"], tier: 5, z: 3.54 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mysore pak", aliases: [], tier: 5, z: 2.8 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sev puri", aliases: [], tier: 5, z: 2.32 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Neer dosa", aliases: [], tier: 5, z: 1.91 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pongal", aliases: [], tier: 5, z: 1.84 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Puran poli", aliases: [], tier: 5, z: 1.8 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sandesh", aliases: [], tier: 5, z: 1.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Modak", aliases: [], tier: 5, z: 1.61 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Berry pulao", aliases: [], tier: 5, z: 1.56 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chicken Chettinad", aliases: ["Chettinad"], tier: 5, z: 1.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Makki di roti", aliases: ["Makki ki roti"], tier: 5, z: 1.5 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bisi bele bath", aliases: [], tier: 5, z: 1.41 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mishti doi", aliases: [], tier: 5, z: 1.4 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Luchi", aliases: [], tier: 5, z: 1.36 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dhokla", aliases: [], tier: 5, z: 1.35 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Zarda", aliases: [], tier: 5, z: 1.3 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Appam", aliases: [], tier: 5, z: 1.28 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chikki", aliases: [], tier: 5, z: 1.28 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Payasam", aliases: [], tier: 5, z: 1.25 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Puttu", aliases: [], tier: 5, z: 1.24 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sarson ka saag", aliases: ["Sarson da saag"], tier: 5, z: 1.23 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kachori", aliases: [], tier: 5, z: 1.23 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rabri", aliases: [], tier: 5, z: 1.19 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Misal pav", aliases: [], tier: 5, z: 1.18 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Avial", aliases: ["Aviyal"], tier: 5, z: 1.06 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Thepla", aliases: [], tier: 5, z: 0.0 },
+      { text: "Fish molee", aliases: ["Meen moilee"], tier: 5, z: 0.0 },
+      { text: "Dal baati churma", aliases: ["Dal baati"], tier: 5, z: 0.0 },
+      { text: "Shrikhand", aliases: [], tier: 5, z: 0.0 },
+      { text: "Yakhni", aliases: [], tier: 5, z: 0.0 },
+      { text: "Macher jhol", aliases: [], tier: 5, z: 0.0 },
+      { text: "Dabeli", aliases: [], tier: 5, z: 0.0 },
+      { text: "Ragda pattice", aliases: [], tier: 5, z: 0.0 },
+      { text: "Sabudana khichdi", aliases: [], tier: 5, z: 0.0 },
+      { text: "Thukpa", aliases: [], tier: 5, z: 0.0 },
+      { text: "Galouti kebab", aliases: ["Tunday kebab", "Galawati"], tier: 5, z: 0.0 },
+      { text: "Sheermal", aliases: [], tier: 5, z: 0.0 },
+      { text: "Phirni", aliases: ["Firni"], tier: 5, z: 0.0 },
+      { text: "Falooda", aliases: [], tier: 5, z: 0.0 },
+      { text: "Malpua", aliases: [], tier: 5, z: 0.0 },
+      { text: "Soan papdi", aliases: [], tier: 5, z: 0.0 },
+      { text: "Laal maas", aliases: [], tier: 6, z: 1.73 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Akki roti", aliases: [], tier: 6, z: 1.61 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Kori rotti", aliases: [], tier: 6, z: 1.53 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Sali boti", aliases: [], tier: 6, z: 1.49 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Kakori kebab", aliases: [], tier: 6, z: 1.23 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Thoran", aliases: [], tier: 6, z: 1.11 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Khandvi", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Undhiyu", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Xacuti", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sorpotel", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bebinca", aliases: [], tier: 6, z: 0.0 },
+      { text: "Gatte ki sabzi", aliases: [], tier: 6, z: 0.0 },
+      { text: "Litti chokha", aliases: [], tier: 6, z: 0.0 },
+      { text: "Pithla", aliases: [], tier: 6, z: 0.0 },
+      { text: "Goshtaba", aliases: ["Gushtaba"], tier: 6, z: 0.0 },
+      { text: "Kosha mangsho", aliases: [], tier: 6, z: 0.0 },
+      { text: "Shorshe ilish", aliases: [], tier: 6, z: 0.0 },
+      { text: "Chingri malai curry", aliases: [], tier: 6, z: 0.0 },
+      { text: "Handvo", aliases: [], tier: 6, z: 0.0 },
+      { text: "Pesarattu", aliases: [], tier: 6, z: 0.0 },
+      { text: "Patra ni machhi", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ghevar", aliases: [], tier: 6, z: 0.0 },
+      { text: "Imarti", aliases: [], tier: 6, z: 0.0 },
+      { text: "Petha", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "japanese-dishes-01", category: "Food", closed: false,
+    prompt: "Name a Japanese dish or food",
+    answers: [
+      { text: "Sushi", aliases: [], tier: 1, z: 3.68 },
+      { text: "Ramen", aliases: [], tier: 1, z: 3.35 },
+      { text: "Miso soup", aliases: ["Miso"], tier: 1, z: 2.75 },
+      { text: "Sashimi", aliases: [], tier: 1, z: 2.61 },
+      { text: "Tempura", aliases: [], tier: 1, z: 2.49 },
+      { text: "Teriyaki", aliases: ["Teriyaki chicken"], tier: 2, z: 2.53 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Udon", aliases: [], tier: 2, z: 2.47 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Katsu curry", aliases: ["Chicken katsu", "Katsu", "Tonkatsu"], tier: 2, z: 2.28 },
+      { text: "Edamame", aliases: [], tier: 2, z: 2.15 },
+      { text: "Gyoza", aliases: [], tier: 2, z: 1.92 },
+      { text: "Onigiri", aliases: [], tier: 2, z: 1.86 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Japanese curry", aliases: ["Kare", "Curry rice", "Kare raisu"], tier: 3, z: 3.9 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Maki", aliases: ["Maki roll", "Makizushi", "California roll"], tier: 3, z: 2.93 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bento", aliases: ["Bento box"], tier: 3, z: 2.7 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Soba", aliases: [], tier: 3, z: 2.48 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mochi", aliases: [], tier: 3, z: 2.42 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Wagyu", aliases: ["Kobe beef"], tier: 3, z: 2.26 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Nigiri", aliases: [], tier: 3, z: 1.87 },
+      { text: "Okonomiyaki", aliases: [], tier: 3, z: 1.82 },
+      { text: "Takoyaki", aliases: [], tier: 3, z: 1.82 },
+      { text: "Yakitori", aliases: [], tier: 3, z: 1.8 },
+      { text: "Shabu-shabu", aliases: [], tier: 3, z: 1.8 },
+      { text: "Sukiyaki", aliases: [], tier: 3, z: 1.78 },
+      { text: "Teppanyaki", aliases: [], tier: 3, z: 1.66 },
+      { text: "Yakisoba", aliases: [], tier: 3, z: 1.65 },
+      { text: "Donburi", aliases: ["Don", "Rice bowl"], tier: 3, z: 1.42 },
+      { text: "Karaage", aliases: ["Chicken karaage"], tier: 3, z: 1.28 },
+      { text: "Oden", aliases: [], tier: 4, z: 2.53 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Inari", aliases: ["Inarizushi"], tier: 4, z: 2.1 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dango", aliases: [], tier: 4, z: 1.97 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fugu", aliases: ["Pufferfish"], tier: 4, z: 1.92 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Natto", aliases: [], tier: 4, z: 1.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nabe", aliases: ["Nabemono", "Hot pot"], tier: 4, z: 1.83 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Unagi", aliases: ["Unadon", "Eel"], tier: 4, z: 1.81 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Yakiniku", aliases: [], tier: 4, z: 1.63 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tonkotsu ramen", aliases: ["Tonkotsu"], tier: 4, z: 1.57 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kaiseki", aliases: [], tier: 4, z: 1.49 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wagashi", aliases: [], tier: 4, z: 1.28 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Taiyaki", aliases: [], tier: 4, z: 1.25 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Omurice", aliases: [], tier: 4, z: 1.18 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Katsudon", aliases: [], tier: 4, z: 1.13 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tamagoyaki", aliases: ["Tamago"], tier: 4, z: 1.09 },
+      { text: "Dorayaki", aliases: [], tier: 4, z: 1.03 },
+      { text: "Gyudon", aliases: ["Beef bowl"], tier: 4, z: 0.0 },
+      { text: "Oyakodon", aliases: [], tier: 4, z: 0.0 },
+      { text: "Chawanmushi", aliases: [], tier: 4, z: 0.0 },
+      { text: "Tsukemen", aliases: [], tier: 4, z: 0.0 },
+      { text: "Korokke", aliases: ["Croquette"], tier: 4, z: 0.0 },
+      { text: "Chirashi", aliases: ["Chirashizushi"], tier: 4, z: 0.0 },
+      { text: "Temaki", aliases: ["Hand roll"], tier: 4, z: 0.0 },
+      { text: "Agedashi tofu", aliases: [], tier: 4, z: 0.0 },
+      { text: "Melonpan", aliases: ["Melon pan"], tier: 4, z: 0.0 },
+      { text: "Anpan", aliases: [], tier: 4, z: 0.0 },
+      { text: "Kakigori", aliases: ["Shaved ice"], tier: 4, z: 0.0 },
+      { text: "Senbei", aliases: ["Rice cracker"], tier: 4, z: 0.0 },
+      { text: "Curry bread", aliases: ["Karē pan"], tier: 5, z: 3.85 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Uni", aliases: ["Sea urchin"], tier: 5, z: 3.69 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tendon", aliases: [], tier: 5, z: 3.31 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hayashi rice", aliases: [], tier: 5, z: 2.57 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Okinawa soba", aliases: [], tier: 5, z: 2.4 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ebi fry", aliases: ["Ebi furai"], tier: 5, z: 2.22 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Manju", aliases: [], tier: 5, z: 2.17 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kitsune udon", aliases: [], tier: 5, z: 2.09 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Castella", aliases: ["Kasutera"], tier: 5, z: 1.94 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Somen", aliases: [], tier: 5, z: 1.54 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tamago kake gohan", aliases: ["TKG"], tier: 5, z: 1.46 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Umeboshi", aliases: [], tier: 5, z: 1.39 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tataki", aliases: ["Beef tataki", "Tuna tataki"], tier: 5, z: 1.29 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Daifuku", aliases: [], tier: 5, z: 1.28 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ikura", aliases: ["Salmon roe"], tier: 5, z: 1.26 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yokan", aliases: [], tier: 5, z: 1.15 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kaisendon", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Zaru soba", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Champon", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hiyashi chuka", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Okayu", aliases: ["Rice porridge"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ochazuke", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nikujaga", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hambagu", aliases: ["Hamburg steak"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tonjiru", aliases: ["Butajiru"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kushikatsu", aliases: ["Kushiage"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Monjayaki", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sunomono", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tsukemono", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kabayaki", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Menchi katsu", aliases: [], tier: 5, z: 0.0 },
+      { text: "Warabimochi", aliases: ["Warabi mochi"], tier: 5, z: 0.0 },
+      { text: "Zenzai", aliases: ["Oshiruko"], tier: 5, z: 0.0 },
+      { text: "Anmitsu", aliases: [], tier: 5, z: 0.0 },
+      { text: "Yakimeshi", aliases: ["Chahan"], tier: 5, z: 0.0 },
+      { text: "Gomaae", aliases: ["Goma-ae"], tier: 5, z: 0.0 },
+      { text: "Kinpira", aliases: ["Kinpira gobo"], tier: 5, z: 0.0 },
+      { text: "Nikuman", aliases: [], tier: 5, z: 0.0 },
+      { text: "Yakiimo", aliases: [], tier: 5, z: 0.0 },
+      { text: "Tebasaki", aliases: [], tier: 5, z: 0.0 },
+      { text: "Mentaiko", aliases: [], tier: 5, z: 0.0 },
+      { text: "Miso katsu", aliases: [], tier: 6, z: 2.16 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Motsunabe", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Chankonabe", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hiyayakko", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Yudofu", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Basashi", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Oshizushi", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Narezushi", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Shirako", aliases: [], tier: 6, z: 0.0 },
+      { text: "Tenmusu", aliases: [], tier: 6, z: 0.0 },
+      { text: "Hitsumabushi", aliases: [], tier: 6, z: 0.0 },
+      { text: "Goya champuru", aliases: ["Champuru"], tier: 6, z: 0.0 },
+      { text: "Jingisukan", aliases: ["Genghis Khan"], tier: 6, z: 0.0 },
+      { text: "Ishikari nabe", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kiritanpo", aliases: [], tier: 6, z: 0.0 },
+      { text: "Houtou", aliases: ["Hoto"], tier: 6, z: 0.0 },
+      { text: "Imagawayaki", aliases: [], tier: 6, z: 0.0 },
+      { text: "Takikomi gohan", aliases: [], tier: 6, z: 0.0 },
+      { text: "Sekihan", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "apples-01", category: "Food", closed: false,
+    prompt: "Name a variety of apple",
+    answers: [
+      { text: "Pink Lady", aliases: ["Cripps Pink"], tier: 1, z: 4.38 },
+      { text: "Red Delicious", aliases: [], tier: 1, z: 4.3 },
+      { text: "Golden Delicious", aliases: [], tier: 1, z: 4.17 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Gala", aliases: ["Royal Gala"], tier: 1, z: 3.67 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Granny Smith", aliases: [], tier: 1, z: 3.59 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Fuji", aliases: [], tier: 2, z: 3.22 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Bramley", aliases: ["Bramley's Seedling"], tier: 2, z: 2.24 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Braeburn", aliases: [], tier: 2, z: 1.69 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Honeycrisp", aliases: [], tier: 2, z: 1.56 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Jazz", aliases: [], tier: 3, z: 4.31 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Cox", aliases: ["Cox's Orange Pippin", "Cox's"], tier: 3, z: 3.94 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Envy", aliases: [], tier: 3, z: 3.84 },
+      { text: "McIntosh", aliases: ["Mac"], tier: 3, z: 3.12 },
+      { text: "Ambrosia", aliases: [], tier: 3, z: 2.65 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Russet", aliases: ["Egremont Russet"], tier: 3, z: 2.45 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jonagold", aliases: [], tier: 3, z: 0.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Empire", aliases: [], tier: 4, z: 4.54 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Discovery", aliases: [], tier: 4, z: 4.45 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rome", aliases: ["Rome Beauty"], tier: 4, z: 4.45 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pacific Rose", aliases: [], tier: 4, z: 4.39 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jonathan", aliases: [], tier: 4, z: 4.31 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cameo", aliases: [], tier: 4, z: 3.48 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cosmic Crisp", aliases: [], tier: 4, z: 3.44 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Spartan", aliases: [], tier: 4, z: 3.37 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Opal", aliases: [], tier: 4, z: 3.2 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Crispin", aliases: ["Mutsu"], tier: 4, z: 2.63 },
+      { text: "Cortland", aliases: [], tier: 4, z: 2.58 },
+      { text: "Kanzi", aliases: [], tier: 4, z: 1.58 },
+      { text: "Worcester Pearmain", aliases: ["Worcester"], tier: 4, z: 1.23 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "SweeTango", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Elstar", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Liberty", aliases: [], tier: 5, z: 4.34 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lady Alice", aliases: [], tier: 5, z: 4.18 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Northern Spy", aliases: [], tier: 5, z: 4.15 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Arkansas Black", aliases: [], tier: 5, z: 4.03 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ginger Gold", aliases: [], tier: 5, z: 3.91 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Baldwin", aliases: [], tier: 5, z: 3.79 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Paula Red", aliases: [], tier: 5, z: 3.74 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Katy", aliases: [], tier: 5, z: 3.65 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "James Grieve", aliases: [], tier: 5, z: 3.32 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Smitten", aliases: [], tier: 5, z: 3.01 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Topaz", aliases: [], tier: 5, z: 2.87 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lobo", aliases: [], tier: 5, z: 2.8 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Blenheim Orange", aliases: [], tier: 5, z: 2.71 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Newtown Pippin", aliases: ["Albemarle Pippin"], tier: 5, z: 2.64 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Golden Russet", aliases: [], tier: 5, z: 2.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rockit", aliases: [], tier: 5, z: 1.71 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Macoun", aliases: [], tier: 5, z: 1.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Winesap", aliases: [], tier: 5, z: 1.42 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gravenstein", aliases: [], tier: 5, z: 1.19 },
+      { text: "Idared", aliases: [], tier: 5, z: 0.0 },
+      { text: "Zestar", aliases: [], tier: 5, z: 0.0 },
+      { text: "Rubinette", aliases: [], tier: 5, z: 0.0 },
+      { text: "Pinova", aliases: ["Piñata"], tier: 5, z: 0.0 },
+      { text: "Junami", aliases: [], tier: 5, z: 0.0 },
+      { text: "Laxton's Superb", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ashmead's Kernel", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Snow apple", aliases: ["Fameuse"], tier: 6, z: 4.41 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Black Diamond", aliases: ["Hua Niu"], tier: 6, z: 4.38 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Hidden Rose", aliases: ["Airlie Red Flesh"], tier: 6, z: 4.35 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Wolf River", aliases: [], tier: 6, z: 4.27 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "York Imperial", aliases: [], tier: 6, z: 4.18 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Pink Pearl", aliases: [], tier: 6, z: 3.99 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Winter Banana", aliases: [], tier: 6, z: 3.95 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Sweet Sixteen", aliases: [], tier: 6, z: 3.9 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Twenty Ounce", aliases: [], tier: 6, z: 3.74 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Bismarck", aliases: [], tier: 6, z: 3.17 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Rhode Island Greening", aliases: [], tier: 6, z: 2.76 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "D'Arcy Spice", aliases: [], tier: 6, z: 2.65 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Akane", aliases: [], tier: 6, z: 2.45 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Roxbury Russet", aliases: [], tier: 6, z: 2.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sekai Ichi", aliases: [], tier: 6, z: 2.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Opalescent", aliases: [], tier: 6, z: 1.98 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Knobby Russet", aliases: ["Knobbed Russet"], tier: 6, z: 1.95 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Haralson", aliases: [], tier: 6, z: 1.82 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Reinette du Canada", aliases: [], tier: 6, z: 1.44 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Stayman", aliases: ["Stayman Winesap"], tier: 6, z: 1.41 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Howgate Wonder", aliases: [], tier: 6, z: 1.17 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Belle de Boskoop", aliases: ["Boskoop"], tier: 6, z: 0.0 },
+      { text: "Calville Blanc", aliases: ["Calville Blanc d'Hiver"], tier: 6, z: 0.0 },
+      { text: "Esopus Spitzenburg", aliases: ["Spitzenburg"], tier: 6, z: 0.0 },
+      { text: "Antonovka", aliases: [], tier: 6, z: 0.0 },
+      { text: "Peasgood's Nonsuch", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ribston Pippin", aliases: [], tier: 6, z: 0.0 },
+      { text: "Pitmaston Pineapple", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "wonders-01", category: "History", closed: true,
+    prompt: "Name one of the Seven Wonders: of the Ancient World, the New Seven Wonders, or the Seven Natural Wonders",
+    answers: [
+      { text: "Great Wall of China", aliases: ["Great Wall"], tier: 1, z: 4.73 },
+      { text: "Taj Mahal", aliases: [], tier: 1, z: 2.95 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Colosseum", aliases: ["Coliseum", "Roman Colosseum"], tier: 1, z: 2.84 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Great Pyramid of Giza", aliases: ["Pyramids of Giza", "Pyramids", "Great Pyramid", "Pyramid of Giza", "Giza"], tier: 1, z: 2.74 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Grand Canyon", aliases: [], tier: 2, z: 3.91 },
+      { text: "Hanging Gardens of Babylon", aliases: ["Hanging Gardens"], tier: 2, z: 3.43 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Petra", aliases: [], tier: 2, z: 3.27 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Christ the Redeemer", aliases: ["Cristo Redentor"], tier: 2, z: 3.0 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Machu Picchu", aliases: [], tier: 2, z: 2.3 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Northern Lights", aliases: ["Aurora Borealis", "Aurora"], tier: 3, z: 4.43 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Great Barrier Reef", aliases: [], tier: 3, z: 3.66 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mount Everest", aliases: ["Everest"], tier: 3, z: 3.39 },
+      { text: "Lighthouse of Alexandria", aliases: ["Pharos", "Pharos of Alexandria"], tier: 3, z: 3.34 },
+      { text: "Colossus of Rhodes", aliases: ["Colossus"], tier: 3, z: 2.97 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chichen Itza", aliases: [], tier: 3, z: 1.8 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Victoria Falls", aliases: [], tier: 4, z: 4.22 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Statue of Zeus at Olympia", aliases: ["Statue of Zeus"], tier: 4, z: 3.04 },
+      { text: "Temple of Artemis at Ephesus", aliases: ["Temple of Artemis", "Temple of Diana"], tier: 4, z: 2.54 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mausoleum at Halicarnassus", aliases: ["Mausoleum of Halicarnassus", "Mausoleum", "Tomb of Mausolus"], tier: 5, z: 1.74 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Harbour of Rio de Janeiro", aliases: ["Rio Harbour", "Guanabara Bay", "Harbor of Rio de Janeiro"], tier: 6, z: 3.34 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Parícutin", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "norse-myth-01", category: "History", closed: false,
+    prompt: "Name a god, goddess, giant or creature from Norse mythology",
+    answers: [
+      { text: "Thor", aliases: [], tier: 1, z: 3.69 },
+      { text: "Loki", aliases: [], tier: 1, z: 3.27 },
+      { text: "Odin", aliases: ["Woden", "Wotan"], tier: 1, z: 3.23 },
+      { text: "Freya", aliases: ["Freyja"], tier: 1, z: 2.94 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Hel", aliases: ["Hela"], tier: 2, z: 2.95 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Tyr", aliases: [], tier: 2, z: 2.63 },
+      { text: "Heimdall", aliases: ["Heimdallr"], tier: 2, z: 2.09 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Baldur", aliases: ["Balder", "Baldr"], tier: 2, z: 2.0 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Frigg", aliases: ["Frigga"], tier: 2, z: 1.95 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Sif", aliases: [], tier: 3, z: 2.56 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ymir", aliases: [], tier: 3, z: 2.04 },
+      { text: "Fenrir", aliases: ["Fenris"], tier: 3, z: 1.99 },
+      { text: "Freyr", aliases: ["Frey"], tier: 3, z: 1.72 },
+      { text: "Skadi", aliases: ["Skaði"], tier: 3, z: 1.54 },
+      { text: "Bragi", aliases: [], tier: 3, z: 1.53 },
+      { text: "Njord", aliases: ["Njörðr"], tier: 3, z: 1.41 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Idun", aliases: ["Iðunn", "Idunn"], tier: 3, z: 1.36 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Surtr", aliases: ["Surt"], tier: 3, z: 1.29 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jörmungandr", aliases: ["Midgard Serpent", "World Serpent"], tier: 3, z: 1.04 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ran", aliases: [], tier: 4, z: 4.87 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Modi", aliases: [], tier: 4, z: 3.8 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nanna", aliases: [], tier: 4, z: 2.5 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vali", aliases: [], tier: 4, z: 2.28 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Magni", aliases: [], tier: 4, z: 2.19 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vidar", aliases: ["Víðarr"], tier: 4, z: 1.87 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Aegir", aliases: [], tier: 4, z: 1.56 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sleipnir", aliases: [], tier: 4, z: 1.55 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mimir", aliases: [], tier: 4, z: 1.49 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ullr", aliases: ["Ull"], tier: 4, z: 1.33 },
+      { text: "Kvasir", aliases: [], tier: 4, z: 1.21 },
+      { text: "Sigyn", aliases: [], tier: 4, z: 1.06 },
+      { text: "Hodr", aliases: ["Höðr", "Hod", "Hoder"], tier: 4, z: 0.0 },
+      { text: "Forseti", aliases: [], tier: 4, z: 0.0 },
+      { text: "Angrboda", aliases: [], tier: 4, z: 0.0 },
+      { text: "Ve", aliases: [], tier: 5, z: 4.56 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sol", aliases: ["Sunna"], tier: 5, z: 3.69 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mani", aliases: [], tier: 5, z: 3.23 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bor", aliases: ["Borr"], tier: 5, z: 3.02 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nott", aliases: [], tier: 5, z: 2.55 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Eir", aliases: [], tier: 5, z: 2.38 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Buri", aliases: [], tier: 5, z: 2.07 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jord", aliases: ["Jörð"], tier: 5, z: 1.88 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vili", aliases: [], tier: 5, z: 1.85 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fulla", aliases: [], tier: 5, z: 1.8 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Garm", aliases: ["Garmr"], tier: 5, z: 1.64 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nidhogg", aliases: ["Níðhöggr"], tier: 5, z: 1.47 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Huginn", aliases: ["Hugin"], tier: 5, z: 1.16 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Muninn", aliases: ["Munin"], tier: 5, z: 1.08 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hoenir", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gefjon", aliases: ["Gefjun"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hermod", aliases: ["Hermóðr"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dagr", aliases: ["Dag"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Thrud", aliases: ["Þrúðr"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bestla", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Thrym", aliases: ["Þrymr"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hrungnir", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Skrymir", aliases: ["Utgard-Loki"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ratatoskr", aliases: ["Ratatosk"], tier: 5, z: 0.0 },
+      { text: "Saga", aliases: [], tier: 6, z: 3.87 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Var", aliases: [], tier: 6, z: 3.65 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Od", aliases: ["Óðr"], tier: 6, z: 3.39 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Syn", aliases: [], tier: 6, z: 3.03 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Rind", aliases: ["Rindr"], tier: 6, z: 2.76 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Vor", aliases: [], tier: 6, z: 2.75 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Gerd", aliases: ["Gerðr"], tier: 6, z: 2.72 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Geri", aliases: [], tier: 6, z: 2.65 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Gna", aliases: [], tier: 6, z: 2.31 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Elli", aliases: [], tier: 6, z: 2.31 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Hati", aliases: [], tier: 6, z: 2.18 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Skoll", aliases: [], tier: 6, z: 1.79 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Laufey", aliases: [], tier: 6, z: 1.27 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Lofn", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Snotra", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hlin", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sjofn", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Gullveig", aliases: ["Heidr"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lodur", aliases: ["Lóðurr"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hnoss", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Delling", aliases: ["Dellingr"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bergelmir", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bolthorn", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hymir", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Gymir", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Thiazi", aliases: ["Þjazi"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Freki", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tanngrisnir", aliases: [], tier: 6, z: 0.0 },
+      { text: "Tanngnjostr", aliases: [], tier: 6, z: 0.0 },
+      { text: "Gullinbursti", aliases: [], tier: 6, z: 0.0 },
+      { text: "Hraesvelgr", aliases: [], tier: 6, z: 0.0 },
+      { text: "Hyrrokkin", aliases: [], tier: 6, z: 0.0 },
+      { text: "Jarnsaxa", aliases: [], tier: 6, z: 0.0 },
+      { text: "Farbauti", aliases: [], tier: 6, z: 0.0 },
+      { text: "Narfi", aliases: ["Nari"], tier: 6, z: 0.0 },
+      { text: "Byleistr", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "apollo-astronauts-01", category: "History", closed: true,
+    prompt: "Name an astronaut who flew on an Apollo mission (Apollo 7 to Apollo 17)",
+    answers: [
+      { text: "Neil Armstrong", aliases: ["Armstrong"], tier: 1, z: 3.71 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Buzz Aldrin", aliases: ["Aldrin", "Edwin Aldrin"], tier: 1, z: 2.63 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Michael Collins", aliases: ["Collins"], tier: 2, z: 4.1 },
+      { text: "Alan Shepard", aliases: ["Shepard"], tier: 2, z: 3.42 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Jim Lovell", aliases: ["Lovell", "James Lovell"], tier: 2, z: 2.96 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "John Young", aliases: ["Young"], tier: 3, z: 5.1 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Pete Conrad", aliases: ["Conrad", "Charles Conrad"], tier: 3, z: 3.51 },
+      { text: "Fred Haise", aliases: ["Haise"], tier: 3, z: 1.98 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Gene Cernan", aliases: ["Cernan", "Eugene Cernan"], tier: 3, z: 1.9 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jack Swigert", aliases: ["Swigert", "John Swigert"], tier: 3, z: 1.64 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "David Scott", aliases: ["Dave Scott", "Scott"], tier: 4, z: 4.58 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Charlie Duke", aliases: ["Duke", "Charles Duke"], tier: 4, z: 4.14 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Alan Bean", aliases: ["Bean"], tier: 4, z: 3.85 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Edgar Mitchell", aliases: ["Mitchell", "Ed Mitchell"], tier: 4, z: 3.66 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "James Irwin", aliases: ["Irwin", "Jim Irwin"], tier: 4, z: 3.56 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bill Anders", aliases: ["Anders", "William Anders"], tier: 4, z: 3.39 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Harrison Schmitt", aliases: ["Schmitt", "Jack Schmitt"], tier: 4, z: 2.85 },
+      { text: "Ken Mattingly", aliases: ["Mattingly"], tier: 4, z: 2.59 },
+      { text: "Frank Borman", aliases: ["Borman"], tier: 4, z: 2.1 },
+      { text: "Dick Gordon", aliases: ["Gordon", "Richard Gordon"], tier: 5, z: 4.2 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ron Evans", aliases: ["Evans", "Ronald Evans"], tier: 5, z: 3.92 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tom Stafford", aliases: ["Stafford", "Thomas Stafford"], tier: 5, z: 3.54 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Al Worden", aliases: ["Worden", "Alfred Worden"], tier: 5, z: 2.48 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Stuart Roosa", aliases: ["Roosa"], tier: 5, z: 1.68 },
+      { text: "Wally Schirra", aliases: ["Schirra", "Walter Schirra"], tier: 5, z: 1.44 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jim McDivitt", aliases: ["McDivitt", "James McDivitt"], tier: 5, z: 1.36 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rusty Schweickart", aliases: ["Schweickart", "Russell Schweickart"], tier: 5, z: 1.26 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Walt Cunningham", aliases: ["Cunningham", "Walter Cunningham"], tier: 6, z: 3.38 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Donn Eisele", aliases: ["Eisele"], tier: 6, z: 1.59 }, // override: auto 5 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "empires-01", category: "History", closed: false,
+    prompt: "Name a historical empire",
+    answers: [
+      { text: "British", aliases: ["British Empire"], tier: 1, z: 5.18 },
+      { text: "Roman", aliases: ["Rome", "Roman Empire", "Rome Empire"], tier: 1, z: 4.5 },
+      { text: "Ottoman", aliases: ["Ottoman Empire"], tier: 1, z: 3.62 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Mongol", aliases: ["Mongols", "Mongol Empire", "Mongols Empire"], tier: 1, z: 2.97 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Holy Roman", aliases: ["Holy Roman Empire"], tier: 2, z: 4.35 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Persian", aliases: ["Achaemenid", "Persia", "Persian Empire", "Achaemenid Empire", "Persia Empire"], tier: 2, z: 3.83 },
+      { text: "Byzantine", aliases: ["Eastern Roman", "Byzantine Empire", "Eastern Roman Empire"], tier: 2, z: 3.35 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Aztec", aliases: ["Aztec Empire"], tier: 2, z: 3.1 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Inca", aliases: ["Incan", "Inca Empire", "Incan Empire"], tier: 2, z: 3.01 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "French", aliases: ["Napoleonic", "First French Empire", "French Empire", "Napoleonic Empire"], tier: 3, z: 5.09 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Russian", aliases: ["Russian Empire"], tier: 3, z: 5.01 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "German", aliases: ["Second Reich", "German Empire", "Second Reich Empire"], tier: 3, z: 4.95 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Japanese", aliases: ["Empire of Japan", "Japanese Empire"], tier: 3, z: 4.81 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Spanish", aliases: ["Spanish Empire"], tier: 3, z: 4.73 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dutch", aliases: ["Dutch Empire"], tier: 3, z: 4.41 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Egyptian", aliases: ["Ancient Egypt", "Egypt", "Egyptian Empire", "Ancient Egypt Empire", "Egypt Empire"], tier: 3, z: 4.21 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Portuguese", aliases: ["Portuguese Empire"], tier: 3, z: 4.03 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Qing", aliases: ["Qing dynasty", "Chinese", "Qing Empire", "Qing dynasty Empire", "Chinese Empire"], tier: 3, z: 3.12 },
+      { text: "Macedonian", aliases: ["Greek", "Alexander's Empire", "Macedonian Empire", "Greek Empire"], tier: 3, z: 3.08 },
+      { text: "Babylonian", aliases: ["Babylon", "Neo-Babylonian", "Babylonian Empire", "Babylon Empire", "Neo-Babylonian Empire"], tier: 3, z: 3.01 },
+      { text: "Mughal", aliases: ["Moghul", "Mughal Empire", "Moghul Empire"], tier: 3, z: 2.86 },
+      { text: "Austro-Hungarian", aliases: ["Austria-Hungary", "Habsburg", "Austrian", "Austro-Hungarian Empire", "Austria-Hungary Empire", "Habsburg Empire", "Austrian Empire"], tier: 3, z: 2.78 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Italian", aliases: ["Italian Empire"], tier: 4, z: 4.66 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mexican", aliases: ["Mexican Empire"], tier: 4, z: 4.41 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Brazilian", aliases: ["Empire of Brazil", "Brazilian Empire"], tier: 4, z: 4.23 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Swedish", aliases: ["Swedish Empire"], tier: 4, z: 4.21 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Han", aliases: ["Han dynasty", "Han Empire", "Han dynasty Empire"], tier: 4, z: 3.93 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Danish", aliases: ["Danish Empire"], tier: 4, z: 3.91 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Maya", aliases: ["Mayan", "Maya Empire", "Mayan Empire"], tier: 4, z: 3.87 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Belgian", aliases: ["Belgian Empire"], tier: 4, z: 3.82 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ming", aliases: ["Ming dynasty", "Ming Empire", "Ming dynasty Empire"], tier: 4, z: 3.54 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mali", aliases: ["Mali Empire"], tier: 4, z: 3.53 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ethiopian", aliases: ["Abyssinian", "Ethiopian Empire", "Abyssinian Empire"], tier: 4, z: 3.51 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gupta", aliases: ["Gupta Empire"], tier: 4, z: 3.35 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Zulu", aliases: ["Zulu Kingdom", "Zulu Empire", "Zulu Kingdom Empire"], tier: 4, z: 3.19 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Khmer", aliases: ["Angkor", "Khmer Empire", "Angkor Empire"], tier: 4, z: 3.16 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Assyrian", aliases: ["Neo-Assyrian", "Assyrian Empire", "Neo-Assyrian Empire"], tier: 4, z: 2.96 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hittite", aliases: ["Hittite Empire"], tier: 4, z: 2.49 },
+      { text: "Akkadian", aliases: ["Akkadian Empire"], tier: 4, z: 2.35 },
+      { text: "Carthaginian", aliases: ["Carthage", "Carthaginian Empire", "Carthage Empire"], tier: 4, z: 2.32 },
+      { text: "Carolingian", aliases: ["Frankish", "Charlemagne's empire", "Carolingian Empire", "Frankish Empire", "Charlemagne's empire Empire"], tier: 4, z: 2.28 },
+      { text: "Parthian", aliases: ["Parthian Empire"], tier: 4, z: 2.23 },
+      { text: "Abbasid", aliases: ["Abbasid Caliphate", "Abbasid Empire", "Abbasid Caliphate Empire"], tier: 4, z: 2.15 },
+      { text: "Umayyad", aliases: ["Umayyad Caliphate", "Umayyad Empire", "Umayyad Caliphate Empire"], tier: 4, z: 2.14 },
+      { text: "Safavid", aliases: ["Safavid Empire"], tier: 4, z: 2.02 },
+      { text: "Seljuk", aliases: ["Seljuq", "Seljuk Empire", "Seljuq Empire"], tier: 4, z: 1.95 },
+      { text: "Sasanian", aliases: ["Sassanid", "Sasanid", "Sasanian Empire", "Sassanid Empire", "Sasanid Empire"], tier: 4, z: 1.87 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Songhai", aliases: ["Songhay", "Songhai Empire", "Songhay Empire"], tier: 4, z: 1.83 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mauryan", aliases: ["Maurya", "Mauryan Empire", "Maurya Empire"], tier: 4, z: 1.78 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Timurid", aliases: ["Tamerlane", "Timurid Empire", "Tamerlane Empire"], tier: 4, z: 1.58 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Song", aliases: ["Song dynasty", "Song Empire", "Song dynasty Empire"], tier: 5, z: 5.26 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Korean", aliases: ["Korean Empire"], tier: 5, z: 4.49 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ghana", aliases: ["Wagadu", "Ghana Empire", "Wagadu Empire"], tier: 5, z: 3.9 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vietnamese", aliases: ["Dai Viet", "Vietnamese Empire", "Dai Viet Empire"], tier: 5, z: 3.85 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bulgarian", aliases: ["First Bulgarian Empire", "Bulgarian Empire"], tier: 5, z: 3.81 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yuan", aliases: ["Yuan dynasty", "Yuan Empire", "Yuan dynasty Empire"], tier: 5, z: 3.7 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tang", aliases: ["Tang dynasty", "Tang Empire", "Tang dynasty Empire"], tier: 5, z: 3.58 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Serbian", aliases: ["Serbian Empire"], tier: 5, z: 3.53 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sikh", aliases: ["Sikh Empire"], tier: 5, z: 3.35 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Golden Horde", aliases: ["Golden Horde Empire"], tier: 5, z: 3.21 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Qin", aliases: ["Qin dynasty", "Qin Empire", "Qin dynasty Empire"], tier: 5, z: 3.05 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Benin", aliases: ["Benin Empire"], tier: 5, z: 3.03 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ashanti", aliases: ["Asante", "Ashanti Empire", "Asante Empire"], tier: 5, z: 2.82 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Delhi Sultanate", aliases: ["Delhi Sultanate Empire"], tier: 5, z: 2.43 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ptolemaic", aliases: ["Ptolemaic Empire"], tier: 5, z: 2.33 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chola", aliases: ["Chola Empire"], tier: 5, z: 2.33 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Maratha", aliases: ["Maratha Empire"], tier: 5, z: 2.31 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kongo", aliases: ["Kongo Empire"], tier: 5, z: 2.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Durrani", aliases: ["Afghan", "Durrani Empire", "Afghan Empire"], tier: 5, z: 2.01 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Seleucid", aliases: ["Seleucid Empire"], tier: 5, z: 2.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mamluk", aliases: ["Mamluk Sultanate", "Mamluk Empire", "Mamluk Sultanate Empire"], tier: 5, z: 1.96 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fatimid", aliases: ["Fatimid Caliphate", "Fatimid Empire", "Fatimid Caliphate Empire"], tier: 5, z: 1.83 },
+      { text: "Ayyubid", aliases: ["Ayyubid Empire"], tier: 5, z: 1.34 },
+      { text: "Hunnic", aliases: ["Huns", "Hunnic Empire", "Huns Empire"], tier: 5, z: 1.31 },
+      { text: "Rashidun", aliases: ["Rashidun Caliphate", "Rashidun Empire", "Rashidun Caliphate Empire"], tier: 5, z: 1.29 },
+      { text: "Aksumite", aliases: ["Aksum", "Axum", "Aksumite Empire", "Aksum Empire", "Axum Empire"], tier: 5, z: 1.08 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Central African", aliases: ["Central African Empire"], tier: 6, z: 4.64 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Latin", aliases: ["Latin Empire"], tier: 6, z: 4.48 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Median", aliases: ["Medes", "Median Empire", "Medes Empire"], tier: 6, z: 4.05 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Pagan", aliases: ["Bagan", "Pagan Empire", "Bagan Empire"], tier: 6, z: 3.56 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tibetan", aliases: ["Tibetan Empire"], tier: 6, z: 3.51 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Haitian", aliases: ["Haitian Empire"], tier: 6, z: 3.35 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Comanche", aliases: ["Comancheria", "Comanche Empire", "Comancheria Empire"], tier: 6, z: 2.81 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Gallic", aliases: ["Gallic Empire"], tier: 6, z: 2.76 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Oyo", aliases: ["Oyo Empire"], tier: 6, z: 2.65 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tongan", aliases: ["Tu'i Tonga", "Tongan Empire", "Tu'i Tonga Empire"], tier: 6, z: 2.52 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sokoto", aliases: ["Sokoto Caliphate", "Sokoto Empire", "Sokoto Caliphate Empire"], tier: 6, z: 2.47 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nicaea", aliases: ["Empire of Nicaea", "Nicaean", "Nicaea Empire", "Nicaean Empire"], tier: 6, z: 2.16 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Khazar", aliases: ["Khazar Khaganate", "Khazar Empire", "Khazar Khaganate Empire"], tier: 6, z: 1.91 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Toltec", aliases: ["Toltec Empire"], tier: 6, z: 1.87 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Wari", aliases: ["Huari", "Wari Empire", "Huari Empire"], tier: 6, z: 1.86 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Trebizond", aliases: ["Empire of Trebizond", "Trebizond Empire"], tier: 6, z: 1.84 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kushan", aliases: ["Kushan Empire"], tier: 6, z: 1.82 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tiwanaku", aliases: ["Tiwanaku Empire"], tier: 6, z: 1.74 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Vijayanagara", aliases: ["Vijayanagara Empire"], tier: 6, z: 1.7 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Majapahit", aliases: ["Majapahit Empire"], tier: 6, z: 1.61 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Srivijaya", aliases: ["Srivijaya Empire"], tier: 6, z: 1.27 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Toungoo", aliases: ["Taungoo", "Toungoo Empire", "Taungoo Empire"], tier: 6, z: 1.22 },
+      { text: "Kanem-Bornu", aliases: ["Bornu", "Kanem-Bornu Empire", "Bornu Empire"], tier: 6, z: 1.18 },
+      { text: "Palmyrene", aliases: ["Palmyra", "Palmyrene Empire", "Palmyra Empire"], tier: 6, z: 1.17 },
+      { text: "Chagatai", aliases: ["Chagatai Empire"], tier: 6, z: 1.11 },
+      { text: "Ilkhanate", aliases: ["Ilkhanate Empire"], tier: 6, z: 0.0 },
+      { text: "Mutapa", aliases: ["Monomotapa", "Great Zimbabwe", "Mutapa Empire", "Monomotapa Empire", "Great Zimbabwe Empire"], tier: 6, z: 0.0 },
+      { text: "Khwarazmian", aliases: ["Khwarezmian", "Khwarazmian Empire", "Khwarezmian Empire"], tier: 6, z: 0.0 },
+      { text: "Ghaznavid", aliases: ["Ghaznavid Empire"], tier: 6, z: 0.0 },
+      { text: "Ghurid", aliases: ["Ghurid Empire"], tier: 6, z: 0.0 },
+      { text: "Göktürk", aliases: ["Turkic Khaganate", "Göktürk Empire", "Turkic Khaganate Empire"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "wars-20c-01", category: "History", closed: false,
+    prompt: "Name a war fought (at least partly) in the 20th century",
+    answers: [
+      { text: "World War I", aliases: ["WW1", "WWI", "First World War", "World War 1", "World War One", "Great War"], tier: 1, z: 5.32 },
+      { text: "Cold War", aliases: [], tier: 1, z: 4.89 },
+      { text: "World War II", aliases: ["WW2", "WWII", "Second World War", "World War 2", "World War Two"], tier: 1, z: 4.84 },
+      { text: "Vietnam War", aliases: ["Vietnam"], tier: 1, z: 4.28 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Spanish Civil War", aliases: [], tier: 2, z: 4.47 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Korean War", aliases: ["Korea"], tier: 2, z: 4.45 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Gulf War", aliases: ["First Gulf War", "Persian Gulf War", "Desert Storm"], tier: 2, z: 4.25 },
+      { text: "Boer War", aliases: ["Second Boer War", "Anglo-Boer War", "South African War"], tier: 2, z: 3.03 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Falklands War", aliases: ["Falklands", "Falklands Conflict"], tier: 2, z: 2.96 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Six-Day War", aliases: ["1967 war"], tier: 3, z: 5.01 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Russian Civil War", aliases: ["Russian Revolution"], tier: 3, z: 4.6 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chinese Civil War", aliases: [], tier: 3, z: 4.6 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Iran–Iraq War", aliases: [], tier: 3, z: 4.19 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Soviet–Afghan War", aliases: ["Soviet invasion of Afghanistan", "Afghan War"], tier: 3, z: 3.74 },
+      { text: "Kosovo War", aliases: ["Kosovo"], tier: 3, z: 3.43 },
+      { text: "Russo-Japanese War", aliases: [], tier: 3, z: 3.23 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bosnian War", aliases: ["Bosnia"], tier: 3, z: 3.19 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Suez Crisis", aliases: ["Suez", "Suez War"], tier: 3, z: 3.17 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Yom Kippur War", aliases: ["October War", "Ramadan War"], tier: 3, z: 2.49 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Winter War", aliases: [], tier: 4, z: 4.79 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Irish Civil War", aliases: [], tier: 4, z: 4.36 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Greek Civil War", aliases: [], tier: 4, z: 4.33 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Irish War of Independence", aliases: ["Anglo-Irish War"], tier: 4, z: 4.23 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mexican Revolution", aliases: [], tier: 4, z: 4.18 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Arab–Israeli War", aliases: ["1948 Arab–Israeli War", "1948 war", "Israeli War of Independence"], tier: 4, z: 4.08 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Polish–Soviet War", aliases: [], tier: 4, z: 4.08 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nigerian Civil War", aliases: ["Biafran War", "Biafra"], tier: 4, z: 3.99 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Troubles", aliases: ["Northern Ireland conflict"], tier: 4, z: 3.99 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Congo Crisis", aliases: ["Congo War", "First Congo War", "Second Congo War"], tier: 4, z: 3.7 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lebanese Civil War", aliases: [], tier: 4, z: 3.69 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bangladesh Liberation War", aliases: ["Bangladesh War"], tier: 4, z: 3.63 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Indo-Pakistani War", aliases: ["Indo-Pakistani Wars", "Kashmir War"], tier: 4, z: 3.34 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Croatian War of Independence", aliases: ["Croatian War", "Yugoslav Wars"], tier: 4, z: 3.29 },
+      { text: "Algerian War", aliases: ["Algerian War of Independence"], tier: 4, z: 3.26 },
+      { text: "Cambodian Civil War", aliases: ["Cambodian–Vietnamese War"], tier: 4, z: 3.24 },
+      { text: "Second Sino-Japanese War", aliases: ["Sino-Japanese War"], tier: 4, z: 3.2 },
+      { text: "Balkan Wars", aliases: ["First Balkan War", "Second Balkan War"], tier: 4, z: 3.17 },
+      { text: "Chechen War", aliases: ["First Chechen War", "Second Chechen War", "Chechen Wars"], tier: 4, z: 3.02 },
+      { text: "Greco-Turkish War", aliases: ["Turkish War of Independence"], tier: 4, z: 2.97 },
+      { text: "Rwandan Civil War", aliases: ["Rwandan genocide"], tier: 4, z: 2.93 },
+      { text: "First Indochina War", aliases: ["Indochina War"], tier: 4, z: 2.82 },
+      { text: "Angolan Civil War", aliases: ["Angolan War"], tier: 4, z: 2.63 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Malayan Emergency", aliases: [], tier: 4, z: 2.6 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Italo-Ethiopian War", aliases: ["Second Italo-Ethiopian War", "Abyssinian War"], tier: 4, z: 2.39 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "South African Border War", aliases: ["Namibian War of Independence"], tier: 5, z: 4.37 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cuban Revolution", aliases: [], tier: 5, z: 3.84 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Philippine–American War", aliases: [], tier: 5, z: 3.74 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Finnish Civil War", aliases: [], tier: 5, z: 3.64 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Boxer Rebellion", aliases: [], tier: 5, z: 3.53 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Somali Civil War", aliases: [], tier: 5, z: 3.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Turkish invasion of Cyprus", aliases: ["Cyprus conflict"], tier: 5, z: 3.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ethiopian Civil War", aliases: [], tier: 5, z: 3.49 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sierra Leone Civil War", aliases: [], tier: 5, z: 3.48 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sudanese Civil War", aliases: ["Second Sudanese Civil War"], tier: 5, z: 3.28 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sri Lankan Civil War", aliases: [], tier: 5, z: 3.26 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Algerian Civil War", aliases: [], tier: 5, z: 3.25 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sino-Indian War", aliases: [], tier: 5, z: 3.21 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sino-Vietnamese War", aliases: [], tier: 5, z: 3.13 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yemeni Civil War", aliases: ["North Yemen Civil War"], tier: 5, z: 3.13 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Liberian Civil War", aliases: ["First Liberian Civil War"], tier: 5, z: 3.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Guatemalan Civil War", aliases: [], tier: 5, z: 2.91 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nicaraguan Revolution", aliases: ["Contra War"], tier: 5, z: 2.81 },
+      { text: "Mau Mau Uprising", aliases: ["Mau Mau rebellion", "Mau Mau"], tier: 5, z: 2.73 },
+      { text: "Eritrean War of Independence", aliases: ["Eritrean–Ethiopian War"], tier: 5, z: 2.71 },
+      { text: "Salvadoran Civil War", aliases: [], tier: 5, z: 2.7 },
+      { text: "Rhodesian Bush War", aliases: ["Zimbabwe War of Independence"], tier: 5, z: 2.53 },
+      { text: "Kargil War", aliases: [], tier: 5, z: 2.45 },
+      { text: "Laotian Civil War", aliases: ["Secret War"], tier: 5, z: 2.39 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mozambican Civil War", aliases: ["Mozambican War of Independence"], tier: 5, z: 2.36 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nagorno-Karabakh War", aliases: ["First Nagorno-Karabakh War"], tier: 5, z: 2.22 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Football War", aliases: ["Soccer War"], tier: 6, z: 4.95 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Ten-Day War", aliases: ["Slovenian War"], tier: 6, z: 4.87 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Toyota War", aliases: ["Chadian–Libyan War"], tier: 6, z: 3.94 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cod Wars", aliases: ["Cod War"], tier: 6, z: 3.81 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Continuation War", aliases: [], tier: 6, z: 3.7 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Western Sahara War", aliases: [], tier: 6, z: 3.39 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Uganda–Tanzania War", aliases: [], tier: 6, z: 3.36 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Lapland War", aliases: [], tier: 6, z: 2.64 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Chaco War", aliases: [], tier: 6, z: 2.49 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Italo-Turkish War", aliases: [], tier: 6, z: 2.42 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Transnistria War", aliases: [], tier: 6, z: 2.39 },
+      { text: "Ogaden War", aliases: [], tier: 6, z: 1.85 },
+      { text: "Dhofar Rebellion", aliases: ["Dhofar War"], tier: 6, z: 1.53 },
+      { text: "Tajikistani Civil War", aliases: [], tier: 6, z: 1.2 },
+      { text: "Cenepa War", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "explorers-01", category: "History", closed: false,
+    prompt: "Name a famous explorer (of land, sea or ice, before the Space Age)",
+    answers: [
+      { text: "Captain Cook", aliases: ["James Cook", "Cook"], tier: 1, z: 4.45 },
+      { text: "Christopher Columbus", aliases: ["Columbus"], tier: 1, z: 3.82 },
+      { text: "Marco Polo", aliases: [], tier: 1, z: 3.54 },
+      { text: "Ferdinand Magellan", aliases: ["Magellan"], tier: 1, z: 2.7 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Francis Drake", aliases: ["Drake", "Sir Francis Drake"], tier: 2, z: 3.82 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Vasco da Gama", aliases: ["Da Gama"], tier: 2, z: 2.32 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Leif Erikson", aliases: ["Leif Eriksson", "Leif Ericson"], tier: 2, z: 2.32 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Roald Amundsen", aliases: ["Amundsen"], tier: 2, z: 2.24 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Amerigo Vespucci", aliases: ["Vespucci"], tier: 2, z: 1.74 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Lewis and Clark", aliases: ["Meriwether Lewis", "William Clark"], tier: 3, z: 4.13 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Henry Hudson", aliases: ["Hudson"], tier: 3, z: 3.95 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Robert Falcon Scott", aliases: ["Captain Scott", "Scott of the Antarctic", "Robert Scott"], tier: 3, z: 3.67 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Edmund Hillary", aliases: ["Hillary"], tier: 3, z: 3.55 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Walter Raleigh", aliases: ["Raleigh", "Sir Walter Raleigh"], tier: 3, z: 3.52 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "David Livingstone", aliases: ["Livingstone", "Dr Livingstone"], tier: 3, z: 3.1 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jacques Cartier", aliases: ["Cartier"], tier: 3, z: 2.99 },
+      { text: "Zheng He", aliases: [], tier: 3, z: 2.89 },
+      { text: "Ernest Shackleton", aliases: ["Shackleton"], tier: 3, z: 2.61 },
+      { text: "Francisco Pizarro", aliases: ["Pizarro"], tier: 3, z: 2.51 },
+      { text: "Ibn Battuta", aliases: [], tier: 3, z: 1.9 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sacagawea", aliases: [], tier: 3, z: 1.85 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hernán Cortés", aliases: ["Cortes", "Cortez"], tier: 3, z: 1.81 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bartolomeu Dias", aliases: ["Bartholomew Diaz", "Dias"], tier: 3, z: 1.25 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "John Franklin", aliases: ["Franklin", "Sir John Franklin"], tier: 4, z: 4.18 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "George Vancouver", aliases: ["Vancouver"], tier: 4, z: 4.11 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Richard Burton", aliases: ["Richard Francis Burton"], tier: 4, z: 3.76 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Erik the Red", aliases: ["Eric the Red"], tier: 4, z: 3.67 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Henry Morton Stanley", aliases: ["Stanley"], tier: 4, z: 3.51 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Isabella Bird", aliases: [], tier: 4, z: 3.46 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Burke and Wills", aliases: ["Robert O'Hara Burke", "William John Wills"], tier: 4, z: 3.42 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Henry the Navigator", aliases: ["Prince Henry the Navigator"], tier: 4, z: 3.27 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gertrude Bell", aliases: [], tier: 4, z: 3.24 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mary Kingsley", aliases: [], tier: 4, z: 3.18 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Alexander von Humboldt", aliases: ["Humboldt"], tier: 4, z: 3.09 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "John Cabot", aliases: ["Cabot", "Giovanni Caboto"], tier: 4, z: 3.01 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Matthew Flinders", aliases: ["Flinders"], tier: 4, z: 3.0 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Freya Stark", aliases: [], tier: 4, z: 2.9 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Samuel de Champlain", aliases: ["Champlain"], tier: 4, z: 2.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Abel Tasman", aliases: ["Tasman"], tier: 4, z: 2.76 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hernando de Soto", aliases: ["De Soto"], tier: 4, z: 2.48 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Juan Ponce de León", aliases: ["Ponce de Leon"], tier: 4, z: 2.46 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jacques Cousteau", aliases: ["Cousteau"], tier: 4, z: 2.44 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mungo Park", aliases: [], tier: 4, z: 2.44 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Robert Peary", aliases: ["Peary"], tier: 4, z: 2.2 },
+      { text: "Vitus Bering", aliases: ["Bering"], tier: 4, z: 2.14 },
+      { text: "Vasco Núñez de Balboa", aliases: ["Balboa"], tier: 4, z: 1.84 },
+      { text: "Thor Heyerdahl", aliases: ["Heyerdahl"], tier: 4, z: 1.77 },
+      { text: "Tenzing Norgay", aliases: ["Tenzing", "Sherpa Tenzing"], tier: 4, z: 1.63 },
+      { text: "John Hanning Speke", aliases: ["Speke"], tier: 4, z: 1.62 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fridtjof Nansen", aliases: ["Nansen"], tier: 4, z: 1.35 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pedro Álvares Cabral", aliases: ["Cabral"], tier: 4, z: 1.07 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "David Thompson", aliases: [], tier: 5, z: 4.22 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "James Clark Ross", aliases: ["Ross"], tier: 5, z: 4.05 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Alexander Mackenzie", aliases: ["Mackenzie"], tier: 5, z: 3.53 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "William Parry", aliases: ["Parry", "William Edward Parry"], tier: 5, z: 3.42 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Richard E. Byrd", aliases: ["Byrd", "Admiral Byrd"], tier: 5, z: 3.23 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "La Salle", aliases: ["René-Robert Cavelier de La Salle", "Robert de La Salle"], tier: 5, z: 3.16 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jacques Marquette", aliases: ["Marquette"], tier: 5, z: 2.99 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Percy Fawcett", aliases: ["Fawcett"], tier: 5, z: 2.86 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hiram Bingham", aliases: ["Bingham"], tier: 5, z: 2.73 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Charles Sturt", aliases: ["Sturt"], tier: 5, z: 2.64 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Douglas Mawson", aliases: ["Mawson"], tier: 5, z: 2.5 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Martin Frobisher", aliases: ["Frobisher"], tier: 5, z: 2.33 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "William Baffin", aliases: ["Baffin"], tier: 5, z: 2.31 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Louis Antoine de Bougainville", aliases: ["Bougainville"], tier: 5, z: 2.31 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "William Dampier", aliases: ["Dampier"], tier: 5, z: 2.22 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Francisco Vázquez de Coronado", aliases: ["Coronado"], tier: 5, z: 1.97 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ranulph Fiennes", aliases: ["Fiennes", "Sir Ranulph Fiennes"], tier: 5, z: 1.83 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Francis Younghusband", aliases: ["Younghusband"], tier: 5, z: 1.72 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Wilfred Thesiger", aliases: ["Thesiger"], tier: 5, z: 1.69 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Juan Sebastián Elcano", aliases: ["Elcano"], tier: 5, z: 1.4 },
+      { text: "Jean-François de La Pérouse", aliases: ["La Pérouse", "Laperouse"], tier: 5, z: 1.36 },
+      { text: "Giovanni da Verrazzano", aliases: ["Verrazzano", "Verrazano"], tier: 5, z: 1.29 },
+      { text: "Willem Barentsz", aliases: ["Barents", "Barentsz"], tier: 5, z: 1.11 },
+      { text: "Louis Jolliet", aliases: ["Joliet"], tier: 5, z: 1.1 },
+      { text: "Álvar Núñez Cabeza de Vaca", aliases: ["Cabeza de Vaca"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Edward Eyre", aliases: ["Eyre"], tier: 6, z: 3.11 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Matthew Henson", aliases: ["Henson"], tier: 6, z: 3.1 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Ida Pfeiffer", aliases: [], tier: 6, z: 2.84 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Heinrich Barth", aliases: ["Barth"], tier: 6, z: 2.73 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Ludwig Leichhardt", aliases: ["Leichhardt"], tier: 6, z: 2.31 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Jedediah Smith", aliases: [], tier: 6, z: 2.28 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Zebulon Pike", aliases: ["Pike"], tier: 6, z: 2.17 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Leo Africanus", aliases: [], tier: 6, z: 2.15 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Hanno", aliases: ["Hanno the Navigator"], tier: 6, z: 2.11 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nain Singh", aliases: ["Nain Singh Rawat"], tier: 6, z: 2.05 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Niccolò de' Conti", aliases: ["Conti"], tier: 6, z: 1.93 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Aurel Stein", aliases: ["Stein"], tier: 6, z: 1.84 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sven Hedin", aliases: ["Hedin"], tier: 6, z: 1.8 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "John C. Frémont", aliases: ["Fremont"], tier: 6, z: 1.8 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Xuanzang", aliases: [], tier: 6, z: 1.6 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Jeanne Baret", aliases: ["Baret"], tier: 6, z: 1.47 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Fabian Gottlieb von Bellingshausen", aliases: ["Bellingshausen"], tier: 6, z: 1.35 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pytheas", aliases: [], tier: 6, z: 1.33 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "John McDouall Stuart", aliases: ["Stuart"], tier: 6, z: 1.2 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Yermak", aliases: ["Yermak Timofeyevich"], tier: 6, z: 1.19 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Afanasy Nikitin", aliases: ["Nikitin"], tier: 6, z: 1.04 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nikolay Przhevalsky", aliases: ["Przewalski", "Przhevalsky"], tier: 6, z: 0.0 },
+      { text: "Naddodd", aliases: [], tier: 6, z: 0.0 },
+      { text: "Bjarni Herjólfsson", aliases: [], tier: 6, z: 0.0 },
+      { text: "Semyon Dezhnev", aliases: ["Dezhnev"], tier: 6, z: 0.0 },
+      { text: "Odoric of Pordenone", aliases: ["Odoric"], tier: 6, z: 0.0 },
+      { text: "William of Rubruck", aliases: ["Rubruck"], tier: 6, z: 0.0 },
+      { text: "Ahmad ibn Fadlan", aliases: ["Ibn Fadlan"], tier: 6, z: 0.0 },
+      { text: "Ibn Jubayr", aliases: [], tier: 6, z: 0.0 },
+      { text: "Estevanico", aliases: ["Esteban"], tier: 6, z: 0.0 },
+      { text: "Alexandrine Tinné", aliases: ["Tinne"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "romanovs-01", category: "History", closed: true,
+    prompt: "Name a Romanov ruler of Russia (tsars, emperors and empresses, 1613 to 1917)",
+    answers: [
+      { text: "Peter I", aliases: ["Peter the Great", "Peter 1", "Peter 1st", "Peter the 1st", "Peter the first"], tier: 1, z: 4.88 },
+      { text: "Catherine II", aliases: ["Catherine the Great", "Catherine 2", "Catherine 2nd", "Catherine the 2nd", "Catherine the second"], tier: 1, z: 4.06 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Nicholas II", aliases: ["Nicholas 2", "Nicholas 2nd", "Nicholas the 2nd", "Nicholas the second"], tier: 1, z: 3.99 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Michael I", aliases: ["Michael", "Mikhail", "Michael Romanov", "Michael 1", "Michael 1st", "Michael the 1st", "Michael the first"], tier: 2, z: 5.08 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Alexander I", aliases: ["Alexander 1", "Alexander 1st", "Alexander the 1st", "Alexander the first"], tier: 2, z: 4.4 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Alexander II", aliases: ["Alexander 2", "Alexander 2nd", "Alexander the 2nd", "Alexander the second"], tier: 2, z: 4.31 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Paul I", aliases: ["Paul", "Paul 1", "Paul 1st", "Paul the 1st", "Paul the first"], tier: 3, z: 5.03 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Elizabeth", aliases: ["Empress Elizabeth", "Elizaveta"], tier: 3, z: 4.47 },
+      { text: "Alexander III", aliases: ["Alexander 3", "Alexander 3rd", "Alexander the 3rd", "Alexander the third"], tier: 3, z: 4.2 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Nicholas I", aliases: ["Nicholas 1", "Nicholas 1st", "Nicholas the 1st", "Nicholas the first"], tier: 3, z: 4.03 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Peter III", aliases: ["Peter 3", "Peter 3rd", "Peter the 3rd", "Peter the third"], tier: 4, z: 4.44 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Anna", aliases: ["Anna Ivanovna", "Empress Anna", "Anne"], tier: 4, z: 4.37 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Catherine I", aliases: ["Catherine 1", "Catherine 1st", "Catherine the 1st", "Catherine the first"], tier: 4, z: 4.11 },
+      { text: "Peter II", aliases: ["Peter 2", "Peter 2nd", "Peter the 2nd", "Peter the second"], tier: 5, z: 4.64 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ivan V", aliases: ["Ivan 5", "Ivan 5th", "Ivan the 5th", "Ivan the fifth"], tier: 5, z: 3.83 },
+      { text: "Alexis", aliases: ["Alexis I", "Aleksey", "Alexei", "Alexis 1", "Alexis 1st", "Alexis the 1st", "Alexis the first"], tier: 5, z: 3.74 },
+      { text: "Ivan VI", aliases: ["Ivan 6", "Ivan 6th", "Ivan the 6th", "Ivan the sixth"], tier: 6, z: 3.66 },
+      { text: "Feodor III", aliases: ["Fyodor III", "Fedor III", "Feodor 3", "Feodor 3rd", "Feodor the 3rd", "Feodor the third", "Fyodor 3", "Fyodor 3rd", "Fyodor the 3rd", "Fyodor the third", "Fedor 3", "Fedor 3rd", "Fedor the 3rd", "Fedor the third"], tier: 6, z: 1.79 },
+    ]
+  },
+  {
+    id: "greek-thinkers-01", category: "History", closed: false,
+    prompt: "Name a philosopher, mathematician or scientist of the ancient Greek world",
+    answers: [
+      { text: "Aristotle", aliases: [], tier: 1, z: 3.41 },
+      { text: "Plato", aliases: [], tier: 1, z: 3.37 },
+      { text: "Socrates", aliases: [], tier: 1, z: 3.27 },
+      { text: "Archimedes", aliases: [], tier: 1, z: 2.69 },
+      { text: "Pythagoras", aliases: [], tier: 1, z: 2.68 },
+      { text: "Euclid", aliases: [], tier: 2, z: 2.86 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Diogenes", aliases: [], tier: 2, z: 2.51 },
+      { text: "Hippocrates", aliases: [], tier: 2, z: 2.5 },
+      { text: "Epicurus", aliases: [], tier: 2, z: 2.21 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Galen", aliases: [], tier: 3, z: 2.95 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ptolemy", aliases: ["Claudius Ptolemy"], tier: 3, z: 2.87 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Thales", aliases: ["Thales of Miletus"], tier: 3, z: 2.67 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Zeno", aliases: ["Zeno of Elea", "Zeno of Citium"], tier: 3, z: 2.67 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Heraclitus", aliases: [], tier: 3, z: 2.15 },
+      { text: "Democritus", aliases: [], tier: 3, z: 2.02 },
+      { text: "Eratosthenes", aliases: [], tier: 3, z: 1.96 },
+      { text: "Hero", aliases: ["Hero of Alexandria", "Heron"], tier: 4, z: 4.68 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Xenophon", aliases: [], tier: 4, z: 2.75 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Plutarch", aliases: [], tier: 4, z: 2.71 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Epictetus", aliases: [], tier: 4, z: 2.25 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hypatia", aliases: [], tier: 4, z: 2.06 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Parmenides", aliases: [], tier: 4, z: 2.04 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Plotinus", aliases: [], tier: 4, z: 2.03 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Theophrastus", aliases: [], tier: 4, z: 1.98 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Protagoras", aliases: [], tier: 4, z: 1.94 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Aristarchus", aliases: ["Aristarchus of Samos"], tier: 4, z: 1.88 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Empedocles", aliases: [], tier: 4, z: 1.87 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hipparchus", aliases: [], tier: 4, z: 1.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Anaxagoras", aliases: [], tier: 4, z: 1.67 },
+      { text: "Anaximander", aliases: [], tier: 4, z: 1.65 },
+      { text: "Strabo", aliases: [], tier: 5, z: 2.52 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pappus", aliases: ["Pappus of Alexandria"], tier: 5, z: 2.29 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Apollonius", aliases: ["Apollonius of Perga"], tier: 5, z: 2.23 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gorgias", aliases: [], tier: 5, z: 1.87 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dioscorides", aliases: [], tier: 5, z: 1.71 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chrysippus", aliases: [], tier: 5, z: 1.67 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Eudoxus", aliases: ["Eudoxus of Cnidus"], tier: 5, z: 1.5 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pyrrho", aliases: [], tier: 5, z: 1.46 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Xenophanes", aliases: [], tier: 5, z: 1.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Posidonius", aliases: [], tier: 5, z: 1.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Carneades", aliases: [], tier: 5, z: 1.41 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Anaximenes", aliases: [], tier: 5, z: 1.34 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Leucippus", aliases: [], tier: 5, z: 1.3 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Antisthenes", aliases: [], tier: 5, z: 1.3 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Aristippus", aliases: [], tier: 5, z: 1.28 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Diophantus", aliases: [], tier: 5, z: 1.24 },
+      { text: "Cleanthes", aliases: [], tier: 5, z: 1.18 },
+      { text: "Philolaus", aliases: [], tier: 5, z: 1.09 },
+      { text: "Speusippus", aliases: [], tier: 5, z: 1.08 },
+      { text: "Erasistratus", aliases: [], tier: 5, z: 1.05 },
+      { text: "Herophilus", aliases: [], tier: 5, z: 1.04 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hippasus", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Theon", aliases: ["Theon of Alexandria"], tier: 6, z: 2.57 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Philo of Byzantium", aliases: ["Philon"], tier: 6, z: 2.55 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Porphyry", aliases: [], tier: 6, z: 2.34 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Simplicius", aliases: [], tier: 6, z: 1.91 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Proclus", aliases: [], tier: 6, z: 1.9 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Aspasia", aliases: [], tier: 6, z: 1.8 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Conon", aliases: ["Conon of Samos"], tier: 6, z: 1.79 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Hippias", aliases: [], tier: 6, z: 1.69 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Iamblichus", aliases: [], tier: 6, z: 1.57 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Diotima", aliases: [], tier: 6, z: 1.5 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Theaetetus", aliases: [], tier: 6, z: 1.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sextus Empiricus", aliases: [], tier: 6, z: 1.35 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Arcesilaus", aliases: [], tier: 6, z: 1.3 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Cratylus", aliases: [], tier: 6, z: 1.29 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Archytas", aliases: [], tier: 6, z: 1.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Diogenes Laertius", aliases: [], tier: 6, z: 1.26 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Aristoxenus", aliases: [], tier: 6, z: 1.25 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Prodicus", aliases: [], tier: 6, z: 1.23 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nicomachus", aliases: [], tier: 6, z: 1.23 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Xenocrates", aliases: [], tier: 6, z: 1.18 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Thrasymachus", aliases: [], tier: 6, z: 1.12 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Melissus", aliases: [], tier: 6, z: 1.05 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Alcmaeon", aliases: [], tier: 6, z: 1.03 },
+      { text: "Menaechmus", aliases: [], tier: 6, z: 0.0 },
+      { text: "Panaetius", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ctesibius", aliases: [], tier: 6, z: 0.0 },
+      { text: "Hipparchia", aliases: [], tier: 6, z: 0.0 },
+      { text: "Aenesidemus", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "battles-01", category: "History", closed: false,
+    prompt: "Name a famous battle or siege",
+    answers: [
+      { text: "D-Day", aliases: ["Normandy", "Normandy landings", "Battle of D-Day", "Battle of Normandy", "Battle of Normandy landings"], tier: 1, z: 5.34 },
+      { text: "Hastings", aliases: ["Battle of Hastings"], tier: 1, z: 3.7 },
+      { text: "Waterloo", aliases: ["Battle of Waterloo"], tier: 1, z: 3.52 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Gettysburg", aliases: ["Battle of Gettysburg"], tier: 1, z: 3.14 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Trafalgar", aliases: ["Battle of Trafalgar"], tier: 1, z: 3.02 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Stalingrad", aliases: ["Battle of Stalingrad"], tier: 1, z: 2.82 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Britain", aliases: ["Battle of Britain", "Battle of Battle of Britain"], tier: 2, z: 4.72 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Marathon", aliases: ["Battle of Marathon"], tier: 2, z: 4.16 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Pearl Harbor", aliases: ["Pearl Harbour", "Battle of Pearl Harbor", "Battle of Pearl Harbour"], tier: 2, z: 3.84 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Somme", aliases: ["Battle of The Somme", "Battle of Somme"], tier: 2, z: 2.89 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Agincourt", aliases: ["Battle of Agincourt"], tier: 2, z: 2.35 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Thermopylae", aliases: ["Battle of Thermopylae"], tier: 2, z: 2.21 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Berlin", aliases: ["Battle of Berlin"], tier: 3, z: 4.38 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Midway", aliases: ["Battle of Midway"], tier: 3, z: 3.69 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bunker Hill", aliases: ["Battle of Bunker Hill"], tier: 3, z: 3.64 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Bulge", aliases: ["Ardennes", "Battle of The Bulge", "Battle of Bulge", "Battle of Ardennes"], tier: 3, z: 3.24 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Okinawa", aliases: ["Battle of Okinawa"], tier: 3, z: 3.2 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dunkirk", aliases: ["Battle of Dunkirk"], tier: 3, z: 3.14 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Alamo", aliases: ["Battle of The Alamo", "Battle of Alamo"], tier: 3, z: 3.08 },
+      { text: "Leningrad", aliases: ["Siege of Leningrad", "Battle of Leningrad", "Battle of Siege of Leningrad"], tier: 3, z: 3.07 },
+      { text: "Gallipoli", aliases: ["Battle of Gallipoli"], tier: 3, z: 2.98 },
+      { text: "Bosworth", aliases: ["Bosworth Field", "Battle of Bosworth", "Battle of Bosworth Field"], tier: 3, z: 2.79 },
+      { text: "Yorktown", aliases: ["Battle of Yorktown"], tier: 3, z: 2.77 },
+      { text: "Ypres", aliases: ["Passchendaele", "Battle of Ypres", "Battle of Passchendaele"], tier: 3, z: 2.75 },
+      { text: "Verdun", aliases: ["Battle of Verdun"], tier: 3, z: 2.66 },
+      { text: "Little Bighorn", aliases: ["Custer's Last Stand", "Little Big Horn", "Battle of Little Bighorn", "Battle of Custer's Last Stand", "Battle of Little Big Horn"], tier: 3, z: 2.63 },
+      { text: "Culloden", aliases: ["Battle of Culloden"], tier: 3, z: 2.38 },
+      { text: "Iwo Jima", aliases: ["Battle of Iwo Jima"], tier: 3, z: 2.37 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Kursk", aliases: ["Battle of Kursk"], tier: 3, z: 2.36 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bannockburn", aliases: ["Battle of Bannockburn"], tier: 3, z: 2.27 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "El Alamein", aliases: ["Alamein", "Battle of El Alamein", "Battle of Alamein"], tier: 3, z: 2.23 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Austerlitz", aliases: ["Battle of Austerlitz"], tier: 3, z: 2.2 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bull Run", aliases: ["Manassas", "Battle of Bull Run", "Battle of Manassas"], tier: 4, z: 4.31 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tours", aliases: ["Battle of Tours"], tier: 4, z: 4.14 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vienna", aliases: ["Siege of Vienna", "Battle of Vienna", "Battle of Siege of Vienna"], tier: 4, z: 3.98 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Stamford Bridge", aliases: ["Battle of Stamford Bridge"], tier: 4, z: 3.42 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Constantinople", aliases: ["Fall of Constantinople", "Battle of Constantinople", "Battle of Fall of Constantinople"], tier: 4, z: 3.38 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Leipzig", aliases: ["Battle of Leipzig"], tier: 4, z: 3.27 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lexington and Concord", aliases: ["Lexington", "Concord", "Battle of Lexington and Concord", "Battle of Lexington", "Battle of Concord"], tier: 4, z: 3.22 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Saratoga", aliases: ["Battle of Saratoga"], tier: 4, z: 3.14 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vicksburg", aliases: ["Battle of Vicksburg"], tier: 4, z: 2.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tet Offensive", aliases: ["Tet", "Battle of Tet Offensive", "Battle of Tet"], tier: 4, z: 2.8 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Arnhem", aliases: ["Battle of Arnhem"], tier: 4, z: 2.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Marston Moor", aliases: ["Battle of Marston Moor"], tier: 4, z: 2.74 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Blenheim", aliases: ["Battle of Blenheim"], tier: 4, z: 2.71 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Marne", aliases: ["Battle of The Marne", "Battle of Marne"], tier: 4, z: 2.56 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Guadalcanal", aliases: ["Battle of Guadalcanal"], tier: 4, z: 2.55 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Balaclava", aliases: ["Balaklava", "Battle of Balaclava", "Battle of Balaklava"], tier: 4, z: 2.51 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jutland", aliases: ["Battle of Jutland"], tier: 4, z: 2.5 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Poitiers", aliases: ["Battle of Poitiers"], tier: 4, z: 2.34 },
+      { text: "Monte Cassino", aliases: ["Cassino", "Battle of Monte Cassino", "Battle of Cassino"], tier: 4, z: 2.32 },
+      { text: "Antietam", aliases: ["Battle of Antietam"], tier: 4, z: 2.32 },
+      { text: "Salamis", aliases: ["Battle of Salamis"], tier: 4, z: 2.3 },
+      { text: "Orléans", aliases: ["Siege of Orléans", "Battle of Orléans", "Battle of Siege of Orléans"], tier: 4, z: 2.27 },
+      { text: "Cannae", aliases: ["Battle of Cannae"], tier: 4, z: 2.26 },
+      { text: "Dien Bien Phu", aliases: ["Battle of Dien Bien Phu"], tier: 4, z: 2.15 },
+      { text: "Zama", aliases: ["Battle of Zama"], tier: 4, z: 2.12 },
+      { text: "Inchon", aliases: ["Incheon", "Battle of Inchon", "Battle of Incheon"], tier: 4, z: 2.04 },
+      { text: "Lepanto", aliases: ["Battle of Lepanto"], tier: 4, z: 1.93 },
+      { text: "Flodden", aliases: ["Battle of Flodden"], tier: 4, z: 1.89 },
+      { text: "Edgehill", aliases: ["Battle of Edgehill"], tier: 4, z: 1.86 },
+      { text: "Actium", aliases: ["Battle of Actium"], tier: 4, z: 1.82 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Borodino", aliases: ["Battle of Borodino"], tier: 4, z: 1.81 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Naseby", aliases: ["Battle of Naseby"], tier: 4, z: 1.8 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rorke's Drift", aliases: ["Battle of Rorke's Drift"], tier: 4, z: 1.77 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Isandlwana", aliases: ["Battle of Isandlwana"], tier: 4, z: 1.58 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Plassey", aliases: ["Battle of Plassey"], tier: 4, z: 1.52 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Towton", aliases: ["Battle of Towton"], tier: 4, z: 1.52 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gaugamela", aliases: ["Battle of Gaugamela"], tier: 4, z: 1.44 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hattin", aliases: ["Battle of Hattin"], tier: 4, z: 1.4 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Crécy", aliases: ["Battle of Crécy"], tier: 4, z: 1.29 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Teutoburg Forest", aliases: ["Teutoburg", "Battle of Teutoburg Forest", "Battle of Teutoburg"], tier: 4, z: 1.24 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Moscow", aliases: ["Battle of Moscow"], tier: 5, z: 4.42 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Singapore", aliases: ["Fall of Singapore", "Battle of Singapore", "Battle of Fall of Singapore"], tier: 5, z: 4.35 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "New Orleans", aliases: ["Battle of New Orleans"], tier: 5, z: 4.21 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Quebec", aliases: ["Plains of Abraham", "Battle of Quebec", "Battle of Plains of Abraham"], tier: 5, z: 3.97 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Coral Sea", aliases: ["Battle of Coral Sea"], tier: 5, z: 3.83 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Goose Green", aliases: ["Battle of Goose Green"], tier: 5, z: 3.82 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Copenhagen", aliases: ["Battle of Copenhagen"], tier: 5, z: 3.67 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Warsaw", aliases: ["Warsaw Uprising", "Battle of Warsaw", "Battle of Warsaw Uprising"], tier: 5, z: 3.66 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Nile", aliases: ["Aboukir Bay", "Battle of The Nile", "Battle of Nile", "Battle of Aboukir Bay"], tier: 5, z: 3.64 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sedan", aliases: ["Battle of Sedan"], tier: 5, z: 3.55 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Stirling Bridge", aliases: ["Battle of Stirling Bridge"], tier: 5, z: 3.46 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kosovo", aliases: ["Kosovo Polje", "Battle of Kosovo", "Battle of Kosovo Polje"], tier: 5, z: 3.43 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hamburger Hill", aliases: ["Battle of Hamburger Hill"], tier: 5, z: 3.43 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Trenton", aliases: ["Battle of Trenton"], tier: 5, z: 3.29 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Crete", aliases: ["Battle of Crete"], tier: 5, z: 3.2 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shrewsbury", aliases: ["Battle of Shrewsbury"], tier: 5, z: 3.1 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Falkirk", aliases: ["Battle of Falkirk"], tier: 5, z: 2.96 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mogadishu", aliases: ["Black Hawk Down", "Battle of Mogadishu", "Battle of Black Hawk Down"], tier: 5, z: 2.92 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shiloh", aliases: ["Battle of Shiloh"], tier: 5, z: 2.9 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Barnet", aliases: ["Battle of Barnet"], tier: 5, z: 2.86 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jena", aliases: ["Jena–Auerstedt", "Battle of Jena", "Battle of Jena–Auerstedt"], tier: 5, z: 2.85 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fredericksburg", aliases: ["Battle of Fredericksburg"], tier: 5, z: 2.84 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sevastopol", aliases: ["Siege of Sevastopol", "Battle of Sevastopol", "Battle of Siege of Sevastopol"], tier: 5, z: 2.77 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Leyte Gulf", aliases: ["Battle of Leyte Gulf"], tier: 5, z: 2.75 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fallujah", aliases: ["Battle of Fallujah"], tier: 5, z: 2.65 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Karbala", aliases: ["Battle of Karbala"], tier: 5, z: 2.54 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Amiens", aliases: ["Battle of Amiens"], tier: 5, z: 2.54 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Boyne", aliases: ["Battle of The Boyne", "Battle of Boyne"], tier: 5, z: 2.52 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tobruk", aliases: ["Battle of Tobruk"], tier: 5, z: 2.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Philippi", aliases: ["Battle of Philippi"], tier: 5, z: 2.42 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tewkesbury", aliases: ["Battle of Tewkesbury"], tier: 5, z: 2.31 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Grunwald", aliases: ["Battle of Grunwald"], tier: 5, z: 2.3 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Imphal", aliases: ["Kohima", "Battle of Imphal", "Battle of Kohima"], tier: 5, z: 2.27 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Anzio", aliases: ["Battle of Anzio"], tier: 5, z: 2.17 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tsushima", aliases: ["Battle of Tsushima"], tier: 5, z: 2.16 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vimy Ridge", aliases: ["Battle of Vimy Ridge"], tier: 5, z: 2.16 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cambrai", aliases: ["Battle of Cambrai"], tier: 5, z: 2.1 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chancellorsville", aliases: ["Battle of Chancellorsville"], tier: 5, z: 2.08 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Adrianople", aliases: ["Battle of Adrianople"], tier: 5, z: 1.95 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Omdurman", aliases: ["Battle of Omdurman"], tier: 5, z: 1.95 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Panipat", aliases: ["Battle of Panipat"], tier: 5, z: 1.89 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Alesia", aliases: ["Battle of Alesia"], tier: 5, z: 1.87 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Khe Sanh", aliases: ["Battle of Khe Sanh"], tier: 5, z: 1.85 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mafeking", aliases: ["Siege of Mafeking", "Battle of Mafeking", "Battle of Siege of Mafeking"], tier: 5, z: 1.76 },
+      { text: "Tannenberg", aliases: ["Battle of Tannenberg"], tier: 5, z: 1.58 },
+      { text: "Sekigahara", aliases: ["Battle of Sekigahara"], tier: 5, z: 1.57 },
+      { text: "Spion Kop", aliases: ["Battle of Spion Kop"], tier: 5, z: 1.44 },
+      { text: "Manzikert", aliases: ["Battle of Manzikert"], tier: 5, z: 1.16 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mohács", aliases: ["Battle of Mohács"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "White Mountain", aliases: ["Battle of White Mountain"], tier: 6, z: 4.66 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Long Tan", aliases: ["Battle of Long Tan"], tier: 6, z: 4.0 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Red Cliffs", aliases: ["Battle of Red Cliffs"], tier: 6, z: 3.65 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Medina Ridge", aliases: ["Battle of Medina Ridge"], tier: 6, z: 3.26 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Lewes", aliases: ["Battle of Lewes"], tier: 6, z: 2.85 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "San Jacinto", aliases: ["Battle of San Jacinto"], tier: 6, z: 2.65 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Yarmouk", aliases: ["Battle of Yarmouk"], tier: 6, z: 2.55 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Badr", aliases: ["Battle of Badr"], tier: 6, z: 2.5 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Pavia", aliases: ["Battle of Pavia"], tier: 6, z: 2.38 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Evesham", aliases: ["Battle of Evesham"], tier: 6, z: 2.36 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Marengo", aliases: ["Battle of Marengo"], tier: 6, z: 2.22 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Chickamauga", aliases: ["Battle of Chickamauga"], tier: 6, z: 2.22 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ia Drang", aliases: ["Battle of Ia Drang"], tier: 6, z: 2.14 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kadesh", aliases: ["Battle of Kadesh"], tier: 6, z: 1.97 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Mukden", aliases: ["Battle of Mukden"], tier: 6, z: 1.96 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Issus", aliases: ["Battle of Issus"], tier: 6, z: 1.8 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sedgemoor", aliases: ["Battle of Sedgemoor"], tier: 6, z: 1.7 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Prestonpans", aliases: ["Battle of Prestonpans"], tier: 6, z: 1.69 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Plataea", aliases: ["Battle of Plataea"], tier: 6, z: 1.65 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Wagram", aliases: ["Battle of Wagram"], tier: 6, z: 1.64 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Adwa", aliases: ["Adowa", "Battle of Adwa", "Battle of Adowa"], tier: 6, z: 1.63 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Solferino", aliases: ["Battle of Solferino"], tier: 6, z: 1.54 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "73 Easting", aliases: ["Battle of 73 Easting"], tier: 6, z: 1.53 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Caporetto", aliases: ["Battle of Caporetto"], tier: 6, z: 1.42 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Nicopolis", aliases: ["Battle of Nicopolis"], tier: 6, z: 1.4 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Châlons", aliases: ["Catalaunian Plains", "Battle of Châlons", "Battle of Catalaunian Plains"], tier: 6, z: 1.32 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Killiecrankie", aliases: ["Battle of Killiecrankie"], tier: 6, z: 1.29 },
+      { text: "Pharsalus", aliases: ["Battle of Pharsalus"], tier: 6, z: 1.19 },
+      { text: "Milvian Bridge", aliases: ["Battle of Milvian Bridge"], tier: 6, z: 1.18 },
+      { text: "Bouvines", aliases: ["Battle of Bouvines"], tier: 6, z: 1.03 },
+      { text: "Qadisiyyah", aliases: ["al-Qadisiyyah", "Battle of Qadisiyyah", "Battle of al-Qadisiyyah"], tier: 6, z: 0.0 },
+      { text: "Ain Jalut", aliases: ["Battle of Ain Jalut"], tier: 6, z: 0.0 },
+      { text: "Sadowa", aliases: ["Königgrätz", "Battle of Sadowa", "Battle of Königgrätz"], tier: 6, z: 0.0 },
+      { text: "Rocroi", aliases: ["Battle of Rocroi"], tier: 6, z: 0.0 },
+      { text: "Lützen", aliases: ["Battle of Lützen"], tier: 6, z: 0.0 },
+      { text: "Breitenfeld", aliases: ["Battle of Breitenfeld"], tier: 6, z: 0.0 },
+      { text: "Seelow Heights", aliases: ["Battle of Seelow Heights"], tier: 6, z: 0.0 },
+      { text: "Longewala", aliases: ["Battle of Longewala"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "renaissance-artists-01", category: "History", closed: false,
+    prompt: "Name an artist or architect of the Renaissance (about 1300 to 1600)",
+    answers: [
+      { text: "Raphael", aliases: ["Raffaello"], tier: 1, z: 3.39 },
+      { text: "Michelangelo", aliases: ["Michelangelo Buonarroti"], tier: 1, z: 3.16 },
+      { text: "Leonardo da Vinci", aliases: ["Leonardo", "Da Vinci"], tier: 1, z: 3.12 },
+      { text: "Donatello", aliases: [], tier: 1, z: 2.62 },
+      { text: "Titian", aliases: ["Tiziano"], tier: 2, z: 2.61 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Botticelli", aliases: ["Sandro Botticelli"], tier: 2, z: 2.43 },
+      { text: "Hieronymus Bosch", aliases: ["Bosch"], tier: 2, z: 2.14 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Albrecht Dürer", aliases: ["Dürer"], tier: 2, z: 1.97 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "El Greco", aliases: [], tier: 3, z: 2.98 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Giovanni Bellini", aliases: ["Bellini"], tier: 3, z: 2.55 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hans Holbein", aliases: ["Holbein", "Hans Holbein the Younger"], tier: 3, z: 2.3 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Giotto", aliases: [], tier: 3, z: 2.28 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jan van Eyck", aliases: ["Van Eyck"], tier: 3, z: 2.25 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tintoretto", aliases: [], tier: 3, z: 2.01 },
+      { text: "Pieter Bruegel", aliases: ["Bruegel", "Brueghel", "Pieter Bruegel the Elder"], tier: 3, z: 2.0 },
+      { text: "Brunelleschi", aliases: ["Filippo Brunelleschi"], tier: 3, z: 1.9 },
+      { text: "Giorgione", aliases: [], tier: 3, z: 1.86 },
+      { text: "Masaccio", aliases: [], tier: 3, z: 1.76 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Piero della Francesca", aliases: [], tier: 4, z: 2.73 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vasari", aliases: ["Giorgio Vasari"], tier: 4, z: 2.37 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cellini", aliases: ["Benvenuto Cellini"], tier: 4, z: 2.25 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Veronese", aliases: ["Paolo Veronese"], tier: 4, z: 2.2 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Filippo Lippi", aliases: ["Lippi", "Fra Filippo Lippi", "Filippino Lippi"], tier: 4, z: 2.13 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Fra Angelico", aliases: [], tier: 4, z: 2.09 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Palladio", aliases: ["Andrea Palladio"], tier: 4, z: 2.07 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mantegna", aliases: ["Andrea Mantegna"], tier: 4, z: 2.04 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Correggio", aliases: [], tier: 4, z: 1.91 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bramante", aliases: ["Donato Bramante"], tier: 4, z: 1.82 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Perugino", aliases: [], tier: 4, z: 1.8 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lucas Cranach", aliases: ["Cranach", "Lucas Cranach the Elder"], tier: 4, z: 1.75 },
+      { text: "Verrocchio", aliases: ["Andrea del Verrocchio"], tier: 4, z: 1.65 },
+      { text: "Uccello", aliases: ["Paolo Uccello"], tier: 4, z: 1.59 },
+      { text: "Ghirlandaio", aliases: ["Domenico Ghirlandaio"], tier: 4, z: 1.54 },
+      { text: "Ghiberti", aliases: ["Lorenzo Ghiberti"], tier: 4, z: 1.53 },
+      { text: "Hans Memling", aliases: ["Memling"], tier: 4, z: 1.44 },
+      { text: "Rogier van der Weyden", aliases: ["Van der Weyden"], tier: 4, z: 1.32 },
+      { text: "Matthias Grünewald", aliases: ["Grünewald"], tier: 4, z: 1.17 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Arcimboldo", aliases: ["Giuseppe Arcimboldo"], tier: 4, z: 1.1 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hugo van der Goes", aliases: ["Van der Goes"], tier: 5, z: 3.58 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Simone Martini", aliases: [], tier: 5, z: 3.11 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lorenzo Lotto", aliases: ["Lotto"], tier: 5, z: 3.04 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nicholas Hilliard", aliases: ["Hilliard"], tier: 5, z: 2.77 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Giulio Romano", aliases: [], tier: 5, z: 2.51 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lavinia Fontana", aliases: [], tier: 5, z: 2.47 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Alberti", aliases: ["Leon Battista Alberti"], tier: 5, z: 2.32 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Carpaccio", aliases: ["Vittore Carpaccio"], tier: 5, z: 2.19 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Andrea del Sarto", aliases: ["Del Sarto"], tier: 5, z: 1.96 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Antonello da Messina", aliases: [], tier: 5, z: 1.7 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Duccio", aliases: [], tier: 5, z: 1.59 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Signorelli", aliases: ["Luca Signorelli"], tier: 5, z: 1.58 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cimabue", aliases: [], tier: 5, z: 1.56 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bronzino", aliases: [], tier: 5, z: 1.5 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pontormo", aliases: [], tier: 5, z: 1.31 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pinturicchio", aliases: [], tier: 5, z: 1.31 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Parmigianino", aliases: [], tier: 5, z: 1.23 },
+      { text: "Giambologna", aliases: [], tier: 5, z: 1.12 },
+      { text: "Altdorfer", aliases: ["Albrecht Altdorfer"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sofonisba Anguissola", aliases: ["Anguissola"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gerard David", aliases: [], tier: 6, z: 3.66 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Lucas van Leyden", aliases: [], tier: 6, z: 2.47 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Moroni", aliases: ["Giovanni Battista Moroni"], tier: 6, z: 2.23 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Bassano", aliases: ["Jacopo Bassano"], tier: 6, z: 2.06 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Jean Fouquet", aliases: ["Fouquet"], tier: 6, z: 2.05 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Petrus Christus", aliases: [], tier: 6, z: 2.04 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cosimo Tura", aliases: [], tier: 6, z: 1.99 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Rosso Fiorentino", aliases: [], tier: 6, z: 1.82 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Robert Campin", aliases: ["Campin"], tier: 6, z: 1.69 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Luca della Robbia", aliases: ["Della Robbia"], tier: 6, z: 1.57 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Domenico Veneziano", aliases: [], tier: 6, z: 1.56 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Gentile da Fabriano", aliases: [], tier: 6, z: 1.55 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sansovino", aliases: ["Jacopo Sansovino"], tier: 6, z: 1.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pisanello", aliases: [], tier: 6, z: 1.47 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Carlo Crivelli", aliases: ["Crivelli"], tier: 6, z: 1.42 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sebastiano del Piombo", aliases: [], tier: 6, z: 1.39 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Veit Stoss", aliases: [], tier: 6, z: 1.31 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Jacopo della Quercia", aliases: [], tier: 6, z: 1.26 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tilman Riemenschneider", aliases: ["Riemenschneider"], tier: 6, z: 1.22 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Jean Clouet", aliases: ["François Clouet", "Clouet"], tier: 6, z: 1.19 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Andrea del Castagno", aliases: ["Castagno"], tier: 6, z: 1.15 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Barocci", aliases: ["Federico Barocci"], tier: 6, z: 1.05 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Michelozzo", aliases: [], tier: 6, z: 1.03 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dosso Dossi", aliases: [], tier: 6, z: 1.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Benozzo Gozzoli", aliases: ["Gozzoli"], tier: 6, z: 0.84 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pollaiuolo", aliases: ["Antonio del Pollaiuolo"], tier: 6, z: 0.0 },
+      { text: "Dieric Bouts", aliases: ["Bouts"], tier: 6, z: 0.0 },
+      { text: "Quentin Matsys", aliases: ["Massys"], tier: 6, z: 0.0 },
+      { text: "Joachim Patinir", aliases: ["Patinir"], tier: 6, z: 0.0 },
+      { text: "Jan Gossaert", aliases: ["Mabuse", "Gossaert"], tier: 6, z: 0.0 },
+      { text: "Hans Baldung", aliases: ["Baldung Grien"], tier: 6, z: 0.0 },
+      { text: "Primaticcio", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "famous-ships-01", category: "History", closed: false,
+    prompt: "Name a famous real ship from history",
+    answers: [
+      { text: "Titanic", aliases: ["RMS Titanic"], tier: 1, z: 3.59 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "HMS Victory", aliases: ["Victory"], tier: 1, z: 3.36 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Santa María", aliases: [], tier: 1, z: 3.03 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Mayflower", aliases: [], tier: 1, z: 2.83 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Mary Rose", aliases: [], tier: 2, z: 4.5 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "HMS Bounty", aliases: ["Bounty"], tier: 2, z: 3.22 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Bismarck", aliases: [], tier: 2, z: 3.17 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "HMS Beagle", aliases: ["Beagle"], tier: 2, z: 2.89 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Lusitania", aliases: ["RMS Lusitania"], tier: 2, z: 2.29 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Cutty Sark", aliases: [], tier: 2, z: 2.22 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Queen Mary", aliases: ["RMS Queen Mary"], tier: 3, z: 4.52 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rainbow Warrior", aliases: [], tier: 3, z: 3.81 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Endurance", aliases: [], tier: 3, z: 3.74 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Golden Hind", aliases: ["Golden Hinde"], tier: 3, z: 3.47 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Endeavour", aliases: ["HMS Endeavour", "HM Bark Endeavour"], tier: 3, z: 3.45 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "USS Constitution", aliases: ["Constitution", "Old Ironsides"], tier: 3, z: 3.42 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "USS Arizona", aliases: ["Arizona"], tier: 3, z: 3.4 },
+      { text: "USS Enterprise", aliases: ["Enterprise"], tier: 3, z: 3.4 },
+      { text: "USS Missouri", aliases: ["Missouri"], tier: 3, z: 3.39 },
+      { text: "HMS Hood", aliases: ["Hood"], tier: 3, z: 3.32 },
+      { text: "HMS Belfast", aliases: ["Belfast"], tier: 3, z: 3.26 },
+      { text: "Mary Celeste", aliases: ["Marie Celeste"], tier: 3, z: 3.18 },
+      { text: "Britannia", aliases: ["Royal Yacht Britannia", "HMY Britannia"], tier: 3, z: 3.18 },
+      { text: "Yamato", aliases: [], tier: 3, z: 2.83 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Exxon Valdez", aliases: [], tier: 3, z: 2.73 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Kon-Tiki", aliases: [], tier: 3, z: 2.57 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Niña", aliases: [], tier: 3, z: 2.26 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Pinta", aliases: [], tier: 3, z: 2.06 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "QE2", aliases: ["Queen Elizabeth 2"], tier: 3, z: 2.06 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Carpathia", aliases: ["RMS Carpathia"], tier: 3, z: 2.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ever Given", aliases: [], tier: 4, z: 5.22 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Great Eastern", aliases: ["SS Great Eastern"], tier: 4, z: 4.75 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Olympic", aliases: ["RMS Olympic"], tier: 4, z: 4.49 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Discovery", aliases: ["RRS Discovery"], tier: 4, z: 4.45 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "SS Great Britain", aliases: ["Great Britain"], tier: 4, z: 4.0 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Aurora", aliases: [], tier: 4, z: 3.73 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ark Royal", aliases: ["HMS Ark Royal"], tier: 4, z: 3.72 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "USS Monitor", aliases: ["Monitor"], tier: 4, z: 3.4 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "CSS Virginia", aliases: ["Merrimack", "Merrimac", "Virginia"], tier: 4, z: 3.39 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "USS Maine", aliases: ["Maine"], tier: 4, z: 3.37 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "HMS Terror", aliases: ["Terror"], tier: 4, z: 3.33 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Edmund Fitzgerald", aliases: ["SS Edmund Fitzgerald"], tier: 4, z: 3.33 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Terra Nova", aliases: [], tier: 4, z: 3.32 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "HMS Warrior", aliases: ["Warrior"], tier: 4, z: 3.31 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "USS Indianapolis", aliases: ["Indianapolis"], tier: 4, z: 3.3 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Costa Concordia", aliases: [], tier: 4, z: 3.13 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nautilus", aliases: ["USS Nautilus"], tier: 4, z: 2.87 },
+      { text: "Calypso", aliases: [], tier: 4, z: 2.86 },
+      { text: "Queen Anne's Revenge", aliases: [], tier: 4, z: 2.85 },
+      { text: "HMS Dreadnought", aliases: ["Dreadnought"], tier: 4, z: 2.55 },
+      { text: "HMS Erebus", aliases: ["Erebus"], tier: 4, z: 2.44 },
+      { text: "Kursk", aliases: [], tier: 4, z: 2.36 },
+      { text: "Fram", aliases: [], tier: 4, z: 2.35 },
+      { text: "Andrea Doria", aliases: [], tier: 4, z: 2.35 },
+      { text: "Amistad", aliases: ["La Amistad"], tier: 4, z: 2.31 },
+      { text: "Vasa", aliases: [], tier: 4, z: 2.29 },
+      { text: "Potemkin", aliases: ["Battleship Potemkin"], tier: 4, z: 2.27 },
+      { text: "Graf Spee", aliases: ["Admiral Graf Spee"], tier: 4, z: 2.17 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tirpitz", aliases: [], tier: 4, z: 2.13 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Empire Windrush", aliases: ["Windrush", "HMT Empire Windrush"], tier: 4, z: 2.11 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Britannic", aliases: ["HMHS Britannic"], tier: 4, z: 2.1 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "General Belgrano", aliases: ["Belgrano", "ARA General Belgrano"], tier: 4, z: 1.91 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Scharnhorst", aliases: [], tier: 4, z: 1.88 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wilhelm Gustloff", aliases: ["MV Wilhelm Gustloff"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Great Western", aliases: ["SS Great Western"], tier: 5, z: 4.96 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Great Harry", aliases: ["Henry Grace à Dieu"], tier: 5, z: 4.69 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Half Moon", aliases: ["Halve Maen"], tier: 5, z: 4.62 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Susan Constant", aliases: [], tier: 5, z: 4.06 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "SS United States", aliases: [], tier: 5, z: 4.06 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Essex", aliases: ["Whaleship Essex"], tier: 5, z: 3.92 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Herald of Free Enterprise", aliases: [], tier: 5, z: 3.81 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sovereign of the Seas", aliases: [], tier: 5, z: 3.64 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Canberra", aliases: ["SS Canberra"], tier: 5, z: 3.64 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "PT-109", aliases: [], tier: 5, z: 3.56 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Empress of Ireland", aliases: ["RMS Empress of Ireland"], tier: 5, z: 3.42 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "USS Cole", aliases: ["Cole"], tier: 5, z: 3.38 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "HMS Resolution", aliases: ["Resolution"], tier: 5, z: 3.35 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "HMS Prince of Wales", aliases: ["Prince of Wales"], tier: 5, z: 3.34 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "HMS Royal Oak", aliases: ["Royal Oak"], tier: 5, z: 3.3 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "HMS Challenger", aliases: ["Challenger"], tier: 5, z: 3.22 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "USS Lexington", aliases: ["Lexington"], tier: 5, z: 3.21 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Californian", aliases: ["SS Californian"], tier: 5, z: 3.12 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "HMS Invincible", aliases: ["Invincible"], tier: 5, z: 3.11 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "USS Pueblo", aliases: ["Pueblo"], tier: 5, z: 3.03 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "USS Hornet", aliases: ["Hornet"], tier: 5, z: 2.97 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "HMS Resolute", aliases: ["Resolute"], tier: 5, z: 2.93 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Torrey Canyon", aliases: [], tier: 5, z: 2.85 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Batavia", aliases: [], tier: 5, z: 2.72 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "USS Yorktown", aliases: ["Yorktown"], tier: 5, z: 2.69 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Musashi", aliases: [], tier: 5, z: 2.63 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gipsy Moth IV", aliases: [], tier: 5, z: 2.59 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "HMS Repulse", aliases: ["Repulse"], tier: 5, z: 2.49 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mikasa", aliases: [], tier: 5, z: 2.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sultana", aliases: ["SS Sultana"], tier: 5, z: 2.41 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Normandie", aliases: ["SS Normandie"], tier: 5, z: 2.3 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Moskva", aliases: [], tier: 5, z: 2.28 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "H. L. Hunley", aliases: ["Hunley"], tier: 5, z: 2.02 },
+      { text: "Mauretania", aliases: ["RMS Mauretania"], tier: 5, z: 1.93 },
+      { text: "Speedwell", aliases: [], tier: 5, z: 1.91 },
+      { text: "Bluenose", aliases: [], tier: 5, z: 1.81 },
+      { text: "HMS Warspite", aliases: ["Warspite"], tier: 5, z: 1.75 },
+      { text: "HMS Temeraire", aliases: ["Temeraire", "Fighting Temeraire"], tier: 5, z: 1.75 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Clotilda", aliases: [], tier: 5, z: 1.21 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gjøa", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "U-47", aliases: [], tier: 6, z: 4.64 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Victoria", aliases: ["Nao Victoria"], tier: 6, z: 4.44 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Matthew", aliases: [], tier: 6, z: 4.37 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "MS St. Louis", aliases: ["St. Louis"], tier: 6, z: 4.37 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Quest", aliases: [], tier: 6, z: 4.27 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Sea Venture", aliases: [], tier: 6, z: 4.2 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Spray", aliases: [], tier: 6, z: 4.18 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Exodus", aliases: ["Exodus 1947"], tier: 6, z: 3.69 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Trinidad", aliases: [], tier: 6, z: 3.65 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Savannah", aliases: ["SS Savannah"], tier: 6, z: 3.62 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Arctic Sunrise", aliases: [], tier: 6, z: 3.61 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "MS Estonia", aliases: ["Estonia"], tier: 6, z: 3.45 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Sea Empress", aliases: [], tier: 6, z: 3.44 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Alvin", aliases: [], tier: 6, z: 3.4 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Sirius", aliases: ["SS Sirius"], tier: 6, z: 3.26 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Atlantic Conveyor", aliases: [], tier: 6, z: 3.25 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "HMS Shannon", aliases: ["Shannon"], tier: 6, z: 3.23 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "U-505", aliases: [], tier: 6, z: 3.15 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "USS Chesapeake", aliases: ["Chesapeake"], tier: 6, z: 3.09 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "HMS Conqueror", aliases: ["Conqueror"], tier: 6, z: 2.99 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "USS Maddox", aliases: ["Maddox"], tier: 6, z: 2.91 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Godspeed", aliases: [], tier: 6, z: 2.83 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Brookes", aliases: [], tier: 6, z: 2.81 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Trieste", aliases: [], tier: 6, z: 2.8 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "General Slocum", aliases: ["PS General Slocum"], tier: 6, z: 2.63 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nimrod", aliases: [], tier: 6, z: 2.63 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Jeanie Johnston", aliases: [], tier: 6, z: 2.62 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Doña Paz", aliases: [], tier: 6, z: 2.4 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Eastland", aliases: ["SS Eastland"], tier: 6, z: 2.34 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "USS Thresher", aliases: ["Thresher"], tier: 6, z: 2.31 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Akagi", aliases: [], tier: 6, z: 2.27 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Zong", aliases: [], tier: 6, z: 2.26 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "HMS Bellerophon", aliases: ["Bellerophon"], tier: 6, z: 2.13 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Oriana", aliases: [], tier: 6, z: 2.07 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Amoco Cadiz", aliases: [], tier: 6, z: 1.94 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Achille Lauro", aliases: [], tier: 6, z: 1.85 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bonhomme Richard", aliases: ["USS Bonhomme Richard"], tier: 6, z: 1.76 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Struma", aliases: [], tier: 6, z: 1.75 },
+      { text: "Shinano", aliases: [], tier: 6, z: 1.69 },
+      { text: "Belgica", aliases: [], tier: 6, z: 1.58 },
+      { text: "Glomar Explorer", aliases: [], tier: 6, z: 1.45 },
+      { text: "Komagata Maru", aliases: [], tier: 6, z: 1.33 },
+      { text: "Varyag", aliases: [], tier: 6, z: 1.19 },
+      { text: "Suhaili", aliases: [], tier: 6, z: 0.0 },
+      { text: "Redoutable", aliases: [], tier: 6, z: 0.0 },
+      { text: "Bucentaure", aliases: [], tier: 6, z: 0.0 },
+      { text: "Santísima Trinidad", aliases: [], tier: 6, z: 0.0 },
+      { text: "Arktika", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "royal-houses-01", category: "History", closed: false,
+    prompt: "Name a royal house or ruling dynasty of Europe",
+    answers: [
+      { text: "Windsor", aliases: ["House of Windsor"], tier: 1, z: 3.73 },
+      { text: "Tudor", aliases: ["Tudors", "House of Tudor", "House of Tudors"], tier: 1, z: 3.3 },
+      { text: "Habsburg", aliases: ["Hapsburg", "Habsburgs", "House of Habsburg", "House of Hapsburg", "House of Habsburgs"], tier: 1, z: 2.61 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Romanov", aliases: ["Romanovs", "House of Romanov", "House of Romanovs"], tier: 1, z: 2.46 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Stuart", aliases: ["Stewart", "Stuarts", "House of Stuart", "House of Stewart", "House of Stuarts"], tier: 2, z: 4.13 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Bourbon", aliases: ["Bourbons", "House of Bourbon", "House of Bourbons"], tier: 2, z: 3.6 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Bonaparte", aliases: ["Napoleon", "House of Bonaparte", "House of Napoleon"], tier: 2, z: 3.07 },
+      { text: "Medici", aliases: ["House of Medici"], tier: 2, z: 3.0 },
+      { text: "Plantagenet", aliases: ["Plantagenets", "House of Plantagenet", "House of Plantagenets"], tier: 2, z: 2.42 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "York", aliases: ["House of York"], tier: 3, z: 5.37 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Orange", aliases: ["Orange-Nassau", "House of Orange", "House of Orange-Nassau"], tier: 3, z: 4.62 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lancaster", aliases: ["House of Lancaster"], tier: 3, z: 3.78 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ottoman", aliases: ["Osman", "Osmanli", "House of Ottoman", "House of Osman", "House of Osmanli"], tier: 3, z: 3.62 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Normandy", aliases: ["Norman", "Normans", "House of Normandy", "House of Norman", "House of Normans"], tier: 3, z: 3.48 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Hanover", aliases: ["Hanoverian", "Hanoverians", "House of Hanover", "House of Hanoverian", "House of Hanoverians"], tier: 3, z: 3.37 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Savoy", aliases: ["House of Savoy"], tier: 3, z: 3.09 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Borgia", aliases: ["House of Borgia"], tier: 3, z: 2.64 },
+      { text: "Grimaldi", aliases: ["House of Grimaldi"], tier: 3, z: 2.4 },
+      { text: "Valois", aliases: ["House of Valois"], tier: 3, z: 2.37 },
+      { text: "Hohenzollern", aliases: ["House of Hohenzollern"], tier: 3, z: 2.05 },
+      { text: "Saxe-Coburg and Gotha", aliases: ["Saxe-Coburg-Gotha", "Saxe-Coburg", "House of Saxe-Coburg and Gotha", "House of Saxe-Coburg-Gotha", "House of Saxe-Coburg"], tier: 3, z: 1.95 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bruce", aliases: ["House of Bruce"], tier: 4, z: 4.34 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Luxembourg", aliases: ["House of Luxembourg"], tier: 4, z: 3.57 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lorraine", aliases: ["Habsburg-Lorraine", "House of Lorraine", "House of Habsburg-Lorraine"], tier: 4, z: 3.46 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Burgundy", aliases: ["Burgundian", "House of Burgundy", "House of Burgundian"], tier: 4, z: 3.46 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nassau", aliases: ["Nassau-Weilburg", "House of Nassau", "House of Nassau-Weilburg"], tier: 4, z: 3.32 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Godwin", aliases: ["House of Godwin"], tier: 4, z: 3.02 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gonzaga", aliases: ["House of Gonzaga"], tier: 4, z: 2.98 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Este", aliases: ["House of Este"], tier: 4, z: 2.92 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wessex", aliases: ["Cerdic", "House of Wessex", "House of Cerdic"], tier: 4, z: 2.89 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Liechtenstein", aliases: ["House of Liechtenstein"], tier: 4, z: 2.77 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sforza", aliases: ["House of Sforza"], tier: 4, z: 2.56 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mountbatten", aliases: ["Battenberg", "Mountbatten-Windsor", "House of Mountbatten", "House of Battenberg", "House of Mountbatten-Windsor"], tier: 4, z: 2.52 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Oldenburg", aliases: ["House of Oldenburg"], tier: 4, z: 2.42 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Visconti", aliases: ["House of Visconti"], tier: 4, z: 2.42 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Balliol", aliases: ["House of Balliol"], tier: 4, z: 2.36 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vasa", aliases: ["House of Vasa"], tier: 4, z: 2.29 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Carolingian", aliases: ["Carolingians", "House of Carolingian", "House of Carolingians"], tier: 4, z: 2.28 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Orléans", aliases: ["House of Orléans"], tier: 4, z: 2.27 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Blois", aliases: ["House of Blois"], tier: 4, z: 2.21 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Merovingian", aliases: ["Merovingians", "House of Merovingian", "House of Merovingians"], tier: 4, z: 2.03 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rurik", aliases: ["Rurikid", "Rurikids", "House of Rurik", "House of Rurikid", "House of Rurikids"], tier: 4, z: 2.02 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bernadotte", aliases: ["House of Bernadotte"], tier: 4, z: 2.01 },
+      { text: "Braganza", aliases: ["Bragança", "House of Braganza", "House of Bragança"], tier: 4, z: 2.01 },
+      { text: "Welf", aliases: ["Guelph", "House of Welf", "House of Guelph"], tier: 4, z: 1.94 },
+      { text: "Angevin", aliases: ["Anjou", "House of Angevin", "House of Anjou"], tier: 4, z: 1.81 },
+      { text: "Capet", aliases: ["Capetian", "Capetians", "House of Capet", "House of Capetian", "House of Capetians"], tier: 4, z: 1.73 },
+      { text: "Hohenstaufen", aliases: ["Staufer", "House of Hohenstaufen", "House of Staufer"], tier: 4, z: 1.51 },
+      { text: "Wittelsbach", aliases: ["House of Wittelsbach"], tier: 4, z: 1.35 },
+      { text: "Piast", aliases: ["House of Piast"], tier: 4, z: 1.24 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wettin", aliases: ["House of Wettin"], tier: 4, z: 1.15 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Glücksburg", aliases: ["Schleswig-Holstein-Sonderburg-Glücksburg", "House of Glücksburg", "House of Schleswig-Holstein-Sonderburg-Glücksburg"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jagiellon", aliases: ["Jagiellonian", "House of Jagiellon", "House of Jagiellonian"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Árpád", aliases: ["House of Árpád"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Trastámara", aliases: ["House of Trastámara"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bourbon-Parma", aliases: ["House of Bourbon-Parma"], tier: 5, z: 2.91 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Farnese", aliases: ["House of Farnese"], tier: 5, z: 2.26 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Della Rovere", aliases: ["House of Della Rovere"], tier: 5, z: 2.08 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dunkeld", aliases: ["House of Dunkeld"], tier: 5, z: 2.03 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Flavian", aliases: ["Flavians", "House of Flavian", "House of Flavians"], tier: 5, z: 1.9 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Julio-Claudian", aliases: ["Julio-Claudians", "House of Julio-Claudian", "House of Julio-Claudians"], tier: 5, z: 1.89 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bourbon-Two Sicilies", aliases: ["House of Bourbon-Two Sicilies"], tier: 5, z: 1.83 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lusignan", aliases: ["House of Lusignan"], tier: 5, z: 1.79 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Alpin", aliases: ["House of Alpin"], tier: 5, z: 1.55 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Salian", aliases: ["House of Salian"], tier: 5, z: 1.54 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hauteville", aliases: ["House of Hauteville"], tier: 5, z: 1.38 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Montefeltro", aliases: ["House of Montefeltro"], tier: 5, z: 1.35 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Komnenos", aliases: ["Comnenus", "Komnenian", "House of Komnenos", "House of Comnenus", "House of Komnenian"], tier: 5, z: 1.25 },
+      { text: "Ottonian", aliases: ["Liudolfing", "House of Ottonian", "House of Liudolfing"], tier: 5, z: 1.25 },
+      { text: "Zogu", aliases: ["Zog", "House of Zogu", "House of Zog"], tier: 5, z: 1.16 },
+      { text: "Fairhair", aliases: ["Hårfagre", "House of Fairhair", "House of Hårfagre"], tier: 5, z: 1.14 },
+      { text: "Holstein-Gottorp", aliases: ["Holstein-Gottorp-Romanov", "House of Holstein-Gottorp", "House of Holstein-Gottorp-Romanov"], tier: 5, z: 1.12 },
+      { text: "Palaiologos", aliases: ["Palaeologus", "Palaiologan", "House of Palaiologos", "House of Palaeologus", "House of Palaiologan"], tier: 5, z: 0.0 },
+      { text: "Přemyslid", aliases: ["House of Přemyslid"], tier: 5, z: 0.0 },
+      { text: "Aviz", aliases: ["Avis", "House of Aviz", "House of Avis"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Karađorđević", aliases: ["Karadjordjevic", "Karageorgevich", "House of Karađorđević", "House of Karadjordjevic", "House of Karageorgevich"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Obrenović", aliases: ["House of Obrenović"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Petrović-Njegoš", aliases: ["House of Petrović-Njegoš"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bjelbo", aliases: ["Folkung", "House of Bjelbo", "House of Folkung"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Estridsen", aliases: ["House of Estridsen"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bagrationi", aliases: ["House of Bagrationi"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gediminid", aliases: ["Gediminids", "House of Gediminid", "House of Gediminids"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Barcelona", aliases: ["House of Barcelona"], tier: 6, z: 4.23 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Hesse", aliases: ["House of Hesse"], tier: 6, z: 2.87 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Justinian", aliases: ["House of Justinian"], tier: 6, z: 2.67 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mecklenburg", aliases: ["House of Mecklenburg"], tier: 6, z: 2.65 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Courtenay", aliases: ["House of Courtenay"], tier: 6, z: 2.59 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Jiménez", aliases: ["Jimena", "House of Jiménez", "House of Jimena"], tier: 6, z: 2.33 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Angelos", aliases: ["Angelid", "House of Angelos", "House of Angelid"], tier: 6, z: 2.24 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Württemberg", aliases: ["House of Württemberg"], tier: 6, z: 2.24 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Malatesta", aliases: ["House of Malatesta"], tier: 6, z: 2.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Antonine", aliases: ["Nerva–Antonine", "House of Antonine", "House of Nerva–Antonine"], tier: 6, z: 1.88 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sverre", aliases: ["House of Sverre"], tier: 6, z: 1.75 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Scaliger", aliases: ["Della Scala", "House of Scaliger", "House of Della Scala"], tier: 6, z: 1.64 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Thurn und Taxis", aliases: ["House of Thurn und Taxis"], tier: 6, z: 1.64 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Constantinian", aliases: ["House of Constantinian"], tier: 6, z: 1.53 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Theodosian", aliases: ["House of Theodosian"], tier: 6, z: 1.48 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Jelling", aliases: ["Gorm", "Knýtlinga", "House of Jelling", "House of Gorm", "House of Knýtlinga"], tier: 6, z: 1.48 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Severan", aliases: ["House of Severan"], tier: 6, z: 1.45 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bentivoglio", aliases: ["House of Bentivoglio"], tier: 6, z: 1.45 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Doukas", aliases: ["House of Doukas"], tier: 6, z: 1.42 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Hohenzollern-Sigmaringen", aliases: ["House of Hohenzollern-Sigmaringen"], tier: 6, z: 1.32 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Aberffraw", aliases: ["Gwynedd", "House of Aberffraw", "House of Gwynedd"], tier: 6, z: 1.29 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Zähringen", aliases: ["House of Zähringen"], tier: 6, z: 0.0 },
+      { text: "Ascania", aliases: ["Ascanian", "House of Ascania", "House of Ascanian"], tier: 6, z: 0.0 },
+      { text: "Uí Néill", aliases: ["O'Neill", "House of Uí Néill", "House of O'Neill"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "pop-group-members-01", category: "Music", closed: true,
+    prompt: "Name a member of BTS, Blackpink, One Direction or the Spice Girls",
+    answers: [
+      { text: "Harry Styles", aliases: ["Harry"], tier: 1, z: 4.22 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Victoria Beckham", aliases: ["Posh Spice", "Posh", "Victoria Adams"], tier: 1, z: 3.46 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Zayn Malik", aliases: ["Zayn"], tier: 1, z: 2.86 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Jungkook", aliases: ["Jeon Jungkook", "JK"], tier: 1, z: 2.09 }, // override: auto 6 -> 1 (famous/obvious answer in this category)
+      { text: "V", aliases: ["Taehyung", "Kim Taehyung"], tier: 2, z: 5.06 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Lisa", aliases: ["Lalisa"], tier: 2, z: 4.29 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Jennie", aliases: [], tier: 2, z: 3.21 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Niall Horan", aliases: ["Niall"], tier: 2, z: 2.64 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Jimin", aliases: ["Park Jimin"], tier: 2, z: 2.39 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Geri Halliwell", aliases: ["Ginger Spice", "Geri", "Ginger", "Geri Horner"], tier: 2, z: 2.37 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "RM", aliases: ["Rap Monster", "Namjoon", "Kim Namjoon"], tier: 3, z: 3.75 },
+      { text: "Liam Payne", aliases: ["Liam"], tier: 3, z: 3.52 },
+      { text: "Louis Tomlinson", aliases: ["Louis"], tier: 3, z: 3.21 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rosé", aliases: ["Roseanne Park"], tier: 3, z: 2.76 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jin", aliases: ["Seokjin", "Kim Seokjin"], tier: 4, z: 3.98 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mel B", aliases: ["Scary Spice", "Melanie Brown", "Scary"], tier: 4, z: 3.79 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Suga", aliases: ["Yoongi", "Agust D", "Min Yoongi"], tier: 4, z: 2.7 },
+      { text: "Emma Bunton", aliases: ["Baby Spice", "Baby"], tier: 4, z: 2.18 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "J-Hope", aliases: ["Hoseok", "Jung Hoseok"], tier: 5, z: 4.87 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jisoo", aliases: [], tier: 5, z: 1.74 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mel C", aliases: ["Sporty Spice", "Melanie C", "Melanie Chisholm", "Sporty"], tier: 6, z: 3.79 }, // override: auto 3 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "music-genres-01", category: "Music", closed: false,
+    prompt: "Name a genre of music",
+    answers: [
+      { text: "Country", aliases: [], tier: 1, z: 5.48 },
+      { text: "Rock", aliases: [], tier: 1, z: 5.03 },
+      { text: "Pop", aliases: [], tier: 1, z: 4.87 },
+      { text: "Jazz", aliases: [], tier: 1, z: 4.31 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Classical", aliases: [], tier: 1, z: 4.26 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Hip hop", aliases: ["Rap"], tier: 1, z: 4.13 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "R&B", aliases: ["RnB", "Rhythm and blues"], tier: 2, z: 5.05 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Metal", aliases: ["Heavy metal"], tier: 2, z: 4.82 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "K-pop", aliases: ["Kpop"], tier: 2, z: 4.59 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Blues", aliases: [], tier: 2, z: 4.34 },
+      { text: "Reggae", aliases: [], tier: 2, z: 3.47 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "EDM", aliases: ["Electronic", "Electronic dance music", "Electronica", "Dance"], tier: 2, z: 3.21 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "House", aliases: [], tier: 3, z: 5.71 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Soul", aliases: [], tier: 3, z: 4.81 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Alternative", aliases: ["Alt rock", "Alternative rock"], tier: 3, z: 4.71 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Latin", aliases: [], tier: 3, z: 4.48 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Trap", aliases: [], tier: 3, z: 4.33 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Opera", aliases: [], tier: 3, z: 4.27 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Folk", aliases: [], tier: 3, z: 4.22 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Punk", aliases: ["Punk rock"], tier: 3, z: 4.2 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Gospel", aliases: [], tier: 3, z: 4.18 },
+      { text: "Drill", aliases: [], tier: 3, z: 4.09 },
+      { text: "Indie", aliases: ["Indie rock", "Indie pop"], tier: 3, z: 4.0 },
+      { text: "Drum and bass", aliases: ["DnB", "D&B"], tier: 3, z: 3.89 },
+      { text: "Lo-fi", aliases: ["Lofi"], tier: 3, z: 3.85 },
+      { text: "Disco", aliases: [], tier: 3, z: 3.78 },
+      { text: "Funk", aliases: [], tier: 3, z: 3.71 },
+      { text: "Techno", aliases: [], tier: 3, z: 3.49 },
+      { text: "Dubstep", aliases: [], tier: 3, z: 3.03 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Grunge", aliases: [], tier: 3, z: 3.02 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Reggaeton", aliases: [], tier: 3, z: 2.38 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Afrobeats", aliases: ["Afrobeat"], tier: 3, z: 1.73 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "World", aliases: ["World music"], tier: 4, z: 5.89 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hard rock", aliases: [], tier: 4, z: 4.91 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Black metal", aliases: [], tier: 4, z: 4.73 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Death metal", aliases: [], tier: 4, z: 4.72 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "J-pop", aliases: [], tier: 4, z: 4.63 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "New wave", aliases: [], tier: 4, z: 4.61 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rock and roll", aliases: ["Rock n roll"], tier: 4, z: 4.57 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Easy listening", aliases: [], tier: 4, z: 4.57 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Swing", aliases: [], tier: 4, z: 4.34 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Garage", aliases: ["UK garage"], tier: 4, z: 4.25 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Post-punk", aliases: [], tier: 4, z: 4.18 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pop punk", aliases: [], tier: 4, z: 4.12 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hardcore", aliases: ["Hardcore punk"], tier: 4, z: 3.97 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ambient", aliases: [], tier: 4, z: 3.62 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bollywood", aliases: ["Filmi"], tier: 4, z: 3.58 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Salsa", aliases: [], tier: 4, z: 3.53 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nu metal", aliases: [], tier: 4, z: 3.53 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Trance", aliases: [], tier: 4, z: 3.49 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Synth-pop", aliases: ["Synthpop"], tier: 4, z: 3.34 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Psychedelic", aliases: ["Psychedelic rock", "Psychedelia"], tier: 4, z: 3.34 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Emo", aliases: [], tier: 4, z: 3.24 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Glam rock", aliases: ["Glam"], tier: 4, z: 3.22 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bluegrass", aliases: [], tier: 4, z: 3.16 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Prog rock", aliases: ["Progressive rock", "Prog"], tier: 4, z: 3.14 },
+      { text: "Thrash metal", aliases: ["Thrash"], tier: 4, z: 3.14 },
+      { text: "Grime", aliases: [], tier: 4, z: 3.09 },
+      { text: "Ska", aliases: [], tier: 4, z: 3.05 },
+      { text: "Motown", aliases: [], tier: 4, z: 2.98 },
+      { text: "Flamenco", aliases: [], tier: 4, z: 2.93 },
+      { text: "Dancehall", aliases: [], tier: 4, z: 2.81 },
+      { text: "Rockabilly", aliases: [], tier: 4, z: 2.66 },
+      { text: "Bossa nova", aliases: [], tier: 4, z: 2.45 },
+      { text: "Britpop", aliases: [], tier: 4, z: 2.31 },
+      { text: "Shoegaze", aliases: [], tier: 4, z: 2.22 },
+      { text: "Amapiano", aliases: [], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Phonk", aliases: [], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hyperpop", aliases: [], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "New age", aliases: [], tier: 5, z: 5.27 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Post-rock", aliases: [], tier: 5, z: 4.88 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Big band", aliases: [], tier: 5, z: 4.85 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "City pop", aliases: [], tier: 5, z: 4.8 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Industrial", aliases: [], tier: 5, z: 4.71 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dream pop", aliases: [], tier: 5, z: 4.59 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Northern soul", aliases: [], tier: 5, z: 4.53 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Soft rock", aliases: [], tier: 5, z: 4.52 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Acid house", aliases: [], tier: 5, z: 4.43 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Math rock", aliases: [], tier: 5, z: 4.35 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Trip hop", aliases: [], tier: 5, z: 4.28 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Musical theatre", aliases: ["Show tunes", "Showtunes"], tier: 5, z: 4.21 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jungle", aliases: [], tier: 5, z: 4.12 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fusion", aliases: ["Jazz fusion"], tier: 5, z: 4.02 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Celtic", aliases: ["Celtic folk"], tier: 5, z: 4.0 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Neo-soul", aliases: [], tier: 5, z: 3.93 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Surf rock", aliases: ["Surf"], tier: 5, z: 3.83 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yacht rock", aliases: [], tier: 5, z: 3.79 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dub", aliases: [], tier: 5, z: 3.64 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tango", aliases: [], tier: 5, z: 3.58 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Baroque", aliases: [], tier: 5, z: 3.32 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Americana", aliases: [], tier: 5, z: 3.21 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Polka", aliases: [], tier: 5, z: 3.2 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Samba", aliases: [], tier: 5, z: 3.18 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Barbershop", aliases: [], tier: 5, z: 2.99 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Calypso", aliases: [], tier: 5, z: 2.86 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bebop", aliases: [], tier: 5, z: 2.83 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mariachi", aliases: [], tier: 5, z: 2.81 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Doo-wop", aliases: [], tier: 5, z: 2.8 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "A cappella", aliases: [], tier: 5, z: 2.76 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sea shanty", aliases: ["Shanty", "Sea shanties"], tier: 5, z: 2.75 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gregorian chant", aliases: ["Plainchant", "Plainsong"], tier: 5, z: 2.68 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ragtime", aliases: [], tier: 5, z: 2.57 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Soca", aliases: [], tier: 5, z: 2.57 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Metalcore", aliases: [], tier: 5, z: 2.57 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bhangra", aliases: [], tier: 5, z: 2.32 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bachata", aliases: [], tier: 5, z: 2.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hardstyle", aliases: [], tier: 5, z: 2.19 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Merengue", aliases: [], tier: 5, z: 2.18 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cumbia", aliases: [], tier: 5, z: 2.12 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Highlife", aliases: [], tier: 5, z: 2.06 },
+      { text: "Vaporwave", aliases: [], tier: 5, z: 2.06 },
+      { text: "Fado", aliases: [], tier: 5, z: 2.01 },
+      { text: "Zydeco", aliases: [], tier: 5, z: 1.99 },
+      { text: "Chiptune", aliases: ["8-bit"], tier: 5, z: 1.96 },
+      { text: "Eurodance", aliases: [], tier: 5, z: 1.95 },
+      { text: "Krautrock", aliases: [], tier: 5, z: 1.93 },
+      { text: "Skiffle", aliases: [], tier: 5, z: 1.85 },
+      { text: "Gabber", aliases: [], tier: 5, z: 1.7 },
+      { text: "Qawwali", aliases: [], tier: 5, z: 1.4 },
+      { text: "Ranchera", aliases: [], tier: 5, z: 1.23 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Go-go", aliases: [], tier: 6, z: 5.73 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Big beat", aliases: [], tier: 6, z: 4.92 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Power metal", aliases: [], tier: 6, z: 4.74 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "No wave", aliases: [], tier: 6, z: 4.61 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Jersey club", aliases: [], tier: 6, z: 4.55 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Noise", aliases: ["Noise rock"], tier: 6, z: 4.55 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Two-tone", aliases: ["2 tone"], tier: 6, z: 4.48 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Future bass", aliases: [], tier: 6, z: 4.24 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "New jack swing", aliases: [], tier: 6, z: 4.21 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Witch house", aliases: [], tier: 6, z: 4.1 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Acid jazz", aliases: [], tier: 6, z: 4.07 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Drone", aliases: [], tier: 6, z: 4.0 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cloud rap", aliases: [], tier: 6, z: 3.96 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Delta blues", aliases: [], tier: 6, z: 3.92 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Doom metal", aliases: [], tier: 6, z: 3.77 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Turbo-folk", aliases: [], tier: 6, z: 3.62 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Outlaw country", aliases: [], tier: 6, z: 3.51 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Stoner rock", aliases: [], tier: 6, z: 3.27 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Fuji", aliases: [], tier: 6, z: 3.22 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Sludge metal", aliases: [], tier: 6, z: 3.22 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Trot", aliases: [], tier: 6, z: 3.21 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Footwork", aliases: ["Juke"], tier: 6, z: 3.12 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Cajun", aliases: [], tier: 6, z: 2.99 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Juju", aliases: [], tier: 6, z: 2.97 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Minimalism", aliases: ["Minimalist"], tier: 6, z: 2.9 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bubblegum pop", aliases: ["Bubblegum"], tier: 6, z: 2.81 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bassline", aliases: [], tier: 6, z: 2.43 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Italo disco", aliases: [], tier: 6, z: 2.41 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Boogie-woogie", aliases: [], tier: 6, z: 2.38 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Honky-tonk", aliases: [], tier: 6, z: 2.38 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Hindustani", aliases: [], tier: 6, z: 2.37 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rocksteady", aliases: [], tier: 6, z: 2.34 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "IDM", aliases: [], tier: 6, z: 2.34 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Chanson", aliases: [], tier: 6, z: 2.29 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Jangle pop", aliases: [], tier: 6, z: 2.28 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Crunk", aliases: [], tier: 6, z: 2.23 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Carnatic", aliases: [], tier: 6, z: 2.13 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Screamo", aliases: [], tier: 6, z: 2.11 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Klezmer", aliases: [], tier: 6, z: 2.09 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Deathcore", aliases: [], tier: 6, z: 2.07 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Zouk", aliases: [], tier: 6, z: 2.05 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Grindcore", aliases: [], tier: 6, z: 2.04 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Gamelan", aliases: [], tier: 6, z: 2.03 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tejano", aliases: [], tier: 6, z: 1.99 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Riot grrrl", aliases: [], tier: 6, z: 1.97 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Breakbeat", aliases: [], tier: 6, z: 1.94 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Enka", aliases: [], tier: 6, z: 1.86 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kwaito", aliases: [], tier: 6, z: 1.83 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mento", aliases: [], tier: 6, z: 1.82 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Schlager", aliases: [], tier: 6, z: 1.81 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Psytrance", aliases: [], tier: 6, z: 1.77 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Djent", aliases: [], tier: 6, z: 1.62 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Dangdut", aliases: [], tier: 6, z: 1.61 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hyphy", aliases: [], tier: 6, z: 1.58 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Corrido", aliases: ["Corridos"], tier: 6, z: 1.55 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kuduro", aliases: [], tier: 6, z: 1.45 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Madchester", aliases: ["Baggy"], tier: 6, z: 1.4 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Horrorcore", aliases: [], tier: 6, z: 1.39 },
+      { text: "Kizomba", aliases: [], tier: 6, z: 1.37 },
+      { text: "Norteño", aliases: [], tier: 6, z: 1.26 },
+      { text: "Soukous", aliases: [], tier: 6, z: 1.17 },
+      { text: "Sophisti-pop", aliases: [], tier: 6, z: 1.12 },
+      { text: "Cantopop", aliases: [], tier: 6, z: 1.09 },
+      { text: "Kompa", aliases: ["Compas"], tier: 6, z: 1.02 },
+      { text: "Mandopop", aliases: [], tier: 6, z: 0.0 },
+      { text: "Raï", aliases: [], tier: 6, z: 0.0 },
+      { text: "Gqom", aliases: [], tier: 6, z: 0.0 },
+      { text: "Mbalax", aliases: [], tier: 6, z: 0.0 },
+      { text: "Rebetiko", aliases: [], tier: 6, z: 0.0 },
+      { text: "Isicathamiya", aliases: [], tier: 6, z: 0.0 },
+      { text: "Mbaqanga", aliases: [], tier: 6, z: 0.0 },
+      { text: "Taarab", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "italian-expression-01", category: "Music", closed: false,
+    prompt: "Name an Italian musical term for dynamics, articulation or expression (not a tempo marking)",
+    answers: [
+      { text: "Piano", aliases: [], tier: 1, z: 4.31 },
+      { text: "Forte", aliases: [], tier: 1, z: 3.24 },
+      { text: "Crescendo", aliases: [], tier: 1, z: 2.83 },
+      { text: "Staccato", aliases: [], tier: 1, z: 2.58 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Fortissimo", aliases: [], tier: 1, z: 1.94 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Mezzo forte", aliases: [], tier: 2, z: 2.51 },
+      { text: "Legato", aliases: [], tier: 2, z: 2.26 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Pizzicato", aliases: [], tier: 2, z: 2.02 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Pianissimo", aliases: [], tier: 2, z: 1.96 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Diminuendo", aliases: ["Decrescendo"], tier: 2, z: 1.66 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Fine", aliases: [], tier: 3, z: 5.23 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Solo", aliases: [], tier: 3, z: 4.61 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dolce", aliases: [], tier: 3, z: 3.07 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "A cappella", aliases: [], tier: 3, z: 2.76 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Coda", aliases: [], tier: 3, z: 2.74 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Da capo", aliases: ["Da capo al fine", "DC"], tier: 3, z: 2.72 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tutti", aliases: [], tier: 3, z: 2.66 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mezzo piano", aliases: [], tier: 3, z: 2.59 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Vibrato", aliases: [], tier: 3, z: 2.56 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tremolo", aliases: [], tier: 3, z: 2.42 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Arpeggio", aliases: [], tier: 3, z: 2.08 },
+      { text: "Cantabile", aliases: [], tier: 3, z: 1.94 },
+      { text: "Glissando", aliases: [], tier: 3, z: 1.83 },
+      { text: "Sforzando", aliases: ["Sforzato", "Sfz"], tier: 3, z: 1.13 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Arco", aliases: [], tier: 4, z: 2.56 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Con brio", aliases: [], tier: 4, z: 2.38 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Molto", aliases: [], tier: 4, z: 2.31 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Poco a poco", aliases: ["Poco"], tier: 4, z: 2.28 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bravura", aliases: [], tier: 4, z: 2.27 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sotto voce", aliases: [], tier: 4, z: 2.17 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Con fuoco", aliases: [], tier: 4, z: 1.81 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Subito", aliases: [], tier: 4, z: 1.8 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ostinato", aliases: [], tier: 4, z: 1.78 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Marcato", aliases: [], tier: 4, z: 1.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Obbligato", aliases: [], tier: 4, z: 1.63 },
+      { text: "Sostenuto", aliases: [], tier: 4, z: 1.6 },
+      { text: "Agitato", aliases: [], tier: 4, z: 1.53 },
+      { text: "Dal segno", aliases: ["DS"], tier: 4, z: 1.44 },
+      { text: "Portamento", aliases: [], tier: 4, z: 1.38 },
+      { text: "Fermata", aliases: [], tier: 4, z: 1.34 },
+      { text: "Fortepiano", aliases: ["Fp"], tier: 4, z: 1.29 },
+      { text: "Tenuto", aliases: [], tier: 4, z: 1.23 },
+      { text: "Espressivo", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Con amore", aliases: [], tier: 5, z: 2.89 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Simile", aliases: [], tier: 5, z: 2.41 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Brillante", aliases: [], tier: 5, z: 1.99 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Con spirito", aliases: [], tier: 5, z: 1.93 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Furioso", aliases: [], tier: 5, z: 1.86 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Appassionato", aliases: [], tier: 5, z: 1.42 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Giocoso", aliases: [], tier: 5, z: 1.41 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Scherzando", aliases: [], tier: 5, z: 1.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mezza voce", aliases: [], tier: 5, z: 1.38 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tranquillo", aliases: [], tier: 5, z: 1.34 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ottava", aliases: ["8va", "Ottava alta"], tier: 5, z: 1.23 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Grazioso", aliases: [], tier: 5, z: 1.15 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tacet", aliases: [], tier: 5, z: 1.12 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Spiccato", aliases: [], tier: 5, z: 1.05 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Leggiero", aliases: ["Leggero"], tier: 5, z: 0.0 },
+      { text: "Pesante", aliases: [], tier: 5, z: 0.0 },
+      { text: "Morendo", aliases: [], tier: 5, z: 0.0 },
+      { text: "Rinforzando", aliases: ["Rfz"], tier: 5, z: 0.0 },
+      { text: "Con sordino", aliases: ["Con sord", "Sordino"], tier: 5, z: 0.0 },
+      { text: "Senza sordino", aliases: ["Senza"], tier: 5, z: 0.0 },
+      { text: "Animato", aliases: [], tier: 5, z: 0.0 },
+      { text: "Risoluto", aliases: [], tier: 5, z: 0.0 },
+      { text: "Affettuoso", aliases: [], tier: 5, z: 0.0 },
+      { text: "Energico", aliases: [], tier: 5, z: 0.0 },
+      { text: "Loco", aliases: [], tier: 6, z: 3.21 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Con anima", aliases: [], tier: 6, z: 2.75 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Segue", aliases: [], tier: 6, z: 2.56 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Una corda", aliases: [], tier: 6, z: 1.89 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Colla voce", aliases: [], tier: 6, z: 1.88 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Niente", aliases: ["Al niente"], tier: 6, z: 1.85 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tre corde", aliases: [], tier: 6, z: 1.73 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Divisi", aliases: [], tier: 6, z: 1.63 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Col legno", aliases: [], tier: 6, z: 1.52 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Semplice", aliases: [], tier: 6, z: 1.48 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Volti subito", aliases: ["VS"], tier: 6, z: 0.94 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sul ponticello", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sul tasto", aliases: [], tier: 6, z: 0.0 },
+      { text: "Martellato", aliases: [], tier: 6, z: 0.0 },
+      { text: "Perdendosi", aliases: [], tier: 6, z: 0.0 },
+      { text: "Attacca", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ripieno", aliases: [], tier: 6, z: 0.0 },
+      { text: "Lacrimoso", aliases: [], tier: 6, z: 0.0 },
+      { text: "Dolente", aliases: [], tier: 6, z: 0.0 },
+      { text: "Smorzando", aliases: [], tier: 6, z: 0.0 },
+      { text: "Calando", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "taylor-beyonce-albums-01", category: "Music", closed: true,
+    prompt: "Name a studio album by Taylor Swift or Beyoncé (released up to the end of 2025)",
+    answers: [
+      { text: "1989", aliases: [], tier: 1, z: 4.46 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Fearless", aliases: [], tier: 1, z: 3.55 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Folklore", aliases: [], tier: 1, z: 3.49 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Lemonade", aliases: [], tier: 1, z: 3.44 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Red", aliases: [], tier: 2, z: 5.32 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Reputation", aliases: ["Rep"], tier: 2, z: 4.47 },
+      { text: "Lover", aliases: [], tier: 2, z: 4.26 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Renaissance", aliases: [], tier: 2, z: 3.87 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Midnights", aliases: [], tier: 2, z: 1.72 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Speak Now", aliases: [], tier: 3, z: 5.0 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Cowboy Carter", aliases: [], tier: 3, z: 3.73 },
+      { text: "The Tortured Poets Department", aliases: ["TTPD"], tier: 3, z: 3.5 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dangerously in Love", aliases: [], tier: 3, z: 3.47 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Evermore", aliases: [], tier: 3, z: 2.67 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Life of a Showgirl", aliases: [], tier: 3, z: 2.4 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Taylor Swift", aliases: ["Debut"], tier: 4, z: 4.03 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "I Am... Sasha Fierce", aliases: ["Sasha Fierce"], tier: 4, z: 3.46 },
+      { text: "Beyoncé", aliases: ["Self-titled"], tier: 4, z: 3.37 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "B'Day", aliases: [], tier: 5, z: 1.74 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "4", aliases: ["Four"], tier: 6, z: 5.78 }, // override: auto 1 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "stringed-instruments-01", category: "Music", closed: false,
+    prompt: "Name a stringed instrument (plucked, bowed or struck)",
+    answers: [
+      { text: "Guitar", aliases: ["Acoustic guitar"], tier: 1, z: 4.48 },
+      { text: "Electric guitar", aliases: [], tier: 1, z: 4.28 },
+      { text: "Bass guitar", aliases: ["Bass", "Electric bass"], tier: 1, z: 4.07 },
+      { text: "Violin", aliases: ["Fiddle"], tier: 1, z: 3.74 },
+      { text: "Harp", aliases: [], tier: 1, z: 3.4 },
+      { text: "Cello", aliases: [], tier: 1, z: 3.29 },
+      { text: "Piano", aliases: [], tier: 2, z: 4.31 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Double bass", aliases: ["Upright bass", "Contrabass"], tier: 2, z: 4.21 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Viola", aliases: [], tier: 2, z: 3.54 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Banjo", aliases: [], tier: 2, z: 3.27 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Ukulele", aliases: ["Uke"], tier: 2, z: 3.01 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Mandolin", aliases: [], tier: 2, z: 2.78 },
+      { text: "Sitar", aliases: [], tier: 2, z: 2.41 },
+      { text: "Steel guitar", aliases: ["Pedal steel", "Lap steel", "Pedal steel guitar"], tier: 3, z: 4.28 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Classical guitar", aliases: ["Spanish guitar"], tier: 3, z: 4.06 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Twelve-string guitar", aliases: ["12-string guitar", "12 string"], tier: 3, z: 3.93 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lute", aliases: [], tier: 3, z: 2.87 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Harpsichord", aliases: [], tier: 3, z: 2.62 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lyre", aliases: [], tier: 3, z: 2.61 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Koto", aliases: [], tier: 3, z: 2.46 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Oud", aliases: [], tier: 3, z: 2.44 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dulcimer", aliases: ["Hammered dulcimer", "Appalachian dulcimer"], tier: 3, z: 2.12 },
+      { text: "Zither", aliases: [], tier: 3, z: 2.01 },
+      { text: "Balalaika", aliases: [], tier: 3, z: 1.89 },
+      { text: "Bouzouki", aliases: [], tier: 3, z: 1.59 },
+      { text: "Erhu", aliases: [], tier: 3, z: 1.5 },
+      { text: "Tar", aliases: [], tier: 4, z: 3.63 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Viol", aliases: ["Viola da gamba", "Gamba"], tier: 4, z: 2.28 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kora", aliases: [], tier: 4, z: 2.28 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pipa", aliases: [], tier: 4, z: 2.25 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Veena", aliases: ["Vina"], tier: 4, z: 2.2 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dobro", aliases: ["Resonator guitar", "Resonator"], tier: 4, z: 2.02 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Saz", aliases: ["Bağlama"], tier: 4, z: 1.93 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hurdy-gurdy", aliases: [], tier: 4, z: 1.72 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shamisen", aliases: [], tier: 4, z: 1.69 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Clavichord", aliases: [], tier: 4, z: 1.65 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Setar", aliases: [], tier: 4, z: 1.5 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Autoharp", aliases: [], tier: 4, z: 1.48 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Guzheng", aliases: ["Zheng"], tier: 4, z: 1.36 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sarod", aliases: [], tier: 4, z: 1.36 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mandola", aliases: [], tier: 4, z: 1.31 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Theorbo", aliases: [], tier: 4, z: 1.29 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gayageum", aliases: ["Kayagum"], tier: 4, z: 1.26 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Charango", aliases: [], tier: 4, z: 1.22 },
+      { text: "Qanun", aliases: ["Kanun"], tier: 4, z: 1.18 },
+      { text: "Cittern", aliases: [], tier: 4, z: 1.12 },
+      { text: "Santoor", aliases: ["Santur"], tier: 4, z: 1.09 },
+      { text: "Guqin", aliases: ["Qin"], tier: 4, z: 1.08 },
+      { text: "Banjolele", aliases: ["Banjo ukulele"], tier: 4, z: 0.0 },
+      { text: "Tanpura", aliases: ["Tambura"], tier: 4, z: 0.0 },
+      { text: "Rebab", aliases: ["Rabab"], tier: 4, z: 0.0 },
+      { text: "Kamancheh", aliases: ["Kamancha"], tier: 4, z: 0.0 },
+      { text: "Portuguese guitar", aliases: ["Guitarra portuguesa"], tier: 5, z: 3.9 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chapman Stick", aliases: [], tier: 5, z: 3.74 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Harp guitar", aliases: [], tier: 5, z: 3.37 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tres", aliases: [], tier: 5, z: 3.06 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Viola d'amore", aliases: [], tier: 5, z: 2.82 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cuatro", aliases: [], tier: 5, z: 2.2 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bandura", aliases: [], tier: 5, z: 2.16 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Biwa", aliases: [], tier: 5, z: 1.83 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Psaltery", aliases: [], tier: 5, z: 1.56 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sarangi", aliases: [], tier: 5, z: 1.54 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hardanger fiddle", aliases: ["Hardingfele"], tier: 5, z: 1.47 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vihuela", aliases: [], tier: 5, z: 1.39 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rebec", aliases: [], tier: 5, z: 1.29 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cimbalom", aliases: [], tier: 5, z: 1.23 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Berimbau", aliases: [], tier: 5, z: 1.22 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sanshin", aliases: [], tier: 5, z: 1.15 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kantele", aliases: [], tier: 5, z: 1.12 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nyckelharpa", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Morin khuur", aliases: ["Horsehead fiddle"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cavaquinho", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Guitarrón", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Domra", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mandocello", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dilruba", aliases: ["Esraj"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dutar", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dombra", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yueqin", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sanxian", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Yangqin", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Archlute", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ruan", aliases: [], tier: 6, z: 2.41 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Aeolian harp", aliases: [], tier: 6, z: 2.32 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Cretan lyra", aliases: ["Lyra"], tier: 6, z: 2.31 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Ngoni", aliases: [], tier: 6, z: 1.58 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Vielle", aliases: [], tier: 6, z: 1.35 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tromba marina", aliases: [], tier: 6, z: 1.08 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Đàn bầu", aliases: [], tier: 6, z: 0.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Timple", aliases: [], tier: 6, z: 0.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Komuz", aliases: [], tier: 6, z: 0.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tanbur", aliases: [], tier: 6, z: 0.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tzouras", aliases: [], tier: 6, z: 0.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Lavta", aliases: [], tier: 6, z: 0.0 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Cümbüş", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Liuqin", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kokyu", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Geomungo", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Haegeum", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Đàn tranh", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Krar", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Begena", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Masenqo", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Valiha", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ektara", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Crwth", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Citole", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Gittern", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bandurria", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Laúd", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Baryton", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Arpeggione", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Octobass", aliases: [], tier: 6, z: 0.0 },
+      { text: "Violone", aliases: [], tier: 6, z: 0.0 },
+      { text: "Langeleik", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kokle", aliases: [], tier: 6, z: 0.0 },
+      { text: "Gusli", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kobza", aliases: [], tier: 6, z: 0.0 },
+      { text: "Tamburica", aliases: ["Tamburitza"], tier: 6, z: 0.0 },
+      { text: "Gusle", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kemenche", aliases: ["Kemençe"], tier: 6, z: 0.0 },
+      { text: "Gadulka", aliases: [], tier: 6, z: 0.0 },
+      { text: "Igil", aliases: [], tier: 6, z: 0.0 },
+      { text: "Jouhikko", aliases: [], tier: 6, z: 0.0 },
+      { text: "Talharpa", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "operas-01", category: "Music", closed: false,
+    prompt: "Name an opera or operetta",
+    answers: [
+      { text: "Carmen", aliases: [], tier: 1, z: 3.63 },
+      { text: "The Magic Flute", aliases: ["Die Zauberflöte"], tier: 1, z: 3.5 },
+      { text: "The Marriage of Figaro", aliases: ["Le nozze di Figaro", "Figaro"], tier: 1, z: 2.91 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "La Bohème", aliases: ["Boheme"], tier: 1, z: 2.01 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Madama Butterfly", aliases: ["Madame Butterfly", "Butterfly"], tier: 1, z: 1.96 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Don Giovanni", aliases: [], tier: 2, z: 3.39 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Barber of Seville", aliases: ["Il barbiere di Siviglia"], tier: 2, z: 3.1 },
+      { text: "Aida", aliases: [], tier: 2, z: 2.88 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Tosca", aliases: [], tier: 2, z: 2.47 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "La Traviata", aliases: ["Traviata"], tier: 2, z: 2.28 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Turandot", aliases: [], tier: 2, z: 1.91 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "William Tell", aliases: ["Guillaume Tell"], tier: 3, z: 4.79 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Ring Cycle", aliases: ["The Ring", "Der Ring des Nibelungen", "Ring of the Nibelung"], tier: 3, z: 4.39 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Faust", aliases: [], tier: 3, z: 3.07 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Flying Dutchman", aliases: ["Der fliegende Holländer"], tier: 3, z: 3.05 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tristan und Isolde", aliases: ["Tristan and Isolde"], tier: 3, z: 2.41 },
+      { text: "Hansel and Gretel", aliases: ["Hänsel und Gretel"], tier: 3, z: 2.4 },
+      { text: "Dido and Aeneas", aliases: [], tier: 3, z: 2.3 },
+      { text: "Rigoletto", aliases: [], tier: 3, z: 2.2 },
+      { text: "Porgy and Bess", aliases: [], tier: 3, z: 2.19 },
+      { text: "Fidelio", aliases: [], tier: 3, z: 2.07 },
+      { text: "Pagliacci", aliases: [], tier: 3, z: 2.01 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Otello", aliases: [], tier: 3, z: 1.98 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Il Trovatore", aliases: ["Trovatore"], tier: 3, z: 1.81 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Nabucco", aliases: [], tier: 3, z: 1.78 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Die Fledermaus", aliases: ["Fledermaus", "The Bat"], tier: 3, z: 1.74 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Così fan tutte", aliases: [], tier: 3, z: 1.66 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Die Walküre", aliases: ["The Valkyrie", "Walküre"], tier: 3, z: 1.38 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Turn of the Screw", aliases: [], tier: 4, z: 4.21 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nixon in China", aliases: [], tier: 4, z: 3.88 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Einstein on the Beach", aliases: [], tier: 4, z: 3.71 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Merry Widow", aliases: ["Die lustige Witwe"], tier: 4, z: 3.64 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Norma", aliases: [], tier: 4, z: 3.33 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Macbeth", aliases: [], tier: 4, z: 3.32 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Peter Grimes", aliases: [], tier: 4, z: 3.32 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Queen of Spades", aliases: ["Pique Dame"], tier: 4, z: 3.13 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "A Midsummer Night's Dream", aliases: [], tier: 4, z: 3.04 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Siegfried", aliases: [], tier: 4, z: 3.03 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Pearl Fishers", aliases: ["Les pêcheurs de perles"], tier: 4, z: 2.9 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Tales of Hoffmann", aliases: ["Les contes d'Hoffmann"], tier: 4, z: 2.88 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Billy Budd", aliases: [], tier: 4, z: 2.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Samson and Delilah", aliases: ["Samson et Dalila"], tier: 4, z: 2.79 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Orpheus in the Underworld", aliases: ["Orphée aux enfers"], tier: 4, z: 2.77 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Salome", aliases: [], tier: 4, z: 2.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Elektra", aliases: [], tier: 4, z: 2.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Don Pasquale", aliases: [], tier: 4, z: 2.65 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Falstaff", aliases: [], tier: 4, z: 2.64 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Manon", aliases: [], tier: 4, z: 2.58 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Pirates of Penzance", aliases: [], tier: 4, z: 2.57 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Mikado", aliases: [], tier: 4, z: 2.49 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Bartered Bride", aliases: [], tier: 4, z: 2.27 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Parsifal", aliases: [], tier: 4, z: 2.24 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Werther", aliases: [], tier: 4, z: 2.2 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "HMS Pinafore", aliases: ["Pinafore"], tier: 4, z: 2.09 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lohengrin", aliases: [], tier: 4, z: 2.06 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Das Rheingold", aliases: ["Rheingold", "The Rhinegold"], tier: 4, z: 2.03 },
+      { text: "Eugene Onegin", aliases: ["Onegin"], tier: 4, z: 2.02 },
+      { text: "Boris Godunov", aliases: [], tier: 4, z: 1.85 },
+      { text: "Der Rosenkavalier", aliases: ["Rosenkavalier"], tier: 4, z: 1.85 },
+      { text: "Tannhäuser", aliases: [], tier: 4, z: 1.76 },
+      { text: "Lucia di Lammermoor", aliases: ["Lucia"], tier: 4, z: 1.74 },
+      { text: "Manon Lescaut", aliases: [], tier: 4, z: 1.7 },
+      { text: "Die Meistersinger von Nürnberg", aliases: ["Meistersinger", "The Mastersingers of Nuremberg"], tier: 4, z: 1.58 },
+      { text: "Rusalka", aliases: [], tier: 4, z: 1.58 },
+      { text: "Gianni Schicchi", aliases: [], tier: 4, z: 1.55 },
+      { text: "Götterdämmerung", aliases: ["Twilight of the Gods"], tier: 4, z: 1.54 },
+      { text: "L'elisir d'amore", aliases: ["The Elixir of Love", "Elisir d'amore"], tier: 4, z: 1.47 },
+      { text: "Orfeo ed Euridice", aliases: ["Orpheus and Eurydice", "Orfeo", "L'Orfeo"], tier: 4, z: 1.43 },
+      { text: "Cavalleria rusticana", aliases: ["Cavalleria"], tier: 4, z: 1.34 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "La Cenerentola", aliases: ["Cenerentola"], tier: 4, z: 1.33 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lakmé", aliases: [], tier: 4, z: 1.24 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "War and Peace", aliases: [], tier: 5, z: 4.88 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Don Carlos", aliases: ["Don Carlo"], tier: 5, z: 3.97 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Doctor Atomic", aliases: [], tier: 5, z: 3.93 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Death in Venice", aliases: [], tier: 5, z: 3.92 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Love for Three Oranges", aliases: [], tier: 5, z: 3.52 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Prince Igor", aliases: [], tier: 5, z: 3.35 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lulu", aliases: [], tier: 5, z: 3.33 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Cunning Little Vixen", aliases: [], tier: 5, z: 2.82 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Giulio Cesare", aliases: ["Julius Caesar"], tier: 5, z: 2.46 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rinaldo", aliases: [], tier: 5, z: 2.45 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Candide", aliases: [], tier: 5, z: 2.25 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ariadne auf Naxos", aliases: [], tier: 5, z: 2.04 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "La forza del destino", aliases: ["The Force of Destiny", "Forza del destino"], tier: 5, z: 1.92 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "La clemenza di Tito", aliases: ["Clemenza di Tito"], tier: 5, z: 1.87 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Abduction from the Seraglio", aliases: ["Die Entführung aus dem Serail", "Il Seraglio"], tier: 5, z: 1.7 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Amahl and the Night Visitors", aliases: ["Amahl"], tier: 5, z: 1.63 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Wozzeck", aliases: [], tier: 5, z: 1.58 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Rake's Progress", aliases: [], tier: 5, z: 1.55 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Coronation of Poppea", aliases: ["L'incoronazione di Poppea", "Poppea"], tier: 5, z: 1.49 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bluebeard's Castle", aliases: ["Duke Bluebeard's Castle"], tier: 5, z: 1.44 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Idomeneo", aliases: [], tier: 5, z: 1.43 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Roméo et Juliette", aliases: ["Romeo and Juliet"], tier: 5, z: 1.43 },
+      { text: "Simon Boccanegra", aliases: [], tier: 5, z: 1.36 },
+      { text: "Un ballo in maschera", aliases: ["A Masked Ball"], tier: 5, z: 1.35 },
+      { text: "Andrea Chénier", aliases: [], tier: 5, z: 1.3 },
+      { text: "La fanciulla del West", aliases: ["The Girl of the Golden West", "Fanciulla del West"], tier: 5, z: 1.28 },
+      { text: "I puritani", aliases: ["Puritani"], tier: 5, z: 1.18 },
+      { text: "La sonnambula", aliases: ["Sonnambula"], tier: 5, z: 1.18 },
+      { text: "Der Freischütz", aliases: ["Freischutz", "The Marksman"], tier: 5, z: 1.05 },
+      { text: "Il trittico", aliases: ["Trittico"], tier: 5, z: 1.04 },
+      { text: "Les Troyens", aliases: ["The Trojans"], tier: 5, z: 1.03 },
+      { text: "Pelléas et Mélisande", aliases: ["Pelleas and Melisande", "Pelléas"], tier: 5, z: 0.95 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Serse", aliases: ["Xerxes"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jenůfa", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lady Macbeth of Mtsensk", aliases: ["Lady Macbeth of the Mtsensk District"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Thaïs", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dialogues des Carmélites", aliases: ["Dialogues of the Carmelites"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Akhnaten", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dead Man Walking", aliases: [], tier: 6, z: 4.66 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Medium", aliases: [], tier: 6, z: 4.61 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Nose", aliases: [], tier: 6, z: 4.51 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Tender Land", aliases: [], tier: 6, z: 4.06 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Four Saints in Three Acts", aliases: [], tier: 6, z: 4.01 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Louise", aliases: [], tier: 6, z: 4.0 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Martha", aliases: [], tier: 6, z: 3.98 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Vanessa", aliases: [], tier: 6, z: 3.72 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Albert Herring", aliases: [], tier: 6, z: 3.41 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Trouble in Tahiti", aliases: [], tier: 6, z: 3.03 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Luisa Miller", aliases: [], tier: 6, z: 2.95 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Moses und Aron", aliases: [], tier: 6, z: 2.95 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Susannah", aliases: [], tier: 6, z: 2.85 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Oedipus Rex", aliases: [], tier: 6, z: 2.83 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Arabella", aliases: [], tier: 6, z: 2.75 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mignon", aliases: [], tier: 6, z: 2.66 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Oberon", aliases: [], tier: 6, z: 2.65 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "The Rape of Lucretia", aliases: [], tier: 6, z: 2.48 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "The Golden Cockerel", aliases: ["Le Coq d'Or"], tier: 6, z: 2.36 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Die tote Stadt", aliases: [], tier: 6, z: 2.33 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Satyagraha", aliases: [], tier: 6, z: 2.23 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Rienzi", aliases: [], tier: 6, z: 2.07 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Gloriana", aliases: [], tier: 6, z: 2.04 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Mathis der Maler", aliases: [], tier: 6, z: 2.02 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "The Death of Klinghoffer", aliases: [], tier: 6, z: 1.88 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Capriccio", aliases: [], tier: 6, z: 1.77 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "La Gioconda", aliases: [], tier: 6, z: 1.75 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Die Frau ohne Schatten", aliases: [], tier: 6, z: 1.53 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Alcina", aliases: [], tier: 6, z: 1.52 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ernani", aliases: [], tier: 6, z: 1.4 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Suor Angelica", aliases: [], tier: 6, z: 1.39 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Die Soldaten", aliases: [], tier: 6, z: 1.25 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Semiramide", aliases: [], tier: 6, z: 1.17 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "La rondine", aliases: [], tier: 6, z: 1.14 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Adriana Lecouvreur", aliases: [], tier: 6, z: 1.12 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Maria Stuarda", aliases: [], tier: 6, z: 1.1 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "L'italiana in Algeri", aliases: ["The Italian Girl in Algiers"], tier: 6, z: 1.05 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mefistofele", aliases: [], tier: 6, z: 1.01 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "I vespri siciliani", aliases: ["Sicilian Vespers"], tier: 6, z: 0.0 },
+      { text: "Il tabarro", aliases: [], tier: 6, z: 0.0 },
+      { text: "Rodelinda", aliases: [], tier: 6, z: 0.0 },
+      { text: "Káťa Kabanová", aliases: ["Katya Kabanova"], tier: 6, z: 0.0 },
+      { text: "Khovanshchina", aliases: [], tier: 6, z: 0.0 },
+      { text: "Anna Bolena", aliases: [], tier: 6, z: 0.0 },
+      { text: "Euryanthe", aliases: [], tier: 6, z: 0.0 },
+      { text: "Königskinder", aliases: [], tier: 6, z: 0.0 },
+      { text: "Treemonisha", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "hamilton-songs-01", category: "Music", closed: true,
+    prompt: "Name a song from the musical Hamilton (original Broadway cast recording)",
+    answers: [
+      { text: "My Shot", aliases: [], tier: 1, z: 5.2 },
+      { text: "You'll Be Back", aliases: [], tier: 1, z: 5.15 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "The Room Where It Happens", aliases: [], tier: 1, z: 4.79 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Satisfied", aliases: [], tier: 1, z: 4.28 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Alexander Hamilton", aliases: [], tier: 1, z: 4.05 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Wait for It", aliases: [], tier: 2, z: 5.33 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Non-Stop", aliases: [], tier: 2, z: 5.09 },
+      { text: "Burn", aliases: [], tier: 2, z: 4.53 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Guns and Ships", aliases: [], tier: 2, z: 4.3 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Helpless", aliases: [], tier: 2, z: 3.69 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Schuyler Sisters", aliases: [], tier: 2, z: 2.85 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Say No to This", aliases: [], tier: 3, z: 5.72 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "One Last Time", aliases: [], tier: 3, z: 5.65 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Right Hand Man", aliases: [], tier: 3, z: 5.19 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "History Has Its Eyes on You", aliases: [], tier: 3, z: 4.94 },
+      { text: "The Story of Tonight", aliases: [], tier: 3, z: 4.89 },
+      { text: "Who Lives, Who Dies, Who Tells Your Story", aliases: ["Who Tells Your Story"], tier: 3, z: 4.17 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Aaron Burr, Sir", aliases: [], tier: 3, z: 3.3 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "It's Quiet Uptown", aliases: ["Quiet Uptown"], tier: 3, z: 3.29 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ten Duel Commandments", aliases: [], tier: 3, z: 3.2 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "What'd I Miss", aliases: ["What Did I Miss"], tier: 3, z: 2.96 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Yorktown (The World Turned Upside Down)", aliases: ["Yorktown", "The World Turned Upside Down"], tier: 3, z: 2.74 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dear Theodosia", aliases: [], tier: 3, z: 1.97 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "That Would Be Enough", aliases: [], tier: 4, z: 5.43 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "What Comes Next?", aliases: [], tier: 4, z: 5.17 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Take a Break", aliases: [], tier: 4, z: 5.1 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Washington on Your Side", aliases: [], tier: 4, z: 4.92 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The World Was Wide Enough", aliases: [], tier: 4, z: 4.81 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Stay Alive", aliases: [], tier: 4, z: 4.66 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cabinet Battle #1", aliases: ["Cabinet Battle"], tier: 4, z: 4.35 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cabinet Battle #2", aliases: [], tier: 4, z: 4.35 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hurricane", aliases: [], tier: 4, z: 4.1 },
+      { text: "The Reynolds Pamphlet", aliases: [], tier: 4, z: 3.24 },
+      { text: "Your Obedient Servant", aliases: [], tier: 4, z: 3.14 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Election of 1800", aliases: [], tier: 4, z: 2.96 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "We Know", aliases: [], tier: 5, z: 5.97 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "I Know Him", aliases: [], tier: 5, z: 5.78 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Meet Me Inside", aliases: [], tier: 5, z: 4.92 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Blow Us All Away", aliases: [], tier: 5, z: 4.53 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Best of Wives and Best of Women", aliases: [], tier: 5, z: 4.05 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "A Winter's Ball", aliases: [], tier: 5, z: 3.06 },
+      { text: "Farmer Refuted", aliases: [], tier: 5, z: 3.03 },
+      { text: "The Adams Administration", aliases: [], tier: 6, z: 4.17 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "The Story of Tonight (Reprise)", aliases: [], tier: 6, z: 2.95 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Stay Alive (Reprise)", aliases: [], tier: 6, z: 2.95 },
+      { text: "Schuyler Defeated", aliases: [], tier: 6, z: 2.84 },
+    ]
+  },
+  {
+    id: "scales-modes-01", category: "Music", closed: true,
+    prompt: "Name a musical scale or mode",
+    answers: [
+      { text: "Major", aliases: ["Major scale"], tier: 1, z: 5.3 },
+      { text: "Minor", aliases: ["Natural minor", "Minor scale"], tier: 1, z: 4.62 },
+      { text: "Chromatic", aliases: ["Chromatic scale"], tier: 1, z: 2.91 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Pentatonic", aliases: ["Major pentatonic", "Minor pentatonic"], tier: 1, z: 2.23 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Blues scale", aliases: ["Blues"], tier: 2, z: 4.22 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Harmonic minor", aliases: [], tier: 2, z: 3.31 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Dorian", aliases: [], tier: 2, z: 3.17 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Whole tone", aliases: ["Whole-tone scale"], tier: 3, z: 4.45 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Melodic minor", aliases: [], tier: 3, z: 3.22 },
+      { text: "Phrygian", aliases: [], tier: 3, z: 2.18 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lydian", aliases: [], tier: 3, z: 2.09 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mixolydian", aliases: [], tier: 3, z: 1.69 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ionian", aliases: [], tier: 4, z: 2.62 },
+      { text: "Aeolian", aliases: [], tier: 4, z: 2.36 },
+      { text: "Diatonic", aliases: [], tier: 4, z: 2.22 },
+      { text: "Locrian", aliases: [], tier: 4, z: 1.55 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Altered scale", aliases: ["Super Locrian", "Altered"], tier: 5, z: 3.96 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hungarian minor", aliases: ["Double harmonic minor", "Gypsy minor"], tier: 5, z: 3.73 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Double harmonic", aliases: ["Byzantine", "Arabic scale", "Double harmonic major"], tier: 5, z: 3.32 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bebop scale", aliases: ["Bebop"], tier: 5, z: 2.83 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Phrygian dominant", aliases: ["Spanish Phrygian", "Freygish"], tier: 5, z: 2.18 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lydian dominant", aliases: ["Acoustic scale"], tier: 5, z: 2.09 },
+      { text: "Octatonic", aliases: ["Diminished", "Diminished scale"], tier: 5, z: 0.0 },
+      { text: "Hexatonic", aliases: ["Augmented scale"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "In scale", aliases: ["Insen", "In sen"], tier: 6, z: 4.83 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Yo scale", aliases: ["Yo"], tier: 6, z: 4.3 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Persian scale", aliases: ["Persian"], tier: 6, z: 3.79 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Hungarian major", aliases: [], tier: 6, z: 3.78 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Romanian minor", aliases: ["Ukrainian Dorian"], tier: 6, z: 3.54 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Harmonic major", aliases: [], tier: 6, z: 3.33 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Prometheus scale", aliases: ["Mystic scale"], tier: 6, z: 3.12 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Enigmatic scale", aliases: ["Enigmatic"], tier: 6, z: 3.1 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Neapolitan minor", aliases: ["Neapolitan major", "Neapolitan"], tier: 6, z: 2.74 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bhairav", aliases: ["Bhairavi"], tier: 6, z: 1.67 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hirajoshi", aliases: [], tier: 6, z: 0.0 },
+      { text: "Slendro", aliases: [], tier: 6, z: 0.0 },
+      { text: "Pelog", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "percussion-01", category: "Music", closed: false,
+    prompt: "Name a percussion instrument",
+    answers: [
+      { text: "Drums", aliases: ["Drum kit", "Drum set", "Drum"], tier: 1, z: 3.93 },
+      { text: "Triangle", aliases: [], tier: 1, z: 3.93 },
+      { text: "Cymbals", aliases: ["Cymbal"], tier: 1, z: 2.75 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Tambourine", aliases: [], tier: 1, z: 2.64 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Xylophone", aliases: [], tier: 1, z: 2.37 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Bass drum", aliases: ["Kick drum", "Kick"], tier: 2, z: 3.89 },
+      { text: "Snare drum", aliases: ["Snare"], tier: 2, z: 3.19 },
+      { text: "Cowbell", aliases: [], tier: 2, z: 2.46 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Bongos", aliases: ["Bongo", "Bongo drums"], tier: 2, z: 2.32 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Timpani", aliases: ["Kettledrum", "Kettledrums", "Kettle drums"], tier: 2, z: 2.19 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Maracas", aliases: ["Maraca"], tier: 2, z: 2.11 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Hi-hat", aliases: [], tier: 3, z: 4.4 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Steel drum", aliases: ["Steelpan", "Steel pan", "Steel drums"], tier: 3, z: 4.01 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bells", aliases: ["Handbells", "Sleigh bells", "Jingle bells", "Bell"], tier: 3, z: 3.9 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Gong", aliases: ["Tam-tam"], tier: 3, z: 3.45 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tubular bells", aliases: ["Chimes"], tier: 3, z: 3.16 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Washboard", aliases: [], tier: 3, z: 2.31 },
+      { text: "Marimba", aliases: [], tier: 3, z: 2.29 },
+      { text: "Woodblock", aliases: ["Wood block"], tier: 3, z: 2.2 },
+      { text: "Tabla", aliases: [], tier: 3, z: 2.17 },
+      { text: "Castanets", aliases: [], tier: 3, z: 2.01 },
+      { text: "Glockenspiel", aliases: [], tier: 3, z: 1.91 },
+      { text: "Vibraphone", aliases: ["Vibes"], tier: 3, z: 1.89 },
+      { text: "Congas", aliases: ["Conga", "Conga drums"], tier: 3, z: 1.85 },
+      { text: "Djembe", aliases: [], tier: 3, z: 1.8 },
+      { text: "Claves", aliases: [], tier: 3, z: 1.49 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Cajón", aliases: [], tier: 3, z: 1.04 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tom-tom", aliases: ["Toms", "Tom", "Floor tom"], tier: 4, z: 4.53 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Temple blocks", aliases: [], tier: 4, z: 4.14 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Talking drum", aliases: [], tier: 4, z: 4.08 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Whip", aliases: ["Slapstick"], tier: 4, z: 4.01 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Frame drum", aliases: ["Bendir"], tier: 4, z: 3.98 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Thunder sheet", aliases: [], tier: 4, z: 3.95 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Spoons", aliases: [], tier: 4, z: 3.28 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shaker", aliases: ["Egg shaker"], tier: 4, z: 3.23 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ratchet", aliases: [], tier: 4, z: 3.15 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wind chimes", aliases: ["Mark tree"], tier: 4, z: 3.05 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Anvil", aliases: [], tier: 4, z: 3.04 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Tabor", aliases: [], tier: 4, z: 2.78 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Crash cymbal", aliases: [], tier: 4, z: 2.59 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ride cymbal", aliases: [], tier: 4, z: 2.59 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Taiko", aliases: [], tier: 4, z: 2.23 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dhol", aliases: [], tier: 4, z: 1.92 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Celesta", aliases: ["Celeste"], tier: 4, z: 1.66 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kalimba", aliases: ["Mbira", "Thumb piano"], tier: 4, z: 1.44 },
+      { text: "Agogo", aliases: [], tier: 4, z: 1.39 },
+      { text: "Timbales", aliases: [], tier: 4, z: 1.38 },
+      { text: "Cabasa", aliases: [], tier: 4, z: 1.14 },
+      { text: "Darbuka", aliases: ["Doumbek", "Goblet drum"], tier: 4, z: 1.1 },
+      { text: "Guiro", aliases: [], tier: 4, z: 0.0 },
+      { text: "Rainstick", aliases: ["Rain stick"], tier: 4, z: 0.0 },
+      { text: "Bodhrán", aliases: [], tier: 4, z: 0.0 },
+      { text: "Handpan", aliases: ["Hang", "Hang drum"], tier: 4, z: 0.0 },
+      { text: "Vibraslap", aliases: [], tier: 4, z: 0.0 },
+      { text: "Crotales", aliases: [], tier: 4, z: 0.0 },
+      { text: "Flexatone", aliases: [], tier: 4, z: 0.0 },
+      { text: "Surdo", aliases: [], tier: 4, z: 0.0 },
+      { text: "Pandeiro", aliases: [], tier: 4, z: 0.0 },
+      { text: "Cuíca", aliases: [], tier: 4, z: 0.0 },
+      { text: "Wind machine", aliases: [], tier: 5, z: 4.57 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bell tree", aliases: [], tier: 5, z: 4.4 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bones", aliases: [], tier: 5, z: 4.32 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Singing bowl", aliases: ["Tibetan singing bowl"], tier: 5, z: 4.31 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ocean drum", aliases: [], tier: 5, z: 4.01 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Slit drum", aliases: ["Log drum", "Teponaztli"], tier: 5, z: 3.38 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Typewriter", aliases: [], tier: 5, z: 3.26 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Finger cymbals", aliases: ["Zills"], tier: 5, z: 2.74 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "China cymbal", aliases: [], tier: 5, z: 2.59 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Daf", aliases: [], tier: 5, z: 2.46 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Carillon", aliases: [], tier: 5, z: 2.27 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Reco-reco", aliases: [], tier: 5, z: 1.86 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Riq", aliases: ["Riqq"], tier: 5, z: 1.54 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Udu", aliases: [], tier: 5, z: 1.45 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Angklung", aliases: [], tier: 5, z: 1.09 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sistrum", aliases: [], tier: 5, z: 1.07 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tombak", aliases: ["Tonbak", "Zarb"], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dholak", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mridangam", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ghatam", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kanjira", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shekere", aliases: [], tier: 5, z: 0.0 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Caxixi", aliases: [], tier: 5, z: 0.0 },
+      { text: "Batá drums", aliases: ["Bata"], tier: 5, z: 0.0 },
+      { text: "Dunun", aliases: ["Djun djun"], tier: 5, z: 0.0 },
+      { text: "Balafon", aliases: [], tier: 5, z: 0.0 },
+      { text: "Janggu", aliases: ["Janggo"], tier: 5, z: 0.0 },
+      { text: "Rototom", aliases: ["Roto-tom"], tier: 5, z: 0.0 },
+      { text: "Tamborim", aliases: [], tier: 5, z: 0.0 },
+      { text: "Lambeg drum", aliases: ["Lambeg"], tier: 5, z: 0.0 },
+      { text: "Spring drum", aliases: ["Thunder tube"], tier: 6, z: 4.05 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Cannon", aliases: [], tier: 6, z: 4.02 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Lion's roar", aliases: ["String drum"], tier: 6, z: 3.06 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Jing", aliases: [], tier: 6, z: 3.03 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Sandpaper blocks", aliases: ["Sandpaper"], tier: 6, z: 2.72 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Buk", aliases: [], tier: 6, z: 2.51 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Caixa", aliases: [], tier: 6, z: 1.93 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tambora", aliases: [], tier: 6, z: 1.65 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bonang", aliases: [], tier: 6, z: 1.63 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Bombo", aliases: ["Bombo legüero"], tier: 6, z: 1.57 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Quijada", aliases: ["Jawbone"], tier: 6, z: 1.09 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pakhavaj", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Damaru", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bougarabou", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ashiko", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Gendèr", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kendang", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tsuzumi", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Shime-daiko", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kkwaenggwari", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bianzhong", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lithophone", aliases: [], tier: 6, z: 0.0 },
+      { text: "Tingsha", aliases: [], tier: 6, z: 0.0 },
+      { text: "Octoban", aliases: [], tier: 6, z: 0.0 },
+      { text: "Timbau", aliases: [], tier: 6, z: 0.0 },
+      { text: "Repinique", aliases: [], tier: 6, z: 0.0 },
+      { text: "Ganzá", aliases: [], tier: 6, z: 0.0 },
+      { text: "Afoxé", aliases: [], tier: 6, z: 0.0 },
+      { text: "Aluphone", aliases: [], tier: 6, z: 0.0 },
+      { text: "Waterphone", aliases: [], tier: 6, z: 0.0 },
+      { text: "Almglocken", aliases: ["Tuned cowbells"], tier: 6, z: 0.0 },
+      { text: "Boobam", aliases: [], tier: 6, z: 0.0 },
+      { text: "Xylorimba", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "ballets-01", category: "Music", closed: false,
+    prompt: "Name a ballet",
+    answers: [
+      { text: "The Sleeping Beauty", aliases: [], tier: 1, z: 4.34 },
+      { text: "Swan Lake", aliases: [], tier: 1, z: 3.8 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Cinderella", aliases: [], tier: 1, z: 3.45 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Romeo and Juliet", aliases: [], tier: 1, z: 3.34 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "The Nutcracker", aliases: [], tier: 1, z: 2.86 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "The Rite of Spring", aliases: [], tier: 2, z: 3.61 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Don Quixote", aliases: [], tier: 2, z: 2.92 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Giselle", aliases: [], tier: 2, z: 2.81 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "The Firebird", aliases: [], tier: 2, z: 2.66 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Coppélia", aliases: [], tier: 2, z: 1.29 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Red Shoes", aliases: [], tier: 3, z: 4.58 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Peter and the Wolf", aliases: [], tier: 3, z: 4.24 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Carmen", aliases: ["Carmen Suite"], tier: 3, z: 3.63 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "A Midsummer Night's Dream", aliases: ["The Dream"], tier: 3, z: 3.04 },
+      { text: "Spartacus", aliases: [], tier: 3, z: 2.83 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Alice's Adventures in Wonderland", aliases: ["Alice in Wonderland"], tier: 3, z: 2.83 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Manon", aliases: [], tier: 3, z: 2.58 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Petrushka", aliases: ["Petrouchka"], tier: 3, z: 1.63 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "La Sylphide", aliases: [], tier: 3, z: 1.49 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Le Corsaire", aliases: ["Corsaire"], tier: 3, z: 1.31 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Boléro", aliases: [], tier: 3, z: 1.09 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "La Bayadère", aliases: ["Bayadere"], tier: 3, z: 0.0 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Billy the Kid", aliases: [], tier: 4, z: 4.24 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Parade", aliases: [], tier: 4, z: 4.16 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Apollo", aliases: ["Apollon musagète"], tier: 4, z: 3.82 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Dying Swan", aliases: [], tier: 4, z: 3.77 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Symphony in C", aliases: [], tier: 4, z: 3.76 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sylvia", aliases: [], tier: 4, z: 3.6 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jewels", aliases: [], tier: 4, z: 3.59 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rodeo", aliases: [], tier: 4, z: 3.47 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Appalachian Spring", aliases: [], tier: 4, z: 3.24 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Anastasia", aliases: [], tier: 4, z: 3.21 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Winter's Tale", aliases: [], tier: 4, z: 3.05 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Serenade", aliases: [], tier: 4, z: 2.94 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Afternoon of a Faun", aliases: ["L'après-midi d'un faune"], tier: 4, z: 2.42 },
+      { text: "The Four Temperaments", aliases: [], tier: 4, z: 2.41 },
+      { text: "Scheherazade", aliases: [], tier: 4, z: 2.13 },
+      { text: "Agon", aliases: [], tier: 4, z: 2.12 },
+      { text: "Onegin", aliases: [], tier: 4, z: 2.03 },
+      { text: "Paquita", aliases: [], tier: 4, z: 1.86 },
+      { text: "Daphnis et Chloé", aliases: ["Daphnis and Chloe"], tier: 4, z: 1.76 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pulcinella", aliases: [], tier: 4, z: 1.51 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Les Noces", aliases: [], tier: 4, z: 1.37 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Les Sylphides", aliases: ["Chopiniana"], tier: 4, z: 1.33 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mayerling", aliases: [], tier: 4, z: 1.25 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Raymonda", aliases: [], tier: 4, z: 1.2 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "La Fille mal gardée", aliases: ["The Wayward Daughter"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Car Man", aliases: [], tier: 5, z: 5.29 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "A Month in the Country", aliases: [], tier: 5, z: 5.04 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fancy Free", aliases: [], tier: 5, z: 4.33 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Bright Stream", aliases: [], tier: 5, z: 4.31 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Stone Flower", aliases: [], tier: 5, z: 4.27 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Peter Pan", aliases: [], tier: 5, z: 4.27 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Flames of Paris", aliases: [], tier: 5, z: 3.96 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ivan the Terrible", aliases: [], tier: 5, z: 3.8 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Revelations", aliases: [], tier: 5, z: 3.56 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dracula", aliases: [], tier: 5, z: 3.34 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Napoli", aliases: [], tier: 5, z: 3.33 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Le Spectre de la rose", aliases: ["Spectre de la rose"], tier: 5, z: 3.2 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Enigma Variations", aliases: [], tier: 5, z: 3.18 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Woolf Works", aliases: [], tier: 5, z: 3.15 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Prodigal Son", aliases: [], tier: 5, z: 2.92 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "La Esmeralda", aliases: ["Esmeralda"], tier: 5, z: 2.77 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chroma", aliases: [], tier: 5, z: 2.75 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Marguerite and Armand", aliases: [], tier: 5, z: 2.73 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Taming of the Shrew", aliases: [], tier: 5, z: 2.53 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Pharaoh's Daughter", aliases: [], tier: 5, z: 2.44 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lady of the Camellias", aliases: ["La Dame aux camélias"], tier: 5, z: 2.21 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jeux", aliases: [], tier: 5, z: 2.19 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Edward Scissorhands", aliases: [], tier: 5, z: 2.14 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "La Valse", aliases: [], tier: 5, z: 1.87 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ondine", aliases: [], tier: 5, z: 1.86 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gayane", aliases: ["Gayaneh"], tier: 5, z: 1.06 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Les Patineurs", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "La Source", aliases: [], tier: 6, z: 4.8 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "In the Upper Room", aliases: [], tier: 6, z: 4.63 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Golden Age", aliases: [], tier: 6, z: 4.58 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "A Folk Tale", aliases: [], tier: 6, z: 3.95 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Western Symphony", aliases: [], tier: 6, z: 3.75 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Stars and Stripes", aliases: [], tier: 6, z: 3.73 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Dances at a Gathering", aliases: [], tier: 6, z: 3.66 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "The Red Poppy", aliases: [], tier: 6, z: 3.58 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Pineapple Poll", aliases: [], tier: 6, z: 3.51 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "The Two Pigeons", aliases: [], tier: 6, z: 3.36 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "The Talisman", aliases: ["Le Talisman"], tier: 6, z: 3.06 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Checkmate", aliases: [], tier: 6, z: 2.98 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Façade", aliases: [], tier: 6, z: 2.96 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Symphonic Variations", aliases: [], tier: 6, z: 2.82 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pas de Quatre", aliases: [], tier: 6, z: 2.41 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "The Little Humpbacked Horse", aliases: [], tier: 6, z: 1.63 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Le Tricorne", aliases: ["The Three-Cornered Hat"], tier: 6, z: 1.51 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Les Biches", aliases: [], tier: 6, z: 1.48 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Elite Syncopations", aliases: [], tier: 6, z: 1.44 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Harlequinade", aliases: ["Les Millions d'Arlequin"], tier: 6, z: 1.42 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Concerto Barocco", aliases: [], tier: 6, z: 1.34 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "The Fountain of Bakhchisarai", aliases: [], tier: 6, z: 1.09 },
+      { text: "Laurencia", aliases: [], tier: 6, z: 1.07 },
+      { text: "Anyuta", aliases: [], tier: 6, z: 0.0 },
+      { text: "Flower Festival in Genzano", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "classic-rock-members-01", category: "Music", closed: true,
+    prompt: "Name a member of the Beatles, the Rolling Stones, Queen, Led Zeppelin, Pink Floyd or The Who (classic line-ups)",
+    answers: [
+      { text: "Freddie Mercury", aliases: ["Mercury", "Freddie"], tier: 1, z: 3.57 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "John Lennon", aliases: ["Lennon"], tier: 1, z: 3.55 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Paul McCartney", aliases: ["McCartney"], tier: 1, z: 3.51 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Mick Jagger", aliases: ["Jagger"], tier: 1, z: 3.03 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Brian May", aliases: [], tier: 2, z: 4.46 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "George Harrison", aliases: ["Harrison"], tier: 2, z: 4.03 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Keith Richards", aliases: ["Keef"], tier: 2, z: 3.68 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Syd Barrett", aliases: ["Barrett"], tier: 2, z: 2.99 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Ringo Starr", aliases: ["Ringo"], tier: 2, z: 2.97 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Robert Plant", aliases: ["Plant"], tier: 3, z: 4.57 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Jimmy Page", aliases: ["Page"], tier: 3, z: 4.36 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Roger Taylor", aliases: [], tier: 3, z: 4.2 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Roger Waters", aliases: ["Waters"], tier: 3, z: 4.12 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Keith Moon", aliases: ["Moon"], tier: 3, z: 4.06 },
+      { text: "David Gilmour", aliases: ["Gilmour"], tier: 3, z: 2.86 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Pete Townshend", aliases: ["Townshend"], tier: 3, z: 2.62 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Roger Daltrey", aliases: ["Daltrey"], tier: 3, z: 2.18 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Charlie Watts", aliases: ["Watts"], tier: 4, z: 3.7 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ronnie Wood", aliases: ["Ron Wood"], tier: 4, z: 3.67 },
+      { text: "John Deacon", aliases: ["Deacon"], tier: 4, z: 3.39 },
+      { text: "John Bonham", aliases: ["Bonham", "Bonzo"], tier: 4, z: 2.79 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "John Paul Jones", aliases: [], tier: 5, z: 4.49 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Brian Jones", aliases: [], tier: 5, z: 4.28 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Richard Wright", aliases: ["Rick Wright"], tier: 5, z: 4.1 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nick Mason", aliases: ["Mason"], tier: 5, z: 4.01 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "John Entwistle", aliases: ["Entwistle"], tier: 5, z: 2.33 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mick Taylor", aliases: [], tier: 6, z: 3.77 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Bill Wyman", aliases: ["Wyman"], tier: 6, z: 2.74 }, // override: auto 5 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "michael-jackson-tracks-01", category: "Music", closed: true,
+    prompt: "Name a track from Michael Jackson's albums Thriller or Bad (original track lists)",
+    answers: [
+      { text: "Bad", aliases: [], tier: 1, z: 5.53 },
+      { text: "Beat It", aliases: [], tier: 1, z: 5.0 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Smooth Criminal", aliases: [], tier: 1, z: 4.24 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Thriller", aliases: [], tier: 1, z: 3.91 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Billie Jean", aliases: [], tier: 1, z: 3.41 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "The Way You Make Me Feel", aliases: [], tier: 2, z: 5.36 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Man in the Mirror", aliases: [], tier: 2, z: 4.45 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Wanna Be Startin' Somethin'", aliases: ["Wanna Be Starting Something", "Wanna Be Startin' Something"], tier: 2, z: 2.54 }, // override: auto 6 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Girl Is Mine", aliases: [], tier: 3, z: 4.87 },
+      { text: "Human Nature", aliases: [], tier: 3, z: 4.83 },
+      { text: "Dirty Diana", aliases: [], tier: 3, z: 3.91 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "P.Y.T. (Pretty Young Thing)", aliases: ["PYT", "Pretty Young Thing"], tier: 3, z: 1.19 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Leave Me Alone", aliases: [], tier: 4, z: 4.93 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "I Just Can't Stop Loving You", aliases: [], tier: 4, z: 4.41 },
+      { text: "Liberian Girl", aliases: [], tier: 4, z: 3.01 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Another Part of Me", aliases: [], tier: 5, z: 5.41 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Baby Be Mine", aliases: [], tier: 5, z: 4.83 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Speed Demon", aliases: [], tier: 5, z: 4.01 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Just Good Friends", aliases: [], tier: 6, z: 5.31 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "The Lady in My Life", aliases: [], tier: 6, z: 4.89 }, // override: auto 3 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "austen-bronte-01", category: "Language", closed: true,
+    prompt: "Name a novel by Jane Austen or one of the Brontë sisters (unfinished novels count)",
+    answers: [
+      { text: "Pride and Prejudice", aliases: [], tier: 1, z: 3.71 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Jane Eyre", aliases: [], tier: 1, z: 3.11 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Wuthering Heights", aliases: [], tier: 1, z: 2.52 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Emma", aliases: [], tier: 2, z: 4.23 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Sense and Sensibility", aliases: [], tier: 2, z: 3.2 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Mansfield Park", aliases: [], tier: 3, z: 3.41 },
+      { text: "Persuasion", aliases: [], tier: 3, z: 3.33 },
+      { text: "Northanger Abbey", aliases: [], tier: 3, z: 1.93 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Agnes Grey", aliases: [], tier: 4, z: 3.52 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Villette", aliases: [], tier: 4, z: 2.19 },
+      { text: "The Tenant of Wildfell Hall", aliases: [], tier: 4, z: 1.18 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lady Susan", aliases: [], tier: 5, z: 4.16 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shirley", aliases: [], tier: 5, z: 3.73 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sanditon", aliases: [], tier: 5, z: 1.28 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Professor", aliases: [], tier: 6, z: 4.9 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Watsons", aliases: [], tier: 6, z: 2.17 }, // override: auto 5 -> 6 (rare but satisfying find)
+    ]
+  },
+  {
+    id: "hebrew-letters-01", category: "Language", closed: true,
+    prompt: "Name a letter of the Hebrew alphabet",
+    answers: [
+      { text: "Bet", aliases: ["Beth", "Vet"], tier: 1, z: 4.79 },
+      { text: "Aleph", aliases: ["Alef"], tier: 1, z: 2.39 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Shin", aliases: ["Sin"], tier: 2, z: 3.69 },
+      { text: "Gimel", aliases: [], tier: 2, z: 1.33 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Dalet", aliases: ["Daleth"], tier: 2, z: 1.25 }, // override: auto 5 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Nun", aliases: [], tier: 3, z: 3.64 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mem", aliases: [], tier: 3, z: 2.91 },
+      { text: "Yod", aliases: ["Yud", "Yodh"], tier: 3, z: 2.06 },
+      { text: "Tav", aliases: ["Taw"], tier: 3, z: 2.06 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lamed", aliases: ["Lamedh"], tier: 3, z: 1.7 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "He", aliases: ["Hei", "Hey"], tier: 4, z: 6.69 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Vav", aliases: ["Waw"], tier: 4, z: 2.08 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kaf", aliases: ["Kaph", "Khaf"], tier: 4, z: 1.88 },
+      { text: "Resh", aliases: [], tier: 4, z: 1.82 },
+      { text: "Ayin", aliases: [], tier: 4, z: 1.6 },
+      { text: "Pe", aliases: ["Pei", "Fe", "Peh"], tier: 5, z: 3.72 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Chet", aliases: ["Het", "Heth", "Khet"], tier: 5, z: 3.13 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Tet", aliases: ["Teth"], tier: 5, z: 2.81 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Qof", aliases: ["Kuf", "Qoph", "Kof"], tier: 5, z: 1.28 },
+      { text: "Zayin", aliases: [], tier: 5, z: 0.0 },
+      { text: "Samekh", aliases: ["Samech", "Samek"], tier: 6, z: 0.0 },
+      { text: "Tsadi", aliases: ["Tzadi", "Tsade", "Tzade", "Sadhe", "Tsadik"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "india-languages-01", category: "Language", closed: true,
+    prompt: "Name one of the 22 scheduled languages of India",
+    answers: [
+      { text: "Hindi", aliases: [], tier: 1, z: 3.82 },
+      { text: "Tamil", aliases: [], tier: 1, z: 3.76 },
+      { text: "Urdu", aliases: [], tier: 1, z: 3.26 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Bengali", aliases: ["Bangla"], tier: 1, z: 3.21 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Punjabi", aliases: ["Panjabi"], tier: 1, z: 3.16 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Sanskrit", aliases: [], tier: 2, z: 3.31 }, // override: auto 1 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Telugu", aliases: [], tier: 2, z: 3.17 },
+      { text: "Marathi", aliases: [], tier: 2, z: 2.85 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Gujarati", aliases: [], tier: 2, z: 2.79 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Nepali", aliases: [], tier: 3, z: 3.0 },
+      { text: "Kashmiri", aliases: [], tier: 3, z: 2.96 },
+      { text: "Malayalam", aliases: [], tier: 3, z: 2.85 },
+      { text: "Kannada", aliases: [], tier: 3, z: 2.8 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Sindhi", aliases: [], tier: 3, z: 2.33 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Assamese", aliases: [], tier: 4, z: 2.27 },
+      { text: "Odia", aliases: ["Oriya"], tier: 4, z: 1.95 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Konkani", aliases: [], tier: 4, z: 1.86 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Manipuri", aliases: ["Meitei", "Meiteilon"], tier: 5, z: 1.74 },
+      { text: "Maithili", aliases: [], tier: 5, z: 1.53 },
+      { text: "Dogri", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bodo", aliases: [], tier: 6, z: 2.32 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Santali", aliases: ["Santhali"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "grammatical-cases-01", category: "Language", closed: true,
+    prompt: "Name a grammatical case (as found in Latin, German, Russian, Finnish and other languages)",
+    answers: [
+      { text: "Nominative", aliases: [], tier: 1, z: 2.57 },
+      { text: "Genitive", aliases: ["Possessive"], tier: 1, z: 2.57 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Accusative", aliases: [], tier: 1, z: 2.51 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Dative", aliases: [], tier: 2, z: 2.43 },
+      { text: "Vocative", aliases: [], tier: 2, z: 1.88 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Instrumental", aliases: [], tier: 3, z: 3.99 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ablative", aliases: [], tier: 3, z: 2.31 },
+      { text: "Locative", aliases: [], tier: 3, z: 2.16 },
+      { text: "Oblique", aliases: ["Objective"], tier: 4, z: 3.2 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Prepositional", aliases: [], tier: 4, z: 2.17 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ergative", aliases: [], tier: 4, z: 1.83 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Partitive", aliases: [], tier: 4, z: 1.65 },
+      { text: "Absolutive", aliases: [], tier: 5, z: 1.43 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Illative", aliases: [], tier: 5, z: 1.13 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Comitative", aliases: [], tier: 5, z: 1.09 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Essive", aliases: [], tier: 5, z: 0.0 },
+      { text: "Inessive", aliases: [], tier: 5, z: 0.0 },
+      { text: "Elative", aliases: [], tier: 6, z: 1.14 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Translative", aliases: [], tier: 6, z: 1.06 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Allative", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Adessive", aliases: [], tier: 6, z: 0.0 },
+      { text: "Abessive", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "typefaces-01", category: "Language", closed: false,
+    prompt: "Name a typeface or font",
+    answers: [
+      { text: "Times New Roman", aliases: ["Times"], tier: 1, z: 4.46 },
+      { text: "Comic Sans", aliases: ["Comic Sans MS"], tier: 1, z: 3.52 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Helvetica", aliases: [], tier: 1, z: 2.44 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Arial", aliases: [], tier: 1, z: 2.34 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Calibri", aliases: [], tier: 1, z: 1.47 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Impact", aliases: [], tier: 2, z: 4.92 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Georgia", aliases: [], tier: 2, z: 4.46 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Courier", aliases: ["Courier New"], tier: 2, z: 3.68 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Papyrus", aliases: [], tier: 2, z: 2.9 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Verdana", aliases: [], tier: 2, z: 1.88 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Wingdings", aliases: [], tier: 2, z: 1.49 }, // override: auto 5 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Century Gothic", aliases: [], tier: 3, z: 3.63 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Open Sans", aliases: [], tier: 3, z: 3.57 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Gill Sans", aliases: [], tier: 3, z: 3.3 },
+      { text: "Rockwell", aliases: [], tier: 3, z: 3.2 },
+      { text: "Cambria", aliases: [], tier: 3, z: 2.66 },
+      { text: "Baskerville", aliases: [], tier: 3, z: 2.36 },
+      { text: "Futura", aliases: [], tier: 3, z: 2.26 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Trebuchet", aliases: ["Trebuchet MS"], tier: 3, z: 2.07 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lucida", aliases: ["Lucida Sans", "Lucida Console", "Lucida Grande"], tier: 3, z: 2.03 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Garamond", aliases: [], tier: 3, z: 1.85 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Roboto", aliases: [], tier: 3, z: 1.83 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tahoma", aliases: [], tier: 3, z: 1.69 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Palatino", aliases: ["Palatino Linotype", "Book Antiqua"], tier: 3, z: 1.6 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bodoni", aliases: [], tier: 3, z: 1.5 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Segoe UI", aliases: ["Segoe"], tier: 3, z: 1.15 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Consolas", aliases: [], tier: 3, z: 0.0 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Chicago", aliases: [], tier: 4, z: 4.83 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Old English Text", aliases: ["Old English"], tier: 4, z: 4.74 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "San Francisco", aliases: ["SF Pro"], tier: 4, z: 4.4 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cooper Black", aliases: [], tier: 4, z: 4.23 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Inter", aliases: [], tier: 4, z: 4.16 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Broadway", aliases: [], tier: 4, z: 4.08 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Geneva", aliases: [], tier: 4, z: 4.0 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Brush Script", aliases: [], tier: 4, z: 3.99 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bradley Hand", aliases: [], tier: 4, z: 3.99 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Marker Felt", aliases: [], tier: 4, z: 3.85 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lobster", aliases: [], tier: 4, z: 3.65 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Monaco", aliases: [], tier: 4, z: 3.65 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Source Sans", aliases: ["Source Sans Pro"], tier: 4, z: 3.57 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "DIN", aliases: [], tier: 4, z: 3.56 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Franklin Gothic", aliases: [], tier: 4, z: 3.54 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Myriad", aliases: ["Myriad Pro"], tier: 4, z: 3.49 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Oswald", aliases: [], tier: 4, z: 3.43 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ubuntu", aliases: [], tier: 4, z: 3.27 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Algerian", aliases: [], tier: 4, z: 3.26 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "American Typewriter", aliases: [], tier: 4, z: 3.26 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Minion", aliases: ["Minion Pro"], tier: 4, z: 3.05 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Clarendon", aliases: [], tier: 4, z: 3.05 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Poppins", aliases: [], tier: 4, z: 2.97 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Stencil", aliases: [], tier: 4, z: 2.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Menlo", aliases: [], tier: 4, z: 2.8 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bauhaus", aliases: ["Bauhaus 93"], tier: 4, z: 2.6 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Montserrat", aliases: [], tier: 4, z: 2.59 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Chiller", aliases: [], tier: 4, z: 2.54 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Trajan", aliases: [], tier: 4, z: 2.49 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Optima", aliases: [], tier: 4, z: 2.47 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Proxima Nova", aliases: [], tier: 4, z: 2.36 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Arial Black", aliases: [], tier: 4, z: 2.34 },
+      { text: "Noto", aliases: ["Noto Sans"], tier: 4, z: 2.31 },
+      { text: "Univers", aliases: [], tier: 4, z: 2.24 },
+      { text: "Playfair Display", aliases: ["Playfair"], tier: 4, z: 2.23 },
+      { text: "Bookman", aliases: ["Bookman Old Style"], tier: 4, z: 2.2 },
+      { text: "Constantia", aliases: [], tier: 4, z: 2.13 },
+      { text: "Merriweather", aliases: [], tier: 4, z: 2.11 },
+      { text: "Perpetua", aliases: [], tier: 4, z: 2.07 },
+      { text: "Avenir", aliases: [], tier: 4, z: 2.06 },
+      { text: "Fira Sans", aliases: ["Fira", "Fira Code"], tier: 4, z: 2.05 },
+      { text: "Pacifico", aliases: [], tier: 4, z: 2.04 },
+      { text: "Lato", aliases: [], tier: 4, z: 1.98 },
+      { text: "Copperplate", aliases: ["Copperplate Gothic"], tier: 4, z: 1.87 },
+      { text: "Corbel", aliases: [], tier: 4, z: 1.81 },
+      { text: "Caslon", aliases: [], tier: 4, z: 1.73 },
+      { text: "Century Schoolbook", aliases: ["Century"], tier: 4, z: 1.68 },
+      { text: "Didot", aliases: [], tier: 4, z: 1.65 },
+      { text: "Frutiger", aliases: [], tier: 4, z: 1.35 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Bebas Neue", aliases: ["Bebas"], tier: 4, z: 1.13 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Candara", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Akzidenz-Grotesk", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Raleway", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jokerman", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Curlz", aliases: ["Curlz MT"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Monotype Corsiva", aliases: ["Corsiva"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Zapfino", aliases: [], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Webdings", aliases: [], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Transport", aliases: [], tier: 5, z: 4.68 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Source Code Pro", aliases: [], tier: 5, z: 4.57 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Symbol", aliases: [], tier: 5, z: 4.31 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dancing Script", aliases: [], tier: 5, z: 4.12 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Interstate", aliases: [], tier: 5, z: 3.99 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Johnston", aliases: ["Johnston Sans", "New Johnston"], tier: 5, z: 3.79 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bank Gothic", aliases: [], tier: 5, z: 3.64 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gotham", aliases: [], tier: 5, z: 3.52 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hobo", aliases: [], tier: 5, z: 3.08 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Avant Garde", aliases: ["ITC Avant Garde"], tier: 5, z: 3.05 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Edwardian Script", aliases: [], tier: 5, z: 2.94 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Press Start 2P", aliases: [], tier: 5, z: 2.86 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "OCR-A", aliases: [], tier: 5, z: 2.79 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Comic Neue", aliases: [], tier: 5, z: 2.73 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Quicksand", aliases: [], tier: 5, z: 2.68 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "IBM Plex", aliases: ["Plex"], tier: 5, z: 2.59 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "MS Sans Serif", aliases: ["Microsoft Sans Serif"], tier: 5, z: 2.59 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mistral", aliases: [], tier: 5, z: 2.58 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lora", aliases: [], tier: 5, z: 2.58 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cascadia Code", aliases: ["Cascadia"], tier: 5, z: 2.45 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rubik", aliases: [], tier: 5, z: 2.13 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Kabel", aliases: [], tier: 5, z: 1.91 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Plantin", aliases: [], tier: 5, z: 1.84 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Roboto Slab", aliases: [], tier: 5, z: 1.82 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Roboto Mono", aliases: [], tier: 5, z: 1.82 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Goudy Old Style", aliases: ["Goudy"], tier: 5, z: 1.79 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bembo", aliases: [], tier: 5, z: 1.77 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sabon", aliases: [], tier: 5, z: 1.66 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Andale Mono", aliases: [], tier: 5, z: 1.66 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "JetBrains Mono", aliases: [], tier: 5, z: 1.61 },
+      { text: "Zapf Dingbats", aliases: ["Dingbats"], tier: 5, z: 1.44 },
+      { text: "Blackletter", aliases: [], tier: 5, z: 1.35 },
+      { text: "Fraktur", aliases: [], tier: 5, z: 1.34 },
+      { text: "Eurostile", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Snell Roundhand", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Inconsolata", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fixedsys", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "OpenDyslexic", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nunito", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "IM Fell", aliases: ["IM Fell English"], tier: 6, z: 4.46 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Dubai", aliases: [], tier: 6, z: 4.08 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Cairo", aliases: [], tier: 6, z: 3.84 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Meta", aliases: ["FF Meta"], tier: 6, z: 3.74 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Windsor", aliases: [], tier: 6, z: 3.73 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Rail Alphabet", aliases: [], tier: 6, z: 3.62 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Highway Gothic", aliases: ["Clearview"], tier: 6, z: 3.59 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Anton", aliases: [], tier: 6, z: 3.59 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Work Sans", aliases: [], tier: 6, z: 3.58 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Crimson Text", aliases: ["Crimson"], tier: 6, z: 3.58 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Syntax", aliases: [], tier: 6, z: 3.53 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "DM Sans", aliases: [], tier: 6, z: 3.4 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Souvenir", aliases: [], tier: 6, z: 3.36 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Barlow", aliases: [], tier: 6, z: 3.36 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Terminus", aliases: [], tier: 6, z: 3.18 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Scala", aliases: ["FF Scala"], tier: 6, z: 3.01 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Rosewood", aliases: [], tier: 6, z: 2.99 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Karla", aliases: [], tier: 6, z: 2.93 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Mrs Eaves", aliases: [], tier: 6, z: 2.85 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Centaur", aliases: [], tier: 6, z: 2.79 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Kaufmann", aliases: [], tier: 6, z: 2.75 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Jenson", aliases: ["Adobe Jenson"], tier: 6, z: 2.73 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Choc", aliases: [], tier: 6, z: 2.64 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Vivaldi", aliases: [], tier: 6, z: 2.58 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cormorant", aliases: [], tier: 6, z: 2.34 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Amiri", aliases: [], tier: 6, z: 2.32 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Janson", aliases: [], tier: 6, z: 2.25 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Libre Baskerville", aliases: [], tier: 6, z: 2.24 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Playbill", aliases: [], tier: 6, z: 2.09 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Archivo", aliases: [], tier: 6, z: 1.85 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Filosofia", aliases: [], tier: 6, z: 1.83 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "EB Garamond", aliases: [], tier: 6, z: 1.83 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Uncial", aliases: [], tier: 6, z: 1.7 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rotis", aliases: [], tier: 6, z: 1.69 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Compacta", aliases: [], tier: 6, z: 1.58 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bickham Script", aliases: [], tier: 6, z: 1.49 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Officina", aliases: [], tier: 6, z: 1.47 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Josefin Sans", aliases: [], tier: 6, z: 1.34 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Figtree", aliases: [], tier: 6, z: 1.3 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Space Grotesk", aliases: [], tier: 6, z: 1.22 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Neue Haas Grotesk", aliases: [], tier: 6, z: 1.2 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Abril Fatface", aliases: [], tier: 6, z: 1.1 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Benguiat", aliases: ["ITC Benguiat"], tier: 6, z: 0.0 },
+      { text: "Peignot", aliases: [], tier: 6, z: 0.0 },
+      { text: "Microgramma", aliases: [], tier: 6, z: 0.0 },
+      { text: "Atkinson Hyperlegible", aliases: [], tier: 6, z: 0.0 },
+      { text: "Lexend", aliases: [], tier: 6, z: 0.0 },
+      { text: "Manrope", aliases: [], tier: 6, z: 0.0 },
+      { text: "Cinzel", aliases: [], tier: 6, z: 0.0 },
+      { text: "VT323", aliases: [], tier: 6, z: 0.0 },
+      { text: "Vazirmatn", aliases: ["Vazir"], tier: 6, z: 0.0 },
+      { text: "Tajawal", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "dr-seuss-01", category: "Language", closed: false,
+    prompt: "Name a book by Dr. Seuss",
+    answers: [
+      { text: "The Cat in the Hat", aliases: [], tier: 1, z: 4.33 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Green Eggs and Ham", aliases: [], tier: 1, z: 3.94 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "How the Grinch Stole Christmas!", aliases: ["The Grinch"], tier: 1, z: 2.85 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "The Lorax", aliases: [], tier: 1, z: 2.13 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "Oh, the Places You'll Go!", aliases: ["The Places You'll Go"], tier: 2, z: 4.7 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "One Fish, Two Fish, Red Fish, Blue Fish", aliases: ["One Fish Two Fish"], tier: 2, z: 4.2 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Fox in Socks", aliases: [], tier: 2, z: 3.94 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Horton Hears a Who!", aliases: ["Horton"], tier: 2, z: 3.22 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Foot Book", aliases: [], tier: 3, z: 4.76 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Cat in the Hat Comes Back", aliases: [], tier: 3, z: 4.29 },
+      { text: "Hop on Pop", aliases: [], tier: 3, z: 4.27 },
+      { text: "Mr. Brown Can Moo! Can You?", aliases: ["Mr. Brown Can Moo"], tier: 3, z: 3.14 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Horton Hatches the Egg", aliases: [], tier: 3, z: 2.85 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dr. Seuss's ABC", aliases: ["Dr Seuss ABC", "ABC"], tier: 3, z: 1.72 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "There's a Wocket in My Pocket!", aliases: ["Wocket in My Pocket"], tier: 3, z: 1.41 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Yertle the Turtle and Other Stories", aliases: ["Yertle the Turtle", "Yertle"], tier: 3, z: 1.28 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Sneetches and Other Stories", aliases: ["The Sneetches"], tier: 3, z: 1.26 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Oh, the Thinks You Can Think!", aliases: [], tier: 4, z: 4.67 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Happy Birthday to You!", aliases: [], tier: 4, z: 4.66 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Did I Ever Tell You How Lucky You Are?", aliases: [], tier: 4, z: 4.61 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "I Can Read with My Eyes Shut!", aliases: [], tier: 4, z: 4.58 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Butter Battle Book", aliases: [], tier: 4, z: 4.26 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "If I Ran the Zoo", aliases: [], tier: 4, z: 4.06 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ten Apples Up on Top!", aliases: [], tier: 4, z: 3.91 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wacky Wednesday", aliases: [], tier: 4, z: 3.27 },
+      { text: "And to Think That I Saw It on Mulberry Street", aliases: ["Mulberry Street", "To Think That I Saw It on Mulberry Street"], tier: 4, z: 3.14 },
+      { text: "Marvin K. Mooney Will You Please Go Now!", aliases: ["Marvin K. Mooney"], tier: 4, z: 2.99 },
+      { text: "Dr. Seuss's Sleep Book", aliases: ["Sleep Book"], tier: 4, z: 1.72 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The 500 Hats of Bartholomew Cubbins", aliases: ["The 500 Hats"], tier: 4, z: 1.19 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Great Day for Up!", aliases: [], tier: 5, z: 5.53 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Oh Say Can You Say?", aliases: [], tier: 5, z: 5.17 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "You're Only Old Once!", aliases: [], tier: 5, z: 5.16 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Shape of Me and Other Stuff", aliases: ["The Shape of Me"], tier: 5, z: 4.56 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "What Pet Should I Get?", aliases: [], tier: 5, z: 4.42 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "If I Ran the Circus", aliases: [], tier: 5, z: 3.93 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Scrambled Eggs Super!", aliases: [], tier: 5, z: 3.4 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "On Beyond Zebra!", aliases: [], tier: 5, z: 3.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The King's Stilts", aliases: [], tier: 5, z: 2.73 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Hunches in Bunches", aliases: [], tier: 5, z: 2.2 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Bartholomew and the Oobleck", aliases: ["Oobleck"], tier: 5, z: 1.36 },
+      { text: "McElligot's Pool", aliases: [], tier: 5, z: 0.0 },
+      { text: "Thidwick the Big-Hearted Moose", aliases: ["Thidwick"], tier: 5, z: 0.0 },
+      { text: "I Had Trouble in Getting to Solla Sollew", aliases: ["Solla Sollew", "I Had Trouble Getting to Solla Sollew"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Daisy-Head Mayzie", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "In a People House", aliases: [], tier: 6, z: 5.58 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Come Over to My House", aliases: [], tier: 6, z: 5.32 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "I Am Not Going to Get Up Today!", aliases: [], tier: 6, z: 5.16 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "The Eye Book", aliases: [], tier: 6, z: 4.88 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Horse Museum", aliases: ["Dr. Seuss's Horse Museum"], tier: 6, z: 4.43 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "My Many Colored Days", aliases: [], tier: 6, z: 4.16 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "I Wish That I Had Duck Feet", aliases: [], tier: 6, z: 4.1 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "The Tooth Book", aliases: [], tier: 6, z: 4.06 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Maybe You Should Fly a Jet! Maybe You Should Be a Vet!", aliases: ["Maybe You Should Fly a Jet"], tier: 6, z: 3.69 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "I Can Lick 30 Tigers Today! and Other Stories", aliases: ["I Can Lick 30 Tigers Today"], tier: 6, z: 3.57 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Because a Little Bug Went Ka-Choo!", aliases: [], tier: 6, z: 3.13 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "The Many Mice of Mr. Brice", aliases: [], tier: 6, z: 2.95 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Would You Rather Be a Bullfrog?", aliases: [], tier: 6, z: 2.34 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "The Cat's Quizzer", aliases: [], tier: 6, z: 1.24 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "The Seven Lady Godivas", aliases: [], tier: 6, z: 0.0 },
+      { text: "Hooray for Diffendoofer Day!", aliases: [], tier: 6, z: 0.0 },
+      { text: "The Bippolo Seed and Other Lost Stories", aliases: ["The Bippolo Seed"], tier: 6, z: 0.0 },
+      { text: "Please Try to Remember the First of Octember!", aliases: ["First of Octember"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "poets-01", category: "Language", closed: false,
+    prompt: "Name a famous poet who wrote in English",
+    answers: [
+      { text: "William Shakespeare", aliases: ["Shakespeare"], tier: 1, z: 3.95 },
+      { text: "Robert Frost", aliases: ["Frost"], tier: 1, z: 3.9 },
+      { text: "Emily Dickinson", aliases: ["Dickinson"], tier: 1, z: 3.34 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Edgar Allan Poe", aliases: ["Poe"], tier: 1, z: 3.22 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "William Wordsworth", aliases: ["Wordsworth"], tier: 1, z: 2.87 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "William Blake", aliases: ["Blake"], tier: 2, z: 4.08 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Lord Byron", aliases: ["Byron"], tier: 2, z: 3.66 },
+      { text: "T. S. Eliot", aliases: ["TS Eliot", "Eliot"], tier: 2, z: 3.49 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "John Keats", aliases: ["Keats"], tier: 2, z: 2.95 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Maya Angelou", aliases: ["Angelou"], tier: 2, z: 2.87 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Sylvia Plath", aliases: ["Plath"], tier: 2, z: 2.49 }, // override: auto 4 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Robert Burns", aliases: ["Burns", "Rabbie Burns"], tier: 3, z: 4.15 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dylan Thomas", aliases: [], tier: 3, z: 3.98 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ted Hughes", aliases: [], tier: 3, z: 3.86 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "John Milton", aliases: ["Milton"], tier: 3, z: 3.83 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Robert Browning", aliases: ["Browning"], tier: 3, z: 3.39 },
+      { text: "Carol Ann Duffy", aliases: ["Duffy"], tier: 3, z: 3.28 },
+      { text: "Walt Whitman", aliases: ["Whitman"], tier: 3, z: 3.27 },
+      { text: "Elizabeth Barrett Browning", aliases: ["Barrett Browning"], tier: 3, z: 3.18 },
+      { text: "Wilfred Owen", aliases: ["Owen"], tier: 3, z: 3.0 },
+      { text: "W. B. Yeats", aliases: ["Yeats", "William Butler Yeats"], tier: 3, z: 2.92 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Langston Hughes", aliases: [], tier: 3, z: 2.92 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Alfred, Lord Tennyson", aliases: ["Tennyson", "Alfred Tennyson", "Lord Tennyson"], tier: 3, z: 2.86 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Samuel Taylor Coleridge", aliases: ["Coleridge"], tier: 3, z: 2.82 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Geoffrey Chaucer", aliases: ["Chaucer"], tier: 3, z: 2.78 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Christina Rossetti", aliases: ["Rossetti"], tier: 3, z: 2.62 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Seamus Heaney", aliases: ["Heaney"], tier: 3, z: 2.44 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Rudyard Kipling", aliases: ["Kipling"], tier: 3, z: 2.41 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Percy Bysshe Shelley", aliases: ["Shelley", "Percy Shelley"], tier: 3, z: 1.97 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Thomas Gray", aliases: ["Gray"], tier: 4, z: 4.3 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Elizabeth Bishop", aliases: ["Bishop"], tier: 4, z: 4.12 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mary Oliver", aliases: [], tier: 4, z: 4.11 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Alexander Pope", aliases: ["Pope"], tier: 4, z: 4.09 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "William Carlos Williams", aliases: [], tier: 4, z: 3.94 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Jonathan Swift", aliases: ["Swift"], tier: 4, z: 3.92 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Matthew Arnold", aliases: ["Arnold"], tier: 4, z: 3.85 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Thomas Hardy", aliases: ["Hardy"], tier: 4, z: 3.82 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "George Herbert", aliases: ["Herbert"], tier: 4, z: 3.82 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lewis Carroll", aliases: ["Carroll"], tier: 4, z: 3.72 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "John Clare", aliases: ["Clare"], tier: 4, z: 3.64 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Wendy Cope", aliases: ["Cope"], tier: 4, z: 3.63 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Grace Nichols", aliases: [], tier: 4, z: 3.54 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Robert Louis Stevenson", aliases: ["Stevenson"], tier: 4, z: 3.52 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "E. E. Cummings", aliases: ["Cummings"], tier: 4, z: 3.45 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ezra Pound", aliases: ["Pound"], tier: 4, z: 3.45 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Michael Rosen", aliases: ["Rosen"], tier: 4, z: 3.39 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rupert Brooke", aliases: ["Brooke"], tier: 4, z: 3.38 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Oscar Wilde", aliases: ["Wilde"], tier: 4, z: 3.38 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Edward Lear", aliases: ["Lear"], tier: 4, z: 3.2 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "A. A. Milne", aliases: ["Milne"], tier: 4, z: 3.2 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Philip Larkin", aliases: ["Larkin"], tier: 4, z: 3.14 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Amanda Gorman", aliases: ["Gorman"], tier: 4, z: 3.11 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Derek Walcott", aliases: ["Walcott"], tier: 4, z: 3.09 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ralph Waldo Emerson", aliases: ["Emerson"], tier: 4, z: 3.08 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Simon Armitage", aliases: ["Armitage"], tier: 4, z: 2.93 },
+      { text: "John Dryden", aliases: ["Dryden"], tier: 4, z: 2.92 },
+      { text: "Spike Milligan", aliases: ["Milligan"], tier: 4, z: 2.87 },
+      { text: "Allen Ginsberg", aliases: ["Ginsberg"], tier: 4, z: 2.82 },
+      { text: "Gerard Manley Hopkins", aliases: ["Hopkins"], tier: 4, z: 2.77 },
+      { text: "John Donne", aliases: ["Donne"], tier: 4, z: 2.75 },
+      { text: "W. H. Auden", aliases: ["Auden"], tier: 4, z: 2.65 },
+      { text: "Gwendolyn Brooks", aliases: [], tier: 4, z: 2.55 },
+      { text: "Ben Jonson", aliases: ["Jonson"], tier: 4, z: 2.55 },
+      { text: "Edmund Spenser", aliases: ["Spenser"], tier: 4, z: 2.54 },
+      { text: "Henry Wadsworth Longfellow", aliases: ["Longfellow"], tier: 4, z: 2.5 },
+      { text: "Siegfried Sassoon", aliases: ["Sassoon"], tier: 4, z: 2.4 },
+      { text: "Emily Brontë", aliases: [], tier: 4, z: 2.39 },
+      { text: "Andrew Marvell", aliases: ["Marvell"], tier: 4, z: 2.36 },
+      { text: "Shel Silverstein", aliases: ["Silverstein"], tier: 4, z: 2.28 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Benjamin Zephaniah", aliases: ["Zephaniah"], tier: 4, z: 2.13 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "A. E. Housman", aliases: ["Housman"], tier: 4, z: 2.07 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "John Betjeman", aliases: ["Betjeman"], tier: 4, z: 2.04 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "John Agard", aliases: ["Agard"], tier: 4, z: 1.96 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Roger McGough", aliases: ["McGough"], tier: 4, z: 1.94 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rupi Kaur", aliases: ["Kaur"], tier: 4, z: 1.37 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Imtiaz Dharker", aliases: ["Dharker"], tier: 4, z: 0.0 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Edward Thomas", aliases: [], tier: 5, z: 4.35 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Andrew Motion", aliases: ["Motion"], tier: 5, z: 4.28 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Walter Scott", aliases: ["Sir Walter Scott"], tier: 5, z: 4.2 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Billy Collins", aliases: [], tier: 5, z: 3.93 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Wallace Stevens", aliases: [], tier: 5, z: 3.72 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Leonard Cohen", aliases: ["Cohen"], tier: 5, z: 3.69 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dorothy Parker", aliases: [], tier: 5, z: 3.65 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Jackie Kay", aliases: [], tier: 5, z: 3.65 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Stevie Smith", aliases: [], tier: 5, z: 3.64 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Philip Sidney", aliases: ["Sidney", "Sir Philip Sidney"], tier: 5, z: 3.6 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Walter de la Mare", aliases: ["De la Mare"], tier: 5, z: 3.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Robert Lowell", aliases: ["Lowell"], tier: 5, z: 3.42 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ogden Nash", aliases: ["Nash"], tier: 5, z: 3.1 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Anne Sexton", aliases: ["Sexton"], tier: 5, z: 3.06 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Banjo Paterson", aliases: ["Paterson"], tier: 5, z: 3.03 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Margaret Atwood", aliases: ["Atwood"], tier: 5, z: 3.01 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Christopher Marlowe", aliases: ["Marlowe"], tier: 5, z: 3.0 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Adrienne Rich", aliases: [], tier: 5, z: 2.94 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Thom Gunn", aliases: ["Gunn"], tier: 5, z: 2.93 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Patrick Kavanagh", aliases: ["Kavanagh"], tier: 5, z: 2.71 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Charles Bukowski", aliases: ["Bukowski"], tier: 5, z: 2.51 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Carl Sandburg", aliases: ["Sandburg"], tier: 5, z: 2.27 },
+      { text: "Robert Southey", aliases: ["Southey"], tier: 5, z: 2.23 },
+      { text: "Rabindranath Tagore", aliases: ["Tagore"], tier: 5, z: 2.15 },
+      { text: "Kae Tempest", aliases: ["Kate Tempest"], tier: 5, z: 2.1 },
+      { text: "Edna St. Vincent Millay", aliases: ["Millay"], tier: 5, z: 2.02 },
+      { text: "John Masefield", aliases: ["Masefield"], tier: 5, z: 1.99 },
+      { text: "Audre Lorde", aliases: ["Lorde"], tier: 5, z: 1.98 },
+      { text: "Hilaire Belloc", aliases: ["Belloc"], tier: 5, z: 1.86 },
+      { text: "Ocean Vuong", aliases: ["Vuong"], tier: 5, z: 1.83 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Louis MacNeice", aliases: ["MacNeice"], tier: 5, z: 1.66 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Louise Glück", aliases: ["Gluck"], tier: 5, z: 1.59 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Warsan Shire", aliases: [], tier: 5, z: 1.21 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lemn Sissay", aliases: ["Sissay"], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "R. S. Thomas", aliases: [], tier: 6, z: 4.69 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Tony Harrison", aliases: [], tier: 6, z: 3.97 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Les Murray", aliases: [], tier: 6, z: 3.88 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Hart Crane", aliases: [], tier: 6, z: 3.67 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Sharon Olds", aliases: [], tier: 6, z: 3.65 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Geoffrey Hill", aliases: [], tier: 6, z: 3.61 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Edwin Morgan", aliases: [], tier: 6, z: 3.58 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Henry Lawson", aliases: ["Lawson"], tier: 6, z: 3.57 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Judith Wright", aliases: [], tier: 6, z: 3.56 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Thomas Wyatt", aliases: ["Wyatt"], tier: 6, z: 3.54 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cecil Day-Lewis", aliases: ["C. Day Lewis"], tier: 6, z: 3.46 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Rita Dove", aliases: [], tier: 6, z: 3.41 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Henry Vaughan", aliases: ["Vaughan"], tier: 6, z: 3.41 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Marianne Moore", aliases: [], tier: 6, z: 3.33 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Frank O'Hara", aliases: ["O'Hara"], tier: 6, z: 3.33 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Claude McKay", aliases: ["McKay"], tier: 6, z: 3.31 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Nikki Giovanni", aliases: ["Giovanni"], tier: 6, z: 3.23 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Isaac Rosenberg", aliases: ["Rosenberg"], tier: 6, z: 3.21 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Paul Laurence Dunbar", aliases: ["Dunbar"], tier: 6, z: 3.02 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Charlotte Mew", aliases: [], tier: 6, z: 2.97 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Lucille Clifton", aliases: ["Clifton"], tier: 6, z: 2.92 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Stephen Spender", aliases: ["Spender"], tier: 6, z: 2.75 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Robert Herrick", aliases: ["Herrick"], tier: 6, z: 2.72 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Richard Lovelace", aliases: ["Lovelace"], tier: 6, z: 2.72 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Alfred Noyes", aliases: ["Noyes"], tier: 6, z: 2.6 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ivor Gurney", aliases: ["Gurney"], tier: 6, z: 2.59 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Dante Gabriel Rossetti", aliases: [], tier: 6, z: 2.58 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "William Cowper", aliases: ["Cowper"], tier: 6, z: 2.56 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Claudia Rankine", aliases: ["Rankine"], tier: 6, z: 2.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "John Berryman", aliases: ["Berryman"], tier: 6, z: 2.48 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Paul Muldoon", aliases: ["Muldoon"], tier: 6, z: 2.47 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Anne Bradstreet", aliases: ["Bradstreet"], tier: 6, z: 2.34 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Thomas Chatterton", aliases: ["Chatterton"], tier: 6, z: 2.27 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Algernon Charles Swinburne", aliases: ["Swinburne"], tier: 6, z: 2.26 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Phillis Wheatley", aliases: ["Wheatley"], tier: 6, z: 2.06 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ernest Dowson", aliases: ["Dowson"], tier: 6, z: 2.06 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Hugh MacDiarmid", aliases: ["MacDiarmid"], tier: 6, z: 2.03 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Linton Kwesi Johnson", aliases: ["LKJ"], tier: 6, z: 2.03 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Liz Lochhead", aliases: ["Lochhead"], tier: 6, z: 1.88 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "John Ashbery", aliases: ["Ashbery"], tier: 6, z: 1.84 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lawrence Ferlinghetti", aliases: ["Ferlinghetti"], tier: 6, z: 1.79 },
+      { text: "Kamau Brathwaite", aliases: ["Brathwaite"], tier: 6, z: 1.76 },
+      { text: "Joy Harjo", aliases: ["Harjo"], tier: 6, z: 1.69 },
+      { text: "Aphra Behn", aliases: ["Behn"], tier: 6, z: 1.66 },
+      { text: "Theodore Roethke", aliases: ["Roethke"], tier: 6, z: 1.58 },
+      { text: "Countee Cullen", aliases: ["Cullen"], tier: 6, z: 1.54 },
+      { text: "Felicia Hemans", aliases: ["Hemans"], tier: 6, z: 1.33 },
+      { text: "Norman MacCaig", aliases: ["MacCaig"], tier: 6, z: 1.03 },
+      { text: "Eavan Boland", aliases: ["Boland"], tier: 6, z: 1.01 },
+    ]
+  },
+  {
+    id: "latin-phrases-01", category: "Language", closed: false,
+    prompt: "Name a Latin word or phrase that is used in English",
+    answers: [
+      { text: "Status quo", aliases: [], tier: 1, z: 3.75 },
+      { text: "Vice versa", aliases: [], tier: 1, z: 3.68 },
+      { text: "Et cetera", aliases: ["Etc", "Etcetera"], tier: 1, z: 2.95 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Carpe diem", aliases: [], tier: 1, z: 2.49 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Veni, vidi, vici", aliases: [], tier: 1, z: 1.61 }, // override: auto 5 -> 1 (famous/obvious answer in this category)
+      { text: "Per se", aliases: [], tier: 2, z: 4.26 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Alter ego", aliases: [], tier: 2, z: 3.73 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Ad hoc", aliases: [], tier: 2, z: 3.4 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Pro bono", aliases: [], tier: 2, z: 3.36 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Alma mater", aliases: [], tier: 2, z: 3.21 },
+      { text: "Quid pro quo", aliases: [], tier: 2, z: 3.18 },
+      { text: "Bona fide", aliases: [], tier: 2, z: 2.96 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Cogito, ergo sum", aliases: [], tier: 2, z: 2.0 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Versus", aliases: ["Vs"], tier: 3, z: 4.32 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Id est", aliases: ["I.e."], tier: 3, z: 3.99 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Per capita", aliases: [], tier: 3, z: 3.81 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ad lib", aliases: ["Ad libitum"], tier: 3, z: 3.71 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "De facto", aliases: [], tier: 3, z: 3.57 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Circa", aliases: [], tier: 3, z: 3.57 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "In vitro", aliases: [], tier: 3, z: 3.42 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Subpoena", aliases: ["Sub poena"], tier: 3, z: 3.34 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Per annum", aliases: [], tier: 3, z: 3.23 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Post mortem", aliases: ["Postmortem"], tier: 3, z: 3.16 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Alibi", aliases: [], tier: 3, z: 3.1 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Verbatim", aliases: [], tier: 3, z: 3.07 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ergo", aliases: [], tier: 3, z: 2.97 },
+      { text: "Magnum opus", aliases: [], tier: 3, z: 2.96 },
+      { text: "Habeas corpus", aliases: [], tier: 3, z: 2.83 },
+      { text: "Curriculum vitae", aliases: ["CV"], tier: 3, z: 2.78 },
+      { text: "In memoriam", aliases: [], tier: 3, z: 2.73 },
+      { text: "Memento mori", aliases: [], tier: 3, z: 2.71 },
+      { text: "Pro rata", aliases: [], tier: 3, z: 2.65 },
+      { text: "Modus operandi", aliases: ["MO"], tier: 3, z: 2.54 },
+      { text: "Deus ex machina", aliases: [], tier: 3, z: 2.51 },
+      { text: "Rigor mortis", aliases: [], tier: 3, z: 2.5 },
+      { text: "Ad infinitum", aliases: [], tier: 3, z: 2.48 },
+      { text: "Anno Domini", aliases: ["AD"], tier: 3, z: 2.44 },
+      { text: "Persona non grata", aliases: [], tier: 3, z: 2.42 },
+      { text: "Mea culpa", aliases: [], tier: 3, z: 2.41 },
+      { text: "Terra firma", aliases: [], tier: 3, z: 2.39 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Nota bene", aliases: ["NB"], tier: 3, z: 2.38 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Non sequitur", aliases: [], tier: 3, z: 2.32 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ad nauseam", aliases: [], tier: 3, z: 2.22 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Caveat emptor", aliases: [], tier: 3, z: 2.06 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Semper fidelis", aliases: ["Semper fi"], tier: 3, z: 2.02 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "E pluribus unum", aliases: [], tier: 3, z: 1.83 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Post scriptum", aliases: ["PS"], tier: 3, z: 1.74 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tempus fugit", aliases: [], tier: 3, z: 1.7 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Exempli gratia", aliases: ["E.g."], tier: 3, z: 1.2 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Ante meridiem", aliases: ["AM"], tier: 3, z: 1.13 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Post meridiem", aliases: ["PM"], tier: 3, z: 1.13 }, // override: auto 6 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Et al", aliases: ["Et alii"], tier: 4, z: 4.54 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Interim", aliases: [], tier: 4, z: 4.0 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Alumni", aliases: ["Alumnus"], tier: 4, z: 3.89 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ave Maria", aliases: [], tier: 4, z: 3.86 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sic", aliases: [], tier: 4, z: 3.62 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "In vivo", aliases: [], tier: 4, z: 3.43 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Affidavit", aliases: [], tier: 4, z: 3.38 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "In situ", aliases: [], tier: 4, z: 3.28 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Emeritus", aliases: [], tier: 4, z: 3.25 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Et tu, Brute?", aliases: [], tier: 4, z: 3.24 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Inter alia", aliases: [], tier: 4, z: 3.08 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Mens rea", aliases: [], tier: 4, z: 3.07 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Per diem", aliases: [], tier: 4, z: 3.04 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ad astra", aliases: ["Per aspera ad astra", "Per ardua ad astra"], tier: 4, z: 3.03 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cum laude", aliases: ["Magna cum laude", "Summa cum laude"], tier: 4, z: 2.95 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pro forma", aliases: [], tier: 4, z: 2.95 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Addendum", aliases: [], tier: 4, z: 2.89 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Homo sapiens", aliases: [], tier: 4, z: 2.88 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Antebellum", aliases: [], tier: 4, z: 2.84 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "A priori", aliases: [], tier: 4, z: 2.78 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ex officio", aliases: [], tier: 4, z: 2.77 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "De jure", aliases: [], tier: 4, z: 2.73 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "In utero", aliases: [], tier: 4, z: 2.7 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ibid", aliases: ["Ibidem"], tier: 4, z: 2.69 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pro tempore", aliases: ["Pro tem"], tier: 4, z: 2.67 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sine qua non", aliases: [], tier: 4, z: 2.65 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cui bono", aliases: [], tier: 4, z: 2.65 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "In absentia", aliases: [], tier: 4, z: 2.64 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Prima facie", aliases: [], tier: 4, z: 2.54 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "In vino veritas", aliases: [], tier: 4, z: 2.5 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Errata", aliases: ["Erratum"], tier: 4, z: 2.5 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pax Romana", aliases: [], tier: 4, z: 2.49 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Viva voce", aliases: [], tier: 4, z: 2.48 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ipso facto", aliases: [], tier: 4, z: 2.47 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ad hominem", aliases: [], tier: 4, z: 2.47 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Dulce et decorum est", aliases: [], tier: 4, z: 2.45 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "In extremis", aliases: [], tier: 4, z: 2.29 },
+      { text: "Tabula rasa", aliases: [], tier: 4, z: 2.21 },
+      { text: "Sui generis", aliases: [], tier: 4, z: 2.19 },
+      { text: "Vox populi", aliases: ["Vox pop"], tier: 4, z: 2.16 },
+      { text: "Terra incognita", aliases: [], tier: 4, z: 2.14 },
+      { text: "Casus belli", aliases: [], tier: 4, z: 2.03 },
+      { text: "Ex libris", aliases: [], tier: 4, z: 2.0 },
+      { text: "A posteriori", aliases: [], tier: 4, z: 1.97 },
+      { text: "Quo vadis", aliases: [], tier: 4, z: 1.96 },
+      { text: "Ex nihilo", aliases: ["Ex nihilo nihil fit"], tier: 4, z: 1.94 },
+      { text: "In loco parentis", aliases: [], tier: 4, z: 1.75 },
+      { text: "Reductio ad absurdum", aliases: [], tier: 4, z: 1.7 },
+      { text: "Compos mentis", aliases: ["Non compos mentis"], tier: 4, z: 1.51 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Requiescat in pace", aliases: ["RIP"], tier: 4, z: 1.48 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Annus horribilis", aliases: ["Annus mirabilis"], tier: 4, z: 1.47 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sic semper tyrannis", aliases: [], tier: 4, z: 1.47 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "In flagrante delicto", aliases: ["In flagrante"], tier: 4, z: 1.45 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ceteris paribus", aliases: [], tier: 4, z: 1.45 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Amor vincit omnia", aliases: ["Omnia vincit amor"], tier: 4, z: 1.36 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Quod erat demonstrandum", aliases: ["QED"], tier: 4, z: 1.12 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Alea iacta est", aliases: ["Alea jacta est"], tier: 4, z: 1.03 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Citius, Altius, Fortius", aliases: [], tier: 4, z: 0.89 }, // override: auto 6 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "In camera", aliases: [], tier: 5, z: 4.87 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ex post", aliases: ["Ex post facto"], tier: 5, z: 4.72 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Post hoc", aliases: ["Post hoc ergo propter hoc"], tier: 5, z: 3.41 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ex ante", aliases: [], tier: 5, z: 3.32 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Status quo ante", aliases: ["Status quo ante bellum"], tier: 5, z: 3.19 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Viz", aliases: ["Videlicet"], tier: 5, z: 3.19 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fiat lux", aliases: [], tier: 5, z: 3.15 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "In toto", aliases: [], tier: 5, z: 3.15 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sine die", aliases: [], tier: 5, z: 3.1 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ex parte", aliases: [], tier: 5, z: 2.77 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sic transit gloria mundi", aliases: [], tier: 5, z: 2.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Modus vivendi", aliases: [], tier: 5, z: 2.38 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mare nostrum", aliases: [], tier: 5, z: 2.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ab initio", aliases: [], tier: 5, z: 2.23 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Amicus curiae", aliases: [], tier: 5, z: 2.12 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ars gratia artis", aliases: [], tier: 5, z: 2.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Primus inter pares", aliases: [], tier: 5, z: 2.06 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ultra vires", aliases: [], tier: 5, z: 2.02 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Agnus Dei", aliases: [], tier: 5, z: 1.99 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Passim", aliases: [], tier: 5, z: 1.98 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ad valorem", aliases: [], tier: 5, z: 1.95 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Actus reus", aliases: [], tier: 5, z: 1.91 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Deus vult", aliases: [], tier: 5, z: 1.9 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ars longa, vita brevis", aliases: [], tier: 5, z: 1.85 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sub judice", aliases: [], tier: 5, z: 1.84 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pater noster", aliases: [], tier: 5, z: 1.84 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Stet", aliases: [], tier: 5, z: 1.83 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Stare decisis", aliases: [], tier: 5, z: 1.81 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Terra nullius", aliases: [], tier: 5, z: 1.72 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Locus standi", aliases: [], tier: 5, z: 1.66 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Obiter dictum", aliases: ["Obiter dicta"], tier: 5, z: 1.65 },
+      { text: "Deo gratias", aliases: [], tier: 5, z: 1.61 },
+      { text: "Corpus delicti", aliases: [], tier: 5, z: 1.59 },
+      { text: "Mens sana in corpore sano", aliases: [], tier: 5, z: 1.57 },
+      { text: "Semper paratus", aliases: [], tier: 5, z: 1.56 },
+      { text: "Nolo contendere", aliases: [], tier: 5, z: 1.5 },
+      { text: "Vade mecum", aliases: [], tier: 5, z: 1.49 },
+      { text: "Res ipsa loquitur", aliases: [], tier: 5, z: 1.39 },
+      { text: "Festina lente", aliases: [], tier: 5, z: 1.36 },
+      { text: "Urbi et orbi", aliases: [], tier: 5, z: 1.33 },
+      { text: "Mutatis mutandis", aliases: [], tier: 5, z: 1.15 },
+      { text: "Lapsus linguae", aliases: [], tier: 5, z: 1.15 },
+      { text: "Nil desperandum", aliases: [], tier: 5, z: 1.1 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Panem et circenses", aliases: ["Bread and circuses"], tier: 5, z: 1.06 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mirabile dictu", aliases: [], tier: 5, z: 1.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Quis custodiet ipsos custodes", aliases: ["Quis custodiet"], tier: 5, z: 0.89 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pro se", aliases: [], tier: 6, z: 4.2 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Ad interim", aliases: [], tier: 6, z: 3.93 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Ad referendum", aliases: [], tier: 6, z: 3.91 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Cf", aliases: ["Confer"], tier: 6, z: 3.85 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Sub rosa", aliases: [], tier: 6, z: 3.74 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Supra", aliases: [], tier: 6, z: 3.08 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Infra", aliases: [], tier: 6, z: 2.9 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Op cit", aliases: ["Opere citato"], tier: 6, z: 2.88 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Loc cit", aliases: [], tier: 6, z: 2.73 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Lux et veritas", aliases: ["Veritas"], tier: 6, z: 2.71 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Persona grata", aliases: [], tier: 6, z: 2.43 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Pro patria", aliases: [], tier: 6, z: 2.41 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Nisi", aliases: [], tier: 6, z: 2.41 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Jus soli", aliases: [], tier: 6, z: 2.36 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rara avis", aliases: [], tier: 6, z: 2.21 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Caveat lector", aliases: [], tier: 6, z: 2.11 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pari passu", aliases: [], tier: 6, z: 1.99 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tu quoque", aliases: [], tier: 6, z: 1.87 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Gloria in excelsis Deo", aliases: [], tier: 6, z: 1.8 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Jus sanguinis", aliases: [], tier: 6, z: 1.78 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Inter vivos", aliases: [], tier: 6, z: 1.69 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "In pari delicto", aliases: [], tier: 6, z: 1.65 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Res judicata", aliases: [], tier: 6, z: 1.58 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ipse dixit", aliases: [], tier: 6, z: 1.58 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ora et labora", aliases: [], tier: 6, z: 1.41 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Ad baculum", aliases: ["Argumentum ad baculum"], tier: 6, z: 1.33 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lex talionis", aliases: [], tier: 6, z: 1.32 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Carpe noctem", aliases: [], tier: 6, z: 1.2 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Quantum meruit", aliases: [], tier: 6, z: 1.15 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Bona vacantia", aliases: [], tier: 6, z: 1.09 },
+      { text: "Ratio decidendi", aliases: [], tier: 6, z: 1.08 },
+      { text: "Ejusdem generis", aliases: [], tier: 6, z: 1.01 },
+      { text: "Nemo me impune lacessit", aliases: [], tier: 6, z: 0.0 },
+      { text: "Hic sunt dracones", aliases: [], tier: 6, z: 0.0 },
+      { text: "Horribile dictu", aliases: [], tier: 6, z: 0.0 },
+      { text: "Volenti non fit injuria", aliases: ["Volenti"], tier: 6, z: 0.0 },
+      { text: "Uberrimae fidei", aliases: [], tier: 6, z: 0.0 },
+      { text: "Functus officio", aliases: [], tier: 6, z: 0.0 },
+      { text: "Noscitur a sociis", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "romance-languages-01", category: "Language", closed: false,
+    prompt: "Name a Romance language (a living or historical language descended from Latin)",
+    answers: [
+      { text: "French", aliases: ["Français"], tier: 1, z: 5.09 },
+      { text: "Spanish", aliases: ["Castilian", "Español"], tier: 1, z: 4.73 },
+      { text: "Italian", aliases: ["Italiano"], tier: 1, z: 4.66 },
+      { text: "Portuguese", aliases: ["Português"], tier: 2, z: 4.03 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Romanian", aliases: ["Rumanian", "Moldovan"], tier: 2, z: 3.58 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Catalan", aliases: ["Valencian"], tier: 2, z: 3.42 },
+      { text: "Sicilian", aliases: [], tier: 3, z: 3.11 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Galician", aliases: ["Gallego"], tier: 3, z: 2.44 },
+      { text: "Sardinian", aliases: ["Sardu"], tier: 3, z: 2.3 },
+      { text: "Occitan", aliases: ["Provençal", "Langue d'oc"], tier: 3, z: 1.95 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Romansh", aliases: ["Romansch", "Rumantsch"], tier: 3, z: 1.52 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Venetian", aliases: [], tier: 4, z: 3.3 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Haitian Creole", aliases: ["Kreyòl", "Haitian"], tier: 4, z: 2.89 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Neapolitan", aliases: [], tier: 4, z: 2.75 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Corsican", aliases: ["Corsu"], tier: 4, z: 2.45 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ladino", aliases: ["Judaeo-Spanish", "Judeo-Spanish"], tier: 4, z: 2.01 },
+      { text: "Aragonese", aliases: [], tier: 4, z: 1.83 },
+      { text: "Asturian", aliases: ["Asturleonese", "Leonese", "Bable"], tier: 4, z: 1.67 },
+      { text: "Norman", aliases: ["Jèrriais", "Guernésiais"], tier: 5, z: 4.14 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lombard", aliases: [], tier: 5, z: 3.0 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Gascon", aliases: ["Aranese"], tier: 5, z: 2.19 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Walloon", aliases: [], tier: 5, z: 2.12 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Franco-Provençal", aliases: ["Arpitan"], tier: 5, z: 2.12 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ligurian", aliases: ["Genoese"], tier: 5, z: 2.03 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Piedmontese", aliases: [], tier: 5, z: 2.02 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ladin", aliases: [], tier: 5, z: 1.97 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Emilian", aliases: ["Emilian-Romagnol", "Romagnol"], tier: 5, z: 1.45 },
+      { text: "Friulian", aliases: ["Furlan"], tier: 5, z: 1.06 },
+      { text: "Aromanian", aliases: ["Vlach"], tier: 5, z: 0.0 },
+      { text: "Picard", aliases: [], tier: 6, z: 3.18 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Dalmatian", aliases: [], tier: 6, z: 2.66 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Fala", aliases: ["Xalimego"], tier: 6, z: 1.82 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Mozarabic", aliases: [], tier: 6, z: 1.49 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Papiamento", aliases: [], tier: 6, z: 1.08 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Mirandese", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Extremaduran", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Istriot", aliases: [], tier: 6, z: 0.0 },
+      { text: "Megleno-Romanian", aliases: [], tier: 6, z: 0.0 },
+      { text: "Istro-Romanian", aliases: [], tier: 6, z: 0.0 },
+      { text: "Chavacano", aliases: ["Chabacano"], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "writing-systems-01", category: "Language", closed: false,
+    prompt: "Name a writing system or script",
+    answers: [
+      { text: "Chinese characters", aliases: ["Chinese", "Hanzi"], tier: 1, z: 4.64 },
+      { text: "Greek", aliases: ["Greek alphabet"], tier: 1, z: 4.5 },
+      { text: "Latin", aliases: ["Roman alphabet", "Roman", "English alphabet"], tier: 1, z: 4.48 },
+      { text: "Arabic", aliases: ["Arabic script", "Perso-Arabic"], tier: 1, z: 4.03 },
+      { text: "Cyrillic", aliases: [], tier: 1, z: 2.63 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Hebrew", aliases: [], tier: 2, z: 3.91 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Kanji", aliases: [], tier: 2, z: 3.01 },
+      { text: "Braille", aliases: [], tier: 2, z: 3.01 },
+      { text: "Cuneiform", aliases: [], tier: 2, z: 2.53 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Hieroglyphs", aliases: ["Egyptian hieroglyphs", "Hieroglyphics"], tier: 2, z: 2.43 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Katakana", aliases: [], tier: 2, z: 2.33 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Hangul", aliases: ["Hangeul", "Korean"], tier: 2, z: 2.32 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Hiragana", aliases: [], tier: 2, z: 2.29 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Thai", aliases: [], tier: 3, z: 4.17 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tamil", aliases: [], tier: 3, z: 3.76 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Armenian", aliases: [], tier: 3, z: 3.6 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Georgian", aliases: ["Mkhedruli"], tier: 3, z: 3.51 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Tibetan", aliases: [], tier: 3, z: 3.51 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Bengali", aliases: ["Bangla script"], tier: 3, z: 3.21 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Mongolian", aliases: ["Mongolian script"], tier: 3, z: 3.09 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Runes", aliases: ["Runic", "Futhark"], tier: 3, z: 2.89 },
+      { text: "Devanagari", aliases: ["Hindi script", "Nagari"], tier: 3, z: 1.79 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Linear B", aliases: [], tier: 4, z: 4.09 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gothic", aliases: [], tier: 4, z: 3.65 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Cherokee", aliases: ["Cherokee syllabary"], tier: 4, z: 3.45 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Burmese", aliases: ["Myanmar script"], tier: 4, z: 3.27 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Lao", aliases: [], tier: 4, z: 3.27 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Telugu", aliases: [], tier: 4, z: 3.17 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Khmer", aliases: [], tier: 4, z: 3.16 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Coptic", aliases: [], tier: 4, z: 2.86 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Malayalam", aliases: [], tier: 4, z: 2.85 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Aramaic", aliases: [], tier: 4, z: 2.85 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Kannada", aliases: [], tier: 4, z: 2.8 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Gujarati", aliases: [], tier: 4, z: 2.79 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Phoenician", aliases: [], tier: 4, z: 2.69 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Syriac", aliases: [], tier: 4, z: 2.66 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Etruscan", aliases: [], tier: 4, z: 2.65 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Maya glyphs", aliases: ["Maya script", "Mayan hieroglyphs"], tier: 4, z: 2.64 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Sinhala", aliases: ["Sinhalese"], tier: 4, z: 2.46 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Demotic", aliases: [], tier: 4, z: 2.02 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Odia", aliases: ["Oriya script"], tier: 4, z: 1.95 },
+      { text: "Ethiopic", aliases: ["Ge'ez", "Amharic", "Fidel"], tier: 4, z: 1.87 },
+      { text: "Hieratic", aliases: [], tier: 4, z: 1.87 },
+      { text: "Ogham", aliases: [], tier: 4, z: 1.56 },
+      { text: "Glagolitic", aliases: [], tier: 4, z: 1.37 },
+      { text: "Gurmukhi", aliases: ["Punjabi script"], tier: 4, z: 1.35 },
+      { text: "Bopomofo", aliases: ["Zhuyin"], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Linear A", aliases: [], tier: 5, z: 4.12 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Seal script", aliases: [], tier: 5, z: 4.03 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Oracle bone script", aliases: ["Oracle bone"], tier: 5, z: 3.56 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Indus script", aliases: ["Indus Valley script"], tier: 5, z: 3.06 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Balinese", aliases: [], tier: 5, z: 2.77 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Old Turkic", aliases: ["Orkhon"], tier: 5, z: 2.67 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Manchu", aliases: [], tier: 5, z: 2.64 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Javanese", aliases: ["Hanacaraka"], tier: 5, z: 2.62 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Vai", aliases: [], tier: 5, z: 2.53 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Old Persian cuneiform", aliases: ["Old Persian"], tier: 5, z: 2.51 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Deseret", aliases: [], tier: 5, z: 2.38 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pahlavi", aliases: [], tier: 5, z: 2.2 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Brahmi", aliases: [], tier: 5, z: 1.89 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ugaritic", aliases: [], tier: 5, z: 1.81 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cypriot syllabary", aliases: ["Cypriot"], tier: 5, z: 1.71 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Avestan", aliases: [], tier: 5, z: 1.62 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Shavian", aliases: [], tier: 5, z: 1.37 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Proto-Sinaitic", aliases: [], tier: 5, z: 1.29 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Meroitic", aliases: [], tier: 5, z: 1.28 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Baybayin", aliases: [], tier: 5, z: 1.16 },
+      { text: "Canadian Aboriginal syllabics", aliases: ["Canadian syllabics", "Inuktitut syllabics", "Cree syllabics"], tier: 5, z: 1.07 },
+      { text: "Thaana", aliases: ["Tana"], tier: 5, z: 0.0 },
+      { text: "Tifinagh", aliases: ["Berber"], tier: 5, z: 0.0 },
+      { text: "N'Ko", aliases: [], tier: 5, z: 0.0 },
+      { text: "Kharosthi", aliases: [], tier: 5, z: 0.0 },
+      { text: "Rongorongo", aliases: [], tier: 5, z: 0.0 },
+      { text: "Nüshu", aliases: [], tier: 5, z: 0.0 },
+      { text: "Modi", aliases: [], tier: 6, z: 3.8 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Old Hungarian", aliases: ["Rovás"], tier: 6, z: 3.79 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Yi", aliases: ["Yi script"], tier: 6, z: 3.66 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Tai Le", aliases: [], tier: 6, z: 3.46 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Samaritan", aliases: [], tier: 6, z: 3.15 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Old Italic", aliases: [], tier: 6, z: 2.73 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cham", aliases: [], tier: 6, z: 2.71 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Tai Tham", aliases: ["Lanna"], tier: 6, z: 2.31 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Cretan hieroglyphs", aliases: [], tier: 6, z: 2.14 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Lydian", aliases: [], tier: 6, z: 2.09 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Batak", aliases: [], tier: 6, z: 1.89 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Lycian", aliases: [], tier: 6, z: 1.73 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Linear Elamite", aliases: ["Elamite"], tier: 6, z: 1.72 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ranjana", aliases: ["Newa"], tier: 6, z: 1.68 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Ol Chiki", aliases: [], tier: 6, z: 1.61 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Khitan", aliases: [], tier: 6, z: 1.6 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kawi", aliases: [], tier: 6, z: 1.59 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sundanese", aliases: [], tier: 6, z: 1.57 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Nabataean", aliases: [], tier: 6, z: 1.55 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sharada", aliases: [], tier: 6, z: 1.52 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Carian", aliases: [], tier: 6, z: 1.47 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Limbu", aliases: [], tier: 6, z: 1.4 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Lepcha", aliases: [], tier: 6, z: 1.38 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Jurchen", aliases: [], tier: 6, z: 1.36 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Sogdian", aliases: [], tier: 6, z: 1.35 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tangut", aliases: [], tier: 6, z: 1.3 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Lisu", aliases: ["Fraser"], tier: 6, z: 1.28 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "SignWriting", aliases: [], tier: 6, z: 1.24 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Palmyrene", aliases: [], tier: 6, z: 1.17 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Luwian hieroglyphs", aliases: ["Anatolian hieroglyphs"], tier: 6, z: 1.16 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Grantha", aliases: [], tier: 6, z: 1.11 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Adlam", aliases: [], tier: 6, z: 1.01 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Pahawh Hmong", aliases: ["Hmong"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Lontara", aliases: ["Buginese"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Meitei Mayek", aliases: ["Meetei Mayek"], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Siddham", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Kaithi", aliases: [], tier: 6, z: 0.0 },
+      { text: "'Phags-pa", aliases: ["Phagspa"], tier: 6, z: 0.0 },
+      { text: "Soyombo", aliases: [], tier: 6, z: 0.0 },
+      { text: "Osmanya", aliases: [], tier: 6, z: 0.0 },
+      { text: "Bamum", aliases: [], tier: 6, z: 0.0 },
+      { text: "Kikakui", aliases: ["Mende Kikakui"], tier: 6, z: 0.0 },
+      { text: "Mandaic", aliases: [], tier: 6, z: 0.0 },
+      { text: "Rejang", aliases: [], tier: 6, z: 0.0 },
+      { text: "Tagbanwa", aliases: [], tier: 6, z: 0.0 },
+      { text: "Hanunoo", aliases: [], tier: 6, z: 0.0 },
+      { text: "Buhid", aliases: [], tier: 6, z: 0.0 },
+      { text: "Blissymbols", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "poetic-forms-01", category: "Language", closed: false,
+    prompt: "Name a form or type of poem",
+    answers: [
+      { text: "Ballad", aliases: [], tier: 1, z: 3.42 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Haiku", aliases: [], tier: 1, z: 3.08 }, // override: auto 2 -> 1 (famous/obvious answer in this category)
+      { text: "Limerick", aliases: [], tier: 1, z: 3.07 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Sonnet", aliases: [], tier: 1, z: 2.96 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "Epic", aliases: ["Epic poem"], tier: 2, z: 4.35 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Free verse", aliases: [], tier: 2, z: 4.16 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Ode", aliases: [], tier: 2, z: 3.31 },
+      { text: "Elegy", aliases: [], tier: 2, z: 2.71 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Acrostic", aliases: [], tier: 2, z: 2.1 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "Villanelle", aliases: [], tier: 2, z: 1.71 }, // override: auto 3 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Shape poem", aliases: ["Concrete poem", "Calligram"], tier: 3, z: 4.12 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Narrative poem", aliases: ["Narrative"], tier: 3, z: 4.01 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Blank verse", aliases: [], tier: 3, z: 3.86 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Lyric", aliases: ["Lyric poem"], tier: 3, z: 3.63 }, // override: auto 1 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Nursery rhyme", aliases: [], tier: 3, z: 3.39 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Dramatic monologue", aliases: ["Monologue"], tier: 3, z: 3.24 }, // override: auto 2 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "Epitaph", aliases: [], tier: 3, z: 2.83 },
+      { text: "Couplet", aliases: ["Rhyming couplet", "Heroic couplet"], tier: 3, z: 2.51 },
+      { text: "Tanka", aliases: [], tier: 3, z: 2.18 },
+      { text: "Quatrain", aliases: [], tier: 3, z: 2.03 },
+      { text: "Spoken word", aliases: ["Slam poetry", "Performance poetry"], tier: 4, z: 4.39 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Found poem", aliases: ["Found poetry", "Blackout poetry"], tier: 4, z: 4.23 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Nonsense verse", aliases: ["Nonsense poem"], tier: 4, z: 3.89 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Prose poem", aliases: [], tier: 4, z: 3.61 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Hymn", aliases: [], tier: 4, z: 3.61 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Psalm", aliases: [], tier: 4, z: 3.56 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pastoral", aliases: ["Idyll", "Eclogue"], tier: 4, z: 3.54 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Riddle", aliases: [], tier: 4, z: 3.44 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Shakespearean sonnet", aliases: ["English sonnet"], tier: 4, z: 2.62 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Diamante", aliases: [], tier: 4, z: 2.36 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Ghazal", aliases: [], tier: 4, z: 2.21 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Epigram", aliases: [], tier: 4, z: 2.17 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rondeau", aliases: [], tier: 4, z: 1.91 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Doggerel", aliases: [], tier: 4, z: 1.79 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Rubaiyat", aliases: ["Ruba'i"], tier: 4, z: 1.63 }, // override: auto 3 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Petrarchan sonnet", aliases: ["Italian sonnet"], tier: 4, z: 1.46 },
+      { text: "Terza rima", aliases: [], tier: 4, z: 1.43 },
+      { text: "Sestina", aliases: [], tier: 4, z: 1.31 },
+      { text: "Triolet", aliases: [], tier: 4, z: 1.27 },
+      { text: "Tercet", aliases: ["Triplet"], tier: 4, z: 1.17 },
+      { text: "Cinquain", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Pantoum", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Clerihew", aliases: [], tier: 4, z: 0.0 }, // override: auto 5 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Verse novel", aliases: ["Novel in verse"], tier: 5, z: 4.05 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Mock-epic", aliases: ["Mock-heroic"], tier: 5, z: 3.73 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rhyme royal", aliases: [], tier: 5, z: 3.54 }, // override: auto 1 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Golden shovel", aliases: [], tier: 5, z: 3.47 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Lai", aliases: ["Lay"], tier: 5, z: 3.29 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Fable", aliases: [], tier: 5, z: 3.16 }, // override: auto 2 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Epistle", aliases: ["Verse epistle"], tier: 5, z: 2.9 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Erasure poem", aliases: ["Erasure"], tier: 5, z: 2.9 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Madrigal", aliases: [], tier: 5, z: 2.47 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Paean", aliases: [], tier: 5, z: 2.41 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Dirge", aliases: [], tier: 5, z: 2.38 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Cento", aliases: [], tier: 5, z: 2.27 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sapphic", aliases: ["Sapphic stanza"], tier: 5, z: 2.03 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ballade", aliases: [], tier: 5, z: 1.94 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Roundel", aliases: [], tier: 5, z: 1.9 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Canzone", aliases: [], tier: 5, z: 1.74 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Renga", aliases: [], tier: 5, z: 1.59 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Threnody", aliases: [], tier: 5, z: 1.55 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Rondel", aliases: [], tier: 5, z: 1.4 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Aubade", aliases: [], tier: 5, z: 1.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Nonet", aliases: [], tier: 5, z: 1.39 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Senryu", aliases: [], tier: 5, z: 1.37 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Georgic", aliases: [], tier: 5, z: 1.35 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Abecedarian", aliases: [], tier: 5, z: 1.32 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Epithalamium", aliases: ["Epithalamion"], tier: 5, z: 1.27 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ottava rima", aliases: [], tier: 5, z: 1.2 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Ekphrastic poem", aliases: ["Ekphrasis"], tier: 5, z: 1.11 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Pindaric ode", aliases: ["Horatian ode"], tier: 5, z: 1.1 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Spenserian stanza", aliases: ["Spenserian sonnet"], tier: 5, z: 1.09 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Haibun", aliases: [], tier: 5, z: 1.02 }, // override: auto 4 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "Sijo", aliases: [], tier: 5, z: 0.0 },
+      { text: "Qasida", aliases: [], tier: 5, z: 0.0 },
+      { text: "Kyrielle", aliases: [], tier: 5, z: 0.0 },
+      { text: "Fu", aliases: [], tier: 6, z: 3.88 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Chant royal", aliases: [], tier: 6, z: 3.58 }, // override: auto 1 -> 6 (rare but satisfying find)
+      { text: "Ci", aliases: [], tier: 6, z: 3.53 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Luc bat", aliases: [], tier: 6, z: 3.29 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Doha", aliases: [], tier: 6, z: 3.18 }, // override: auto 2 -> 6 (rare but satisfying find)
+      { text: "Fibonacci poem", aliases: ["Fib"], tier: 6, z: 2.68 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Lune", aliases: [], tier: 6, z: 2.51 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Elegiac couplet", aliases: [], tier: 6, z: 2.16 }, // override: auto 3 -> 6 (rare but satisfying find)
+      { text: "Bref double", aliases: [], tier: 6, z: 1.59 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Monody", aliases: [], tier: 6, z: 1.48 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Shloka", aliases: ["Sloka"], tier: 6, z: 1.44 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Décima", aliases: [], tier: 6, z: 1.28 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Landay", aliases: [], tier: 6, z: 1.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Kural", aliases: ["Kural venba"], tier: 6, z: 1.26 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Pantun", aliases: [], tier: 6, z: 1.22 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Skaldic verse", aliases: ["Dróttkvætt"], tier: 6, z: 1.18 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Tetractys", aliases: [], tier: 6, z: 1.13 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Masnavi", aliases: ["Mathnawi"], tier: 6, z: 1.11 }, // override: auto 4 -> 6 (rare but satisfying find)
+      { text: "Rispetto", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Palinode", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Etheree", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Katauta", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Choka", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Sedoka", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Than-bauk", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Tanaga", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Cywydd", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Englyn", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Awdl", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Virelai", aliases: [], tier: 6, z: 0.0 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Glosa", aliases: [], tier: 6, z: 0.0 },
+      { text: "Seguidilla", aliases: [], tier: 6, z: 0.0 },
+      { text: "Copla", aliases: [], tier: 6, z: 0.0 },
+      { text: "Dizain", aliases: [], tier: 6, z: 0.0 },
+      { text: "Huitain", aliases: [], tier: 6, z: 0.0 },
+      { text: "Epyllion", aliases: [], tier: 6, z: 0.0 },
+      { text: "Zuihitsu", aliases: [], tier: 6, z: 0.0 },
+      { text: "Chaupai", aliases: [], tier: 6, z: 0.0 },
+      { text: "Abhang", aliases: [], tier: 6, z: 0.0 },
+      { text: "Vachana", aliases: [], tier: 6, z: 0.0 },
+      { text: "Jueju", aliases: [], tier: 6, z: 0.0 },
+      { text: "Lüshi", aliases: [], tier: 6, z: 0.0 },
+    ]
+  },
+  {
+    id: "narnia-tolkien-01", category: "Language", closed: true,
+    prompt: "Name a Chronicles of Narnia book, or a Middle-earth book by J. R. R. Tolkien",
+    answers: [
+      { text: "The Fellowship of the Ring", aliases: [], tier: 1, z: 3.81 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "The Lion, the Witch and the Wardrobe", aliases: [], tier: 1, z: 3.53 }, // override: auto 3 -> 1 (famous/obvious answer in this category)
+      { text: "The Hobbit", aliases: [], tier: 1, z: 3.39 }, // override: auto 4 -> 1 (famous/obvious answer in this category)
+      { text: "The Return of the King", aliases: [], tier: 2, z: 4.88 }, // override: auto 1 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Two Towers", aliases: [], tier: 2, z: 4.02 }, // override: auto 3 -> 2 (title/name: word frequency is not a recall signal)
+      { text: "The Silmarillion", aliases: [], tier: 2, z: 2.06 }, // override: auto 4 -> 2 (predictable 'clever' pick -> Fool's Gold)
+      { text: "Prince Caspian", aliases: [], tier: 3, z: 3.02 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Magician's Nephew", aliases: [], tier: 3, z: 2.38 }, // override: auto 4 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Voyage of the Dawn Treader", aliases: ["Dawn Treader"], tier: 3, z: 1.66 }, // override: auto 5 -> 3 (title/name: word frequency is not a recall signal)
+      { text: "The Last Battle", aliases: [], tier: 4, z: 4.89 }, // override: auto 1 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Horse and His Boy", aliases: [], tier: 4, z: 4.61 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "The Silver Chair", aliases: [], tier: 4, z: 4.44 }, // override: auto 2 -> 4 (title/name: word frequency is not a recall signal)
+      { text: "Unfinished Tales", aliases: ["Unfinished Tales of Númenor and Middle-earth"], tier: 5, z: 3.57 }, // override: auto 3 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Children of Húrin", aliases: [], tier: 5, z: 0.0 }, // override: auto 6 -> 5 (title/name: word frequency is not a recall signal)
+      { text: "The Fall of Gondolin", aliases: [], tier: 6, z: 1.67 }, // override: auto 5 -> 6 (rare but satisfying find)
+      { text: "Beren and Lúthien", aliases: [], tier: 6, z: 1.01 },
     ]
   },
 ];
