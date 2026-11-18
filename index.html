@@ -85,6 +85,20 @@ button, input { font: inherit; color: inherit; }
 .btn.primary:active { transform: translateY(4px); box-shadow: 0 2px 0 #9a6a14, 0 6px 14px rgba(240,180,60,.2); }
 .btn.big { font-family: var(--display); font-size: 1.2rem; padding: 1rem 1.6rem; letter-spacing: .04em; }
 .btn.ghost { background: transparent; }
+/* Daily Brew: the secondary call to action, in the emerald potion colour so it reads clearly next to the gold Start button */
+.btn.daily { --dg: 0 4px 0 #0b5a45, 0 10px 24px rgba(98,227,166,.18), inset 0 1px 0 rgba(201,255,230,.25);
+  min-width: min(100%, 300px); font-family: var(--display); font-size: 1.05rem; letter-spacing: .03em; padding: .85rem 1.4rem;
+  color: #d4ffeb; background: linear-gradient(180deg, rgba(98,227,166,.28), rgba(30,120,88,.22)); border: 1px solid rgba(98,227,166,.75);
+  box-shadow: var(--dg); }
+.btn.daily::before { content: '\2726'; margin-right: .55em; color: var(--green); }
+.btn.daily:hover { background: linear-gradient(180deg, rgba(98,227,166,.38), rgba(30,120,88,.3)); border-color: var(--green); }
+.btn.daily:active { transform: translateY(3px); box-shadow: 0 1px 0 #0b5a45, 0 4px 12px rgba(98,227,166,.16); }
+.btn.daily:disabled { opacity: .5; cursor: default; }
+/* today's Daily Brew not played yet: a slow glow invites it */
+.btn.daily.fresh { animation: dailyGlow 2.8s ease-in-out infinite; }
+@keyframes dailyGlow { 0%, 100% { box-shadow: var(--dg); } 50% { box-shadow: var(--dg), 0 0 28px rgba(98,227,166,.45); } }
+.reduced .btn.daily.fresh { animation: none; }
+@media (prefers-reduced-motion: reduce) { .btn.daily.fresh { animation: none; } }
 .btn.danger { border-color: rgba(255,122,107,.6); color: #ffb3aa; }
 .icon-btn { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--line);
   background: rgba(255,255,255,.04); cursor: pointer; transition: background .2s, transform .12s; }
@@ -418,7 +432,7 @@ main { position: relative; z-index: 2; flex: 1; min-height: 0; display: flex; }
         </fieldset>
         <div class="home-actions">
           <button class="btn primary big" id="btn-start">Start brewing</button>
-          <button class="btn ghost" id="btn-daily">Daily Brew</button>
+          <button class="btn daily" id="btn-daily">Daily Brew</button>
         </div>
         <p class="mini" id="home-stats"></p>
       </div>
@@ -595,7 +609,8 @@ const CONFIG = {
   timing: { orbMs: 700, fizzleMs: 900, plainMs: 900, reducedMs: 1300, nextDelayMs: 650, skipGuardMs: 250, countUpMs: 1100 },
   titles: [[700, 'Keeper of the Stone'], [600, 'Grand Alchemist'], [500, 'Master Transmuter'], [400, 'Adept of the Flask'],
            [300, 'Journeyman Brewer'], [200, 'Apprentice Mixer'], [100, 'Soot-Stained Novice'], [0, 'Kitchen Dabbler']],
-  categories: ['All', 'Science', 'Geography', 'Film & TV', 'Sport', 'Food', 'History', 'Music', 'Language', 'Video Games'],
+  categories: ['All', 'Everyday', 'Animals & Nature', 'Food', 'Geography', 'Sport', 'Film & TV', 'Music', 'Words', 'Language',
+               'People & Jobs', 'Science', 'History', 'Technology', 'Video Games'],
   storageKey: 'rarebrew.v1'
 };
 const BREW = ['wrong', 'ash', 'brass', 'copper', 'silver', 'gold', 'stone'];
@@ -1025,6 +1040,7 @@ function renderHome() {
   $('#cat-chips').innerHTML = CONFIG.categories.map(c => `<label class="chip"><input type="radio" name="cat" value="${esc(c)}" ${c === Store.data.category ? 'checked' : ''}><span>${esc(c)}</span></label>`).join('');
   const s = Store.data.stats, today = utcDate(), d = Store.data.daily;
   $('#btn-daily').textContent = d.date === today ? `Daily Brew · today's score ${d.score}` : `Daily Brew · ${today}`;
+  $('#btn-daily').classList.toggle('fresh', d.date !== today);
   $('#home-stats').textContent = s.rounds ? `Rounds brewed ${s.rounds} · Best ${s.best} · Good-brew streak ${s.streak}` : 'No daily limit. Brew as many rounds as you like.';
 }
 function renderMute() {
